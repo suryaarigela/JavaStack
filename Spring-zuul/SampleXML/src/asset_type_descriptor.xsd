@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	xmlns:jxb="http://java.sun.com/xml/ns/jaxb" jxb:version="2.1"
+	xmlns="http://www.ibm.com/iis/igc/asset-type-descriptor"
+	targetNamespace="http://www.ibm.com/iis/igc/asset-type-descriptor"
+	elementFormDefault="qualified">
+	
+<!-- ************************************************************************ -->
+<!-- ********* Reused groups/types: IDs, label, position, ... *********** -->
+
+    <xsd:attributeGroup name="Identifying">
+		<!-- 
+			localId format restrictions: 
+			- letters, digits, 'inner' underscores
+			- must not start or end in an underscore
+			- must not contain two or more successive underscores
+			Examples:
+				Valid:   MR_Job, Report
+				Invalid: MR__Job, _Report, Report_, Report%
+			 -->
+		<xsd:attribute name="localId" type="xsd:string" use="required"></xsd:attribute>
+    </xsd:attributeGroup>
+	
+	<xsd:complexType name="Label">
+		<xsd:attribute name="key" type="xsd:string" use="required"></xsd:attribute>
+		<xsd:attribute name="inDefaultLocale" type="xsd:string" use="optional"></xsd:attribute>
+	</xsd:complexType>
+	
+	<xsd:group name="Labeling">
+		<xsd:sequence>
+			<xsd:element name="label" type="Label" minOccurs="1" maxOccurs="1"> </xsd:element>
+		</xsd:sequence>
+	</xsd:group>
+	
+	<xsd:group name="PluralLabeling">
+		<xsd:sequence>
+			<xsd:element name="pluralLabel" type="Label" minOccurs="1" maxOccurs="1"> </xsd:element>
+		</xsd:sequence>
+	</xsd:group>
+
+	<xsd:attributeGroup name="Positioning">
+<!-- 		When not provided, will be appended to the end of a list. 
+			Example: "1.6" for inserting between the 1st and 2nd existing list items.  -->
+		<xsd:attribute name="position" type="xsd:float" use="optional" default="1000.0"></xsd:attribute>
+	</xsd:attributeGroup>
+
+<!-- ****************************************************************** -->
+<!-- ********* Root element and -structure ********** -->
+
+	<xsd:element name="descriptor" type="Descriptor"> </xsd:element>
+	
+	<xsd:complexType name="Descriptor">
+		<xsd:sequence>
+			<xsd:element minOccurs="0" maxOccurs="unbounded" name="family" type="Family"> </xsd:element>
+			<xsd:element minOccurs="0" maxOccurs="unbounded" name="tree" type="Tree"> </xsd:element>
+			<xsd:element minOccurs="1" maxOccurs="unbounded" name="class" type="Class"> </xsd:element>
+		</xsd:sequence>
+<!-- 		Unique, short, identifying model ID. Example: DataMass. Format restriction: Identifying, see above. -->
+		<xsd:attribute name="bundleId" type="xsd:string" use="required"></xsd:attribute>
+	</xsd:complexType>
+	
+		 
+<!-- ****************************************************************** -->
+<!-- ********* GUI Containers: Family, Tree ********** -->
+	
+	<xsd:complexType name="Family">
+    	<xsd:group ref="Labeling"/>
+    	
+<!-- 		Position within the order of asset families. -->
+    	<xsd:attributeGroup ref="Positioning" />
+    	
+<!-- 		Comma-separated list of classes shown in this family. -->
+		<xsd:attribute name="classRefs" type="xsd:string" use="required"></xsd:attribute>
+	</xsd:complexType>
+	
+	<xsd:complexType name="Tree">
+    	<xsd:group ref="Labeling"/>
+    	
+<!-- 		Position within the order of trees. -->
+    	<xsd:attributeGroup ref="Positioning" />
+
+<!-- 		Comma-separated list of class IDs. -->
+		<xsd:attribute name="rootClassRefs" type="xsd:string" use="required"></xsd:attribute>
+	</xsd:complexType>
+		 
+<!-- ****************************************************************** -->
+<!-- ********* Structural definitions: Class ********** -->
+	
+	<xsd:complexType name="Class">
+		<xsd:sequence>
+<!--	     	Classes require a regular label (ex: "Job") as well as a plural label (ex: Jobs) -->
+	    	<xsd:group ref="Labeling"/>
+	    	<xsd:group ref="PluralLabeling"/>    	
+
+<!-- 		    NOT USED IN REGULAR 'Open IGC' INTEGRATION. There, all assets are stored in class "MwbExtensions.ExtensionDataSource", partitioned by attribute "dsType".
+				OPTIONAL, WITH LIMITED SUPPORT: Where and how the assets are persisted in MDS/XMeta. 
+				NOTE: Only allowed for OHS (Open Hierarchical Structure), additional DataStage stage types, and File/Folder types. More support is configurable on request. -->
+			<xsd:element name="storage" type="ClassStorage" minOccurs="0" maxOccurs="1"> </xsd:element>
+
+<!-- 		    Additional properties, to be appended to the header section and hover preview  -->
+			<xsd:element name="headerSection" type="HeaderSection" minOccurs="0" maxOccurs="1"> </xsd:element>
+
+<!-- 		    Additional properties, grouped by GUI sections  -->
+			<xsd:element name="section" type="Section" minOccurs="0" maxOccurs="unbounded"> </xsd:element>
+		</xsd:sequence>
+		
+<!-- 		Unique within this bundle. Example: Job -->
+    	<xsd:attributeGroup ref="Identifying"/>
+    	
+<!-- 		Local ID of this class's super class, in this bundle. Example: TransformStage has JobStage as superclass. -->
+		<xsd:attribute name="superClassRef" type="xsd:string" use="optional"></xsd:attribute>
+		
+<!-- 		Unique, identifying REST name, across all IGC classes. When not provided, will be constructed as <bundleId>__<class-localId>.
+			Example: DataMass__Job. Format restriction: Identifier, see above. -->
+		<xsd:attribute name="restCodeName" type="xsd:string" use="optional"></xsd:attribute>
+			
+<!-- 		Comma-separated list of local class IDs in this bundle whose instances can be containers for assets of this class.
+			Examples: 'Project', when 'Job' is always contained in a Project
+				  	  'Folder,Host' when a 'Folder' can be in another Folder or Host -->
+		<xsd:attribute name="containerClassRefs" type="xsd:string" use="optional"> </xsd:attribute>
+		
+<!-- 		Class whose assets encapsulate runtime/operational data flows and other information (date, status) - OMD = Operational Metadata
+			A Job (executable) can be associated with multiple OMD assets, one per Job run (execution).
+			Example: 'JobRun', when a Job's OMD is encapsulated in JobRun -->
+		<xsd:attribute name="omdClassRef" type="xsd:string" use="optional"> </xsd:attribute>
+		
+<!-- 		Example: For Jobs, allow to upload images such as canvas screen shots, for DataFields don't -->
+		<xsd:attribute name="canHaveImage" type="xsd:boolean" default="false"> </xsd:attribute>
+		
+<!-- 		If true, then in data lineage, assets of this class will initially appear as black boxes, and can be drilled into by clicking "Expand..."
+			Example: true for Job, false for most other classes. -->
+		<xsd:attribute name="expandableInLineage" type="xsd:boolean" default="false"> </xsd:attribute>
+    	
+<!--     	Has impact on usage labels, see DataAccessRoleEnum. -->
+		<xsd:attribute name="dataAccessRole" type="DataAccessRoleEnum" default="Active"> </xsd:attribute>
+    	
+<!-- 		This attribute is for overriding the calculated level by an explicit value.
+			Main use case: Asset types without members, where the reporting level should be 2 or higher.
+			Background:
+				In lineage report graphs, the 'granularity' of the report (e.g. DB vs DB Table) depends on the 'level' of the starting asset. 
+				By default, this level gets calculated once, based on containment hierarchy depth: 
+				Level 1: classes with no member classes.
+				Level 2: classes that have member classes with level of at most 1. 
+				Level 3: classes that have member classes with level of at most 2.
+				(and so forth) -->
+		<xsd:attribute name="reportingLevel" type="xsd:positiveInteger" > </xsd:attribute>
+	</xsd:complexType>
+	
+<!-- 	Where the assets are persisted in MDS/XMeta, and by which attribute they are differentiated/discriminated/partitioned. -->
+	<xsd:complexType name="ClassStorage">
+<!--	        Where in MDS this type is stored. Format: "Model.Class". Example: DataStageX.DSStage -->
+			<xsd:attribute name="mdsClass" type="xsd:string" use="required"></xsd:attribute>
+				
+<!--	        Example: "StageType" -->
+			<xsd:attribute name="typeAttribute" type="xsd:string" use="required"></xsd:attribute>
+				
+<!--	        Example: "PxFileConnector" -->
+			<xsd:attribute name="typeValue" type="xsd:string" use="required"></xsd:attribute>
+	</xsd:complexType>
+	
+	<xsd:complexType name="HeaderSection">
+		<xsd:sequence>
+			<xsd:element name="attribute" type="Attribute" minOccurs="0" maxOccurs="unbounded"> </xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+	
+	<xsd:complexType name="Section">
+		<xsd:sequence>
+    		<xsd:group ref="Labeling"/>
+			<xsd:element name="attribute" type="Attribute" minOccurs="1" maxOccurs="unbounded"> </xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+			 
+<!-- ****************************************************************** -->
+<!-- ********* Structural definitions: Attribute ********** -->
+
+	<xsd:complexType name="Attribute">
+		<xsd:sequence>
+    		<xsd:group ref="Labeling"/>
+			<xsd:element minOccurs="0" maxOccurs="unbounded" name="validValue" type="ValidValue"> </xsd:element>
+		</xsd:sequence>	
+<!-- 		Unique within this attribute's class. Example: status. -->
+    	<xsd:attributeGroup ref="Identifying"/>
+    	
+<!--     	Datatype of this attribute: String, Integer, ... -->
+		<xsd:attribute name="type" type="DatatypeEnum" use="required"> </xsd:attribute>
+		
+<!-- 		If true, then an asset can have more than one value for this attribute. Otherwise - only zero or one value. -->
+		<xsd:attribute name="multiValued" type="xsd:boolean" default="false"> </xsd:attribute>
+		
+<!-- 		If true, then IGC users with role "Asset author" will be able to edit the values for this attribute, otherwise the values will be read-only. -->
+		<xsd:attribute name="editable" type="xsd:boolean" default="false"> </xsd:attribute>
+	</xsd:complexType>
+	
+	<xsd:complexType name="ValidValue">
+    	<xsd:group ref="Labeling"/>
+
+<!-- 		Unique within this value's attribute. Example: SUCCESS. -->
+    	<xsd:attributeGroup ref="Identifying"/>
+	</xsd:complexType>
+	
+    <xsd:simpleType name="DatatypeEnum">
+    	<xsd:restriction base="xsd:string">
+    	
+<!-- 			Limit of 255 chars, stored as varchar. Use it for short string values. -->
+    		<xsd:enumeration value="String"></xsd:enumeration> 
+
+<!-- 			Stored as CLOB; search will be case-sensitive and less efficient. Use it for strings values that may not fit "String". -->
+    		<xsd:enumeration value="LongText"></xsd:enumeration> 
+    		
+<!--     		Integer numbers: -10, 0, 1, 4, ... -->
+    		<xsd:enumeration value="Integer"></xsd:enumeration>
+    		
+<!--     		Decimal numbers: -42.3, 2, 2.0, 2.14 -->
+    		<xsd:enumeration value="Double"></xsd:enumeration>
+
+<!--     		Date and Time -->
+    		<xsd:enumeration value="Date"></xsd:enumeration>
+    		
+<!--     		true / false -->
+    		<xsd:enumeration value="Boolean"></xsd:enumeration>
+    	</xsd:restriction>
+    </xsd:simpleType>
+	
+    <xsd:simpleType name="DataAccessRoleEnum">
+    	<xsd:restriction base="xsd:string">
+<!-- 			Active, "data mover": reads from data sources and writes to data sources. Usage property labels will be: "Reads from" and "Writes to". -->
+    		<xsd:enumeration value="Active"></xsd:enumeration> 
+
+<!-- 			Passive, "data source": is read by and written by active "data movers". Usage property labels will be: "Written by" and "Read by". -->
+    		<xsd:enumeration value="Passive"></xsd:enumeration> 
+
+<!-- 			Other: when flow participant, but none of the above is applicable. Usage property labels will be: "Sources" and "Targets" -->
+    		<xsd:enumeration value="Other"></xsd:enumeration> 
+
+<!-- 			None: when not a flow participant at all. Such assets will have no "Usage Information" section at all, and users will not be able to request lineage reports on such assets. -->
+    		<xsd:enumeration value="None"></xsd:enumeration> 
+    	</xsd:restriction>
+    </xsd:simpleType>
+</xsd:schema>

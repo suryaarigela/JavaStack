@@ -1,0 +1,13 @@
+.clearanceHeaderColor {
+  color: #017fb5;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-size: 1.2em;
+  padding-left: 9px;
+}
+
+.clearanceHeaderButton {
+  width: 100%;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}

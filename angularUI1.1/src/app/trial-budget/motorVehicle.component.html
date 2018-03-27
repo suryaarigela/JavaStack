@@ -1,0 +1,49 @@
+<div class="topMarginNames">
+  <tooltip-content #tbmotorVehicle>
+        <div><span ><p class="fa fa-info-circle fa-tooltip" ></p></span><div class="tooltip-text-regisnation">
+          Select the Motor Vehicle Use type and Enter the amount for FMW and Encumb in whole Dollars </div></div>
+        </tooltip-content>
+  <div tooltipPlacement="right" [tooltip]="tbmotorVehicle">
+      <!--form-group -->
+      <div [formGroup]="motorVehicleGroup" >
+      <div class="col-sm-12 ">
+        <div class="col-sm-3">
+          <label for="Demographic" class=" label-field" *ngIf="index==0">Motor Vehicle 
+     </label>
+        </div>
+        <div class="col-sm-8 zero-padding-bottom no-padding">
+			<div>
+            <div class="col-sm-4 form-group zero-padding-right">
+              <div class="pushDown" for="dob">Use</div>
+              <select class="form-control" formControlName="use" [(ngModel)]="motorVehicle.useType">
+				      <option  *ngFor="let optionEntity of this.motorVehUseDropdown" value="{{optionEntity.key}}">{{optionEntity.value}}</option>
+                       <option>Select</option>
+                    </select>
+            </div>
+			</div>
+            <div class="col-sm-4 form-group zero-padding-right">
+              <div class="pushDown" for="ssn1">FMW</div>
+              <input currencyMask style="padding-right:.5em" formControlName="fmw"  (keypress)="numberOnly($event)" class="form-control"
+                  [(ngModel)]="motorVehicle.fmw"    [options]="{ prefix: '$',hundreds: ',' }" maxlength="10" />
+            </div>
+            <div class="col-sm-4 form-group zero-padding-right">
+              <div class="pushDown" for="ssn2">Encumb</div>
+              <input currencyMask style="padding-right:.5em" formControlName="encumb" (keypress)="numberOnly($event)" class="form-control"
+                    [(ngModel)]="motorVehicle.encumb"  [options]="{ prefix: '$',hundreds: ',' }" maxlength="10" />
+            </div>
+
+        </div>
+         
+        <div (click)="removed.emit(i)" class="trashtop col-sm-1 zero-padding-left">
+          <div>
+            <span class="delete-row">
+				<i class="fa fa-trash-o" aria-hidden="true"></i>
+			</span>
+          </div>
+        </div>
+
+      </div>
+      </div>
+      </div>
+     
+    </div>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aop-reference-model>
+<aop-project name="employee-producer">
+<aspect-definition advice-class-name="com.netflix.hystrix.contrib.javanica.aop.aspectj.HystrixCommandAspect" advice-method-name="methodsAnnotatedWithHystrixCommand(org.aspectj.lang.ProceedingJoinPoint)" advice-type="AROUND" aspect-end-line-number="-1" aspect-name="hystrixCommandAspect" aspect-start-line-number="-1" factory-id="org.springframework.ide.eclipse.aop.core.annotationAspectDefinitionElementFactory" file="/employee-producer/src/main/java/com/javainuse/SpringBootHelloWorldApplication.java" pointcut-expression="hystrixCommandAnnotationPointcut() || hystrixCollapserAnnotationPointcut()" proxy-target-class="false">
+<aop-reference advice-type="AROUND" bean="1:BeansModel|2:employee-producer|3:java:com.javainuse.SpringBootHelloWorldApplication|8:testController:11" bean-file="/employee-producer/src/main/java/com/javainuse/controllers/TestController.java" bean-start-line="11" factory-id="org.springframework.ide.eclipse.aop.core.aopReferenceElementFactory" file="/employee-producer/src/main/java/com/javainuse/SpringBootHelloWorldApplication.java" source="=employee-producer/C:\/Users\/suri2\/.m2\/repository\/com\/netflix\/hystrix\/hystrix-javanica\/1.5.6\/hystrix-javanica-1.5.6.jar&lt;com.netflix.hystrix.contrib.javanica.aop.aspectj(HystrixCommandAspect.class[HystrixCommandAspect~methodsAnnotatedWithHystrixCommand~Lorg.aspectj.lang.ProceedingJoinPoint;" source-start-line="-1" target="=employee-producer/src\/main\/java&lt;com.javainuse.controllers{TestController.java[TestController~firstPage" target-start-line="15"/>
+</aspect-definition>
+</aop-project>
+<aop-project name="com.javainuse"/>
+<aop-project name="zuul-sample-service"/>
+<aop-project name="employee-consumer"/>
+</aop-reference-model>

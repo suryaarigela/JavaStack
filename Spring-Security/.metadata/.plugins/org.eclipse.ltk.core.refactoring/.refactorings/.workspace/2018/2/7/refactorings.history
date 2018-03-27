@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Delete resource &apos;employee-management-syatem&apos;" deleteContents="true" description="Delete resource &apos;employee-management-syatem&apos;" element1="/employee-management-syatem" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1518641743828"/>
+</session>

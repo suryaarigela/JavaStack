@@ -1,0 +1,323 @@
+[{
+    "householdMemberId": 100000001,
+    "personName": {
+      "firstName": "oliver",
+      "lastName": "queen",
+      "middleName": "one",
+      "suffix": "1"
+    },
+    "dob": "01/10/1967",
+    "ssn": {
+      "ssnPart1": "852",
+      "ssnPart2": "45",
+      "ssnPart3": "7896"
+    },
+    "gender": "1",
+    "raceCds": ["1"],
+    "deletedYN": "N",
+    "headOfHouseholdYN": "Y",
+    "relationshipCd": "SE",
+    "altNames": [{
+      "firstName": "John",
+      "lastName": "Diggle",
+      "middleName": "",
+      "suffix": ""
+    }, {
+      "firstName": "Thea",
+      "lastName": "Queen",
+      "middleName": "",
+      "suffix": "3"
+    }],
+    "additionalSsns": [{
+      "ssnPart1": "852",
+      "ssnPart2": "45",
+      "ssnPart3": "7896"
+    }],
+    "pregnantYN": "",
+    "pregnancyDueDate": "",
+    "aliasClientIds": [12345, 698756],
+    "memberClearanceId": "",
+    "memberClearedYN": "",
+    "memberEditableYN": "",
+    "cases": [],
+    "verification": {
+      "ssnVerificationModel": {
+        "verificationDocumentCd": "NO",
+        "verificationRequestedYN": "N",
+        "verificationType": "1",
+        "verifiedYN": "N",
+        "verificationAutoVerified": false,
+        "verificationFileList": [],
+        "retryCount": 2,
+        "messages": [{
+          "code": "abc",
+          "message": "Teat error",
+          "severity": 1
+        }]
+      },
+      "dobVerificationModel": {
+        "verificationDocumentCd": "NO",
+        "verificationAutoVerified": false,
+        "verificationFileList": [],
+        "verificationRequestedYN": "N",
+        "verificationType": "1",
+        "verifiedYN": "N",
+        "retryCount": 2,
+        "messages": [{
+          "code": "abc",
+          "message": "Teat error",
+          "severity": 1
+        }]
+      }
+    },
+    "hasSsnYN": "Y",
+    "ssnReferral": "A"
+  },
+  {
+    "householdMemberId": 100000002,
+    "personName": {
+      "firstName": "Jonathon",
+      "lastName": "Rogers",
+      "middleName": "Michael",
+      "suffix": "1"
+    },
+    "dob": "01/08/1967",
+    "ssn": {
+      "ssnPart1": "123",
+      "ssnPart2": "76",
+      "ssnPart3": "7897"
+    },
+    "gender": "1",
+    "raceCds": [
+      "1"
+    ],
+    "deletedYN": "N",
+    "headOfHouseholdYN": "N",
+    "relationshipCd": "CH",
+    "altNames": [{
+        "firstName": "John",
+        "lastName": "Diggle",
+        "middleName": "",
+        "suffix": ""
+      },
+      {
+        "firstName": "Thea",
+        "lastName": "Queen",
+        "middleName": "",
+        "suffix": "3"
+      }
+    ],
+    "additionalSsns": [{
+      "ssnPart1": "467",
+      "ssnPart2": "76",
+      "ssnPart3": "7896"
+    }],
+    "pregnantYN": "",
+    "pregnancyDueDate": "",
+    "aliasClientIds": [
+      19345,
+      698756
+    ],
+    "memberClearanceId": "",
+    "memberClearedYN": "",
+    "memberEditableYN": "",
+    "cases": [],
+    "verification": {
+      "ssnVerificationModel": {
+        "verificationDocumentCd": "NO",
+        "verificationRequestedYN": "N",
+        "verificationType": "1",
+        "verifiedYN": "N",
+        "verificationAutoVerified": false,
+        "verificationFileList": [],
+        "retryCount": 2,
+        "messages": [{
+          "code": "abc",
+          "message": "Teat error",
+          "severity": 1
+        }]
+      },
+      "dobVerificationModel": {
+        "verificationDocumentCd": "NO",
+        "verificationAutoVerified": false,
+        "verificationFileList": [],
+        "verificationRequestedYN": "N",
+        "verificationType": "1",
+        "verifiedYN": "N",
+        "retryCount": 2,
+        "messages": [{
+          "code": "abc",
+          "message": "Test error",
+          "severity": 1
+        }]
+      }
+    },
+    "hasSsnYN": "Y",
+    "ssnReferral": "A"
+  },
+  {
+    "householdMemberId": 100000003,
+    "personName": {
+      "firstName": "Robert",
+      "lastName": "queen",
+      "middleName": "Dearden",
+      "suffix": "1"
+    },
+    "dob": "01/10/1927",
+    "ssn": {
+      "ssnPart1": "853",
+      "ssnPart2": "45",
+      "ssnPart3": "7806"
+    },
+    "gender": "1",
+    "raceCds": [
+      "1"
+    ],
+    "deletedYN": "N",
+    "headOfHouseholdYN": "N",
+    "relationshipCd": "CH",
+    "altNames": [{
+        "firstName": "John",
+        "lastName": "Diggle",
+        "middleName": "",
+        "suffix": ""
+      },
+      {
+        "firstName": "Thea",
+        "lastName": "Queen",
+        "middleName": "",
+        "suffix": "3"
+      }
+    ],
+    "additionalSsns": [{
+      "ssnPart1": "802",
+      "ssnPart2": "45",
+      "ssnPart3": "7806"
+    }],
+    "pregnantYN": "",
+    "pregnancyDueDate": "",
+    "aliasClientIds": [
+      12346,
+      690757
+    ],
+    "memberClearanceId": "",
+    "memberClearedYN": "",
+    "memberEditableYN": "",
+    "cases": [],
+    "verification": {
+      "ssnVerificationModel": {
+        "verificationDocumentCd": "NO",
+        "verificationRequestedYN": "N",
+        "verificationType": "1",
+        "verifiedYN": "N",
+        "verificationAutoVerified": false,
+        "verificationFileList": [],
+        "retryCount": 2,
+        "messages": [{
+          "code": "abc",
+          "message": "Teat error",
+          "severity": 1
+        }]
+      },
+      "dobVerificationModel": {
+        "verificationDocumentCd": "NO",
+        "verificationAutoVerified": false,
+        "verificationFileList": [],
+        "verificationRequestedYN": "N",
+        "verificationType": "1",
+        "verifiedYN": "N",
+        "retryCount": 2,
+        "messages": [{
+          "code": "abc",
+          "message": "Teat error",
+          "severity": 1
+        }]
+      }
+    },
+    "hasSsnYN": "Y",
+    "ssnReferral": "A"
+  },
+  {
+    "householdMemberId": 100000004,
+    "personName": {
+      "firstName": "Robert",
+      "lastName": "Downey",
+      "middleName": "",
+      "suffix": "1"
+    },
+    "dob": "01/08/1970",
+    "ssn": {
+      "ssnPart1": "456",
+      "ssnPart2": "67",
+      "ssnPart3": "7897"
+    },
+    "gender": "1",
+    "raceCds": [
+      "1"
+    ],
+    "deletedYN": "N",
+    "headOfHouseholdYN": "N",
+    "relationshipCd": "CH",
+    "altNames": [{
+        "firstName": "John",
+        "lastName": "Diggle",
+        "middleName": "",
+        "suffix": ""
+      },
+      {
+        "firstName": "Thea",
+        "lastName": "Queen",
+        "middleName": "",
+        "suffix": "3"
+      }
+    ],
+    "additionalSsns": [{
+      "ssnPart1": "667",
+      "ssnPart2": "79",
+      "ssnPart3": "7896"
+    }],
+    "pregnantYN": "",
+    "pregnancyDueDate": "",
+    "aliasClientIds": [
+      19345,
+      698756
+    ],
+    "memberClearanceId": "",
+    "memberClearedYN": "",
+    "memberEditableYN": "",
+    "cases": [],
+    "verification": {
+      "ssnVerificationModel": {
+        "verificationDocumentCd": "NO",
+        "verificationRequestedYN": "N",
+        "verificationType": "1",
+        "verifiedYN": "N",
+        "verificationAutoVerified": false,
+        "verificationFileList": [],
+        "retryCount": 2,
+        "messages": [{
+          "code": "abc",
+          "message": "Teat error",
+          "severity": 1
+        }]
+      },
+      "dobVerificationModel": {
+        "verificationDocumentCd": "NO",
+        "verificationAutoVerified": false,
+        "verificationFileList": [],
+        "verificationRequestedYN": "N",
+        "verificationType": "1",
+        "verifiedYN": "N",
+        "retryCount": 2,
+        "messages": [{
+          "code": "abc",
+          "message": "Test error",
+          "severity": 1
+        }]
+      }
+    },
+    "hasSsnYN": "Y",
+    "ssnReferral": "A"
+  }
+
+]

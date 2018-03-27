@@ -1,0 +1,387 @@
+<!--<div class="app-alerts col-sm-7 zero-padding-right">
+	<div class="section section-notifications" id="notifications">
+	        <div class="alert alert-success">	             
+				 <div class="alert-icon">
+					<i class="fa fa-check-circle fa-1point5x" aria-hidden="true"></i>
+				</div>
+				<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+					<i class="fa fa-times fa-2" aria-hidden="true"></i>
+				</button>
+				 <b>Success Status:</b> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod....	           
+	        </div>
+	        <div class="clearfix"></div>
+	    </div>			
+	<div class="section section-notifications" id="notifications">
+	        <div class="alert alert-danger">	            
+				 <div class="alert-icon">
+					<i class="fa fa-exclamation-circle fa-1point5x" aria-hidden="true"></i>
+				</div>
+				<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+					<i class="fa fa-times fa-2" aria-hidden="true"></i>
+				</button>
+				 <b>Error Alert:</b> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod....	           
+	        </div>
+	        <div class="clearfix"></div>
+	    </div>
+		<div class="section section-notifications" id="notifications">
+	        <div class="alert alert-warning">	             
+				 <div class="alert-icon">
+					<i class="fa fa-warning fa-1point5x" aria-hidden="true"></i>
+				</div>
+				<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+					<i class="fa fa-times fa-2" aria-hidden="true"></i>
+				</button>
+				 <b>Warning Status:</b> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod....	           
+	        </div>
+	        <div class="clearfix"></div>
+	    </div>
+		
+		<div class="section section-notifications" id="notifications">
+	        <div class="alert alert-info">	             
+				 <div class="alert-icon">
+					<i class="fa fa-check-circle fa-1point5x" aria-hidden="true"></i>
+				</div>
+				<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+					<i class="fa fa-times fa-2" aria-hidden="true"></i>
+				</button>
+				 <b>Information Status:</b> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod....	           
+	        </div>
+	        <div class="clearfix"></div>
+	    </div>
+	</div>-->
+  <div *ngIf="notValid">
+    <div class="app-alerts col-sm-7 zero-padding-right">
+      <div class="section section-notifications" id="notifications">
+        <div class="alert alert-danger">
+          <div class="alert-icon">
+            <i class="fa fa-exclamation-circle fa-1point5x" aria-hidden="true"></i>
+          </div>
+          <button type="button" class="close" aria-label="Close" (click)="notValid=false" >
+					  <i class="fa fa-times fa-2" aria-hidden="true"></i>
+				  </button>   
+          <b>Error Alert:</b> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod....
+        </div>
+        <div class="clearfix"></div>
+      </div>
+    </div>
+  </div>
+
+<div class="page-container col-sm-7 content-box">
+  <form [formGroup]="nameForm" novalidate (ngSubmit)="save(nameForm.value, nameForm.valid)">
+    <div class="section-wrpr bottom-space">
+      <div class="section-label">
+        <div>BASIC INFORMATION (Client ID: {{currentClientId}})</div>
+        <div class="addStatement topalign"><button class="btn btn-primary" (click)="back()">Client Search(Clearance)</button></div>
+      </div>
+      <tooltip-content #basicInfo>
+      <div class="indexvalue"><span><p class="fa fa-info-circle fa-tooltip" ></p></span>
+        <div class="tooltip-text-regisnation">
+          Clearance is used to determine whether the applicant/client is already known to the System through a previous registration.
+          <br/><br/>Enter the SSN and click "Run Clearance" for getting an exact match.
+          <br/><br/>Enter a combination of first name, last name, DOB, Sex and Race for getting potential matches.
+          <br><br>For the potential matches, verify that the name, sex, race and social security number match the identity
+          of the case member.
+        </div>
+      </div>
+    </tooltip-content>
+      <div tooltipPlacement="right" [tooltip]="basicInfo">
+      <div class="box-border-bottom row-view">
+        <div class="col-sm-2">
+          <label for="name" class="pushDown35">Name</label>
+        </div>
+        <div class="col-sm-10 zero-padding-bottom">
+          <div formGroupName="personName">
+            <div class="col-sm-3 zero-padding-left zero-padding-right form-group required">
+              <div class="pushDown control-label">First</div>
+              <input type="text" (keypress)="validateText($event)" [ngClass]="{'style1':nameForm.controls['personName'].controls['firstName'].hasError('required') && nameForm.controls['personName'].controls['firstName'].touched || nameForm.controls['personName'].controls['firstName'].hasError('minlength') || nameForm.controls['personName'].controls['firstName'].hasError('maxlength') || nameForm.controls['personName'].controls['firstName'].hasError('pattern') }" formControlName="firstName" class="form-control-v1 form-control" required
+                maxlength="21" />
+              <!--<input type="text" [(ngModel)]="model.clientRegistrationModel.person.firstName" #clientRegistrationModel.person.firstName="ngModel"class="form-control-v1 form-control" required/>-->
+              <div *ngIf="nameForm.controls['personName'].controls['firstName'].hasError('required') && nameForm.controls['personName'].controls['firstName'].touched"
+                class="alert alert-danger alignment" >
+                <small> {{titleAlert}}</small>
+              </div>
+              <div *ngIf="nameForm.controls['personName'].controls['firstName'].hasError('minlength') && nameForm.controls['personName'].controls['firstName'].touched"
+                class="alert alert-danger alignment">
+                <small>Your first name cannot be less than 3 characters.</small>
+              </div>
+              <div *ngIf="nameForm.controls['personName'].controls['firstName'].hasError('maxlength') && nameForm.controls['personName'].controls['firstName'].touched"
+                class="alert alert-danger alignment">
+                <small>Your first name cannot exceed 20 characters.</small>
+              </div>
+              <div *ngIf="nameForm.controls['personName'].controls['firstName'].hasError('pattern') && nameForm.controls['personName'].controls['firstName'].touched"
+                class="alert alert-danger alignment">
+                <small>Name field should contain only letters</small>
+              </div>
+            </div>
+
+            <div class="col-sm-3 form-group five-padding-left zero-padding-right">
+              <div class="pushDown">Middle</div>
+              <input class="form-control-v1 form-control" type="text" (keypress)="validateText($event)" formControlName="middleName" maxlength="13"
+             [ngClass]="{'style1': nameForm.controls['personName'].controls['middleName'].hasError('pattern') && nameForm.controls['personName'].controls['middleName'].touched} || nameForm.controls['personName'].controls['middleName'].hasError('maxlength')" />
+              <div *ngIf="nameForm.controls['personName'].controls['middleName'].hasError('pattern') && nameForm.controls['personName'].controls['middleName'].touched"
+                class="alert alert-danger alignment">
+                <small>Name field should contain only letters</small>
+              </div>
+              <div *ngIf="nameForm.controls['personName'].controls['middleName'].hasError('maxlength') && nameForm.controls['personName'].controls['middleName'].touched"
+                class="alert alert-danger alignment">
+                <small>Your middle name cannot exceed 12 characters.</small>
+              </div>
+            </div>
+            <div class="col-sm-3 five-padding-left zero-padding-right form-group required">
+              <div class="pushDown control-label">Last</div>
+              <input type="text" (keypress)="validateText($event)" formControlName="lastName" class="form-control-v1 form-control" required
+                maxlength="19"  [ngClass]="{'style1':nameForm.controls['personName'].controls['lastName'].hasError('required') && nameForm.controls['personName'].controls['lastName'].touched || nameForm.controls['personName'].controls['lastName'].hasError('pattern') }"/>
+              <div *ngIf="nameForm.controls['personName'].controls['lastName'].hasError('required') && nameForm.controls['personName'].controls['lastName'].touched"
+                class="alert alert-danger alignment">
+                <small>{{titleAlert}}</small>
+              </div>
+              <div *ngIf="nameForm.controls['personName'].controls['lastName'].hasError('maxlength') && nameForm.controls['personName'].controls['lastName'].touched"
+                class="alert alert-danger alignment">
+                <small>Your last name cannot exceed 18 characters.</small>
+              </div>
+              <div *ngIf="nameForm.controls['personName'].controls['lastName'].hasError('pattern') && nameForm.controls['personName'].controls['lastName'].touched"
+                class="alert alert-danger alignment">
+                <small>Name field should contain only letters</small>
+              </div>
+            </div>
+            <div class="col-sm-2 form-group five-padding-left zero-padding-right ">
+              <div class="pushDown">Suffix</div>
+              <!--<select [(ngModel)]="clientRegistrationModel.personName.suffix" class="form-control-v1 form-control width-suffix">
+											<option  *ngFor="let optionEntity of this.constantsService.getDropDownFromLookup('suffix')" value="{{optionEntity.lookupBean.code}}">{{optionEntity.lookupBean.shortLabel}}</option>
+				      </select>-->
+              <select class="form-control-v1 form-control width-suffix" formControlName="suffix">
+											<option value="-1">Select</option>
+                      <option  *ngFor="let optionEntity of this.constantsService.getDropDownFromLookup(this.constantsService.getText('Suffix'))" value="{{optionEntity.lookupBean.code}}">{{optionEntity.lookupBean.shortLabel}}</option>
+				      </select>
+            </div>
+          </div>
+        </div>
+        <div class="clearfix"></div>
+      </div>
+
+      <div class="box-border-bottom row-view">
+
+        <div class="col-sm-2">
+          <label for="Demographic" class="pushDown35">Demographics</label>
+        </div>
+        <div class="col-sm-9 zero-padding-bottom">
+          <div class="row">
+            <div class="col-sm-6 form-group required zero-padding-right">
+              <div class="pushDown control-label">DOB</div>
+              <input required class="form-control-v1 form-control" formControlName="dob" (keydown) = "preventKeyStroke($event)" ngui-datetime-picker date-only="true"  [ngClass]="{'style1':nameForm.controls['dob'].touched && nameForm.controls['dob'].hasError('required')&& !this.dateChange(nameForm.controls['dob']) }"
+              maxlength="10" max-date=new [close-on-select]="true" parse-format="MM-DD-YYYY"/>
+              <!--<div *ngIf="nameForm.controls['dob'].hasError('required') && nameForm.controls['dob'].touched && this.changeDate ||
+              nameForm.controls['dob'].touched && this.validateDate(nameForm.controls['dob'])" class="alert alert-danger alignment">
+                <small>Invalid Date</small>
+              </div>-->
+              <div *ngIf="nameForm.controls['dob'].touched && !this.dateChange(nameForm.controls['dob'])" class="alert alert-danger alignment">
+                <small>{{titleAlert}}</small>
+              </div>
+              <div *ngIf="nameForm.controls['dob'].touched && this.validateDate(nameForm.controls['dob'])" class="alert alert-danger alignment">
+                <small>Future date is not allowed</small>
+              </div>
+            </div>
+            <div class="col-sm-6 form-group">
+              <div class="pushDown">SSN</div>
+              <input class="form-control" [ngClass]="{'style1':temp,'style2':!temp}" ssnMask type="text" maxlength="11" formControlName="ssn" (keyup)="validSsn($event)"/>
+              <div *ngIf="temp"  class=" style1 alert alert-danger alignment" style="width:100%">
+                <small>Invalid ssn number</small>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-6 form-group">
+              <div class="pushDown">Sex</div>
+              <select class="form-control" formControlName="gender" #genderControl (change)="handlePregnancySelect()">
+                <option value="-1">Select</option>
+              <option *ngFor="let optionEntity of this.constantsService.getDropDownFromLookup(this.constantsService.getText('Sex'))" value="{{optionEntity.lookupBean.code}}">
+                {{optionEntity.lookupBean.shortLabel}}
+                </option>
+                    </select>
+            </div>
+            <div class="col-sm-6 form-group">
+              <div class="pushDown">Race</div>
+              <select formControlName="raceCds" class="form-control">
+											<option value="-1">Select</option>
+                      <option  *ngFor="let optionEntity of this.constantsService.getDropDownFromLookup(this.constantsService.getText('Race'))" value="{{optionEntity.lookupBean.code}}">{{optionEntity.lookupBean.shortLabel}}</option>
+				</select>
+            </div>
+          </div>
+        </div>
+        <div class="clearfix"></div>
+
+      </div>
+      <div class="box-border-bottom row-view form-group" style="margin-bottom:0px">
+        <div class="col-sm-2">
+          <label class="pushDown" for="relationship">Relationship</label>
+        </div>
+        <div class="col-sm-9">
+          <select class="form-control" formControlName="relationshipCd"> 
+											<option value="-1">Select</option>
+                      <option   *ngFor="let optionEntity of this.constantsService.getDropDownFromLookup(this.constantsService.getText('Relationship'))" value="{{optionEntity.lookupBean.code}}">{{optionEntity.lookupBean.shortLabel}}</option>
+					</select>
+        </div>
+        <div class="clearfix"></div>
+      </div>
+      <div class="box-border-bottom row-view">
+        <div class="col-sm-2 ">
+          <label class="pushDown" for="relationship">SSN Referral</label>
+        </div>
+        <div class="col-sm-9 ">
+          <select class="form-control" formControlName="ssnReferral"> 
+            <option value="-1">Select</option>
+            <option *ngFor="let optionEntity of this.constantsService.getDropDownFromLookup(this.constantsService.getText('SsnReferral'))"
+              value="{{optionEntity.lookupBean.code}}">{{optionEntity.lookupBean.shortLabel}}</option>
+					</select>
+        </div>
+        <div class="col-sm-1"></div>
+        <div class="clearfix"></div>
+      </div>
+
+      <div *ngIf="this.houseHoldModel?.additionalSsns?.length > 0" class="box-border-bottom row-view">
+
+        <div class="col-sm-2">
+          <div style="float:left">
+            <label class="pushDown" for="ssn">Additional SSN</label>
+          </div>
+        </div>
+        <div class="col-sm-9">
+          <div *ngFor="let addSsnFields of this.houseHoldModel.additionalSsns; let i = index">
+            <div class="col-sm-11 zero-padding-left form-group">
+              <label class="pushDown control-label" for="dob">SSN {{i+1}}</label>
+              <input type="text" class="form-control" maxlength="11" [disabled]="readOnlyFields" (keypress)=" doSSNMasking($event)" [value]='utilService.getSsn(addSsnFields)'
+                (change)='updateSsn($event, addSsnFields)' />
+
+            </div>
+            <div class="col-sm-1 pd-left" [hidden]="readOnlyFields" style="padding-top: 2.1em;">
+              <span class="delete-row hand" (click)="deleteItemFromIndex(i,'additionalSsns')">
+                <i class="fa fa-trash-o"></i>
+            </span>
+            </div>
+            <div class="clearfix"></div>
+          </div>
+          <div class="clearfix"></div>
+          <div [hidden]="readOnlyFields" (click)="addAdditionalSSN()" class="addAdditionalSSN addbutton-margin" [ngClass]="{'Rfloat':this.houseHoldModel?.additionalSsns?.length > 0}">
+            <i class="fa fa-plus-circle fa-lg plusIconColor" aria-hidden="true"></i><span class=" txt-action-color">&nbsp;Add Additional SSN</span>
+          </div>
+        </div>
+        <div class="clearfix"></div>
+      </div>
+
+      <div *ngIf="this.houseHoldModel?.altNames?.length >0" class="row-view">
+        <div class="col-sm-2">
+          <div style="float:left"><label class="pushDown" for="names">Alternative Names</label></div>
+        </div>
+        <div class="col-sm-9">
+          <div *ngFor="let addAlternativeName of this.houseHoldModel.altNames; let i = index">
+            <div>
+              <label class="pushDown">Name {{i+1}}</label>
+            </div>
+            <div class="col-sm-3 form-group zero-padding-left zero-padding-right">
+              <label class="pushDown control-label" for="firstName">First</label>
+              <input [disabled]="readOnlyFields" value="{{addAlternativeName.firstName}}" maxlength="16" class="form-control-v1 form-control"
+                type="text" (keypress)="validateText($event)" />
+            </div>
+            <div class="col-sm-3 form-group five-padding-left zero-padding-right">
+              <label class="pushDown control-label" for="secondName">Middle</label>
+              <input [disabled]="readOnlyFields" value="{{addAlternativeName.middelName}}" class="form-control-v1 form-control" type="text"
+                maxlength="13" (keypress)="validateText($event)" />
+            </div>
+            <div class="col-sm-3 form-group five-padding-left zero-padding-right">
+              <label class="pushDown control-label" for="lastName">Last</label>
+              <input [disabled]="readOnlyFields" value="{{addAlternativeName.lastName}}" class="form-control-v1 form-control" type="text"
+                maxlength="21" (keypress)="validateText($event)" />
+
+            </div>
+            <div class="col-sm-2 form-group five-padding-left zero-padding-right ">
+              <label class="pushDown" for="suffix">Suffix</label>
+              <select [disabled]="readOnlyFields" value="{{addAlternativeName.suffix}}" class="form-control-v1 form-control width-suffix">
+                <option value="-1">Select</option>
+                <option *ngFor="let optionEntity of this.constantsService.getDropDownFromLookup(this.constantsService.getText('Suffix'))"
+                  value="{{optionEntity.lookupBean.code}}">{{optionEntity.lookupBean.shortLabel}}</option>
+				</select>
+            </div>
+            <div class="col-sm-1 pd-left" [hidden]="readOnlyFields" style="padding-top: 1.8em;">
+              <span class="delete-row hand" (click)="deleteItemFromIndex(i,'altNames')">
+                <i class="fa fa-trash-o"></i>
+            </span>
+            </div>
+            <div class="clearfix"></div>
+          </div>
+          <div class="clearfix"></div>
+          <div [hidden]="readOnlyFields" [ngClass]="{'Rfloat':this.houseHoldModel?.altNames?.length > 0}" (click)="addAdditionalNames()"
+            class="addAdditionalName addbutton-margin"><i class="fa fa-plus-circle fa-lg plusIconColor" aria-hidden="true">
+              </i><span class=" txt-action-color">&nbsp;Add Alternative Name</span></div>
+        </div>
+        <div class="clearfix"></div>
+      </div>
+
+    </div>
+    </div>
+    <div class="section-wrpr" *ngIf="genderControl?.value=='2'">
+      <div class="section-label">PREGNANCY INFORMATION</div>
+      <div>
+        <tooltip-content #pregnancyInfo>
+          <div><span><p class="fa fa-info-circle fa-tooltip" ></p></span><span class="tooltip-text"> Pregnancy Information</span></div>
+        </tooltip-content>
+        <div class="row-view" tooltipPlacement="right" [tooltip]="pregnancyInfo">
+          <div class="col-sm-2">
+            <label for="name" class="pushDown35">Pregnancy</label>
+          </div>
+          <div class="col-sm-9 zero-padding-bottom">
+            <div>
+              <div class="col-sm-6 form-group zero-padding-left">
+                <label for="pregnancy" class=" control-label">Status</label>
+                <select formControlName="pregnantYN" class="form-control" #pregnantYNControl (change)="handlePregnancySelect()">
+              <option value="-1">Select</option>
+              <option *ngFor="let optionEntity of this.constantsService.getDropDownFromLookup(this.constantsService.getText('YesNo'))" value="{{optionEntity.lookupBean.code}}">{{optionEntity.lookupBean.shortLabel}}</option>
+            </select>
+              </div>
+              <div class="col-sm-6 form-group zero-padding-right" *ngIf="nameForm.controls['pregnantYN'].value=='Y'">
+                <label for="pregnancyDate" class=" control-label">Pregnancy Date</label>
+                  <input type="date" formControlName="pregnancyDueDate" class="form-control" id="pregnancyDate">
+              </div>
+            </div>
+          </div>
+          <div class="clearfix"></div>
+        </div>
+      </div>
+    </div>
+    <div *ngIf="  this.houseHoldModel?.aliasClientIds?.length > 0 " class="section-wrpr">
+      <div class="section-label">ALIAS CLIENT IDs
+        <div [hidden]="readOnlyFields" class="addStatement" (click)="addClientId()"><i class="fa fa-plus-circle fa-lg plusIconColor" aria-hidden="true"></i>&nbsp;Add Alias Client ID</div>
+      </div>
+      <tooltip-content #aliasClientId>
+        <div><span><p class="fa fa-info-circle fa-tooltip" ></p></span><span class="tooltip-text"> Alias Client ID</span></div>
+      </tooltip-content>
+      <div class="row-view" tooltipPlacement="right" [tooltip]="aliasClientId">
+
+        <!--<ng-template ngFor let-addCLientId [ngForOf]="this.clientRegistrationModel.aliasClientIds" let-currentElementIndex="index">-->
+        <div class="row" style="padding: 10px" *ngFor="let addCLientId of this.houseHoldModel.aliasClientIds; let i = index; trackBy:trackByFn">
+          <div class="col-sm-2">
+            <div class="pushDown" for="dob">Client ID {{i+1}}</div>
+          </div>
+          <div class="col-sm-8">
+            <!--<input [disabled]="readOnlyFields" [(ngModel)]="this.clientRegistrationModel.aliasClientIds[i]" class="form-control" />-->
+            <input [disabled]="readOnlyFields" value="{{addCLientId}}" class="form-control" (keypress)="validatenumberOnly($event)" />
+          </div>
+
+          <div class="col-sm-2 pd-left" [hidden]="readOnlyFields">
+            <span class="delete-row hand" (click)="deleteItemFromIndex(i,'aliasClientIds')">
+                <i class="fa fa-trash-o"></i>
+            </span>
+          </div>
+          <div class="clearfix"></div>
+        </div>
+      </div>
+      <div class="clearfix"></div>
+    </div>
+    <div class="btnWrapper">
+      <button class="btn cancel-btn btnMargingRt btnCancel" (click)="back()">Cancel</button>
+      <button type="submit" class="btn btn-primary btnSave" [disabled]=!nameForm.valid disableOnClick>Save</button>
+      <!--<button type="button" class="btn btn-primary buttonPadding" [disabled]=!nameForm.valid (click)="next()">Save</button>-->
+    </div>
+  </form>
+</div>
+<div class="clearfix"></div>
+<app-alert-popup></app-alert-popup>

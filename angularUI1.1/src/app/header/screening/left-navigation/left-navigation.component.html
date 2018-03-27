@@ -1,0 +1,23 @@
+<div class=" col-sm-3 sidebarleft" [hidden]="shareService.getDataFromMap('hideHeaderMenus')">
+  <div class="headerBorder menuHeader">
+    <ul class="">
+      <li><a (click)="constantsService.changedStatusOnDefault('initStatus');" class="sidebarleft-default" [routerLink]="['/screening/initiateScreening']"
+          [routerLinkActive]="['active']">Initiate Screening <i id="initStatus" class="fa fa-circle-thin unvisited-color sidebarleft-default-i" aria-hidden="true"></i></a></li>
+      <li><a (click)="constantsService.changedStatusOnDefault('clientStatus');" [routerLink]="['/screening/clientRegisterationAddHouseholdMembersComponent/0']"
+          [routerLinkActive]="['active']">Client Registration <i id="clientStatus" class="fa fa-circle-thin unvisited-color" aria-hidden="true"></i></a></li>
+      <li><a (click)="constantsService.changedStatusOnDefault('contactStatus');" [routerLink]="['/screening/contactInformationV1']"
+          [routerLinkActive]="['active']">Contact Information<i id="contactStatus" class="fa fa-circle-thin unvisited-color" aria-hidden="true"></i></a></li>
+      <li><a (click)="constantsService.changedStatusOnDefault('programStatus');" [routerLink]="['/screening/programSelection']"
+          [routerLinkActive]="['active']">Program Selection<i id="programStatus" class="fa fa-circle-thin unvisited-color" aria-hidden="true"></i></a></li>
+      <li><a (click)="constantsService.changedStatusOnDefault('houseHoldStatus');" [routerLink]="['/screening/householdCircumstances']"
+          [routerLinkActive]="['active']">Household Circumstances<i id="houseHoldStatus" class="fa fa-circle-thin unvisited-color" aria-hidden="true"></i></a></li>
+      <li><a (click)="constantsService.changedStatusOnDefault('recommendedStatus');" [routerLink]="['/screening/recommendedPrograms']"
+          [routerLinkActive]="['active']">Recommended Programs<i id="recommendedStatus" class="fa fa-circle-thin unvisited-color" aria-hidden="true"></i></a></li>
+      <li><a (click)="constantsService.changedStatusOnDefault('screeningStatus');" [routerLink]="['/screening/screeningDisposition']"
+          [routerLinkActive]="['active']">Screening Dispostion<i id="screeningStatus" class="fa fa-circle-thin unvisited-color" aria-hidden="true"></i></a></li>
+    </ul>
+  </div>
+  <div [hidden]="shareService.getDataFromMap('hideRunVerificationBelowMenu')">
+    <button class="btnmarginL btn btn-primary buttonPadding runVerificationButtonTwo" (click) = "customVerify()" type="button">Run Verification</button>
+  </div>
+</div>

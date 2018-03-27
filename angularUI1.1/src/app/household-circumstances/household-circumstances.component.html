@@ -1,0 +1,605 @@
+<form [formGroup]="circumstancesForm" novalidate (ngSubmit)="save(circumstancesForm)">
+  <div class="col-sm-7">
+    <div class="wrapper-box">
+      <h3 class="box-border-bottom" tooltipPlacement="right" [tooltip]="monthlyincomeTooltip">MONTHLY INCOME</h3>
+      <tooltip-content #monthlyincomeTooltip>
+        <div style="margin-top: 3em"><span><i class="fa fa-info-circle fa-tooltip" ></i></span>
+          <div class="tooltip-text-regisnation">
+            Enter the monthly Income Types and Amounts, both earned and unearned
+          </div>
+        </div>
+      </tooltip-content>
+      <tooltip-content #earnedIncomeTooltip>
+        <div style="margin-top: 3em"><span><i class="fa fa-info-circle fa-tooltip" ></i></span>
+          <div class="tooltip-text-regisnation">
+            Enter the monthly Earned Income Types and Amounts
+          </div>
+        </div>
+      </tooltip-content>
+      <div class="row-view box-border-bottom" tooltipPlacement="right" [tooltip]="earnedIncomeTooltip">
+        <div class="row">
+          <div class="col-sm-6">
+            <span><B>EARNED INCOME </B></span>
+          </div>
+          <div class="col-sm-6 u-justifyEnd" *ngIf="earnedIncome.length === 0">
+            <span class="add-field add-margin hand" (click)='addEarnIncome()'><i class="fa fa-plus-circle"></i><span>&nbsp;&nbsp;Add Earned Income</span></span>
+          </div>
+        </div>
+        <div class="row" formArrayName="earnedIncomeForm">
+          <div class="col-sm-3">
+          </div>
+          <div class="col-sm-9 grid-block pd-left amount-grid">
+            <div *ngIf="earnedIncomeForm?.length > 0">
+              <div class="row" *ngFor="let earnedIncome of earnedIncomeForm.controls; let i = index" [formGroupName]="i">
+                <div class="col-sm-5 padding5">
+                  <span class="label-type" *ngIf="i==0">Type</span>
+                  <select class="form-control" formControlName="incomeType">  
+                       <option  *ngFor="let optionEntity of this.earningTypeDropdown" value="{{optionEntity.key}}">{{optionEntity.value}}</option>  
+											</select>
+                </div>
+                <div class="col-sm-5 pd-left padding5 amount-bg">
+                  <span class="label-type" *ngIf="i==0">Amount</span>
+                  <div class="search-container">
+                    <input currencyMask style="padding-right:.5em" formControlName="amount" (keypress)="numberOnly($event)" class="form-control amount-input search-box"
+                      [options]="{ prefix: '$',hundreds: ',' }" maxlength="10" />
+                  </div>
+                  <div class="clearfix"></div>
+                </div>
+                <div class="col-sm-2 pd-left">
+                  <span class="label-type" *ngIf="i==0">&nbsp;</span>
+                  <span class="delete-row hand" (click)="deleteEarnedIncome(i)">
+                  <i class="fa fa-trash-o"></i>
+                </span>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-sm-5 padding5">
+                  <span class="total-info text-right" style="padding: .5em;">Total Earned Income</span>
+                </div>
+                <div class="col-sm-5 pd-left padding5 amount-bg">
+                  <span class="total-info text-right">${{calculateTotalIncome() | number : '1.2-2'}}</span>
+                  <div class="clearfix"></div>
+                </div>
+                <div class="pull-right"><br>
+                  <span class="add-field add-margin hand" (click)='addEarnIncome()'><i class="fa fa-plus-circle"></i><span>&nbsp;&nbsp;Add Earned Income</span></span><br>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <tooltip-content #unearnedIncomeTooltip>
+        <div style="margin-top: 3em"><span><i class="fa fa-info-circle fa-tooltip" ></i></span>
+          <div class="tooltip-text-regisnation">
+            Enter the Unearned Income Types and Amounts
+          </div>
+        </div>
+      </tooltip-content>
+      <div class="row-view" tooltipPlacement="right" [tooltip]="unearnedIncomeTooltip">
+        <div class="row">
+          <div class="col-sm-6"><br>
+            <span><B>UNEARNED INCOME</B> </span>
+          </div>
+          <div class="col-sm-6 u-justifyEnd" *ngIf="unearnedIncome.length === 0"><br>
+            <span class="add-field add-margin hand" (click)='addUnEarnIncome()'><i class="fa fa-plus-circle"></i><span>&nbsp;&nbsp;Add Unearned Income</span></span>
+          </div>
+        </div>
+        <div class="row" formArrayName="unEarnedIncomeForm">
+          <div class="col-sm-1 grid-block">
+          </div>
+          <div class="col-sm-11 grid-block pd-left amount-grid">
+            <div *ngIf="unEarnedIncomeForm?.length > 0">
+              <div class="row" *ngFor="let unEarnedIncome of unEarnedIncomeForm.controls; let i = index" [formGroupName]="i">
+                <div class="col-sm-3 padding5">
+                  <span class="label-type" *ngIf="i==0">Type</span>
+                  <select class="form-control" formControlName="incomeType" (change)="changeDropDownValue($event);">  
+                        <option  *ngFor="let optionEntity of this.unearnedTypeDropdown" value="{{optionEntity.key}}">{{optionEntity.value}}</option>  
+									</select>
+                </div>
+                <div class="col-sm-3 padding5 padding-right" *ngIf="targetValue == 'BP'">
+                  <span class="label-type" *ngIf="i==0">Sub-Type</span>
+                  <select class="form-control" >   
+                        <option  *ngFor="let optionEntity of this.benifitsPensions" value="{{optionEntity.key}}">{{optionEntity.value}}</option>  
+									</select>
+                </div>
+                <div class="col-sm-3 padding5 padding-right" *ngIf="targetValue == 'CP'">
+                  <span class="label-type" *ngIf="i==0">Sub-Type</span>
+                  <select class="form-control">   
+                        <option *ngFor="let optionEntity of this.compensationPayments" value="{{optionEntity.key}}">{{optionEntity.value}}</option>  
+									</select>
+                </div>
+                <div class="col-sm-3 padding5 padding-right" *ngIf="targetValue == 'SA'">
+                  <span class="label-type" *ngIf="i==0">Sub-Type</span>
+                  <select class="form-control" >   
+                        <option  *ngFor="let optionEntity of this.supportType" value="{{optionEntity.key}}">{{optionEntity.value}}</option>  
+									</select>
+                </div>
+                <div class="col-sm-3 padding5 padding-right" *ngIf="targetValue == 'CI'">
+                  <span class="label-type" *ngIf="i==0">Sub-Type</span>
+                  <select class="form-control" >   
+                        <option  *ngFor="let optionEntity of this.contributionType" value="{{optionEntity.key}}">{{optionEntity.value}}</option>  
+									</select>
+                </div>
+                <div class="col-sm-3 padding5 padding-right" *ngIf="targetValue == 'VP'">
+                  <span class="label-type" *ngIf="i==0">Sub-Type</span>
+                  <select class="form-control" >   
+                        <option  *ngFor="let optionEntity of this.vendorType" value="{{optionEntity.key}}">{{optionEntity.value}}</option>  
+									</select>
+                </div>
+                <div class="col-sm-3 padding5 padding-right" *ngIf="targetValue == 'LO'">
+                  <span class="label-type" *ngIf="i==0">Sub-Type</span>
+                  <select class="form-control" >   
+                        <option  *ngFor="let optionEntity of this.loansType" value="{{optionEntity.key}}">{{optionEntity.value}}</option>  
+									</select>
+                </div>
+                <div class="col-sm-3 padding5 padding-right" *ngIf="targetValue == 'ED'">
+                  <span class="label-type" *ngIf="i==0">Sub-Type</span>
+                  <select class="form-control" >   
+                        <option  *ngFor="let optionEntity of this.educationalType" value="{{optionEntity.key}}">{{optionEntity.value}}</option>  
+									</select>
+                </div>
+                <div class="col-sm-3 padding5 padding-right" *ngIf="targetValue == 'RI'">
+                  <span class="label-type" *ngIf="i==0">Sub-Type</span>
+                  <select class="form-control" >   
+                        <option  *ngFor="let optionEntity of this.returnType" value="{{optionEntity.key}}">{{optionEntity.value}}</option>  
+									</select>
+                </div>
+                <div class="col-sm-3 padding5 padding-right" *ngIf="targetValue == 'FO'">
+                  <span class="label-type" *ngIf="i==0">Sub-Type</span>
+                  <select class="form-control" >   
+                        <option  *ngFor="let optionEntity of this.fosterType" value="{{optionEntity.key}}">{{optionEntity.value}}</option>  
+									</select>
+                </div>
+                <div class="col-sm-3 padding5 padding-right" *ngIf="targetValue == 'NE'">
+                  <span class="label-type" *ngIf="i==0">Sub-Type</span>
+                  <select class="form-control" >   
+                        <option  *ngFor="let optionEntity of this.needsType" value="{{optionEntity.key}}">{{optionEntity.value}}</option>  
+									</select>
+                </div>
+                <div class="col-sm-3 padding5 padding-right" *ngIf="targetValue == 'PU'">
+                  <span class="label-type" *ngIf="i==0">Sub-Type</span>
+                  <select class="form-control" >   
+                        <option  *ngFor="let optionEntity of this.publicType" value="{{optionEntity.key}}">{{optionEntity.value}}</option>  
+									</select>
+                </div>
+                <div class="col-sm-3 padding5 padding-right" *ngIf="targetValue == 'RE'">
+                  <span class="label-type" *ngIf="i==0">Sub-Type</span>
+                  <select class="form-control" >   
+                        <option  *ngFor="let optionEntity of this.relocationType" value="{{optionEntity.key}}">{{optionEntity.value}}</option>  
+									</select>
+                </div>
+                <div class="col-sm-3 padding5 padding-right" *ngIf="targetValue == 'SH'">
+                  <span class="label-type" *ngIf="i==0">Sub-Type</span>
+                  <select class="form-control" >   
+                        <option  *ngFor="let optionEntity of this.shelterType" value="{{optionEntity.key}}">{{optionEntity.value}}</option>  
+									</select>
+                </div>
+                <div class="col-sm-3 padding5 padding-right" *ngIf="targetValue == 'PI'">
+                  <span class="label-type" *ngIf="i==0">Sub-Type</span>
+                  <select class="form-control" >   
+                        <option  *ngFor="let optionEntity of this.projectType" value="{{optionEntity.key}}">{{optionEntity.value}}</option>  
+									</select>
+                </div>
+                <div class="col-sm-3 padding5 padding-right" *ngIf="targetValue == 'LS'">
+                  <span class="label-type" *ngIf="i==0">Sub-Type</span>
+                  <select class="form-control" >   
+                        <option  *ngFor="let optionEntity of this.lumpType" value="{{optionEntity.key}}">{{optionEntity.value}}</option>  
+									</select>
+                </div>
+                <div class="col-sm-3 padding5 padding-right" *ngIf="targetValue == 'VR'">
+                  <span class="label-type" *ngIf="i==0">Sub-Type</span>
+                  <select class="form-control" >   
+                        <option  *ngFor="let optionEntity of this.volunteerType" value="{{optionEntity.key}}">{{optionEntity.value}}</option>  
+									</select>
+                </div>
+                <div class="col-sm-3 padding5 padding-right" *ngIf="targetValue == 'VB'">
+                  <span class="label-type" *ngIf="i==0">Sub-Type</span>
+                  <select class="form-control" >   
+                        <option  *ngFor="let optionEntity of this.variableType" value="{{optionEntity.key}}">{{optionEntity.value}}</option>  
+									</select>
+                </div><div class="col-sm-3 padding5 padding-right" *ngIf="targetValue == 'OR'">
+                  <span class="label-type" *ngIf="i==0">Sub-Type</span>
+                  <select class="form-control" >   
+                        <option  *ngFor="let optionEntity of this.otherType" value="{{optionEntity.key}}">{{optionEntity.value}}</option>  
+									</select>
+                </div>
+
+                <div class="col-sm-4 pd-left padding5 amount-bg">
+                  <span class="label-type" *ngIf="i==0">Amount</span>
+                  <div class="search-container">
+                    <input currencyMask style="padding-right:.5em" formControlName="amount" (keypress)="numberOnly($event)" class="form-control amount-input search-box"
+                      [options]="{ prefix: '$',hundreds: ',' }" maxlength="10" />
+                  </div>
+                  <div class="clearfix"></div>
+                </div>
+                <div class="col-sm-2 pd-left">
+                  <span class="label-type" *ngIf="i==0">&nbsp;</span>
+                  <span class="delete-row hand" (click)="deleteUnEarnedIncome(i)">
+                  <i class="fa fa-trash-o"></i>
+                </span>
+                </div>
+              </div>
+               <div class="row">
+                <!--<div class="col-sm-6 padding5">
+                  <span class="total-info text-right" style="padding: .5em;">Total Unearned Income</span>
+                </div>
+                <div class="col-sm-4 pd-left padding5 amount-bg">
+                  <span class="total-info text-right">${{calculateTotalIncome() | number : '1.2-2'}}</span>
+                  <div class="clearfix"></div>
+                </div>-->
+                <div class="pull-right"><br>
+                  <span class="add-field add-margin hand" (click)='addUnEarnIncome()'><i class="fa fa-plus-circle"></i><span>&nbsp;&nbsp;Add Unearned Income</span></span><br>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="wrapper-box">
+      <div class="row box-border-bottom">
+        <div class="col-sm-6">
+          <h3>LIQUID ASSETS</h3>
+        </div>
+        <div class="col-sm-6 u-justifyEnd">
+          <span class="add-field add-margin hand" (click)='addNewAsset()'><i class="fa fa-plus-circle"></i><span>&nbsp;&nbsp;Add Liquid Asset</span></span>
+        </div>
+        <div class="clearfix"></div>
+      </div>
+      <tooltip-content #liquidAssetsTooltip>
+        <div style="margin-top: 3em"><span><i class="fa fa-info-circle fa-tooltip" ></i></span>
+          <div class="tooltip-text-regisnation">
+            Enter the Liquid Asset Types and Amounts
+          </div>
+        </div>
+      </tooltip-content>
+      <div class="row-view" tooltipPlacement="right" [tooltip]="liquidAssetsTooltip">
+        <div class="row" formArrayName="assetForm">
+          <div class="col-sm-3 grid-block">
+            <div>
+              <B>Assets Types & Amounts </B>
+            </div>
+          </div>
+          <div class="col-sm-9 grid-block pd-left amount-grid">
+            <div *ngIf="assetForm?.length > 0">
+              <div class="row" *ngFor="let asset of assetForm.controls; let i = index" [formGroupName]="i">
+                <div class="col-sm-5 padding5">
+                  <span class="label-type" *ngIf="i==0">Type</span>
+                  <select class="form-control" formControlName="assetType">   
+                       <option  *ngFor="let optionEntity of this.assetTypeDropdown" value="{{optionEntity.key}}">{{optionEntity.value}}</option>  
+									</select>
+                </div>
+                <div class="col-sm-5 pd-left padding5 amount-bg">
+                  <span class="label-type" *ngIf="i==0">Amount</span>
+                  <div class="search-container">
+                    <input currencyMask style="padding-right:.5em" formControlName="amount" (keypress)="numberOnly($event)" class="form-control amount-input search-box"
+                      [options]="{ prefix: '$',hundreds: ',' }" maxlength="10" />
+                  </div>
+                  <div class="clearfix"></div>
+                </div>
+                <div class="col-sm-2 pd-left">
+                  <span class="label-type" *ngIf="i==0">&nbsp;</span>
+                  <span class="delete-row hand" (click)="deleteAsset(i)">
+                  <i class="fa fa-trash-o"></i>
+                </span>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-sm-5 padding5">
+                  <span class="total-info text-right" style="padding: .5em;">Total Liquid Assets</span>
+                </div>
+                <div class="col-sm-5 pd-left padding5 amount-bg">
+                  <span class="total-info text-right">${{totalIncome(liquidAssetsAmount) | number : '1.2-2'}}</span>
+                  <div class="clearfix"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="clearfix"></div>
+      </div>
+    </div>
+    <div class="wrapper-box">
+      <div class="box-border-bottom">
+        <div class="pull-left">
+          <h3>SHELTER EXPENSES</h3>
+        </div>
+        <div class="pull-right">
+          <span class="add-field add-margin hand" (click)='addShelterAmount()'><i class="fa fa-plus-circle"></i><span>&nbsp;&nbsp;Add Expense</span></span>
+        </div>
+        <div class="clearfix"></div>
+      </div>
+      <tooltip-content #shelterExpensesTooltip>
+        <div style="margin-top: 3em"><span><i class="fa fa-info-circle fa-tooltip" ></i></span>
+          <div class="tooltip-text-regisnation">
+            Enter the Shelter Types and Amounts
+          </div>
+        </div>
+      </tooltip-content>
+      <div class="row-view" tooltipPlacement="right" [tooltip]="shelterExpensesTooltip">
+        <div class="row" formArrayName="shelterAmountForm">
+          <div class="col-sm-3 grid-block">
+            <div>
+              <B>Shelter Types & Amounts </B>
+            </div>
+          </div>
+          <div class="col-sm-9 grid-block pd-left amount-grid">
+            <div *ngIf="shelterAmountForm?.length > 0">
+              <div class="row" *ngFor="let entity of shelterAmountForm.controls ; let i = index " [formGroupName]="i">
+                <div class="col-sm-5 padding5">
+                  <span class="label-type" *ngIf="i==0">Type</span>
+                  <select class="form-control" formControlName="incomeType">   
+                       <option  *ngFor="let optionEntity of this.shelterTypeDropdown" value="{{optionEntity.key}}">{{optionEntity.value}}</option>  
+											</select>
+                </div>
+                <div class="col-sm-5 pd-left padding5 amount-bg">
+                  <span class="label-type" *ngIf="i==0">Amount</span>
+                  <div class="search-container">
+                    <input currencyMask style="padding-right:.5em" formControlName="amount" (keypress)="numberOnly($event)" class="form-control amount-input search-box"
+                      [options]="{ prefix: '$',hundreds: ',' }" maxlength="10" />
+                  </div>
+                  <div class="clearfix"></div>
+                </div>
+                <div class="col-sm-2 pd-left">
+                  <span class="label-type" *ngIf="i==0">&nbsp;</span>
+                  <span class="delete-row hand" (click)="deleteShelterAmount(i)">
+                  <i class="fa fa-trash-o"></i>
+                </span>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-sm-5 padding5">
+                  <span class="total-info text-right" style="padding: .5em;">Total Sheltered Expenses</span>
+                </div>
+                <div class="col-sm-5 pd-left padding5 amount-bg">
+                  <span class="total-info text-right">${{totalIncome(shelterExpense) | number : '1.2-2'}}</span>
+                  <div class="clearfix"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="clearfix"></div>
+      </div>
+    </div>
+    <div class="wrapper-box">
+      <div class="box-border-bottom">
+        <div class="pull-left">
+          <h3>OTHER CIRCUMSTANCES</h3>
+        </div>
+        <div class="clearfix"></div>
+      </div>
+      <tooltip-content #otherExpensesTooltip>
+        <div style="margin-top: 3em"><span><i class="fa fa-info-circle fa-tooltip" ></i></span>
+          <div class="tooltip-text-regisnation">
+            Provide relevant information regarding the client's situation
+          </div>
+        </div>
+      </tooltip-content>
+      <div class="row-view">
+        <div class="row">
+          <div class="col-sm-12 grid-block">
+            <div class="col-sm-6">
+              <div class="check-list">
+                <input type="checkbox" formControlName="homelessYN">
+                <label class="label-check" for="homelessYN">Homeless</label>
+              </div>
+              <div class="check-list">
+                <input type="checkbox" formControlName="disabledYN">
+                <label class="label-check">Disabled</label>
+              </div>
+              <div class="check-list">
+                <input type="checkbox" formControlName="refugeeYN">
+                <label class="label-check">Refugee</label>
+              </div>
+              <div class="check-list">
+                <input type="checkbox" formControlName="shelterIncludesMealsYN">
+                <label class="label-check">Shelter Includes Meals</label>
+              </div>
+              <div class="check-list">
+                <input type="checkbox" formControlName="authorizedRepresentativeYN">
+                <label class="label-check">Authorized Representative</label>
+              </div>
+              <div class="check-list">
+                <input type="checkbox" formControlName="absentParentYN">
+                <label class="label-check">Absent Parent</label>
+              </div>
+            </div>
+            <div class="col-sm-6">
+              <div class="check-list">
+                <input type="checkbox" formControlName="protectiveLivingArrangementYN">
+                <label class="label-check">Protective Living Arrangement</label>
+              </div>
+              <div class="check-list">
+                <input type="checkbox" formControlName="blindYN">
+                <label class="label-check">Blind</label>
+              </div>
+              <div class="check-list">
+                <input type="checkbox" formControlName="communityBasedWaiverYN">
+                <label class="label-check">Community-based Waiver</label>
+              </div>
+              <div class="check-list">
+                <input type="checkbox" formControlName="destituteMigrantYN">
+                <label class="label-check">Destitute Migrant</label>
+              </div>
+              <div class="check-list">
+                <input type="checkbox" formControlName="medicalPartAEntitlementYN">
+                <label class="label-check">Medicare Part A Entitlement</label>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="clearfix"></div>
+      </div>
+    </div>
+    <div *ngIf="circumstancesForm.get('absentParentYN').value">
+      <div class="wrapper-box">
+        <div class="box-border-bottom">
+          <div class="pull-left">
+            <h3>ABSENT PARENT</h3>
+          </div>
+          <div class="pull-right">
+            <span class="add-field add-margin hand" (click)="AbsentParentControl()"><i class="fa fa-plus-circle"></i><span>&nbsp;&nbsp;Add Absent Parent</span></span>
+          </div>
+          <div class="clearfix"></div>
+        </div>
+        <div>
+          <div class="row-view box-border-bottom">
+            <div formGroupName="absentParent">
+              <div class="col-sm-3 grid-block">
+                <div class="label-field label-margin">Name</div>
+              </div>
+              <div class="col-sm-9 grid-block pd-left amount-grid">
+                <div class="row">
+                  <div class="col-sm-3 pd-right form-group required">
+                    <label class="label-name control-label" for="firstName"> First</label>
+                    <input type="text" class="form-control" formControlName="firstName" required maxlength="21" minlength="3" (keypress)="textOnly($event)"
+                    />
+                    <div *ngIf="lastName&&circumstancesForm.controls['absentParent'].controls['firstName'].hasError('required') &&
+                        circumstancesForm.controls['absentParent'].controls['firstName'].touched" class="alert alert-danger">
+                      <small> {{titleAlert}}</small>
+                    </div>
+                    <div *ngIf="circumstancesForm.controls['absentParent'].controls['firstName'].hasError('minlength') && 
+                  circumstancesForm.controls['absentParent'].controls['firstName'].touched" class="alert alert-danger">
+                      <small>Your first name cannot be less than 3 characters.</small>
+                    </div>
+                    <div *ngIf="circumstancesForm.controls['absentParent'].controls['firstName'].hasError('maxlength') && 
+                  circumstancesForm.controls['absentParent'].controls['firstName'].touched" class="alert alert-danger">
+                      <small>Your first name cannot exceed 20 characters.</small>
+                    </div>
+                  </div>
+                  <div class="col-sm-3 pd-right">
+                    <label class="label-name control-label" for="middleName"> Middle</label>
+                    <input type="text" class="form-control" formControlName="middleName" maxlength="13" (keypress)="textOnly($event)" />
+                    <div *ngIf="circumstancesForm.controls['absentParent'].controls['middleName'].hasError('maxlength') && 
+                  circumstancesForm.controls['absentParent'].controls['middleName'].touched" class="alert alert-danger">
+                      <small>Your middle name cannot exceed 12 characters.</small>
+                    </div>
+                  </div>
+                  <div class="col-sm-3 pd-right form-group required">
+                    <label class="label-name control-label" for="lastName">Last</label>
+                    <input type="text" class="form-control" formControlName="lastName" required maxlength="19" (keypress)="textOnly($event)"
+                    />
+                    <div *ngIf="firstName&&circumstancesForm.controls['absentParent'].controls['lastName'].hasError('required') && 
+                  circumstancesForm.controls['absentParent'].controls['lastName'].touched" class="alert alert-danger">
+                      <small>{{titleAlert}}</small>
+                    </div>
+                    <div *ngIf="circumstancesForm.controls['absentParent'].controls['lastName'].hasError('maxlength') && circumstancesForm.controls['absentParent'].controls['lastName'].touched"
+                      class="alert alert-danger">
+                      <small>Your last name cannot exceed 18 characters.</small>
+                    </div>
+                  </div>
+                  <div class="col-sm-3 form-group">
+                    <label class="label-name" for="suffix">Suffix</label>
+                    <select class="form-control" formControlName="suffix">
+                       <option  *ngFor="let optionEntity of this.suffixDropDowns" value="{{optionEntity.key}}">{{optionEntity.value}}</option>
+										</select>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="clearfix"></div>
+          </div>
+          <div class="row-view">
+            <div class="row">
+              <div class="col-sm-3 grid-block">
+                <div class="label-field label-margin">Demographics</div>
+              </div>
+              <div class="col-sm-9 grid-block pd-left amount-grid">
+                <div class="row">
+                  <div class="col-sm-6 pd-right form-group required">
+                    <span class="label-name control-label" for="dob"> DOB</span>
+                    <input required class="form-control-v1 form-control" formControlName="dob" ngui-datetime-picker date-only="true" maxlength="10"
+                      max-date=new [close-on-select]="true" parse-format="MM-DD-YYYY" />
+                    <div *ngIf="lastName&&circumstancesForm.controls['dob'].hasError('required') 
+                  && circumstancesForm.controls['dob'].touched" class="alert alert-danger">
+                      <small>{{titleAlert}}</small>
+                    </div>
+                  </div>
+                  <div class="col-sm-6">
+                    <span class="label-name"> SSN</span>
+                    <input type="text" class="form-control" formControlName="ssn" maxlength="11" (keypress)=" ssnMasking($event)" />
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-sm-6 pd-right">
+                    <span class="label-name"> Sex</span>
+                    <select class="form-control" formControlName="gender">
+                       <option  *ngFor="let optionEntity of this.sexDropDowns" value="{{optionEntity.key}}">{{optionEntity.value}}</option>
+										</select>
+                  </div>
+                  <div class="col-sm-6">
+                    <span class="label-name"> Race</span>
+                    <select class="form-control" formControlName="raceCds">
+                       <option  *ngFor="let optionEntity of this.raceDropDowns" value="{{optionEntity.key}}">{{optionEntity.value}}</option>
+										</select>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="wrapper-box" *ngIf="circumstancesForm.get('authorizedRepresentative').value">
+      <div class="box-border-bottom">
+        <div class="pull-left">
+          <h3>AUTHORIZED REPRESENTATIVES</h3>
+        </div>
+        <div class="pull-right">
+          <span class="add-field add-margin hand" (click)="addRep()"><i class="fa fa-plus-circle"></i><span>&nbsp;&nbsp;Add Authorized Representative</span></span>
+        </div>
+        <div class="clearfix"></div>
+      </div>
+      <!--auth 1-->
+      <div class="row-view box-border-bottom" *ngIf="FirstName&&hideAuthData3">
+        <div class="">
+          <div class="col-sm-2 grid-block padding-none">
+            <div class="label-field">Auth Rep 1</div>
+          </div>
+          <div class="col-sm-10 grid-block pd-left amount-grid padding-none">
+            <div class="row-text-show">
+              <div class="col-sm-4 pd-right field-col padding-none">
+                <span class="row-field">Type</span>
+                <label class="label-field">{{Type}}</label>
+              </div>
+              <div class="col-sm-2 pd-right field-col padding-none">
+                <span class="row-field">Relation</span>
+                <label class="label-field">{{Relation}}</label>
+              </div>
+              <div class="col-sm-4 pd-right field-col padding-none">
+                <span class="row-field">Name</span>
+                <label class="label-field">{{FirstName}}</label>
+              </div>
+              <div class="col-sm-2 pd-right field-col padding-none" class="pull-right">
+                <span class="edit-row hand">
+                <i class="fa fa-pencil-square-o fa-lg"(click)="EditInfo()"></i>
+              </span>
+                <span class="delete-row hand" (click)="AuthRep3Control()">
+                <i class="fa fa-trash-o"></i>
+            </span>
+              </div>
+            </div>
+            <div class="row-text-show">
+              <div class="col-sm-4 pd-right field-col padding-none">
+                <span class="row-field">Address</span>
+                <label class="label-field">{{address}}</label>
+              </div>
+              <div class="col-sm-3 pd-right field-col padding-none">
+                <span class="row-field">Phone Number</span>
+                <label class="label-field">{{phoneNumber}}</label>
+              </div>
+              <div class="col-sm-3 pd-right field-col padding-none">
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="clearfix"></div>
+      </div>
+    </div>
+    <div class="buttonALign btnWrapper"><br>
+      <button class="btn cancel-btn btnMargingRt btnCancel" (click)=cancel()>Back</button>
+      <button type="submit" class="btn btn-primary btnSave width-100">Next</button>
+    </div>
+  </div>
+</form>

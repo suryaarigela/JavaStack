@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>jQuery UI Datepicker - Default functionality</title>
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <link rel="stylesheet" href="C:/Jquery/tabs.css">
+  <link rel="stylesheet" href="/resources/demos/style.css">
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script>
+  $( function() {
+    $( "#datepicker" ).datepicker();
+  } );
+
+  $(document).ready(function(){
+    $('ul.tabs li').click(function(){
+        var tab_id = $(this).attr('data-tab');
+        $('ul.tabs li').removeClass('current');
+        $('.tab-content').removeClass('current');
+        $(this).addClass('current');
+        $("#"+tab_id).addClass('current');
+    })
+})
+  </script>
+</head>
+<body>
+
+<div class="container">
+
+    <ul class="tabs">
+        <li class="tab current" data-tab="tab-1">Tab One</li>
+        <li class="tab" data-tab="tab-2">Tab Two</li>
+        <li class="tab" data-tab="tab-3">Tab Three</li>
+        <li class="tab" data-tab="tab-4">Tab Four</li>
+    </ul>
+
+    <div id="tab-1" class="tab-content current">
+        <h2>Tab 1</h2>
+
+        <!-- Your content here -->
+
+    </div>
+
+    <div id="tab-2" class="tab-content">
+        <h2>Tab 2</h2>
+
+        <!-- Your content here -->
+       
+    </div>
+
+    <div id="tab-3" class="tab-content">
+        <h2>Tab 3</h2>
+
+        <!-- Your content here -->
+    </div>
+
+    <div id="tab-4" class="tab-content">
+        <h2>Tab 4</h2>
+
+        <!-- Your content here -->
+    </div>
+
+</div><!-- container -->
+</body>
+</html>

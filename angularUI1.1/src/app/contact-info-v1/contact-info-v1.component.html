@@ -1,0 +1,575 @@
+<form novalidate (ngSubmit)="save(contactInformationForm)" [formGroup]="contactInformationForm">
+  <div class="col-md-7 content-box">
+    <!--<h3>Contact Information</h3>-->
+    <div class="settingsPage-box" formGroupName="additionalInformation">
+      <h3 class="box-border-bottom">COMMUNICATION PREFERENCES</h3>
+      <tooltip-content  #contactInformationTooltip>
+        <div style="margin-top: 3em"><span><i class="fa fa-info-circle fa-tooltip" ></i></span>
+          <div class="tooltip-text-regisnation">
+            {{helptextContactInfo}}
+          </div>
+        </div>
+      </tooltip-content>
+      <div class="row-view box-border-bottom"  data-toggle="tooltip" tooltipPlacement="right" [tooltip]="contactInformationTooltip" >
+        <!-- [tooltip]="contactInformationTooltip" data-original-title='<div><span ><p class="fa fa-info-circle fa-tooltip" ></p></span><span  class ="tooltip-text"> Language Info</span></div>' -->
+        <div class="col-sm-3 grid-block form-group required">
+          <div class="label-field control-label">Language</div>
+        </div>
+        <div class="col-sm-9 grid-block">
+          <div class="row">
+            <div class="col-sm-8">
+              <div class="grid-textField">
+
+                <select name="preferredLanguage"  class="form-control" formControlName="preferredLanguage">
+                  <option value="-1" >Select</option>
+                  <option  *ngFor="let optionEntity of this.primaryLanguageDropdown" value="{{optionEntity.key}}">{{optionEntity.value}}</option>
+                </select>
+                <div *ngIf="contactInformationForm.get('additionalInformation').get('preferredLanguage').hasError('required') && contactInformationForm.get('additionalInformation').get('preferredLanguage').touched" class="alert alert-danger">
+                  {{titleAlert}}
+                </div>
+
+              </div>
+            </div>
+            <div class="col-sm-4">
+              <div class="label-check display-check">
+                <input type="checkbox" name="interpreterNeededYN" id="interpreterNeededYN" formControlName="interpreterNeededYN" />
+                <label for="interpreterNeededYN">Interpreter Needed</label>
+                <div *ngIf="contactInformationForm.get('additionalInformation').get('interpreterNeededYN').hasError('required') && contactInformationForm.get('additionalInformation').get('interpreterNeededYN').touched" class="alert alert-danger">
+                  {{titleAlert}}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="clearfix"></div>
+      </div>
+      <div class="row-view box-border-bottom">
+        <div class="col-sm-3 grid-block">
+          <div class="label-field">Disability</div>
+        </div>
+        <div class="col-sm-9 grid-block">
+          <div class="row">
+            <div class="col-sm-4 ">
+              <div class="label-check display-check">
+                <input type="checkbox" name="visuallyImpairedYN" id="visuallyImpairedYN" formControlName="visuallyImpairedYN"/>
+                <label for="visuallyImpairedYN">Visually impaired</label>
+                <div *ngIf="contactInformationForm.get('additionalInformation').get('visuallyImpairedYN').hasError('required') && contactInformationForm.get('additionalInformation').get('visuallyImpairedYN').touched" class="alert alert-danger">
+                  {{titleAlert}}
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-4">
+              <div class="label-check display-check">
+                <input type="checkbox" id="hearingImpairedYN" formControlName="hearingImpairedYN"  />
+                <label for="hearingImpairedYN">Hearing impaired</label>
+              </div>
+            </div>
+            <div class="col-sm-4">
+            <span class="grid-textField" *ngIf="contactInformationForm.get('additionalInformation').get('hearingImpairedYN').value" >
+              <select class="form-control" formControlName="hearingImpairedType" >
+                  <option value="-1" >Select</option>
+                   <option  *ngFor="let optionEntity of this.hearingImpairedDropdown" value="{{optionEntity.key}}">{{optionEntity.value}}</option>
+              </select>
+              <div *ngIf="contactInformationForm.get('additionalInformation').get('hearingImpairedType').hasError('required') && contactInformationForm.get('additionalInformation').get('hearingImpairedType').touched" class="alert alert-danger">
+                {{titleAlert}}
+              </div>
+            </span>
+            </div>
+          </div>
+        </div>
+        <div class="clearfix"></div>
+      </div>
+    </div>
+    <!-- end of additional information -->
+
+
+
+    <!-- Residential Address and Mailing Address Section Starts -->
+    <div class="settingsPage-box">
+      <!-- <form [formGroup]="addressForm" novalidate (ngSubmit)="save(addressForm.value, addressForm.valid)">-->
+      <h3 class="box-border-bottom">Address</h3>
+      <div class="row-view box-border-bottom" formGroupName="homeAddress" >
+        <!-- data-toggle="tooltip" data-original-title='<div><span ><p class="fa fa-info-circle fa-tooltip" ></p></span><span  class ="tooltip-text"> Address Info</span></div>' -->
+        <div class="col-sm-3 grid-block">
+          <label class="label-field">Residential Address</label>
+        </div>
+        <div class="col-sm-9 grid-block">
+          <div class="row">
+            <div class="col-sm-12">
+              <div class="grid-textField form-group required">
+                <label class="sub-label control-label" for="addressLine1">Line 1</label>
+                <input type="text" class="form-control" formControlName="addressLine1"  maxlength="53">
+                <div *ngIf="contactInformationForm.get('homeAddress').get('addressLine1').hasError('required') && contactInformationForm.get('homeAddress').get('addressLine1').touched" class="alert alert-danger">
+                  {{titleAlert}}
+                </div>
+                <div *ngIf="contactInformationForm.get('homeAddress').get('addressLine1').hasError('maxlength') && contactInformationForm.get('homeAddress').get('addressLine1').touched" class="alert alert-danger">
+                  <small>your input cannot exceed 52 characters.</small>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-12">
+              <div class="grid-textField form-group">
+                <label class="sub-label control-label" for="addressLine2">Line 2</label>
+                <input type="text" class="form-control" formControlName="addressLine2"  maxlength="23">
+                <div *ngIf="contactInformationForm.get('homeAddress').get('addressLine2').hasError('required') && contactInformationForm.get('homeAddress').get('addressLine2').touched" class="alert alert-danger">
+                  {{titleAlert}}
+                </div>
+                <div *ngIf="contactInformationForm.get('homeAddress').get('addressLine2').hasError('maxlength') && contactInformationForm.get('homeAddress').get('addressLine2').touched" class="alert alert-danger">
+                  <small>your input cannot exceed 22 characters.</small>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-4 form-group required">
+              <label class="sub-label control-label" for="city">City</label>
+              <div class="grid-textField">
+                <input type="text" class="form-control" formControlName="city">
+                <div *ngIf="contactInformationForm.get('homeAddress').get('city').hasError('required') && contactInformationForm.get('homeAddress').get('city').touched" class="alert alert-danger">
+                  {{titleAlert}}
+                </div>
+                <div *ngIf="contactInformationForm.get('homeAddress').get('city').hasError('maxlength') && contactInformationForm.get('homeAddress').get('city').touched" class="alert alert-danger">
+                  <small>Your input cannot exceed 22 characters.</small>
+                </div>
+                <!--<div *ngIf="addressForm.controls['city_RA'].hasError('pattern') && addressForm.controls['city_RA'].touched" class="alert alert-danger">
+                  <small>This field should contain only letters</small>
+                </div>-->
+              </div>
+            </div>
+
+            <div class="col-sm-4 field-pd-left form-group required">
+              <label class="sub-label control-label" for="zipcode">Zipcode</label>
+              <div class="grid-textField">
+                <input type="text" class="form-control"  (keypress)="numberOnly($event)" formControlName="zipcode">
+                <div *ngIf="contactInformationForm.get('homeAddress').get('zipcode').hasError('required') && contactInformationForm.get('homeAddress').get('zipcode').touched" class="alert alert-danger">
+                  {{titleAlert}}
+                </div>
+                <div *ngIf="contactInformationForm.get('homeAddress').get('zipcode').hasError('maxlength') && contactInformationForm.get('homeAddress').get('zipcode').touched" class="alert alert-danger">
+                  <small>your input cannot exceed 5 characters.</small>
+                </div>
+                <!--
+                <div *ngIf="addressForm.controls['zip_RA'].hasError('required') && addressForm.controls['zip_RA'].touched" class="alert alert-danger">
+                  {{titleAlert}}
+                </div>
+                <div *ngIf="addressForm.controls['zip_RA'].hasError('maxlength') && addressForm.controls['zip_RA'].touched" class="alert alert-danger">
+                  <small>your input cannot exceed 5 characters.</small>
+                </div>
+                -->
+                <!--Zipcode-->
+              </div>
+            </div>
+            <div class="col-sm-4 field-pd-left form-group required">
+              <label class="sub-label control-label" for="state">State</label>
+              <div class="grid-textField">
+                <select class="form-control" formControlName="state">
+                  <option  *ngFor="let optionEntity of this.statesDropdown" value="{{optionEntity.key}}">{{optionEntity.value}}</option>
+                </select>
+                <div *ngIf="contactInformationForm.get('homeAddress').get('state').hasError('required') && contactInformationForm.get('homeAddress').get('state').touched" class="alert alert-danger">
+                  {{titleAlert}}
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row" *ngIf="contactInformationForm.get('homeAddress').get('state').value=='MD'">
+            <div class="col-sm-6 form-group required">
+              <label class="sub-label control-label" for="county">County</label>
+              <div class="grid-textField">
+                <select class="form-control" formControlName="county">
+                  <option  *ngFor="let optionEntity of this.countyDropdown" value="{{optionEntity.key}}">{{optionEntity.value}}</option>
+                  <!--
+                  <option value="" selected>County</option>
+                  <option>Allegany</option>
+                  <option>Anne Arundel</option>
+                  <option>Baltimore</option>
+                  <option value="Baltimore">Baltimore City</option>
+                  <option>Calvert</option>
+                  <option>Caroline</option>
+                  <option>Carroll</option>
+                  <option>Cecil</option>
+                  <option>Charles</option>
+                  <option>Dorchester</option>
+                  <option>Frederick</option>
+                  <option>Garrett</option>
+                  <option>Harford</option>
+                  <option>Howard</option>
+                  <option>Kent</option>
+                  <option>Montgomery</option>
+                  <option>Prince Georges</option>
+                  <option>Queen Annes</option>
+                  <option>Saint Marys</option>
+                  <option>Somerset</option>
+                  <option>Talbot</option>
+                  <option>Washington</option>
+                  <option>Wicomico</option>
+                  <option>Worcester</option>
+                  <option>Other</option>
+                  -->
+                </select>
+                <div *ngIf="contactInformationForm.get('homeAddress').get('county').hasError('required') && contactInformationForm.get('homeAddress').get('county').touched" class="alert alert-danger">
+                  {{titleAlert}}
+                </div>
+                <!--<select class="form-control" formControlName="county_RA" required pattern="[A-Za-z]*">
+                <option  *ngFor="let optionEntity of this.DropDowns.County" value="{{optionEntity.key}}">{{optionEntity.value}}</option>
+                                </select>-->
+              </div>
+            </div>
+            <div class="col-sm-6 field-pd-left form-group required">
+              <label class="sub-label control-label" for="district"> District</label>
+              <div class="grid-textField">
+                <select class="form-control" formControlName="district">
+                  <option value="" selected>Select</option>
+                  <option  *ngFor="let optionEntity of this.districtDropdown" value="{{optionEntity.key}}">{{optionEntity.value}}</option>
+                  <!--<option>Baltimore City</option>
+                  <option>Baltimore Region</option>
+                  <option>Eastern Shore</option>-->
+                </select>
+                <div *ngIf="contactInformationForm.get('homeAddress').get('district').hasError('required') && contactInformationForm.get('homeAddress').get('district').touched" class="alert alert-danger">
+                  {{titleAlert}}
+                </div>
+                <!--<div class="grid-textField" *ngIf="this.DropDowns" >
+                <select class="form-control" formControlName="district_RA" required pattern="[A-Za-z]*">
+                <option  *ngFor="let optionEntity of this.DropDowns.District" value="{{optionEntity.key}}">{{optionEntity.value}}</option>
+                                </select>-->
+                <!--
+                <div *ngIf="addressForm.controls['district_RA'].hasError('required') && addressForm.controls['district_RA'].touched" class="alert alert-danger">
+                  {{titleAlert}}
+                </div>
+                -->
+                <!--<div *ngIf="addressForm.controls['district_RA'].hasError('maxlength') && addressForm.controls['district_RA'].touched" class="alert alert-danger">
+                  <small>your input cannot exceed 5 characters.</small>
+                </div>
+                <div *ngIf="addressForm.controls['district_RA'].hasError('pattern') && addressForm.controls['district_RA'].touched" class="alert alert-danger">
+                  <small>This field should contain only letters</small>
+                </div>-->
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="clearfix"></div>
+      </div>
+
+      <!-- Mailing Address Section Starts -->
+      <div class="row-view box-border-bottom" >
+        <!-- data-toggle="tooltip" data-original-title='<div><span ><p class="fa fa-info-circle fa-tooltip" ></p></span><span  class ="tooltip-text"> Address Info</span></div>' -->
+        <!--<div class="col-sm-3 grid-block">-->
+        <div class="col-sm-3 label-field">Mailing Address</div>
+        <div class="col-sm-9 grid-block">
+          <div class="label-check display-check">
+            <input type="checkbox" checked  formControlName="sameMailingAddress" >
+            <label for="interpreter_needed">Mailing address is same as residential address</label>
+          </div>
+        </div>
+        <div class="clearfix"></div>
+        <div class="mailing-address" formGroupName="mailingAddress" *ngIf="!contactInformationForm.get('sameMailingAddress').value" >
+          <div class="col-sm-3 grid-block">
+          </div>
+          <div class="col-sm-9 grid-block">
+            <div class="row">
+              <div class="col-sm-12">
+                <div class="grid-textField form-group required">
+                  <label class="sub-label control-label" for="line1_MA">Line 1</label>
+                  <input type="text" class="form-control" formControlName="addressLine1">
+                  <div *ngIf="contactInformationForm.get('mailingAddress').get('addressLine1').touched && contactInformationForm.get('mailingAddress').get('addressLine1').hasError('required')" class="alert alert-danger">
+                    {{titleAlert}}
+                  </div>
+                  <div *ngIf="contactInformationForm.get('mailingAddress').get('addressLine1').hasError('maxlength') && contactInformationForm.get('mailingAddress').get('addressLine1').touched" class="alert alert-danger">
+                    <small>Your input cannot exceed 52 characters.</small>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-12">
+                <div class="grid-textField form-group">
+                  <label class="sub-label control-label" for="line2_MA">line 2</label>
+                  <input type="text" class="form-control" formControlName="addressLine2">
+                  <div *ngIf="contactInformationForm.get('mailingAddress').get('addressLine2').touched && contactInformationForm.get('mailingAddress').get('addressLine2').hasError('required')" class="alert alert-danger">
+                    {{titleAlert}}
+                  </div>
+                  <div *ngIf="contactInformationForm.get('mailingAddress').get('addressLine2').hasError('maxlength') && contactInformationForm.get('mailingAddress').get('addressLine2').touched" class="alert alert-danger">
+                    <small>your input cannot exceed 22 characters.</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-4 form">
+
+                <div class="grid-textField form-group required">
+                  <label class="sub-label control-label" for="city_MA">City</label>
+                  <input type="text" class="form-control" formControlName="city">
+                  <div *ngIf="contactInformationForm.get('mailingAddress').get('city').touched && contactInformationForm.get('mailingAddress').get('city').hasError('required')" class="alert alert-danger">
+                    {{titleAlert}}
+                  </div>
+                  <div *ngIf="contactInformationForm.get('mailingAddress').get('city').hasError('maxlength') && contactInformationForm.get('mailingAddress').get('city').touched" class="alert alert-danger">
+                    <small>your input cannot exceed 22 characters.</small>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-4 field-pd-left">
+                <div class="grid-textField form-group required">
+                  <label class="sub-label control-label" for="zip_MA">ZIP Code</label>
+                  <input type="text" class="form-control"  (keypress)="numberOnly($event)" formControlName="zipcode">
+                  <div *ngIf="contactInformationForm.get('mailingAddress').get('zipcode').touched && contactInformationForm.get('mailingAddress').get('zipcode').hasError('required')" class="alert alert-danger">
+                    {{titleAlert}}
+                  </div>
+                  <div *ngIf="contactInformationForm.get('mailingAddress').get('zipcode').hasError('maxlength') && contactInformationForm.get('mailingAddress').get('zipcode').touched" class="alert alert-danger">
+                    <small>your input cannot exceed 5 characters.</small>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-4 field-pd-left">
+                <div class="grid-textField form-group required">
+                  <label class="sub-label control-label" for="state">State</label>
+                  <select class="form-control" formControlName="state">
+                    <option  *ngFor="let optionEntity of this.statesDropdown" value="{{optionEntity.key}}">{{optionEntity.value}}</option>
+                    <!--
+                    <option>Alaska</option>
+                    <option>Alabama</option>
+                    <option>Arkansas</option>
+                    <option>Arizona</option>
+                    <option>California</option>
+                    <option>Colorado</option>
+                    <option>Connecticut</option>
+                    <option>Canal Zone</option>
+                    <option>District of Columbia</option>
+                    <option>Delaware</option>
+                    <option>Florida</option>
+                    <option>Georgia</option>
+                    <option>Guam</option>
+                    <option>Hawaii</option>
+                    <option>Iowa</option>
+                    <option>Idaho</option>
+                    <option>Illinois</option>
+                    <option>Indiana</option>
+                    <option>Kansas</option>
+                    <option>Kentucky</option>
+                    <option>Louisiana</option>
+                    <option>Massachusetts</option>
+                    <option value="MD" selected>Maryland</option>
+                    <option>Maine</option>
+                    <option>Michigan</option>
+                    <option>Minnesota</option>
+                    <option>Missouri</option>
+                    <option>Mississippi</option>
+                    <option>Montana</option>
+                    <option>North Carolina</option>
+                    <option>North Dakota</option>
+                    <option>Nebraska</option>
+                    <option>New Hampshire</option>
+                    <option>New Jersey</option>
+                    <option>New Mexico</option>
+                    <option>Nevada</option>
+                    <option>New York</option>
+                    <option>Ohio</option>
+                    <option>Oklahoma</option>
+                    <option>Oregon</option>
+                    <option>Pennsylvania</option>
+                    <option>Puerto Rico</option>
+                    <option>Rhode Island</option>
+                    <option>South Carolina</option>
+                    <option>South Dakota</option>
+                    <option>Tennessee</option>
+                    <option>Texas</option>
+                    <option>Utah</option>
+                    <option>Virginia</option>
+                    <option>Virgin Islands</option>
+                    <option>Vermont</option>
+                    <option>Washington</option>
+                    <option>Wisconsin</option>
+                    <option>West Virginia</option>
+                    <option>Wyoming</option>
+                    -->
+                  </select>
+                  <div *ngIf="contactInformationForm.get('mailingAddress').get('state').touched && contactInformationForm.get('mailingAddress').get('state').hasError('required')" class="alert alert-danger">
+                    {{titleAlert}}
+                  </div>
+                </div>
+              </div>
+              <div class="row" *ngIf="contactInformationForm.get('mailingAddress').get('state').value=='MD'">
+              <div class="col-sm-6 form-group required">
+                <label class="sub-label control-label" for="county">County</label>
+                <div class="grid-textField">
+                  <select class="form-control" formControlName="county">
+                    <option  *ngFor="let optionEntity of this.countyDropdown" value="{{optionEntity.key}}">{{optionEntity.value}}</option>
+                    <!--
+                    <option value="" selected>County</option>
+                    <option>Allegany</option>
+                    <option value="A">Anne Arundel</option>
+                    <option>Baltimore</option>
+                    <option>Baltimore City</option>
+                    <option>Calvert</option>
+                    <option>Caroline</option>
+                    <option>Carroll</option>
+                    <option>Cecil</option>
+                    <option>Charles</option>
+                    <option>Dorchester</option>
+                    <option>Frederick</option>
+                    <option>Garrett</option>
+                    <option>Harford</option>
+                    <option>Howard</option>
+                    <option>Kent</option>
+                    <option>Montgomery</option>
+                    <option>Prince Georges</option>
+                    <option>Queen Annes</option>
+                    <option>Saint Marys</option>
+                    <option>Somerset</option>
+                    <option>Talbot</option>
+                    <option>Washington</option>
+                    <option>Wicomico</option>
+                    <option>Worcester</option>
+                    <option>Other</option>
+                    -->
+                  </select>
+                  <div *ngIf="contactInformationForm.get('mailingAddress').get('county').touched && contactInformationForm.get('mailingAddress').get('county').hasError('required')" class="alert alert-danger">
+                    {{titleAlert}}
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-6 field-pd-left form-group required" >
+                <label class="sub-label control-label" for="district">District</label>
+                <div class="grid-textField">
+                  <select class="form-control" formControlName="district">
+                    <option value="" selected>Select</option>
+                    <option  *ngFor="let optionEntity of this.districtDropdown" value="{{optionEntity.key}}">{{optionEntity.value}}</option>
+                    <!--<option>Baltimore City</option>
+                    <option>Baltimore Region</option>
+                    <option>Eastern Shore</option>-->
+                  </select>
+                  <div *ngIf="contactInformationForm.get('mailingAddress').get('district').touched && contactInformationForm.get('mailingAddress').get('district').hasError('required')" class="alert alert-danger">
+                    {{titleAlert}}
+                  </div>
+                </div>
+              </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="clearfix"></div>
+      </div>
+    </div>
+
+
+    <!-- Phone Section -->
+    <div class="settingsPage-box">
+      <h3 class="box-border-bottom">Contact Information</h3>
+      <div class="row-view box-border-bottom" formGroupName="phoneNumber">
+        <!-- data-toggle="tooltip" data-original-title='<div><span ><p class="fa fa-info-circle fa-tooltip" ></p></span><span  class ="tooltip-text"> Contact Info</span></div>' -->
+        <div class="col-sm-3 grid-block">
+          <div class="label-field">Phone Number</div>
+        </div>
+        <div class="col-sm-5 grid-block">
+          <label class="sub-label control-label" for="phoneNumber">Number</label>
+          <div class="grid-textField">
+            <input type="text" class="form-control" (keypress)="numberOnly($event)"  maxlength="10" formControlName="phoneNumber">
+            <div *ngIf="contactInformationForm.get('phoneNumber').get('phoneNumber').touched && contactInformationForm.get('phoneNumber').get('phoneNumber').hasError('required')" class="alert alert-danger">
+              {{titleAlert}}
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-2 grid-block">
+          <label class="sub-label control-label" for="p_ext">Ext.</label>
+          <div class="grid-textField">
+            <input type="text" class="form-control"  (keypress)="numberOnly($event)"  maxlength="5" formControlName="phoneNumberExt">
+            <div *ngIf="contactInformationForm.get('phoneNumber').get('phoneNumberExt').touched && contactInformationForm.get('phoneNumber').get('phoneNumberExt').hasError('required')" class="alert alert-danger">
+              {{titleAlert}}
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-2 grid-block">
+          <label class="sub-label control-label" for="p_type" style="margin-bottom: 0;">Type</label>
+          <div class="grid-textField">
+            <select class="form-control" formControlName="phoneNumberType">
+              <option value="" selected>Select</option>
+              <option  *ngFor="let optionEntity of this.phoneTypeDropdown" value="{{optionEntity.key}}">{{optionEntity.value}}</option>    
+              <!--
+              <option value="H" selected>Home</option>
+              <option value="W" selected>Work</option>
+              -->
+            </select>
+            <div *ngIf="contactInformationForm.get('phoneNumber').get('phoneNumberType').touched && contactInformationForm.get('phoneNumber').get('phoneNumberType').hasError('required')" class="alert alert-danger">
+              {{titleAlert}}
+            </div>
+          </div>
+        </div>
+        <div class="clearfix"></div>
+      </div>
+
+      <div class="row-view box-border-bottom" formGroupName="altPhoneNumber">
+        <div class="col-sm-3 grid-block">
+          <div class="label-field">Alternate Phone Number</div>
+        </div>
+        <div class="col-sm-5 grid-block">
+          <label class="sub-label control-label" for="phoneNumber">Number</label>
+          <div class="grid-textField">
+            <input type="text" class="form-control"  (keypress)="numberOnly($event)"  maxlength="10" formControlName="phoneNumber">
+            <div *ngIf="contactInformationForm.get('altPhoneNumber').get('phoneNumber').touched && contactInformationForm.get('altPhoneNumber').get('phoneNumber').hasError('required')" class="alert alert-danger">
+              {{titleAlert}}
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-2 grid-block">
+          <label class="sub-label control-label" for="phoneNumberExt">Ext.</label>
+          <div class="grid-textField">
+            <input type="text" class="form-control"  (keypress)="numberOnly($event)"  maxlength="5" formControlName="phoneNumberExt" >
+            <div *ngIf="contactInformationForm.get('altPhoneNumber').get('phoneNumberExt').touched && contactInformationForm.get('altPhoneNumber').get('phoneNumberExt').hasError('required')" class="alert alert-danger">
+              {{titleAlert}}
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-2 grid-block">
+          <div class="sub-label control-label" for="ap_type">Type</div>
+          <div class="grid-textField">
+            <select class="form-control" formControlName="phoneNumberType">
+              <option value="" selected>Select</option>
+              <option  *ngFor="let optionEntity of this.phoneTypeDropdown" value="{{optionEntity.key}}">{{optionEntity.value}}</option>    
+              <!--              
+              <option value="H" selected>Home</option>
+              <option value="W" selected>Work</option>
+              -->
+            </select>
+            <div *ngIf="contactInformationForm.get('altPhoneNumber').get('phoneNumberType').touched && contactInformationForm.get('altPhoneNumber').get('phoneNumberType').hasError('required')" class="alert alert-danger">
+              {{titleAlert}}
+            </div>
+          </div>
+        </div>
+        <div class="clearfix"></div>
+      </div>
+
+      <div class="row-view box-border-bottom">
+        <div class="col-sm-3 grid-block">
+          <div class="label-field ">Email</div>
+        </div>
+        <div class="col-sm-9 grid-block form-group">
+          <label class="sub-label control-label" for="email">Email</label>
+          <div class="grid-textField">
+            <input id="emailAddress" type="text" class="form-control" formControlName="email">
+            <div *ngIf="contactInformationForm.get('email').touched && !contactInformationForm.get('email').valid" class="alert alert-danger">
+              Invalid Email
+            </div>
+            <!--
+            <div *ngIf="!addressForm.controls['e_mail'].valid && addressForm.controls['e_mail'].touched" class="alert alert-danger">
+              Invalid Email
+            </div>
+          -->
+          </div>
+        </div>
+        <div class="clearfix"></div>
+      </div>
+
+      <div class="buttonALign btnWrapper"><br>
+        <button class="btn cancel-btn btnMargingRt btnCancel" (click)="back()">Back</button>
+        <button type="submit" class="btn btn-primary btnSave">Next</button>
+        <!-- <button type="button" class="btn btn-primary btnSave" (click)="next()">Next</button> -->
+        <!--<button type="button" class="btn btn-primary btnSave" [disabled]=!addressForm.valid (click)="next()">Next</button>-->
+      </div>
+    </div>
+
+
+
+  </div>
+</form>

@@ -1,0 +1,33 @@
+package com.example.demo;
+
+import javax.sql.DataSource;
+
+import org.springframework.batch.core.configuration.annotation.EnableBatchProcessing;
+import org.springframework.batch.core.configuration.annotation.JobBuilderFactory;
+import org.springframework.batch.core.configuration.annotation.StepBuilderFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.jdbc.datasource.DriverManagerDataSource;
+
+@Configuration
+@EnableBatchProcessing
+public class BatchConfiguration {
+
+	@Autowired
+	public JobBuilderFactory jobBuilderFactory;
+	
+	@Autowired
+	public StepBuilderFactory stepBuilderFactory;
+	@Autowired
+	public DataSource dataSource;
+	
+	public DataSource datasource(){
+		DriverManagerDataSource  dataSource=new DriverManagerDataSource();
+		dataSource.setDriverClassName("com.mysql.jdbc.Driver");
+		dataSource.setUrl("jdbc:mysql://localhost/spring");
+		dataSource.setUsername("root");
+		dataSource.setPassword("");
+		
+		return dataSource;
+	}
+}

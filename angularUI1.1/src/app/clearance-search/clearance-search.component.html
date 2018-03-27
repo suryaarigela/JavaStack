@@ -1,0 +1,102 @@
+<div class="page-container col-sm-7 content-box">
+  <div class="section-wrpr">
+    <div class="section-label">CLEARANCE RESULTS</div>
+    <tooltip-content class="clearanceResult" #householdMemberTooltip>
+      <div style="margin-top: 3em"><span><i class="fa fa-info-circle fa-tooltip" ></i></span>
+        <div class="tooltip-text-regisnation">
+          Conduct a clearance search for the client:<br/>
+          <ul style="list-style: disc; padding-left: 20 px">
+            <li>Enter the Client ID or SSN to find an exact match</li>
+            <li>Enter a combination of the Name, DOB, Sex and Race to find potential matches</li>
+          </ul>
+        </div>
+      </div>
+    </tooltip-content>
+    <div class="borderBottom row-view" tooltipPlacement="right" [tooltip]="householdMemberTooltip" [hidden]="this.shareService.getDataFromMap('hideSearchDetails')">
+      <div class="col-sm-12">
+        Enter search terms on the left to perform a clearance search for existing clients
+      </div>
+      <div class="clearfix"> </div>
+    </div>
+    <div tooltipPlacement="right" [tooltip]="householdMemberTooltip" [hidden]="!this.shareService.getDataFromMap('hideSearchDetails')">
+
+
+      <div class="borderBottom boxColor row-view" *ngFor="let entity of this.constantsService.getConstant('householdMembers3'); let i = index">
+        <div class="">
+          <div class="row rowMargin">
+
+            <div class="col-sm-8 textSize labelColor">
+              {{this._utilService.getFullName(entity.personName)}}
+            </div>
+            <div class="col-sm-1"></div>
+            <div class="col-sm-3">
+
+              <div class=" dropdown">
+                <button type="button" (click)="editClient(entity.householdMemberId)" class="clientButton hand"><i class="fa fa-user" aria-hidden="true"></i> Select Client</button>
+                <div class="selectClient clientDropdown dropdown-toggle hand" data-toggle="dropdown">
+
+                  <span class="client-profile-name">...<b class="caret"></b></span></div>
+                <ul class="dropdown-menu user-profile">
+                  <li class="widthFull"><a class="dropdownMargin hand">View Program Participation</a></li>
+                  <li class="widthFull"><a class="dropdownMargin hand">View Client Details</a></li>
+                  <li class="widthFull"><a class="dropdownMargin hand">Edit Client Record</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="row rowMargin">
+            <div class="col-sm-5 idColor">
+              Client ID : {{entity.householdMemberId}}
+            </div>
+            <div class="col-sm-7 idColor">
+              Potential Match
+            </div>
+          </div>
+          <div class="row rowMargin">
+
+            <div class="col-sm-2"><span class="subLabelColor">Sex</span><br><span class="subLabelField">{{constantsService.getDropdownValue(this.constantsService.getText('Sex'),entity.gender)}}</span></div>
+            <div class="col-sm-3"><span class="subLabelColor">SSN</span><br><span class="subLabelField">{{ this._utilService.getSsn(entity.ssn)}}</span></div>
+            <div class="col-sm-3"><span class="subLabelColor">DOB</span><br><span class="subLabelField">{{entity.dob}}</span></div>
+            <div class="col-sm-2"><span class="subLabelColor">Race</span><br><span class="subLabelField">{{constantsService.getDropdownValue(this.constantsService.getText('Race'),entity.raceCds[0])}}</span></div>
+            <div class="col-sm-2"></div>
+
+          </div>
+        </div>
+      </div>
+
+      <div class="borderBottom rowView">
+        <div class="row rowMargin">
+          <div class="col-sm-5">Showing {{(currentPage)*4 + 1}} to {{(currentPage)*4 + 4}} of 12 entries</div>
+          <div class="col-sm-7">
+
+            <div class=" dropdown pagination-align-right">
+              <button type="button" class="pagination-button pagination-button-radius-left hand" [disabled]="currentPage==0" [ngClass]="{'no-cursor': currentPage == 0}"
+                (click)="setPreviousPage()">Previous</button>
+              <button type="button" class="pagination-button" *ngFor="let pageIndex of getPages(); let i = index" [ngClass]="{'pagination-selected noHand': i==currentPage }"
+                (click)="currentPage=i;">
+                {{i+1}}
+                </button>
+              <button type="button" class="pagination-button pagination-button-radius-right hand" [disabled]="currentPage==pageCount-1"
+                [ngClass]="{'no-cursor': currentPage == pageCount-1}" (click)="setNextPage()">Next</button>
+            </div>
+
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="buttonALign btnWrapper col-sm-12 " style="margin-right: 0">
+    <button class="btn cancel-btn buttonPadding  btnCancel" (click)="back()" style="background: white;margin-right: -15px;">Cancel</button>
+  </div>
+
+</div>
+<div class="col-sm-2" style="z-index: 10000">
+  <div class="textColor" [hidden]="this.shareService.getDataFromMap('hideSearchDetails')">Results not found, or no results match:</div>
+  <div class="textColor" [hidden]="!this.shareService.getDataFromMap('hideSearchDetails')">No results match:</div>
+  <input type="button" class="btnMain marginTop" (click)="createNewRecord()" value="Create New Client Record">
+</div>
+<div class="clearfix">
+</div>

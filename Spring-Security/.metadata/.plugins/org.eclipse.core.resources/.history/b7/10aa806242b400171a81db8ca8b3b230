@@ -1,0 +1,10 @@
+package com.test.deadlock;
+
+public class Producer extends Thread {
+
+	PCCLass pc;
+	
+	public Producer(PCCLass pc) {
+		this.pc=pc;
+	}
+}

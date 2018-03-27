@@ -1,0 +1,50 @@
+<div class="page-container col-sm-7 content-box">
+     <!--<form [formGroup]="trustForm"> -->
+<form [formGroup]="trustForm" (ngSubmit)="save(trustForm)">
+ 	<caseInfo [tbForm]="trustForm" [request]="request"></caseInfo> 
+  
+ <!-- <asset></asset>
+  ***************************3*************************************-->
+
+
+  <!--<client-array [parentForm]="trustForm" [clients]="data?.clients"></client-array>-->
+  <!--***********************************5**************************************-->
+  
+  <!--<trust-form></trust-form>-->
+ <!-- ***************************6*************************************-->
+  <div class="section-wrpr bottom-space">
+		<client-array [parentForm]="trustForm" [clients]="request?.clients"></client-array>
+</div>
+
+<deemerEarnedIncome [tbForm]="trustForm"></deemerEarnedIncome>
+
+
+ <unearnIncome-array [parentForm]="trustForm" [unearnedIncomes]="request?.unearnedIncomes"></unearnIncome-array>
+ 
+ 
+ <expenseInfo [tbForm]="trustForm"></expenseInfo>
+ 
+  <div class="section-wrpr bottom-space" >
+    <div class="section-label">ASSETS</div>
+    
+<div>
+
+ <asset-array [parentForm]="trustForm" [assets]="request?.assets" ></asset-array>
+ 
+ <motorVehicle-array [parentForm]="trustForm" [motorVehicles]="request?.vehicularAssets"></motorVehicle-array>
+
+ </div>
+ </div>
+
+ 
+ <div class="buttonALign btnWrapper">
+    <button class="btn cancel-btn btnMargingRt btnCancel" (click)="back()">Back</button>
+    <button type="submit" class="btn btn-primary btnSave width-100">Run Trial Budget</button>
+
+  </div>
+
+
+  <div class="clearfix"></div>
+  </form>
+	<!--</form>-->
+</div>

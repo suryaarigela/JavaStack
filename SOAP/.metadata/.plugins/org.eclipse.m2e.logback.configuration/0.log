@@ -1,0 +1,7 @@
+2018-03-22 12:31:55,277 [JavaFX Application Thread] INFO  org.eclipse.jetty.util.log - Logging initialized @2776987ms
+2018-03-22 12:31:55,675 [JavaFX Application Thread] INFO  org.eclipse.jetty.server.Server - jetty-9.3.9.v20160517
+2018-03-22 12:31:55,799 [JavaFX Application Thread] INFO  o.e.j.server.handler.ContextHandler - Started o.e.j.s.ServletContextHandler@32702e11{/wse,null,AVAILABLE}
+2018-03-22 12:31:55,874 [JavaFX Application Thread] INFO  o.e.jetty.server.AbstractConnector - Started ServerConnector@7c1957b8{HTTP/1.1,[http/1.1]}{0.0.0.0:62834}
+2018-03-22 12:31:55,875 [JavaFX Application Thread] INFO  org.eclipse.jetty.server.Server - Started @2777612ms
+2018-03-22 16:54:33,007 [Framework stop] INFO  o.e.jetty.server.AbstractConnector - Stopped ServerConnector@7c1957b8{HTTP/1.1,[http/1.1]}{0.0.0.0:0}
+2018-03-22 16:54:33,226 [Framework stop] INFO  o.e.j.server.handler.ContextHandler - Stopped o.e.j.s.ServletContextHandler@32702e11{/wse,null,UNAVAILABLE}

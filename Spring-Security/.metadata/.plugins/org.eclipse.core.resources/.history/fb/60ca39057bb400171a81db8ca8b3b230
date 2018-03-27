@@ -1,0 +1,11 @@
+package com.mkyong.error;
+
+public class MyAutowiredIntfImpl implements MyAutowiredIntf {
+
+	@Override
+	public void useMyService() {
+		// TODO Auto-generated method stub
+
+	}
+
+}

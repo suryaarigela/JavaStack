@@ -1,0 +1,117 @@
+<!--
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <span>Contract {{index + 1}}</span>
+        <span class="glyphicon glyphicon-remove pull-right" *ngIf="formArray.length > 1" (click)="removed.emit()"></span>
+    </div>
+    <div class="panel-body">
+        <div [formGroup]="contractGroup">
+            <div class="form-group">
+                <label>Name</label>
+                <input type="text" class="form-control" formControlName="name">
+            </div>
+            <email-array [parentForm]="contractGroup" [emails]="contract?.emails"></email-array>
+        </div>
+    </div>
+</div>
+-->
+  <div [formGroup]="clientGroup">
+               <tooltip-content #tbClient>
+        <div><span ><p class="fa fa-info-circle fa-tooltip" ></p></span><div class="tooltip-text-regisnation">
+          Select the Earned Income type Enter the Earned Income Amount of the Client in whole Dollars,
+					Select the Earned Income Expense type Enter the Earned Income Expense Amount of the Client in whole Dollars,
+					Enter the Monthly Dependent Care Expense Cost in whole Dollars,
+					</div></div>
+        </tooltip-content>
+  <div tooltipPlacement="right" [tooltip]="tbClient">
+
+      <div class="box-border-bottom row-view">
+      	<div class="box-border-bottom row-view">
+	        <!--form-group -->
+	        <div class="col-sm-12">
+	          <label class="check-box-label-margin" >Client {{clientNr+1}}</label>
+	            <!-- <div class="trashtop col-sm-1"> -->
+	              <!-- <div class="trash-icon"> -->
+									
+	                <span (click)="removed.emit()" *ngIf="formArray.length > 1" class="delete-row float-right">
+										
+						<i class="fa fa-trash-o" aria-hidden="true"></i> 
+					</span>
+	              <!-- </div> -->
+	            <!-- </div> -->	          
+	        </div>
+	        
+	        <div class="col-sm-12">
+				 <earnIncome-array [parentForm]="earnedIncomeGroup" [earnedIncomes]="client?.earnedIncomes"></earnIncome-array>
+
+			</div>
+	        <div class="col-sm-12">
+	          <div class="col-sm-3">
+	            <label for="Demographic" class=" label-field check-box-label-margin">Earned Income Options</label>
+	          </div>
+	          <div class="col-sm-9 zero-padding-bottom">
+	            <div>
+	              <div class="col-sm-5 form-group zero-padding-left label-check display-check">
+	                <input type="checkbox" id="check-1" />
+	                <label for="check-1">30+1/3</label>
+	              </div>
+	
+	              <div class="col-sm-5 form-group zero-padding-right label-check display-check">
+	                <input type="checkbox" id="check-1" />
+	                <label for="check-1">$30</label>
+	              </div>
+	            </div>
+	          </div>
+	        </div>
+	
+	        <div class="col-sm-12">
+	          <div class="col-sm-3">
+	            <label for="Demographic" class=" label-field">Earned Income Expense</label>
+	          </div>
+	          <div class="col-sm-9 zero-padding-bottom">
+	            <div>
+	              <div class="col-sm-5 form-group zero-padding-left"> 
+	                <div class="pushDown" for="dob">Type</div>
+	                <select class="form-control">
+										<option  *ngFor="let optionEntity of this.eiExpensetypeDropdown" value="{{optionEntity.key}}">{{optionEntity.value}}</option>	                       
+	                    </select>
+	              </div>
+	
+			<div class="col-sm-5 form-group zero-padding-left">
+                    <div class="pushDown" for="dob"> Amount</div>
+                      <input currencyMask style="padding-right:.5em"  (keypress)="numberOnly($event)" class="form-control"
+                      [options]="{ prefix: '$',hundreds: ',' }" maxlength="10" />
+										{{client.earnedIncomeExpense.amount}}
+                    <div class="clearfix"></div>
+			</div>
+			
+	            </div>
+	          </div>
+	        </div>
+	        <div class="col-sm-12">
+	          <div class="col-sm-3">
+	            <label for="Demographic" class=" label-field check-box-label-margin ">Dependent Care Expense
+	                </label>
+	          </div>
+	          <div class="col-sm-9 zero-padding-bottom">
+	            <div>
+	              <div class="col-sm-5 form-group zero-padding-left">
+	                <div class="search-container" for="dob"></div>
+										<input currencyMask style="padding-right:.5em"  (keypress)="numberOnly($event)" class="form-control"
+                      [options]="{ prefix: '$',hundreds: ',' }" maxlength="10" />	              
+											</div>
+	
+	              <div class="col-sm-5 form-group zero-padding-right">
+	                <div class="pushDown" for="ssn"></div>
+	
+	              </div>
+	            </div>
+	          </div>
+	
+	        </div>
+	        <div class="clearfix"></div>
+        </div>
+      </div>
+  </div>
+    </div>
+  

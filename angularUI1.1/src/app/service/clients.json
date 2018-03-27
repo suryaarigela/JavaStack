@@ -1,0 +1,124 @@
+[{
+    "householdMemberId": 1023342134,
+    "headOfHouseholdYN": "1",
+    "relationshipCd": "1",
+    "altNames": [{
+      "firstName": "John",
+      "lastName": "Diggle",
+      "middleName": "",
+      "suffix": ""
+    }, {
+      "firstName": "Thea",
+      "lastName": "Queen",
+      "middleName": "",
+      "suffix": "3"
+    }],
+    "additionalSsns": [{
+      "ssnPart1": 934,
+      "ssnPart2": 87,
+      "ssnPart3": 4665
+    }, {
+      "ssnPart1": 654,
+      "ssnPart2": 87,
+      "ssnPart3": 9876
+    }],
+    "pregnantYN": "",
+    "pregnancyDueDate": "",
+    "aliasClientIds": [2547, 8563, 3655],
+    "memberClearanceId": "",
+    "memberClearedYN": "",
+    "memberEditableYN": "",
+    "homelessYN": "",
+    "disabledYN": "",
+    "refugeeYN": "",
+    "blindYN": "",
+    "destituteMigrantYN": "",
+    "cases": [],
+    "verification": {
+      "ssnVerificationModel": {
+        "verificationDocumentCd": "",
+        "verificationRequestedYN": "2",
+        "verificationType": "1",
+        "verifiedYN": "2",
+        "retryCount": 2,
+        "messages": [{
+          "code": "abc",
+          "message": "Teat error",
+          "severity": 1
+        }]
+      },
+      "dobVerificationModel": {
+        "verificationDocumentCd": "",
+        "verificationRequestedYN": "2",
+        "verificationType": "1",
+        "verifiedYN": "2",
+        "retryCount": 2,
+        "messages": [{
+          "code": "abc",
+          "message": "Teat error",
+          "severity": 1
+        }]
+      }
+    },
+    "hasSsnYN": "1",
+    "shelterIncludesMealsYN": "2",
+    "protectiveLivingArrangementYN": "1",
+    "communityBasedWaiverYN": "2",
+    "medicarePartAEntitlement": "",
+    "personName": {
+      "firstName": "Jonathon",
+      "lastName": "Michael",
+      "middleName": "Rogers",
+      "suffix": "3"
+    },
+    "dob": "01/10/1967",
+    "ssn": {
+      "ssnPart1": 854,
+      "ssnPart2": 45,
+      "ssnPart3": 7854
+    },
+    "gender": "1",
+    "raceCds": ["1"],
+    "deletedYN": "2"
+  }
+  //   ,
+  //   {
+  //     id: '1023342131',
+  //     name: "Jennifer Rogers",
+  //     sex: "2",
+  //     ssn: "123-76-7897",
+  //     dob: "01/10/1977",
+  //     ssnVerification: "CA",
+  //     dobVerification: "BC",
+  //     race: "2",
+  //     relation: "2",
+  //     "editMode": []
+  //   },
+
+  //   {
+  //     id: '1023342132',
+  //     name: "Miranda Rogers",
+  //     sex: "2",
+  //     ssn: "1190-76-6889",
+  //     dob: "01/10/2007",
+  //     ssnVerification: "ER",
+  //     dobVerification: "BA",
+  //     race: "3",
+  //     relation: "3",
+  //     "editMode": []
+  //   },
+
+  //   {
+  //     id: '1023342133',
+  //     name: "John Rogers",
+  //     sex: "2",
+  //     ssn: "123-76-7897",
+  //     dob: "01/10/2012",
+  //     ssnVerification: "AL",
+  //     dobVerification: "BC",
+  //     race: "4",
+  //     relation: "3",
+  //     "editMode": []
+  //   },
+
+]

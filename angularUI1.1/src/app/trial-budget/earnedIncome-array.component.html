@@ -1,0 +1,19 @@
+<div [formGroup]="parentForm">
+    <div formArrayName="earnedIncomes">
+        <earnedIncome *ngFor="let earnedIncome of earnedIncomes; let i = index" 
+          [formArray]="parentForm.controls.earnedIncomes" 
+          [earnedIncome]="earnedIncome"
+          (removed)="removeEarnIncome(i)"> 
+        </earnedIncome>
+    </div>
+	 <div class="col-sm-5 padding5">
+                  <span class="total-info text-right" style="padding: .5em;">Total Earned Income</span>
+                </div>
+                <div class="col-sm-5 pd-left padding5 ">
+                  <span class="total-info text-right">${{calculateAmount(earnedIncomes) | number : '1.2-2'}}</span>
+                  <div class="clearfix"></div>
+                </div>
+    
+	        <div (click)="addEarnedIncome()" id="addEarnedIncome" class="addAdditionalSSN no-padding addbutton-margin col-sm-11"><span class="float-right"><i class="fa fa-plus-circle fa-lg plusIconColor " aria-hidden="true"></i><span class=" txt-action-color">&nbsp;Add Earned Income</span></span>
+	        </div>
+</div>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script>
+$(function(){
+    $("tr:even").hover(function(){
+  $(this).css("background-color", "yellow");
+    })
+    $("tr:odd").hover(function(){
+  $("tr:even").css("background-color", "white");
+    })
+  
+    });
+
+</script>
+</head>
+<body>
+
+<table border="1">
+    <tr>
+        <td>One</td>
+    </tr>
+    <tr>
+        <td>two</td>
+    </tr>
+    <tr>
+        <td>three</td>
+    </tr>
+    <tr>
+        <td>Four</td>
+    </tr>
+    <tr>
+        <td>Five</td>
+    </tr>
+</table>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<form novalidate (ngSubmit)="save(programSelectionForm)" [formGroup]="programSelectionForm">
+  <div class="page-container col-sm-7 content-box">
+    <div class="section-wrpr bottom-space">
+      <div class="section-wrpr">
+        <div class="section-label">SELECT PROGRAMS</div>
+        <div>
+          <tooltip-content #pregnancyInfo>
+            <div><span><p class="fa fa-info-circle fa-tooltip" ></p></span><span class="tooltip-text"> 
+            Specify one or more Categories of assistance for which the applicant wishes to apply. 
+            The information designated on this screen is used by the system to provide the applicant 
+            the chance to make an recommended programs regarding their eligibility for assistance. 
+            </span></div>
+          </tooltip-content>
+          <div class="row-view" tooltipPlacement="right" [tooltip]="pregnancyInfo">
+            <div class="col-sm-12 selectProgramText1">
+              <div class="col-sm-12 padding-bottom"><span>Select the kinds of assistance required</span>
+                <div class="alert alert-danger" *ngIf="programName.length === 0">
+                  <!--*ngIf="programName.length === 0"-->
+                  <small>Atleast one Program should be selected</small>
+                </div>
+              </div>
+              <div class="col-sm-3 padding-bottom-50 form-group required">
+                <label for="name" class="control-label">Programs</label>
+              </div>
+              <div class="col-sm-9 zero-padding-bottom form-group" *ngFor="let optionEntity of this.constantsService.getConstant('selections')">
+                <span>  <!--// use to store the value that is checked (change)="checkboxes[$event.target.getAttribute('value')]=$event.target.checked -->
+                      <input type="checkbox" formControlName="listOfPrograms" value="{{optionEntity.key}}" (ngModelChange)="listOfProgramSelected(optionEntity.key)">{{optionEntity.value}}     
+                      <!--(ngModelChange)="listOfProgramSelected(optionEntity.key)" -->
+                </span>
+              </div>
+            </div>
+            <div class="clearfix"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="buttonALign btnWrapper">
+      <button class="btn cancel-btn btnMargingRt btnCancel" (click)="back()">Back</button>
+      <button type="submit" class="btn btn-primary btnSave" title="Atleast One Program should be selected">Next</button>
+      <!--[disabled]=!programName.length-->
+    </div>
+  </div>
+</form>

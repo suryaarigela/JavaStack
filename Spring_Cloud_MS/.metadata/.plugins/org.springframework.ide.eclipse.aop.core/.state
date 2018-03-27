@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aop-reference-model>
+<aop-project name="demo"/>
+<aop-project name="lab-4-eureka-client-solution"/>
+<aop-project name="lab-1-boot-solution"/>
+<aop-project name="lab-4-eureka-server-solution"/>
+<aop-project name="common-config-server"/>
+<aop-project name="commmon-eureka-server"/>
+</aop-reference-model>

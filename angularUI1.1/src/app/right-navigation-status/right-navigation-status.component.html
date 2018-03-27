@@ -1,0 +1,40 @@
+<div class="menu-right">
+  <h3>Navigation</h3>
+  <ul>
+    <li class="completed-flow-menu" *ngIf="isClientRegeistered(); else clientRegistraionElseBlock">
+      <a [routerLink]="['/screening/clientInformation']">Client Registration <i class="fa fa-check-circle-o fa-checked_circle_font"></i></a>
+    </li>
+    <template #clientRegistraionElseBlock>
+      <li class="active-flow-menu">
+        <a>Client Registration <i class="fa fa-round"></i></a>
+      </li>
+    </template>
+   
+    <span *ngIf="this.rightNavModel.openComponent == this.openComp.CLIENTREGISTRATION">
+      <li>
+        <a>Basic Information<i [ngClass]="{'fa fa-check': this.rightNavModel.basicInfo}" class="sub-list-icons" aria-hidden="true"></i></a>
+      </li>
+      <li class="no-border-top">
+        <a>Additional Names<i [ngClass]="{'fa fa-check': this.rightNavModel.additionalNames}" class="sub-list-icons" aria-hidden="true"></i></a>
+      </li>
+      <li class="no-border-top">
+        <a>HouseHold Members<span class="sub-list-icons">({{ this.rightNavModel.houseHoldMem }})</span></a>
+      </li>
+    </span>
+    <span [ngSwitch]="isContactInfoAdded()">
+      <li *ngSwitchCase="navEnumSt.INACTIVE">
+        <a>Contact Information <i class="fa fa-round"></i></a>
+      </li>
+      <li class="active-flow-menu" *ngSwitchCase="navEnumSt.ACTIVE">
+        <a [routerLink]="['/screening/AuthorizedReprestative']">Contact Information <i class="fa fa-round"></i></a>
+      </li>
+      <li class="completed-flow-menu" *ngSwitchCase="navEnumSt.COMPLETED">
+        <a [routerLink]="['/screening/AuthorizedReprestative']">Contact Information <i class="fa fa-check-circle-o fa-checked_circle_font"></i></a>
+      </li>
+    </span>
+    <li><a>Program Selection <i class="fa fa-round"></i></a></li>
+    <li><a>Household Circumstances <i class="fa fa-round"></i></a></li>
+    <li><a>Recommended Programs <i class="fa fa-round"></i></a></li>
+    <li><a>Screening Disposition <i class="fa fa-round"></i></a></li>
+  </ul>
+</div>

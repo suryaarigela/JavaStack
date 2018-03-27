@@ -1,0 +1,119 @@
+<form [formGroup]="screeningDispositionForm" novalidate (ngSubmit)="save(screeningDispositionForm)">
+    <div class="col-sm-7">
+        <div class="right-navigation-menus">
+            <div class="right-menu-header btn-primary collapsed" data-toggle="collapse" data-target="#rightSubMenu">
+                <span><i class="fa fa-cogs facogs" aria-hidden="true"></i>&nbsp;&nbsp;Tools</span>
+                <i class="fa fa-plus-square-o" aria-hidden="true"></i>
+            </div>
+            <div id="rightSubMenu" class="collapse">
+                <div class="col-sm-12 right-menu" [routerLink]="['/screening/trialBudget']"><span>Trial Budget</span></div>
+                <div class="col-sm-12 right-menu"><span>CDB Participation</span></div>
+                <div class="col-sm-12 right-menu"><span>Case Narrative</span></div>
+                <div class="col-sm-12 right-menu"><span>Program Selection</span></div>
+            </div>
+        </div>
+        <tooltip-content #unearnedInfo>
+            <div><span><p class="fa fa-info-circle fa-tooltip" ></p></span><span class="tooltip-text"> </span></div>
+        </tooltip-content>
+
+        <div class="settingsPage-box" tooltipPlacement="right" [tooltip]="unearnedInfo">
+            <div class="box-border-bottom screen-dispo-secheader">
+                <div class="col-sm-5">
+                    <span class="section-header-label">SCREENING DISPOSITION</span>
+                </div>
+                <div class="col-sm-7">
+                    <button class="btn btn-primary review-case-btn">Review Case</button>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+            <div class="row-view box-border-bottom">
+                <div class="col-sm-3 grid-block">
+                    <div class="label-field">Withdraw Application</div>
+                </div>
+                <div class="col-sm-9 grid-block">
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <div class="label-check display-check">
+                                <input type="checkbox" id="before-signature" formControlName="withdrawAppBeforeSigningYN" />
+                                <label for="before-signature">Before Signature</label>
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="label-check display-check">
+                                <input type="checkbox" id="after-signature" formControlName="withdrawAppAfterSigningYN" />
+                                <label for="after-signature">After Signature</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+            <!--<div formGroupName="emailConformationForm">-->
+            <div class="row-view box-border-bottom">
+                <div class="col-sm-3 grid-block">
+                    <div class="label-field">Signature</div>
+                </div>
+                <div class="col-sm-9 grid-block">
+                    <div class="form-group">
+                        <div class="onhover-canvas-outer">
+                            <!--<div id="canvas" onmouseover="startSignature()">
+                                    <canvas class="roundCorners onhover-canvas form-control" formControlName="newSignature"></canvas>
+                                    <button class="btn btn-primary btn-pdf clear-btn" onclick="signatureCapture()">Clear</button>
+                                </div>-->
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+            <div class="row-view box-border-bottom">
+                <div class="col-sm-3 grid-block">
+                    <div class="label-field">Interview</div>
+                </div>
+                <div class="col-sm-9 grid-block">
+                    <div class="field-adder hand txt-action-color">
+                        <i class="fa fa-plus-circle fa-lg txt-action-color" aria-hidden="true"></i><span>&nbsp;Add Appointment</span>
+                    </div>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+            <div class="row-view box-border-bottom">
+                <div>
+                    <div class="col-sm-3">
+                        <div class="label-field">Email Confirmation</div>
+                    </div>
+                    <div class="col-sm-9">
+                        <div>
+                            <div class="label-check display-check">
+                                <input type="checkbox" id="email-asst" class="form-control" formControlName="email_assistance" />
+                                <label for="email-asst">Email Assistance Request Form</label>
+                            </div>
+                        </div>
+                        <div class="col-sm-9 grid-block form-group" *ngIf="screeningDispositionForm.get('email_assistance').value">
+                            <label class="sub-label control-label" for="e_mail">Email</label>
+                            <div class="grid-textField">
+                                <input type="text" class="form-control" formControlName="email">
+                                <!--<div *ngIf="screeningDispositionForm.get('email').touched && !screeningDispositionForm.get('email').valid" class="alert alert-danger">
+                                        Invalid Email
+                                    </div>-->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="col-sm-3">
+                        <div class="label-field">PDF Confirmation</div>
+                    </div>
+                    <div class="col-sm-9">
+                        <button class="btn btn-primary btn-pdf">Generate PDF</button>
+                    </div>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+        <div class="buttonALign btnWrapper">
+            <button class="btn cancel-btn btnMargingRt btnCancel" (click)="back()">Back</button>
+            <button type="submit" class="btn btn-primary btnSave" [disabled]=!screeningDispositionForm.valid>Submit</button>
+        </div>
+    </div>
+</form>

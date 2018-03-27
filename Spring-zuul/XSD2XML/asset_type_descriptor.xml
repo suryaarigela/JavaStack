@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<p:descriptor bundleId=""
+	xmlns:p="http://www.ibm.com/iis/igc/asset-type-descriptor" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="asset_type_descriptor.xsd ">
+	<p:family classRefs="" position="1000.0" />
+	<p:tree position="1000.0" rootClassRefs="" />
+	<p:class canHaveImage="false" containerClassRefs=""
+		dataAccessRole="Active" expandableInLineage="false" localId=""
+		omdClassRef="" reportingLevel="1" restCodeName="" superClassRef="">
+		<p:storage mdsClass="" typeAttribute="" typeValue="" />
+		<p:headerSection />
+		<p:section>
+			<p:attribute editable="false" localId="" multiValued="false"
+				type="String" />
+		</p:section>
+	</p:class>
+</p:descriptor>

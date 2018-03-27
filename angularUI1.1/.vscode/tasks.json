@@ -1,0 +1,13 @@
+{
+	"version": "0.1.0",
+	"command": "tsc",
+	"showOutput": "silent",
+	"problemMatcher": "$tsc",
+    "isBuildCommand": true,
+    "isShellCommand": true,
+	"args": ["--target", "ES5",
+             "--outDir", "bin",
+             "--sourceMap",
+             "--watch"
+            ]
+}

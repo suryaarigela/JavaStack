@@ -1,0 +1,137 @@
+<div [formGroup]="tbForm" class="section-wrpr bottom-space">
+
+  <div class="section-label">
+    <div>CASE INFO</div>
+    <!--<div class="addStatement topalign"><button class="btn btn-primary" (click)="back()">Client Search(Clearance)</button></div>-->
+  </div>
+  <tooltip-content #tbCaseInfo1>
+    <div><span><p class="fa fa-info-circle fa-tooltip" ></p></span>
+      <div class="tooltip-text-regisnation">
+        Select the Type of program</div>
+    </div>
+  </tooltip-content>
+  <div tooltipPlacement="right" [tooltip]="tbCaseInfo1">
+    <div>
+
+      <div class="box-border-bottom row-view">
+        <!--form-group -->
+        <div class="col-sm-12">
+          <div class="col-sm-3">
+            <label for="Demographic" class="label-field">Program</label>
+          </div>
+          <div class="col-sm-9 zero-padding-bottom">
+            <div>
+              <div class="col-sm-4 form-group zero-padding-left">
+                <div class="pushDown" for="dob">Type</div>
+                <select class="form-control" formControlName="program" (change)="changeDropDownValue($event);">
+
+                <option  *ngFor="let optionEntity of this.typeDropdown" value="{{optionEntity.key}}">{{optionEntity.value}}</option>
+
+              </select>
+
+              </div>
+            </div>
+            <div *ngIf="targetValue == 3" class="col-sm-5 form-group zero-padding-right">
+              <div class="pushDown" for="ssn">Food stamps HH Type</div>
+              <select class="form-control">
+            <option  *ngFor="let optionEntity of this.foodStampstypeDropdown" value="{{optionEntity.key}}">{{optionEntity.value}}</option>
+             </select>
+            </div>
+            <div *ngIf="targetValue == 2" class="col-sm-4 form-group zero-padding-left">
+              <div class="pushDown" for="ssn">MA Coverage Group</div>
+              <select class="form-control" (change)="onChangeMA($event)">
+              <option  *ngFor="let optionEntity of this.medCoveragrDropdown" value="{{optionEntity.key}}" >{{optionEntity.value}}</option>
+             </select>
+            </div>
+            <div *ngIf="targetValue == 2" class="col-sm-4 form-group zero-padding-left">
+              <div class="pushDown" for="ssn">Sub Type</div>
+              <select *ngIf="maType=='F'" class="form-control">
+              <option  *ngFor="let optionEntity of this.familyDropdown" value="{{optionEntity.key}}">{{optionEntity.value}}</option>           
+             </select>
+              <select *ngIf="maType=='P'" class="form-control">
+             <option  *ngFor="let optionEntity of this.pregnantDropdown" value="{{optionEntity.key}}">{{optionEntity.value}}</option>
+             </select>
+
+              <select *ngIf="maType=='R'" class="form-control">
+              <option  *ngFor="let optionEntity of this.refugeesDropdown" value="{{optionEntity.key}}">{{optionEntity.value}}</option>           
+             </select>
+              <select *ngIf="maType=='ABD'" class="form-control">
+             <option  *ngFor="let optionEntity of this.abdDropDown" value="{{optionEntity.key}}">{{optionEntity.value}}</option>
+             </select>
+
+              <select *ngIf="maType=='M'" class="form-control">
+              <option  *ngFor="let optionEntity of this.masqDropdown" value="{{optionEntity.key}}">{{optionEntity.value}}</option>           
+             </select>
+              <select *ngIf="maType=='T'" class="form-control">
+             <option  *ngFor="let optionEntity of this.familyLtcDropdown" value="{{optionEntity.key}}">{{optionEntity.value}}</option>
+             </select>
+
+              <select *ngIf="maType=='Q'" class="form-control">
+              <option  *ngFor="let optionEntity of this.masqLtcDropdown" value="{{optionEntity.key}}">{{optionEntity.value}}</option>           
+             </select>
+              <select *ngIf="maType=='H'" class="form-control">
+             <option  *ngFor="let optionEntity of this.hcbWaiverDropdown" value="{{optionEntity.key}}">{{optionEntity.value}}</option>
+             </select>
+
+              <select *ngIf="maType=='E'" class="form-control">
+              <option  *ngFor="let optionEntity of this.FaAndSaDropdown" value="{{optionEntity.key}}">{{optionEntity.value}}</option>           
+             </select>
+              <select *ngIf="maType=='X'" class="form-control">
+             <option  *ngFor="let optionEntity of this.MiscellaneousDropdown" value="{{optionEntity.key}}">{{optionEntity.value}}</option>
+             </select>
+
+            </div>
+          </div>
+        </div>
+        <div class="clearfix"></div>
+      </div>
+    </div>
+
+  </div>
+  <tooltip-content #tbCaseInfo2>
+    <div><span><p class="fa fa-info-circle fa-tooltip" ></p></span>
+      <div class="tooltip-text-regisnation">
+        Select the type for Living Arrangement of Household, Enter the Household Size, Enter the number of IRS Dependents for Household</div>
+    </div>
+  </tooltip-content>
+  <div tooltipPlacement="right" [tooltip]="tbCaseInfo2">
+    <div class="box-border-bottom row-view">
+      <!--form-group -->
+      <div class="col-sm-12">
+        <div class="col-sm-3">
+          <label for="Demographic" class="label-field">Household</label>
+        </div>
+        <div class="col-sm-9 zero-padding-bottom">
+          <div>
+            <div class="col-sm-4 form-group zero-padding-left">
+              <div class="pushDown" for="dob">Living Arrangement</div>
+              <select class="form-control" formControlName="livingArrangement">
+											<!--<option  *ngFor="let optionEntity of this.constantsService.getDropDown('typeDropDown')" value="{{optionEntity.key}}">{{optionEntity.value}}</option>-->
+			        <option  *ngFor="let optionEntity of this.livingarrmntDropdown" value="{{optionEntity.key}}">{{optionEntity.value}}</option>
+              </select>
+            </div>
+
+            <div class="col-sm-4 form-group zero-padding-left">
+              <div class="pushDown" for="sex">Size</div>
+              <input type="textbox" style="padding-right:.5em" (keypress)="numberOnly($event)" formControlName="householdMemberSize" class="form-control amount-input search-box"
+                maxlength="7" />
+              <div class="clearfix"></div>
+            </div>
+          </div>
+          <div>
+            <div class="col-sm-4 zero-padding-left">
+              <div class="pushDown" for="sex">IRS Dependents</div>
+              <input type="textbox" style="padding-right:.5em" (keypress)="numberOnly($event)" formControlName="irsDependents" class="form-control amount-input search-box"
+                maxlength="7" />
+            </div>
+            <div class="col-sm-5 zero-padding-right">
+
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="clearfix"></div>
+    </div>
+  </div>
+
+</div>

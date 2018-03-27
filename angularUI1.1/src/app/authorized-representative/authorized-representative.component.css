@@ -1,0 +1,164 @@
+.btn-link {
+  font-size: 14px;
+  font-weight: 700;
+  color: #67babe;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.btn-link:hover {
+  text-decoration: none;
+}
+
+.button-section-divider {
+  font-size: 15px;
+  font-weight: 700;
+  margin: 10px -1px 0;
+}
+
+.field-pd-left {
+  padding-left: 0;
+}
+
+.align-gap {
+  margin-right: 1em;
+}
+
+.user-profile {
+  min-width: 206px;
+  left: inherit;
+  right: 0;
+  margin-top: 10px!important;
+  margin-left: 0;
+  /* float: none; */
+  /* padding-top: 62px; */
+  margin-top: 15px;
+}
+
+.user-profile>li {
+  float: none!important;
+  margin-right: 0!important;
+  border-bottom: 1px solid #e9e9e9;
+}
+
+.user-profile>li:last-child {
+  border-bottom: none;
+}
+
+.user-profile>li>a {
+  padding: 8px 10px;
+  font-size: 15px!important;
+  color: #333333;
+}
+
+.user-profile>li>a i {
+  font-size: 17px!important;
+}
+
+.user-profile>li>a:hover {
+  background: #e1f1f2;
+}
+
+
+.txt-action-color {
+  color: #67babe;
+}
+
+.hand {
+  cursor: pointer;
+}
+
+.field-adder span {
+  font-weight: 600;
+}
+
+.field-adder:hover,
+.field-adder:hover i {
+  color: #048fa8;
+}
+
+.show-text {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 3px;
+}
+
+.authorized-collapse {
+  background: #B9BEBF;
+  position: relative;
+  padding: 5px 15px;
+  margin-top: 8px;
+  border-radius: 3px;
+}
+
+.authorized-collapse input[type="checkbox"]{
+  position: relative;
+  top: 2px;
+}
+.state-name {
+  display: inline-block;
+  color: #fff;
+  font-weight: 600;
+  font-size: 14px;
+  margin-left: 3px;
+}
+
+.float-delete-icon {
+  float: right;
+  width: 20px;
+  height: 20px;
+  border-radius: 4px;
+  background: #bd2e27;
+  color: #fff;
+  font-size: 14px;
+  line-height: 20px;
+  text-align: center;
+  display: block;
+}
+
+.float-delete-icon:hover {
+  color: #fff;
+
+}
+.btnSave {
+    border-radius: 5px;
+    display: block;
+    border: none;            
+}
+
+.btnCancel {
+    width: 100px;
+     background-color: white;
+   border: 1px solid;
+}
+.statePush{
+  margin-top: 1.5em;
+}
+.zero-padding-left {
+  padding-left: 0px;
+}
+.zero-padding-right {
+  padding-right: 0px;
+}
+
+.pushDown {
+  padding-top: 5px;
+}
+
+.pushDown35 {
+  padding-top: 35px;
+}
+.form-control-v1 {
+  width: 94% !important;
+}
+.form-control:focus {
+    border-color: #66afe9!important;
+    outline: 0!important;
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, .6)!important;
+}
+.pull-right{
+  float: right;
+}
+.padding-none{
+  padding-right:0px;
+}

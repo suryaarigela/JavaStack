@@ -1,0 +1,175 @@
+//colors
+$background: #f3f3f3;
+$login-box-background: #fff;
+$login-btn: #fff;
+$login-box-border: #e6e6e6;
+$login-box-shadow: rgba(0,0,0,.1);
+$login-header: #231f20;
+$forgot-password:#231f20;
+$forgot-password-hover: #82c146;
+$login-btn-text-shadow: #406e14;
+$login-bottom-text: #ababab;
+
+//urls
+$check: url(../../assets/images/check.png);;
+$check-active: url(../../assets/images/check-active.png);
+
+@mixin border-radius($radius, $border) {
+            border-radius: $radius;
+            border: $border;
+}
+
+.login-body {
+	background: $background;
+}
+#login-container {
+	max-width: 630px;
+	margin: 3em auto;
+	padding: 0 15px;
+}
+.login-box {
+	background: $login-box-background;
+	@include border-radius(4px, 1px solid $login-box-border);		
+	box-shadow: 0 0 3px $login-box-shadow;
+	padding: 3em 15px;
+}
+.loginbg {
+	max-width: 372px;
+	margin: 0 auto;
+}
+.logo-wrapper {
+	width: 100%;
+	text-align: center;
+	img {
+		max-width: 100%;
+		display: inline-block;
+	}
+}
+.login-account {
+	width: 100%;
+	h2 {
+		font-size: 2.15rem;
+		line-height: 1.2;
+		font-weight: 600;
+		color: $login-header;
+		text-align: center;
+		margin: 1.5em 0;
+	}
+	.form-group {
+		margin-bottom: 10px;
+	}
+	.form-control {
+		@include border-radius(0, none);
+		border-radius: 0;
+		border: none;
+		height: 27px;
+		padding: 0;
+		outline: none;		
+		box-shadow: none;
+		&:focus {			
+			box-shadow: none;
+		}
+	}
+}
+.form-box {
+	background: $login-box-background;
+	@include border-radius(3px, 1px solid $login-box-border);	
+	padding: 10px 10px 2px;
+}
+.label-field {
+	display: block;
+	font-size: 11px;
+	line-height: 13px;	
+	font-weight: 400;
+	letter-spacing: .8px;
+	margin-bottom: 0;
+}
+.login-check {
+	padding: 1em 0;
+}
+.login-remember {
+	float: left;
+	input[type='checkbox'] {
+		opacity: 0;
+		float: left;
+		width: 16px;
+		height: 16px;
+		position: relative;
+		z-index: 1;
+		margin-right: 5px;
+		+ label {
+			background: $check 0 0 no-repeat;
+			padding-left: 25px;
+			float: left;
+			margin-left: -21px;
+			font-size: 13px;
+			font-weight: 600;			
+			line-height: 16px;
+		}
+		&:checked + label {
+			background: $check_active 0 0 no-repeat;
+		}
+	}
+}
+
+.forgot-password {
+	float: right;
+	a {
+		font-size: 12px;
+		line-height: 14px;
+		font-weight: 600;
+		color: $forgot-password;
+		text-decoration: underline;
+		&:hover {
+			color: $forgot-password-hover;
+		}
+	}
+}
+.login-bottom-line {
+}
+.login-btn {
+	width: 100%;
+	padding: 10px 0;	
+	border-radius: 4px;
+	color: $login-btn;
+	font-size: 2.1rem;
+	line-height: 1.2;
+	font-weight: 700;
+	text-transform: uppercase;	
+	text-shadow: 0 1px $login-btn-text-shadow;
+}
+.login-bottom-text {
+	width: 100%;
+	text-align: center;
+	padding: 0 1.5%;
+	margin-top: 2em;
+	p {
+		font-size: 13px;
+		line-height: 20px;
+		color: $login-bottom-text;
+	}
+}
+.example-full-width {
+	width: 100%;
+}
+.example-margin {
+	margin: 0 10px;
+}
+.example-section {
+	display: flex;
+	align-content: center;
+	align-items: center;
+	height: 60px;
+}
+.wrapper{
+	/*position: relative;
+	min-height: 100vh;*/
+	//height:100vh;
+	overflow: auto; 
+}
+.footer{
+	width: 100%;
+	text-align: center;
+	padding: 0 1.5%;
+	margin-top: 2em;
+}	

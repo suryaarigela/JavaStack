@@ -1,0 +1,230 @@
+<ng-sidebar-container>
+  <ng-sidebar [opened]="this.shareService.getDataFromMap('showLeftSidebarMenu')" [mode]="_MODES[_modeNum]" [keyClose]="_keyClose"
+    [position]="_POSITIONS[_positionNum]" [dockedSize]="'50px'" [closeOnClickOutside]="_closeOnClickOutside" [closeOnClickBackdrop]="_closeOnClickBackdrop"
+    [showBackdrop]="_showBackdrop" [animate]="_animate" [trapFocus]="_trapFocus" [autoFocus]="_autoFocus" [sidebarClass]="_sidebarClass"
+    class="menu-container" (onCloseStart)="_onCloseStart()">
+    <div class="row sidebar-header sidebar-nav-width">
+      <div class="col-sm-4">
+      </div>
+      <div class="row sidebar-logo col-sm-8 close-btn-pad">
+        <i (click)="shareService._toggleSidebar()" class="fa fa-times close" aria-hidden="true"></i>
+        <a class="site-logo header-logo">
+            <img src="./assets/images/logo.png" alt="" />
+          </a>
+      </div>
+    </div>
+    <div class="sidebar">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a [routerLink]="['/screening/homeScreen']" [routerLinkActive]="['active']" (click)="shareService._toggleSidebar()"><i class="fa fa-home spacebar-left spacebar"></i>Home</a>
+        </h4>
+      </div>
+      <div class="panel-group" id="accordion">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h4 class="panel-title">
+              <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne"><i class="fa fa-folder spacebar spacebar-left" ></i>Application Process</a>
+            </h4>
+          </div>
+          <div id="collapseOne" class="panel-collapse collapse">
+            <div class="panel-body">
+              <table class="table">
+                <tr class="sidebar-nav-menu">
+                  <td>
+                    <span class="sidebar-nav-inner-icon-margin hamburgerSpanMenu">Inquiry</span>
+                  </td>
+                </tr>
+                <tr class="sidebar-nav-menu" (click)="shareService._toggleSidebar(); navigateToScreening()">
+                  <td>
+                    <span class="sidebar-nav-inner-icon-margin hamburgerSpanMenu">Screening</span>
+                  </td>
+                </tr>
+                <tr class="sidebar-nav-menu">
+                  <td>
+                    <span class="sidebar-nav-inner-icon-margin hamburgerSpanMenu">Interview</span>
+                  </td>
+                </tr>
+                <tr class="sidebar-nav-menu">
+                  <td>
+                    <span class="sidebar-nav-inner-icon-margin hamburgerSpanMenu" [routerLink]="['/screening/trialBudget']" (click)="shareService._toggleSidebar()">Trial Budget/Eligibility</span>
+                  </td>
+                </tr>
+                <tr class="sidebar-nav-menu">
+                  <td>
+                    <span class="sidebar-nav-inner-icon-margin hamburgerSpanMenu">Finalize App</span>
+                  </td>
+                </tr>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <!--********************-->
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h4 class="panel-title">
+              <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo"><i class="fa fa-th-large spacebar-left spacebar" ></i>Case Management</a>
+            </h4>
+          </div>
+          <div id="collapseTwo" class="panel-collapse collapse">
+            <div class="panel-body">
+              <table class="table">
+                <tr class="sidebar-nav-menu">
+                  <td>
+                    <span class="sidebar-nav-inner-icon-margin hamburgerSpanMenu">Benefit History</span>
+                  </td>
+                </tr>
+                <tr class="sidebar-nav-menu">
+                  <td>
+                    <span class="sidebar-nav-inner-icon-margin hamburgerSpanMenu">Case Narrative</span>
+                  </td>
+                </tr>
+                <tr class="sidebar-nav-menu">
+                  <td>
+                    <span class="sidebar-nav-inner-icon-margin hamburgerSpanMenu">Change History</span>
+                  </td>
+                </tr>
+                <tr class="sidebar-nav-menu">
+                  <td>
+                    <span class="sidebar-nav-inner-icon-margin hamburgerSpanMenu">Change Reporting</span>
+                  </td>
+                </tr>
+                <tr class="sidebar-nav-menu">
+                  <td>
+                    <span class="sidebar-nav-inner-icon-margin hamburgerSpanMenu">Financial Management</span>
+                  </td>
+                </tr>
+                <tr class="sidebar-nav-menu">
+                  <td>
+                    <span class="sidebar-nav-inner-icon-margin hamburgerSpanMenu">Mass Modifications</span>
+                  </td>
+                </tr>
+                <tr class="sidebar-nav-menu">
+                  <td>
+                    <span class="sidebar-nav-inner-icon-margin hamburgerSpanMenu">Medicaid Spendown</span>
+                  </td>
+                </tr>
+                <tr class="sidebar-nav-menu">
+                  <td>
+                    <span class="sidebar-nav-inner-icon-margin hamburgerSpanMenu">Redet/Reinstate/ Reactivate</span>
+                  </td>
+                </tr>
+                <tr class="sidebar-nav-menu">
+                  <td>
+                    <span class="sidebar-nav-inner-icon-margin hamburgerSpanMenu">Reporting</span>
+                  </td>
+                </tr>
+                <tr class="sidebar-nav-menu">
+                  <td>
+                    <span class="sidebar-nav-inner-icon-margin hamburgerSpanMenu">Retro Medicaid</span>
+                  </td>
+                </tr>
+              </table>
+            </div>
+          </div>
+        </div>
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h4 class="panel-title">
+              <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree"><i class="fa fa-tasks spacebar-left spacebar"></i>Correspondence</a>
+            </h4>
+          </div>
+          <div id="collapseThree" class="panel-collapse collapse">
+            <div class="panel-body">
+              <table class="table">
+                <tr class="sidebar-nav-menu">
+                  <td>
+                    <span class="sidebar-nav-inner-icon-margin hamburgerSpanMenu">Email</span>
+                  </td>
+                </tr>
+                <tr class="sidebar-nav-menu">
+                  <td>
+                    <span class="sidebar-nav-inner-icon-margin hamburgerSpanMenu">Letters</span>
+                  </td>
+                </tr>
+                <tr class="sidebar-nav-menu">
+                  <td>
+                    <span class="sidebar-nav-inner-icon-margin hamburgerSpanMenu">Notices</span>
+                  </td>
+                </tr>
+              </table>
+            </div>
+          </div>
+        </div>
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h4 class="panel-title">
+              <a data-toggle="collapse" data-parent="#accordion" href="#collapseFour"><i class="fa fa-th-large spacebar-left spacebar" ></i>Worker Management</a>
+            </h4>
+          </div>
+          <div id="collapseFour" class="panel-collapse collapse">
+            <div class="panel-body">
+              <table class="table">
+                <tr class="sidebar-nav-menu">
+                  <td>
+                    <span class="sidebar-nav-inner-icon-margin hamburgerSpanMenu">Worker Performance</span>
+                  </td>
+                </tr>
+                <tr class="sidebar-nav-menu">
+                  <td>
+                    <span class="sidebar-nav-inner-icon-margin hamburgerSpanMenu">Worker Schedule</span>
+                  </td>
+                </tr>
+              </table>
+            </div>
+          </div>
+        </div>
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h4 class="panel-title">
+              <a data-toggle="collapse" data-parent="#accordion" href="#collapseFive"><i class="fa fa-th-large spacebar-left spacebar" ></i>System Management</a>
+            </h4>
+          </div>
+          <div id="collapseFive" class="panel-collapse collapse">
+            <div class="panel-body">
+              <table class="table">
+                <tr class="sidebar-nav-menu">
+                  <td>
+                    <span class="sidebar-nav-inner-icon-margin hamburgerSpanMenu">Archive</span>
+                  </td>
+                </tr>
+                <tr class="sidebar-nav-menu">
+                  <td>
+                    <span class="sidebar-nav-inner-icon-margin hamburgerSpanMenu">Master Client Index</span>
+                  </td>
+                </tr>
+                <tr class="sidebar-nav-menu">
+                  <td>
+                    <span class="sidebar-nav-inner-icon-margin hamburgerSpanMenu">Print Requests</span>
+                  </td>
+                </tr>
+                <tr class="sidebar-nav-menu">
+                  <td>
+                    <span class="sidebar-nav-inner-icon-margin hamburgerSpanMenu">Program Parameters</span>
+                  </td>
+                </tr>
+                <tr class="sidebar-nav-menu">
+                  <td>
+                    <span class="sidebar-nav-inner-icon-margin hamburgerSpanMenu">Reference Data</span>
+                  </td>
+                </tr>
+                <tr class="sidebar-nav-menu">
+                  <td>
+                    <span class="sidebar-nav-inner-icon-margin hamburgerSpanMenu">Security</span>
+                  </td>
+                </tr>
+                <tr class="sidebar-nav-menu">
+                  <td>
+                    <span class="sidebar-nav-inner-icon-margin hamburgerSpanMenu">Vendor Management</span>
+                  </td>
+                </tr>
+
+              </table>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </ng-sidebar>
+</ng-sidebar-container>

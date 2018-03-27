@@ -1,0 +1,5 @@
+package com.journaldev.jaxws.beans;
+
+public interface PersonService {
+
+}

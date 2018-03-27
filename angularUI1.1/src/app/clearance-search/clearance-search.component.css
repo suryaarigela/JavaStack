@@ -1,0 +1,141 @@
+.btnMain {
+  border-radius: 5px;
+  display: block;
+  border: none;
+  line-height: 30px;
+  background: #017fb5;
+  color: #fff;
+}
+
+.btn {
+  background: #dddddd;
+}
+
+.subLabelColor {
+  font-size: 12px;
+}
+
+.subLabelField {
+  margin-top: -8px;
+  color: gray;
+  font-weight: 600;
+}
+
+.idColor {
+  color: green;
+}
+
+.textColor {
+  color: #017fb5;
+}
+
+.borderBottom {
+  border-bottom: 1px solid #eeeeee;
+}
+
+.rowView {
+  padding-bottom: 19px;
+}
+
+.marginTop {
+  margin-top: 10px;
+}
+
+.textSize {
+  font-size: 22px;
+}
+
+.labelColor {
+  color: rgb(47, 85, 151);
+}
+
+.rowMargin {
+  margin-left: 1%;
+  padding-top: 19px;
+}
+
+.selectClient {
+  display: inline-block;
+  padding-top: 1px;
+  padding-bottom: 1px;
+}
+
+.client-profile-name {
+  top: 0px !important;
+}
+
+.clientButton {
+  border-radius: 0px;
+  border: 1px solid #ccc;
+  background: #fff;
+  margin-right: -5px;
+  border-radius: 5px 0 0 5px;
+}
+
+.clientDropdown {
+  border-radius: 0px;
+  border: 1px solid #ccc;
+  background: #fff;
+  margin-right: -5px;
+  border-radius: 0 5px 5px 0;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+.dropdown-menu {
+  font-size: 14px !important;
+  left: -72px !important;
+}
+
+.user-profile {
+  z-index: 100000;
+}
+
+.pagination-button {
+  border-radius: 0px;
+  padding: .3em .9em;
+  border: 1px solid #ccc;
+  background: #fff;
+  margin-right: -5px;
+}
+
+.pagination-button:hover {
+  background-color: #eee;
+  border-color: #ddd;
+}
+
+.pagination-button-radius-left {
+  border-radius: 5px 0 0 5px;
+}
+
+.pagination-button-radius-right {
+  border-radius: 0 5px 5px 0;
+}
+
+.pagination-selected {
+  background: #337ab7!important;
+  color: white;
+}
+
+.pagination-align-right {
+  float: right;
+  margin-right: 1em;
+}
+
+.no-cursor {
+  cursor: not-allowed;
+}
+
+.clearanceHeaderColor {
+  color: #017fb5;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-size: 1.2em;
+  padding-left: 9px;
+}
+
+.clearanceHeaderButton {
+  width: 100%;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}

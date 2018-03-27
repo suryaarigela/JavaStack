@@ -1,0 +1,108 @@
+.form-control:focus {
+    border-color: #66afe9!important;
+    outline: 0!important;
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, .6)!important;
+}
+
+.screen-dispo-secheader {
+  padding: 15px 15px 15px 0;
+}
+
+textarea {
+  resize: vertical;
+}
+
+.txt-action-color {
+    color: #67babe;
+}
+
+.field-adder:hover, .field-adder:hover i {
+    color: #048fa8;
+}
+
+.btn-pdf {
+    width: 150px;
+}
+
+.cnfrm-email-input {
+    margin: 0 0 20px 0;
+}
+
+.review-case-btn {
+  width: 150px;
+  float: right;
+}
+
+.right-navigation-menus {
+  position: absolute;
+  right: -150px;
+  width: 150px;
+  border: 1px solid #ededed;
+  background-color: #fff;
+  border-radius: 5px;
+}
+
+.right-menu {
+    padding: 5px 0;
+    border-bottom: 1px solid #ededed;
+    cursor: pointer;
+    color: #33C7FF;
+    font-weight: 400;
+    font-size: 1.4rem;
+}
+
+.right-menu span {
+  padding-left: 8px;
+}
+
+.right-menu:hover {
+  transition-duration: 300ms;
+  margin-left: 1px;
+  border-left: solid 2px rgba(0, 0, 0, .5);
+  color: black;
+  background-color: #f0f7f7;
+}
+.right-menu-header.collapsed{
+  border-radius: 3px;
+}
+.right-menu-header {
+  padding: 5px 8px;
+  cursor: pointer;
+  font-weight: 600;
+  border-radius: 3px 3px 0 0;
+  text-align: left;
+  color: rgba(255, 255, 255, 0.92);
+  background-color: #69babe;
+}
+
+.right-menu-header:hover {
+  color: #fff;
+  background-color: #418f93;
+}
+
+.right-menu-header i {
+  float: right;
+  margin-top: 5px;
+  font-size: 1.45rem;
+}
+
+.facogs {
+  float: left !important;
+  margin-top: 5px;
+}
+.onhover-canvas{
+  position: relative; 
+  margin: 0 0 10px 0; 
+  padding: 0; 
+  border: 1px solid #c4caac;
+  width: 400px;
+  height: 180px;
+}
+.onhover-canvas-outer{ 
+  width: 400px;
+  /*height: 180px;*/
+}
+.clear-btn{
+  width: 85px !important;
+ 
+}

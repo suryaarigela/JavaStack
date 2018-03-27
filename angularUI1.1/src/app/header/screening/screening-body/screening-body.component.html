@@ -1,0 +1,3 @@
+<app-left-navigation *ngIf="shareService.getDataFromMap('currentModule')==constantsService.getText('screeningModule')"></app-left-navigation>
+<app-clearance-search-menu *ngIf="shareService.getDataFromMap('currentModule')==constantsService.getText('screeningModule')"></app-clearance-search-menu>
+<router-outlet></router-outlet>

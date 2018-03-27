@@ -1,0 +1,30 @@
+package com.replace.text;
+
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.util.stream.Stream;
+
+public class ReplaceText {
+
+	public static void main(String[] args) throws IOException {
+		
+		String folder =args[0];
+		
+		String currentText = args[1];
+		
+		String newText = args[2];
+		
+		replaceContent(folder,currentText,newText);
+	}
+
+	private static void replaceContent(String folder, String currentText, String newText) throws IOException {
+		try (Stream<Path> paths = Files.walk(Paths.get("/home/you/Desktop"))) {
+		    paths
+		        .filter(Files::isRegularFile)
+		        .forEach(System.out::println);
+		} 
+		
+	}
+}

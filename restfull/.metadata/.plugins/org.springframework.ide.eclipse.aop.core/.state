@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aop-reference-model>
+<aop-project name="Spring4MVCHelloWorldRestServiceDemo"/>
+<aop-project name="demo"/>
+<aop-project name="camelExample"/>
+<aop-project name="calories-tracker"/>
+<aop-project name="SpringBootMongoDB"/>
+<aop-project name="spring-jms-activemq"/>
+<aop-project name="hello-springboot"/>
+<aop-project name="ObservableAPI"/>
+<aop-project name="rest.api"/>
+<aop-project name="demo-0.0.1-SNAPSHOT"/>
+<aop-project name="ApacheCamelDemo"/>
+</aop-reference-model>

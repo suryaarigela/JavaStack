@@ -1,0 +1,29 @@
+<h2>My Heroes</h2>
+<div>
+   <form [formGroup]="heroForm">
+     <label>Hero name:</label> <input type="text" formControlName="heroname" name="heroname" #heroName />
+  
+   <label>Description:</label> <input type="text" formControlName="herodesc" name="herodesc" #heroDesc />
+    <label>Hero ID:</label> <input type="text" formControlName="heroId" name="heroId" #heroId />
+ 
+  <button (click)="add(heroName.value,heroDesc.value,heroId.value); heroName.value=''">
+    Add
+  </button>
+   </form>
+</div>
+<ul class="heroes">
+  <li *ngFor="let hero of heroes" (click)="onSelect(hero)"
+      [class.selected]="hero === selectedHero">
+    <span class="badge">{{hero.id}}</span>
+    <span>{{hero.name}}</span>
+    <button class="delete"
+      (click)="delete(hero); $event.stopPropagation()">x</button> 
+      <span class="likebadge">{{hero.likes}} Likes</span>
+  </li>
+</ul>
+<div *ngIf="selectedHero">
+  <h2>
+    {{selectedHero.name | uppercase}} is my hero
+  </h2>
+  <button (click)="gotoDetail()">View Details</button>
+</div>

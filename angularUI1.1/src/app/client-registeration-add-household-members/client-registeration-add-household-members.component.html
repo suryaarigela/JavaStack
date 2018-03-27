@@ -1,0 +1,468 @@
+<div class="page-container col-sm-7 content-box">
+  <div class="section-wrpr" style="margin-bottom: 0;padding-bottom: 0;">
+    <div class="section-label" [ngClass]="{'section-height':householdMembers.length != 0}">
+      <div class="col-sm-6 label-household">
+        HOUSEHOLD MEMBERS
+      </div>
+      <div class="col-sm-6 pull-right">
+        <div class="addStatement" (click)="add()"><i class="fa fa-plus-circle fa-lg plusIconColor" aria-hidden="true"></i>&nbsp;Add Household Member</div>
+      </div>
+      <div class="clearfix"></div>
+
+      <div class=padding-view-options>
+        <div class="col-sm-4 display" [hidden]="disableNext" [hidden]="householdMembers.length == 0">
+          <i class="fa fa-th-list hand frame one" aria-hidden="true" (click)='changeProductId(2)' [class.selectedFrame]="productID==2"> <span>List</span></i>
+          <i class="fa fa-table hand frame two" aria-hidden="true" (click)='changeProductId(3)' [class.selectedFrame]="productID==3"> <span>Table</span></i>
+          <i class="fa fa-th-large hand frame three" aria-hidden="true" (click)='changeProductId(1)' [class.selectedFrame]="productID==1"> <span>Grid</span></i>
+        </div>
+      </div>
+    </div>
+
+    <tooltip-content class="addHouseHoldToolTip" #householdMemberTooltip>
+      <div><span><p class="fa fa-info-circle fa-tooltip" ></p></span>
+        <div class="tooltip-text-regisnation"> The Screening process helps accomplish the following:
+          <br/>
+          <ul style="list-style: disc">
+            <li>Screen and register the applicant and perform SSN/Name Clearance</li>
+            <li>Decide, with the assistance of the System and the applicant, the program(s) for which the applicant may be eligible
+            </li>
+            <li>Perform trial eligibility determination and benefit calculation based on applicant information</li>
+            <li>Assign a Client ID number to the applicant and a Case ID number to the assistance program(s) for which the applicant
+              applied
+            </li>
+          </ul>
+        </div>
+      </div>
+    </tooltip-content>
+    <div class="form-group" tooltipPlacement="right" [tooltip]="householdMemberTooltip">
+      <div>
+        <div [hidden]='productID!=1'>
+          <div *ngFor="let entity of this.householdMembers; let i = index;let end = last" class="boxColor">
+            <div class="col-sm-12">
+              <div class="row">
+                <div class="col-md-3">
+                  <div class="box-wrpr">
+                    <div class="mem-label">
+                      <div *ngIf="entity.householdMember.headOfHouseholdYN != undefined  && entity.householdMember.headOfHouseholdYN == '1'; else relationBlock">
+                        Head Of Household
+                      </div>
+                      <ng-template #relationBlock>
+                        Member {{i+1}}
+                      </ng-template>
+                    </div>
+                    <div class="client-id">
+                      Client ID
+                    </div>
+                    <div class="client-id-new">
+                      {{entity.householdMember.householdMemberId}}
+                    </div>
+                    <div class="clearfix"> </div>
+                    <div (click)="editClient(entity.householdMember.householdMemberId)" class="edit-view-client">
+                      <a>
+                        <u>Edit/View</u>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-8">
+                  <div class="container-fluid">
+                    <div class="row  field-container-box">
+                      <div class="col-md-7">
+                        <div class="field-container">
+                          <div class="field-container-header">Name</div>
+                          <div class="field-container-body">{{this._utilService.getFullName(entity.householdMember.personName)}}</div>
+                        </div>
+                        <div class="field-container">
+                          <div class="field-container-header">SSN</div>
+                          <div class="field-container-body">{{ this._utilService.getSsn(entity.householdMember.ssn)}}
+                          </div>
+                        </div>
+                        <div class="field-container">
+                          <div class="field-container-header">SSN Verification&nbsp;
+                            <i *ngIf="(constantsService.getDropdownValue(this.constantsService.getText('SsnVerificationOption'),entity.householdMember.verification?.ssnVerificationModel.verificationDocumentCd) == 'Verified by SSN Interface' || entity.householdMember.verification?.ssnVerificationModel.verificationAutoVerified ||  entity.verification?.ssnVerificationModel.verificationFileList?.length>0); else showSsnUnverifiedCross_2"
+                              class="fa fa-check ssnOrDobFileStatuses-tick"></i>
+                            <ng-template #showSsnUnverifiedCross_2>
+                              <i class="fa fa-close ssnOrDobFileStatuses-cross"></i>
+                            </ng-template>
+                          </div>
+                          <div class="sub-text " *ngIf="shouldShowField(i,ssnLabel);else showSsnDropdown_2">
+                            <a class="uLine hand" (click)="changeFieldToEditMode(i,ssnLabel)">
+                        {{constantsService.getDropdownValue(this.constantsService.getText('SsnVerificationOption'),entity.householdMember.verification.ssnVerificationModel.verificationDocumentCd)}}
+                        </a>
+                            <span *ngIf="!entity.householdMember.verification.ssnVerificationModel.verificationAutoVerified  && ((!constantsService.getDropdownValue(this.constantsService.getText('SsnVerificationOption'),entity.householdMember.verification.ssnVerificationModel.verificationDocumentCd) == 'Not Verified' ) || (entity.householdMember.verification.ssnVerificationModel.verifiedYN) == 'Y'   ) ">
+                      &nbsp;&nbsp;
+                      <i class="fa fa-file-text-o ssnOrDobFileStatuses-file hand" data-toggle="modal" data-target="#fileUploadModal"  (click)="setCurrentSelection(entity,'ssnVerificationModel')"></i>
+                    </span>
+                          </div>
+                          <ng-template #showSsnDropdown_2>
+                            <div class="field-container-body" style="width: 75%;margin-top: 2px;">
+                              <select class="form-control-v1 form-control width-suffix noPaddingNHeight" (change)="changeFieldToReadMode(i,ssnLabel)" [(ngModel)]='entity.householdMember.verification.ssnVerificationModel.verificationDocumentCd'>
+                                    <!--<option value="-1">Select</option>-->
+                                    <option *ngFor="let optionEntity of this.constantsService.getDropDownFromLookup(this.constantsService.getText('SsnVerificationOption'))" value="{{optionEntity.lookupBean.code}}">{{optionEntity.lookupBean.shortLabel}}</option>
+                         </select>
+                            </div>
+                          </ng-template>
+                        </div>
+                        <div class="field-container">
+                          <div class="field-container-header">Race</div>
+                          <div class="field-container-body">{{constantsService.getDropdownValue(this.constantsService.getText('Race'),entity.householdMember.raceCds[0])}}</div>
+                        </div>
+                      </div>
+                      <div class="col-md-5">
+                        <div class="field-container">
+                          <div class="field-container-header">Sex</div>
+                          <div class="field-container-body">{{constantsService.getDropdownValue(this.constantsService.getText('Sex'),entity.householdMember.gender)}}</div>
+                        </div>
+                        <div class="field-container">
+                          <div class="field-container-header">DOB</div>
+
+                          <div class="field-container-body">{{entity.householdMember.dob}}</div>
+                        </div>
+                        <div class="field-container">
+                          <div class="grey-sub-label">DOB Verification&nbsp;
+                            <i *ngIf="(entity.householdMember.verification.dobVerificationModel.verificationAutoVerified || entity.householdMember.verification.dobVerificationModel.verificationFileList?.length>0); else showDobUnverifiedCross_2"
+                              class="fa fa-check ssnOrDobFileStatuses-tick"></i>
+                            <ng-template #showDobUnverifiedCross_2>
+                              <i class="fa fa-close ssnOrDobFileStatuses-cross"></i>
+                            </ng-template>
+                          </div>
+                          <div class="sub-text " *ngIf="shouldShowField(i,dobLabel);else showDobDropdown_2">
+                            <a class="uLine hand" (click)="changeFieldToEditMode(i,dobLabel)">{{constantsService.getDropdownValue(this.constantsService.getText('DobVerificationOption'),entity.householdMember.verification.dobVerificationModel.verificationDocumentCd)}}</a>
+                            <span *ngIf="!entity.householdMember.verification.dobVerificationModel.verificationAutoVerified && (!constantsService.getDropdownValue(this.constantsService.getText('DobVerificationOption'),entity.householdMember.verification.dobVerificationModel.verificationDocumentCd) == 'Not Verified') || entity.householdMember.verification.dobVerificationModel.verifiedYN == 'Y'">
+                      &nbsp;&nbsp;
+
+                      <i class="fa fa-file-text-o ssnOrDobFileStatuses-file hand"  data-toggle="modal" data-target="#fileUploadModal" (click)="setCurrentSelection(entity,'dobVerificationModel')"></i>
+                    </span></div>
+                          <ng-template #showDobDropdown_2>
+                            <div class="field-container-body" style="width: 75%;margin-top: 2px;">
+                              <select class="form-control-v1 form-control width-suffix noPaddingNHeight" (change)="changeFieldToReadMode(i,dobLabel)" [(ngModel)]='entity.householdMember.verification.dobVerificationModel.verificationDocumentCd'>
+                         <!-- <option value="-1">Select</option>-->
+                          <option *ngFor="let optionEntity of this.constantsService.getDropDownFromLookup(
+                                this.constantsService.getText('DobVerificationOption'))" value="{{optionEntity.lookupBean.code}}">{{optionEntity.lookupBean.shortLabel}}</option>
+                     </select>
+                            </div>
+
+                          </ng-template>
+                        </div>
+                        <div class="field-container">
+                          <div class="field-container-header">Relation</div>
+                          <div class="field-container-body hand" *ngIf="shouldShowField(i,relationshipLabel);else showRelationshipDropdown" (click)="changeFieldToEditMode(i,relationshipLabel)">
+                            <a>
+                              <u>{{constantsService.getDropdownValue(this.constantsService.getText('Relationship'),entity.householdMember.relationshipCd)}}</u>
+                            </a>
+                          </div>
+                          <ng-template #showRelationshipDropdown>
+                            <div class=" field-container-body" style="width: 75%;margin-top: 2px;">
+                              <select class="form-control-v1 form-control width-suffix noPaddingNHeight" (change)="changeFieldToReadMode(i,relationshipLabel)"
+                                [(ngModel)]='entity.householdMember.relationshipCd'>
+                                    <option value="-1">Select</option>
+                                    <option  *ngFor="let optionEntity of this.constantsService.getDropDownFromLookup(
+                                this.constantsService.getText('Relationship'))" value="{{optionEntity.lookupBean.code}}">{{optionEntity.lookupBean.shortLabel}}</option>
+                              </select>
+                            </div>
+                          </ng-template>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-1">
+                  <div class="field-container-box">
+                    <div class="delete-row hand householdtrash" (click)="deleteClient(i)"><i class="fa fa-trash-o" aria-hidden="true"></i></div>
+                  </div>
+                </div>
+
+              </div>
+
+            </div>
+            <div class="clearfix"></div>
+            <div *ngIf="!end" class="blockSeperator"></div>
+
+          </div>
+        </div>
+        <div [hidden]='productID!=2'>
+          <div *ngFor=" let entity of this.householdMembers; let i=index;
+          let end=last " class="boxColor paddingTop">
+
+            <div class="col-sm-12 sub-section-wrpr">
+              <div class="col-md-10 col-sm-10 sub-label-blue">{{this._utilService.getFullName(entity.householdMember.personName)}} <a (click)="editClient(entity.householdMember.householdMemberId)"
+                  class="edit-client-name">(Edit/View)</a></div>
+              <div class="delete-row hand householdtrash" (click)="deleteClient(i)"><i class="fa fa-trash-o" aria-hidden="true"></i></div>
+              <div>
+                <div class="uniqueRow data-row army-green form-group">
+                  <div class="col-md-5 col-sm-5">
+                    Client ID : {{entity.householdMember.householdMemberId}}
+                  </div>
+                  <div class="col-md-4 col-sm-4">
+                    <div class="col-md-4 col-sm-4" style="margin-left: -1.1em;">
+                      Relation:
+                    </div>
+                    <div class="col-md-8 col-sm-8" style="font-weight:600">
+                      <a class="uLine hand" *ngIf="shouldShowField(i,relationshipLabel);else showRelationshipDropdown_2" (click)="changeFieldToEditMode(i,relationshipLabel)">
+                        {{constantsService.getDropdownValue(this.constantsService.getText('Relationship'),entity.householdMember.relationshipCd)}}
+                    </a>
+                      <ng-template #showRelationshipDropdown_2>
+                        <div class="field-container-body noPaddingNHeight" style="width:75%;margin-top: 2px;">
+                          <select class="form-control-v1 form-control width-suffix noPaddingNHeight" (change)="changeFieldToReadMode(i,relationshipLabel)"
+                            [(ngModel)]='entity.householdMember.relationshipCd'>
+                                    <option value="-1">Select</option>
+                                    <option  *ngFor="let optionEntity of this.constantsService.getDropDownFromLookup(
+                                this.constantsService.getText('Relationship'))" value="{{optionEntity.lookupBean.code}}">{{optionEntity.lookupBean.shortLabel}}</option>
+                              </select>
+                        </div>
+                      </ng-template>
+                    </div>
+                  </div>
+                  <div *ngIf=" entity.householdMember.headOfHouseholdYN == '1'  " class="col-md-3 col-sm-3">
+                    Head Of Household
+                  </div>
+                </div>
+                <div class="data-row form-group">
+                  <div class="col-md-5 col-sm-5">
+                    <div class="grey-sub-label">Sex</div>
+                    <div class="sub-text">{{constantsService.getDropdownValue(this.constantsService.getText('Sex'),entity.householdMember.gender)}}</div>
+                  </div>
+                  <div class="col-md-3 col-sm-3">
+                    <div class="grey-sub-label">SSN</div>
+                    <div class="sub-text">{{ this._utilService.getSsn(entity.householdMember.ssn)}}</div>
+                  </div>
+                  <div class="col-md-3 col-sm-3">
+                    <div class="grey-sub-label">DOB</div>
+                    <div class="sub-text">{{entity.householdMember.dob}}</div>
+                  </div>
+                </div>
+                <div class="data-row form-group">
+                  <div class="col-md-5 col-sm-5">
+                    <div class="grey-sub-label">Race</div>
+                    <div class="sub-text">{{constantsService.getDropdownValue(this.constantsService.getText('Race'),entity.householdMember.raceCds[0])}}</div>
+                  </div>
+                  <div class="col-md-3 col-sm-3">
+                    <div class="grey-sub-label">SSN Verification&nbsp;
+                      <i *ngIf="(constantsService.getDropdownValue(this.constantsService.getText('SsnVerificationOption'),entity.householdMember.verification.ssnVerificationModel.verificationDocumentCd) == 'Verified by SSN Interface' || entity.householdMember.verification.ssnVerificationModel.verificationAutoVerified ||  entity.householdMember.verification.ssnVerificationModel.verificationFileList?.length>0); else showSsnUnverifiedCross_2"
+                        class="fa fa-check ssnOrDobFileStatuses-tick"></i>
+
+                      <ng-template #showSsnUnverifiedCross_2>
+                        <i class="fa fa-close ssnOrDobFileStatuses-cross"></i>
+                      </ng-template>
+                    </div>
+                    <div class="sub-text " *ngIf="shouldShowField(i,ssnLabel);else showSsnDropdown_2">
+                      <a class="uLine hand" (click)="changeFieldToEditMode(i,ssnLabel)">
+                        {{constantsService.getDropdownValue(this.constantsService.getText('SsnVerificationOption'),entity.householdMember.verification.ssnVerificationModel.verificationDocumentCd)}}
+                        </a>
+                      <span *ngIf="!entity.householdMember.verification.ssnVerificationModel.verificationAutoVerified  && (!(constantsService.getDropdownValue(this.constantsService.getText('SsnVerificationOption'),entity.householdMember.verification.ssnVerificationModel.verificationDocumentCd) == 'Not Verified' ) ) || entity.householdMember.verification.ssnVerificationModel.verifiedYN == 'Y' ">
+                      &nbsp;&nbsp;
+
+                      <i class="fa fa-file-text-o ssnOrDobFileStatuses-file hand" data-toggle="modal" data-target="#fileUploadModal"  (click)="setCurrentSelection(entity.householdMember,'ssnVerificationModel')"></i>
+                    </span>
+                    </div>
+                    <ng-template #showSsnDropdown_2>
+                      <div class="field-container-body" style="width: 75%;margin-top: 2px;">
+                        <select class="form-control-v1 form-control width-suffix noPaddingNHeight" (change)="changeFieldToReadMode(i,ssnLabel)" [(ngModel)]='entity.householdMember.verification.ssnVerificationModel.verificationDocumentCd'>
+                                    <!--<option value="-1">Select</option>-->
+                                    <option *ngFor="let optionEntity of this.constantsService.getDropDownFromLookup(this.constantsService.getText('SsnVerificationOption'))" value="{{optionEntity.lookupBean.code}}">{{optionEntity.lookupBean.shortLabel}}</option>
+                         </select>
+                      </div>
+                    </ng-template>
+                  </div>
+                  <div class="col-md-3 col-sm-3">
+                    <div class="grey-sub-label">DOB Verification&nbsp;
+                      <i *ngIf="(entity.householdMember.verification.dobVerificationModel.verificationAutoVerified || entity.householdMember.verification.dobVerificationModel.verificationFileList?.length>0); else showDobUnverifiedCross_2"
+                        class="fa fa-check ssnOrDobFileStatuses-tick"></i>
+                      <ng-template #showDobUnverifiedCross_2>
+                        <i class="fa fa-close ssnOrDobFileStatuses-cross"></i>
+                      </ng-template>
+                    </div>
+                    <div class="sub-text " *ngIf="shouldShowField(i,dobLabel);else showDobDropdown_2">
+                      <a class="uLine hand" (click)="changeFieldToEditMode(i,dobLabel)">{{constantsService.getDropdownValue(this.constantsService.getText('DobVerificationOption'),entity.householdMember.verification.dobVerificationModel.verificationDocumentCd)}}</a>
+                      <span *ngIf="!entity.householdMember.verification.dobVerificationModel.verificationAutoVerified && (!constantsService.getDropdownValue(this.constantsService.getText('DobVerificationOption'),entity.householdMember.verification.dobVerificationModel.verificationDocumentCd) == 'Not Verified') || entity.householdMember.verification.dobVerificationModel.verifiedYN == 'Y'">
+                      &nbsp;&nbsp;
+
+                      <i class="fa fa-file-text-o ssnOrDobFileStatuses-file hand"  data-toggle="modal" data-target="#fileUploadModal" (click)="setCurrentSelection(entity,'dobVerificationModel')"></i>
+                    </span></div>
+                    <ng-template #showDobDropdown_2>
+                      <div class="field-container-body" style="width: 75%;margin-top: 2px;">
+                        <select class="form-control-v1 form-control width-suffix noPaddingNHeight" (change)="changeFieldToReadMode(i,dobLabel)" [(ngModel)]='entity.householdMember.verification.dobVerificationModel.verificationDocumentCd'>
+                          <!--<option value="-1">Select</option>-->
+                          <option *ngFor="let optionEntity of this.constantsService.getDropDownFromLookup(
+                                this.constantsService.getText('DobVerificationOption'))" value="{{optionEntity.lookupBean.code}}">{{optionEntity.lookupBean.shortLabel}}</option>
+                     </select>
+                      </div>
+
+                    </ng-template>
+                  </div>
+                  <div class="clearfix"></div>
+                </div>
+              </div>
+            </div>
+            <div class="clearfix"></div>
+            <div *ngIf="!end" class="blockSeperator"></div>
+            <div [hidden]="!entity.householdMember.uploadDobDoc" class="upload-doc">
+              <div class="upload-wrapper">
+                <div class="row" style="border-bottom:2px solid lightgrey;height:48px;margin:0px">
+                  <h4 class="col-sm-12">Upload verification documents for this client for this case<span class="glyphicon glyphicon-remove" style="padding:0px 25px;float: right;"
+                      (click)="entity.householdMember.uploadDobDoc=!entity.householdMember.uploadDobDoc"></span></h4>
+                </div>
+                <div class="row" style="margin:0px;"><label class="glyphicon glyphicon-plus col-sm-8">Add Document<input type="file" class="custom-file-input" (change)="onFileUpload(entity.householdMember)"></label>
+                  <span class="glyphicon glyphicon-trash"></span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+
+        </div>
+
+        <div [hidden]="productID!=3">
+          <div class="someTable section-wrpr table-responsive table-no-padding zero-padding-bottom" style="margin-bottom:
+                                0;padding-bottom: 0;">
+
+            <ngx-datatable class="material" [scrollbarH]="true" [rows]="householdMembers" [limit]="2" [columns]="columns" [columnMode]="'force'"
+              [headerHeight]="50" [footerHeight]="50" [rowHeight]="'auto'">
+            </ngx-datatable>
+
+            <ng-template #hdrTpl let-column="column">
+              {{column.name}}<span class="datatable-icon-down"> </span>
+            </ng-template>
+            <ng-template #nameTpl let-row="row" let-value="value">
+              {{this._utilService.getFullName(value)}}
+            </ng-template>
+            <ng-template #ssnTpl let-row="row" let-value="value">
+              {{ this._utilService.getSsn(value)}}
+            </ng-template>
+            <ng-template #ssnVerificationTmpl let-row="row" let-value="value">
+              <div class="sub-text " style="margin-top: 2px;" *ngIf="shouldShowField(row.$$index,ssnLabel)">
+
+                <i *ngIf="(constantsService.getDropdownValue(this.constantsService.getText('SsnVerificationOption'),row.householdMember.verification?.ssnVerificationModel.verificationDocumentCd) == 'Verified by SSN Interface' || row.householdMember.verification?.ssnVerificationModel.verificationAutoVerified ||  row.householdMember.verification?.ssnVerificationModel.verificationFileList?.length>0); else showSsnUnverifiedCross_3"
+                  class="fa fa-check ssnOrDobFileStatuses-tick"></i>
+                <ng-template #showSsnUnverifiedCross_3>
+                  <i class="fa fa-close ssnOrDobFileStatuses-cross"></i>
+                </ng-template>
+
+                <a class="uLine hand" (click)=changeFieldToEditMode(row.$$index,ssnLabel)>
+                  <!-- {{constantsService.getDropdownValue('ssnVerificationOption',row.verification.ssnVerificationModel.verificationDocumentCd)}}-->
+                  {{constantsService.getDropdownValue(this.constantsService.getText('SsnVerificationOption'),row.householdMember.verification.ssnVerificationModel.verificationDocumentCd)}}
+                </a>
+                <span *ngIf="(!constantsService.getDropdownValue(this.constantsService.getText('SsnVerificationOption'),row.householdMember.verification?.ssnVerificationModel.verificationDocumentCd)=='Not Verified') || (row.householdMember.verification?.ssnVerificationModel.verifiedYN == 'Y') ">
+                  <i style="margin-left:0.5em;"*ngIf="!row.householdMember.verification?.ssnVerificationModel.verificationAutoVerified  && (!(constantsService.getDropdownValue(this.constantsService.getText('SsnVerificationOption'),row.householdMember.verification?.ssnVerificationModel.verificationDocumentCd) == 'Verified by SSN Interface') ) "class="fa fa-file-text-o ssnOrDobFileStatuses-file hand" data-toggle="modal" data-target="#fileUploadModal"  (click)="setCurrentSelection(row,'ssnVerificationModel')"></i>
+              </span>
+              </div>
+              <div *ngIf="!shouldShowField(row.$$index,ssnLabel)" class="field-container-body" style="width: 75%;margin-top: 2px;">
+                <select class="form-control-v1 form-control width-suffix noPaddingNHeight" (change)="changeFieldToReadMode(row.$$index,ssnLabel)"
+                  [(ngModel)]=householdMembers[row.$$index].householdMember.verification.ssnVerificationModel.verificationDocumentCd>
+
+                                    <option *ngFor="let optionEntity of this.constantsService.getDropDownFromLookup(this.constantsService.getText('SsnVerificationOption'))" value="{{optionEntity.lookupBean.code}}">{{optionEntity.lookupBean.shortLabel}}</option>
+                         </select>
+              </div>
+            </ng-template>
+            <ng-template #dobVerificationTmpl let-row="row" let-value="value">
+              <div class="sub-text " style="margin-top: 2px;" *ngIf="shouldShowField(row.$$index,dobLabel)">
+
+                <i *ngIf="(row.householdMember.verification.dobVerificationModel.verificationAutoVerified ||  row.householdMember.verification?.dobVerificationModel.verificationFileList?.length>0); else showDobUnverifiedCross_4"
+                  class="fa fa-check ssnOrDobFileStatuses-tick"></i>
+                <ng-template #showDobUnverifiedCross_4>
+                  <i class="fa fa-close ssnOrDobFileStatuses-cross"></i>
+                </ng-template>
+                <a class="uLine hand" (click)=changeFieldToEditMode(row.$$index,dobLabel)>
+                 {{constantsService.getDropdownValue(this.constantsService.getText('DobVerificationOption'),row.householdMember.verification?.dobVerificationModel.verificationDocumentCd)}}
+                </a>
+                <span *ngIf="!constantsService.getDropdownValue(this.constantsService.getText('DobVerificationOption'),row.householdMember.verification.dobVerificationModel.verificationDocumentCd) == 'Not Verified' || row.householdMember.verification?.dobVerificationModel.verifiedYN =='Y' ">
+                 <i  style="margin-left : 0.5em;" *ngIf="!row.householdMember.verification.dobVerificationModel.verificationAutoVerified" class="fa fa-file-text-o ssnOrDobFileStatuses-file hand"  data-toggle="modal" data-target="#fileUploadModal" (click)="setCurrentSelection(row,'dobVerificationModel')"></i>
+                </span>
+              </div>
+              <div *ngIf="!shouldShowField(row.$$index,dobLabel)" class="field-container-body" style="width: 75%;margin-top: 2px;">
+                <select class="form-control-v1 form-control width-suffix noPaddingNHeight" (change)="changeFieldToReadMode(row.$$index,dobLabel)"
+                  [(ngModel)]="householdMembers[row.$$index].householdMember.verification.dobVerificationModel.verificationDocumentCd">
+                          <option *ngFor="let optionEntity of this.constantsService.getDropDownFromLookup(
+                                this.constantsService.getText('DobVerificationOption'))" value="{{optionEntity.lookupBean.code}}">{{optionEntity.lookupBean.shortLabel}}</option>
+                     </select>
+              </div>
+            </ng-template>
+            <ng-template #relationshipTmpl let-row="row" let-value="value">
+              <div class="sub-text " style="width:75%;margin-top: 2px;" *ngIf="shouldShowField(row.$$index,relationshipLabel)">
+                <a class="uLine hand" (click)=changeFieldToEditMode(row.$$index,relationshipLabel)>
+                {{constantsService.getDropdownValue(this.constantsService.getText('Relationship'),value)}}
+              </a>
+              </div>
+              <div *ngIf="!shouldShowField(row.$$index,relationshipLabel)" class="field-container-body noPaddingNHeight" style="width:75%;margin-top: 2px;">
+                <select class="form-control-v1 form-control width-suffix noPaddingNHeight" (change)="changeFieldToReadMode(row.$$index,relationshipLabel)"
+                  [(ngModel)]=householdMembers[row.$$index].householdMember.relationshipCd>
+                                    <!--<option value="-1">Select</option>-->
+                                    <option  *ngFor="let optionEntity of this.constantsService.getDropDownFromLookup(
+                                this.constantsService.getText('Relationship'))" value="{{optionEntity.lookupBean.code}}">{{optionEntity.lookupBean.shortLabel}}</option>
+                              </select>
+              </div>
+            </ng-template>
+            <ng-template #sexTmpl let-row="row" let-value="value">
+              {{constantsService.getDropdownValue(this.constantsService.getText('Sex'),value)}}
+            </ng-template>
+            <ng-template #raceTmpl let-row="row" let-value="value">
+              {{constantsService.getDropdownValue(this.constantsService.getText('Race'),value)}}
+            </ng-template>
+            <ng-template #deleteTmpl let-row="row" let-i="index">
+              <div class="delete-row hand householdtrash" (click)="deleteClient(row.$$index)"><i class="fa fa-trash-o" aria-hidden="true"></i></div>
+            </ng-template>
+            <div class="clearfix"></div>
+          </div>
+        </div>
+        <div class="row-view" [hidden]='productID==1 || productID==2 || productID==3'>
+          <div class="col-sm-12">Add household members to conduct screening for the applicant</div>
+          <div class="clearfix"></div>
+        </div>
+        <div class="clearfix"></div>
+      </div>
+    </div>
+  </div>
+  <div class=" btnWrapper">
+    <button class="btn cancel-btn btnMargingRt btnCancel" (click)="back()">Back</button>
+    <button disableOnClick type="button" class="btn btn-primary" [class.btnSave]="!disableNext" [class.disabledButton]="disableNext
+                               " (click)="next()" [disabled]="disableNext">Next</button>
+
+  </div>
+  <div id="fileUploadModal" class="modal fade" role="dialog" tabindex="-1">
+    <div class="vertical-alignment-helper">
+      <div class="modal-dialog modal-lg vertical-align-center">
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h4 class="modal-title">Upload verification documents for {{memberSelected}} for this case </h4>
+          </div>
+          <div class="modal-body">
+            <div *ngFor="let entity of this.currentFiles;let i = index ">
+              <div class="col-sm-6 finished-upload">
+                <p>
+                  <i class="fa fa-picture-o final-upload-img" aria-hidden="true"></i>
+                  <span class="final-upload-file-name">{{entity}}</span>
+                  <i class="fa fa-check-circle-o ssnOrDobFileStatuses-tick final-upload-tick" aria-hidden="true"></i>
+                </p>
+              </div>
+              <div class=" delete-row hand">
+                <i aria-hidden="true" class="fa fa-trash-o hand" aria-hidden="true" (click)="deleteFile(i)"></i>
+              </div>
+              <div class="clearfix"></div>
+            </div>
+            <div *ngIf="fileUploading" class="finished-upload col-sm-10" style="padding: 0">
+              <div class="progress-bar" role="progressbar" [ngStyle]="{ 'width': uploadProgress + '%' }">
+                <span style="padding-left: 10px; margin-top: 4px; float: left;">{{fileToUpload}}</span>
+                <span *ngIf="fileUploaded"><i class="glyphicon glyphicon-ok upload-tick"></i></span>
+              </div>
+
+            </div>
+            <div class="clearfix"></div>
+            <div class="hand" [class.Rfloat]="true">
+              <input type="file" name="file" id="file" class="inputfile" (change)="uploadFile(fileUploadElement.value)" #fileUploadElement
+              />
+              <label for="file">
+              <i class="fa fa-plus-circle" style="font-size: 1.2em"></i> &nbsp; Add Document
+              </label>
+            </div>
+            <div class="clearfix"></div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+<app-app-confirm-popup (onSuccessCallback)="deleteClientCallback($event)"></app-app-confirm-popup>

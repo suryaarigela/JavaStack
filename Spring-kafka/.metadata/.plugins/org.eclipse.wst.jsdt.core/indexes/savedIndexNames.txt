@@ -1,0 +1,11 @@
+INDEX VERSION 1.3+C:\workspace\Spring-kafka\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
+1947517935.index
+775836034.index
+2299876160.index
+2459688964.index
+3041819751.index
+1307700888.index
+1655080796.index
+1631655639.index
+3203266180.index
+1448037211.index

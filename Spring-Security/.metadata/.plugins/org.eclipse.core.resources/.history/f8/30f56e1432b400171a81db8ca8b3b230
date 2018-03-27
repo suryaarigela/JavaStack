@@ -1,0 +1,10 @@
+package com.exception;
+
+public class Employee {
+	
+	@Override
+	public int hashCode(){
+		return 1;
+	}
+
+}

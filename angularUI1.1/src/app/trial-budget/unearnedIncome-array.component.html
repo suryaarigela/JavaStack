@@ -1,0 +1,53 @@
+<div class="section-wrpr bottom-space">
+  <div class="section-label">
+    <div>UNEARNED INCOME</div>
+
+  </div>
+  <div>
+    <div >
+      <un-earn-income *ngFor="let unearnedIncome of unearnedIncomes.houseHoldUnearnedIncomes; let i = index" [formArray]="parentForm.controls.unearnedIncomes"
+        [unEarnedIncome]="unearnedIncome" (removed)="removeunEarnIncome(i)">
+      </un-earn-income>
+    </div>
+    <div class="col-sm-10 pd-right padding5 " id="assetsCount" >Total Household Unearned Income : ${{calculateAmount(unearnedIncomes) | number : '1.2-2'}}</div>
+
+  </div>
+
+  <div (click)="addunEarnedIncome()" id="addAdditionalSSN" class="addAdditionalSSN addbutton-margin col-sm-11 no-padding"><span class="float-right"><i class="fa fa-plus-circle fa-lg plusIconColor " aria-hidden="true"></i><span class=" txt-action-color">&nbsp;Add Household Unearned Income
+</span></span>
+  </div>
+  <div class="clearfix"></div>
+    <tooltip-content #tbunearnedIncomeArray>
+        <div><span ><p class="fa fa-info-circle fa-tooltip" ></p></span><div class="tooltip-text-regisnation">
+        Enter the monthly Unearned Income of the ABD Spouse in Whole Dollars</div></div>
+        </tooltip-content> 
+  <div tooltipPlacement="right" [tooltip]="tbunearnedIncomeArray">
+
+
+  <div  [formGroup]="parentForm"  class="box-border-bottom row-view">
+
+    <div class="col-sm-12 no-padding">
+      <div class="col-sm-3">
+        <label for="Demographic" class=" label-field">Other</label>
+      </div>
+      <div class="col-sm-9 zero-padding-bottom">
+        <div>
+          <div class="col-sm-5 form-group zero-padding-left">
+            <div class="pushDown" for="dob">ABD Spouse Unearned <br>Income</div>
+            <input currencyMask style="padding-right:.5em" (keypress)="numberOnly($event)" class="form-control" [options]="{ prefix: '$',hundreds: ',' }"
+              maxlength="10" [(ngModel)]="spouseUnearnedIncome" formControlName="spouseUnearnedIncome"/>
+          </div>
+
+          <div class="col-sm-5 form-group zero-padding-right">
+            <div class="pushDown" for="ssn">Deemer Unearned <br> Income</div>
+            <input currencyMask style="padding-right:.5em" (keypress)="numberOnly($event)" class="form-control" [options]="{ prefix: '$',hundreds: ',' }"
+              maxlength="10" [(ngModel)]="deemerUnearnedIncome" formControlName="deemerUnearnedIncome"/>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <div class="clearfix"></div>
+  </div>
+  </div>
+</div>

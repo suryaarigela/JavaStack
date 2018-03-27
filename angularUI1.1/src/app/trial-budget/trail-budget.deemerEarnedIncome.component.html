@@ -1,0 +1,44 @@
+<div class="section-wrpr bottom-space">
+    <div class="section-label">
+      <div>DEEMER EARNED INCOME
+      </div>
+    </div>
+    <tooltip-content #tbDeemerErIncome>
+        <div><span ><p class="fa fa-info-circle fa-tooltip" ></p></span><div class="tooltip-text-regisnation">
+          Enter the amount of Deemer Monthly Earned Income in whole Dollars,
+          Enter the Monthly Allowable Expenses of the Deemer in whole Dollars </div></div>
+        </tooltip-content>
+  <div tooltipPlacement="right" [tooltip]="tbDeemerErIncome">
+    <div>
+
+
+      <div [formGroup]="tbForm" class="box-border-bottom row-view" tooltipPlacement="right" [tooltip]="deemerInfo">
+        <!--form-group -->
+        <div class="col-sm-12">
+          <div class="col-sm-3">
+            <label for="Demographic" class=" label-field check-box-label-margin heading-top-margin">Deemer Details
+          </label>
+          </div>
+          <div class="col-sm-9 zero-padding-bottom">
+            <div>
+			
+			<div class="col-sm-5 form-group zero-padding-left pushDown"> 
+                    <div for="ssn">Deemer Amount </div>
+                      <input currencyMask style="padding-right:.5em" (keypress)="numberOnly($event)" formControlName="deemarEarnedIncome" class="form-control"
+                      [options]="{ prefix: '$',hundreds: ',' }" maxlength="10" />
+                    <div class="clearfix"></div>
+			</div>
+			
+              <div class="col-sm-5 form-group zero-padding-left pushDown">
+                <div for="ssn">Deemer Expense </div>
+                <input currencyMask style="padding-right:.5em"  (keypress)="numberOnly($event)" formControlName="deemarEarnedIncomeExpense" class="form-control"
+                      [options]="{ prefix: '$',hundreds: ',' }" maxlength="10" />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="clearfix"></div>
+      </div>
+
+    </div>
+  </div>

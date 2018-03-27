@@ -1,0 +1,46 @@
+<div class="col-md-7 content-box">
+<!--<form [formGroup]="clientForm">-->
+  <div class="settingsPage-box">
+    <h3 class="box-border-bottom">SCREENING OPTIONS</h3>
+    <tooltip-content #screeningOptions>
+           <div><span ><p class="fa fa-info-circle fa-tooltip" ></p></span><div class="tooltip-text-regisnation">Conduct screening for a new application or reopen an existing case by providing the Case ID</div></div>
+        </tooltip-content>
+    <div class="row-view box-border-bottom"  tooltipPlacement="right" [tooltip]="screeningOptions">
+      <div class="">
+        <div class="col-sm-4 grid-textField">
+          Initial Screening
+
+        </div>
+        <div class="col-sm-4 grid-textField">
+
+        </div>
+        <div class="col-sm-3 col-sm-offset-1 grid-textField">
+          <input disableOnClick type="button" class="btnMain" (click)=next() value="Go">
+        </div>
+        <div class="col-sm-1 grid-textField">
+
+        </div>
+        <div class="clearfix"></div>
+      </div>
+      <div class="">
+        <div class="col-sm-4 grid-textField">
+          Existing Case ID
+
+        </div>
+        <div class="col-sm-3 grid-textField">
+          <input type="text" class="form-control" [(ngModel)]="clientId" onkeypress='return event.charCode >= 48 && event.charCode <= 57' maxlength="9"/>
+        </div>
+        <div class="col-sm-1"></div>
+        <div class="col-sm-3 col-sm-offset-1 grid-textField">
+          <input disableOnClick type="button" class="btnMain" (click)=next() value="Go">
+        </div>
+        <div class="col-sm-1 grid-textField">
+
+        </div>
+        <div class="clearfix"></div>
+      </div>
+    </div>
+    <div class="clearfix"></div>
+  </div>
+<!--</form>-->
+</div>

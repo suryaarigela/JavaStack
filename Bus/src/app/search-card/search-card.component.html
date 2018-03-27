@@ -1,0 +1,43 @@
+<md-card class="bus-ticket-card">
+ <md-card-title>Book bus tickets online</md-card-title>
+ <md-card-content>
+<form [formGroup]="busForm" (ngSubmit)="letsGo()">
+<div>
+ <md-radio-group name="tripType" formControlName="tripType" class="form-control"  >
+ <md-radio-button value="0">One way</md-radio-button>
+ <md-radio-button value="1">Round trip</md-radio-button>
+ </md-radio-group>
+ </div>
+
+  <div>
+ <md-input-container>
+ <input mdInput name="origin" placeholder="Origin" formControlName="origin" >
+ </md-input-container>
+ <md-input-container>
+ <input mdInput name="destination" placeholder="Destination" formControlName="destination" >
+ </md-input-container>
+ </div>
+
+
+ <div>
+
+<md-input-container>
+  <input mdInput name="departureDate" formControlName="departureDate" [mdDatepicker]="departPicker" placeholder="Choose a date">
+  <button mdSuffix [mdDatepickerToggle]="departPicker"></button>
+</md-input-container>
+<md-datepicker #departPicker></md-datepicker>
+
+<md-input-container>
+  <input mdInput name="arrivalDate" formControlName="arrivalDate" [mdDatepicker]="arrivPicker" placeholder="Choose a date">
+  <button mdSuffix [mdDatepickerToggle]="arrivPicker"></button>
+</md-input-container>
+<md-datepicker #arrivPicker></md-datepicker>
+
+ </div>
+ <button md-raised-button color="accent" [disabled]=!busForm.valid>Let's Go</button>
+</form>
+ </md-card-content>
+</md-card>
+<div *ngIf="loading">
+<img class="image" src="./../assets/bus1.png" alt="" width="30" height="30">
+</div>

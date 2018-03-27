@@ -1,0 +1,11 @@
+Manifest-Version: 1.0
+Implementation-Title: WebApplicationDemo
+Implementation-Version: 0.0.1-SNAPSHOT
+Built-By: suri2
+Implementation-Vendor-Id: com.sample.test.web
+Build-Jdk: 1.8.0_144
+Implementation-URL: http://projects.spring.io/spring-boot/WebApplicati
+ onDemo/
+Created-By: Maven Integration for Eclipse
+Implementation-Vendor: Pivotal Software, Inc.
+

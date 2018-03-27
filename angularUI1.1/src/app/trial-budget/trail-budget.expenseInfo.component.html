@@ -1,0 +1,71 @@
+<div class="section-wrpr bottom-space">
+    <div class="section-label">
+      <div>EXPENSES</div>
+     
+    </div>
+    <tooltip-content #tbexpenseInfo>
+        <div><span ><p class="fa fa-info-circle fa-tooltip" ></p></span><div class="tooltip-text-regisnation">
+          Enter the Household Monthly Rent or Mortgage Cost,
+          Enter the monthly Utilities cost for the Household if they are not using the standard Utility Allowance (SUA)
+          Enter the Monthly cost of Medical Expense for the Household </div></div>
+        </tooltip-content>
+    <div tooltipPlacement="right" [tooltip]="tbexpenseInfo"> 
+
+    <div class="box-border-bottom row-view">
+      <!--form-group -->
+      <div class="col-sm-3">
+        <label for="Demographic">Household Expenses</label>
+      </div>
+      <div [formGroup]="tbForm" class="col-sm-9 zero-padding-bottom">
+       
+        <div>
+          <div class="col-sm-5 form-group zero-padding-left">
+            <div class="pushDown" for="dob">Household Rent/Mortgage</div>
+            <input currencyMask style="padding-right:.5em" (keypress)="numberOnly($event)" class="form-control" formControlName="mortage"
+                      [options]="{ prefix: '$',hundreds: ',' }" maxlength="10" />
+          </div>
+
+          <div class="col-sm-5 form-group zero-padding-right">
+            <div class="pushDown" for="ssn">Household Utilities</div>
+            <input currencyMask style="padding-right:.5em"  (keypress)="numberOnly($event)" class="form-control" formControlName="utilities"
+                      [options]="{ prefix: '$',hundreds: ',' }" maxlength="10" />
+          </div>
+        </div>
+
+        <div>
+          <div class="col-sm-5 form-group zero-padding-left">
+            <div class="pushDown" for="dob">Medical Expense</div>
+            <input currencyMask style="padding-right:.5em"  (keypress)="numberOnly($event)" formControlName="medicalExpense" class="form-control"
+                      [options]="{ prefix: '$',hundreds: ',' }" maxlength="10" />
+          </div>
+
+          <div class="col-sm-5 form-group zero-padding-right">
+            <div class="pushDown" for="ssn">LTC Inc Deduction</div>
+            <input currencyMask style="padding-right:.5em"  (keypress)="numberOnly($event)" class="form-control" formControlName="ltc"
+                      [options]="{ prefix: '$',hundreds: ',' }" maxlength="10" />
+          </div>
+        </div>
+
+        <div>
+          <div class="col-sm-5 form-group zero-padding-left">
+            <div class="pushDown" for="dob">Utility Method
+            </div>
+            <select class="form-control">
+						<option  *ngFor="let optionEntity of this.utilityMethodtypeDropdown" value="{{optionEntity.key}}">{{optionEntity.value}}</option>	                       
+            </select>
+          </div>
+          
+
+          <div class="col-sm-5 form-group zero-padding-right">
+
+          </div>
+
+        </div>
+
+      </div>
+      <div class="clearfix"></div>
+
+    </div>
+    </div>
+  </div>
+

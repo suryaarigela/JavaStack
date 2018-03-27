@@ -1,0 +1,41 @@
+<div class=" settingsPage-box col-sm-3 sidebarleft" [hidden]="shareService.getDataFromMap('hideSearchHeader')">
+  <div class="box-border-bottom section-label">CLEARANCE SEARCH</div>
+  <div class="col-sm-12 clearanceHeaderColor">Exact Matches:
+  </div>
+  <div class="col-sm-12">
+    Client ID
+    <input type="text" class="form-control">
+  </div>
+
+  <div class="col-sm-12">
+    SSN
+    <input type="text" ssnMask maxlength="11" class="form-control">
+  </div>
+  <div class="col-sm-12 clearanceHeaderColor">Potential Matches:</div>
+  <div class="col-sm-12">
+    Name
+    <input type="text" class="form-control" value="{{this._utilService.getFullName(this.constantsService.getConstant('clearanceSearchModel').personName)}}">
+  </div>
+  <div class="col-sm-12">
+    DOB
+    <input class="form-control" ngui-datetime-picker date-only="true" value="{{this.constantsService.getConstant('clearanceSearchModel').dob}}"
+    maxlength="10" max-date=new [close-on-select]="true" parse-format="MM-DD-YYYY">
+  </div>
+  <div class="col-sm-12">
+    Sex
+    <select class="form-control" value="{{this.constantsService.getConstant('clearanceSearchModel').gender}}">
+											<option value="-1">Select</option>
+                      <option  *ngFor="let optionEntity of this.constantsService.getDropDownFromLookup(this.constantsService.getText('Sex'))" value="{{optionEntity.lookupBean.code}}">{{optionEntity.lookupBean.shortLabel}}</option>
+                    </select>
+  </div>
+  <div class="col-sm-12">
+    Race
+    <select class="form-control" value="{{this.constantsService.getConstant('clearanceSearchModel').raceCds[0]}}">
+											<option value="-1">Select</option>
+                      <option  *ngFor="let optionEntity of this.constantsService.getDropDownFromLookup(this.constantsService.getText('Race'))" value="{{optionEntity.lookupBean.code}}">{{optionEntity.lookupBean.shortLabel}}</option>
+				</select>
+  </div>
+  <div class="col-sm-12">
+    <button type="button" class="btn btn-primary buttonPadding clearanceHeaderButton" (click)="searchHouseholds()">Search</button>
+  </div>
+</div>

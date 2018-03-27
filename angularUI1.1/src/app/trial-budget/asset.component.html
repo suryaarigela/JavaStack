@@ -1,0 +1,52 @@
+<tooltip-content #tbasset>
+        <div><span ><p class="fa fa-info-circle fa-tooltip" ></p></span><div class="tooltip-text-regisnation">
+          Select the type of Asset type and Enter the amount in whole Dollars</div></div>
+        </tooltip-content>
+  <div tooltipPlacement="right" [tooltip]="tbasset">
+<div>
+  <!--form- group -->
+  <div [formGroup]="assetGroup">
+    <div class="col-sm-12">
+      <div class="col-sm-3">
+        <label for="Demographic" class=" label-field" *ngIf="index==0">ASSET</label> 
+      </div>
+      <div class="col-sm-9 zero-padding-bottom">
+        <div>
+          <div class="col-sm-5 form-group zero-padding-left">
+
+            <div *ngIf="index==0" class="pushDown" for="dob">Type</div>
+            <div *ngIf="index!=0" class="pushDown" for="dob"></div>
+            <select class="form-control" [(ngModel)]="asset.assetType" formControlName="type">
+				<!--<option  *ngFor="let optionEntity of this.constantsService.getDropDown('typeDropDown')" value="{{optionEntity.key}}">{{optionEntity.value}}</option>-->
+				      <option  *ngFor="let optionEntity of this.assetTypeDropdown" value="{{optionEntity.key}}">{{optionEntity.value}}</option>
+                    </select>
+          </div>
+        </div>
+        <div class="col-sm-5 pd-left padding5 amount-bg">
+          <div *ngIf="index==0">
+            <span class="label-type">Amount</span>
+          </div>
+          <div *ngIf="index!=0"><span class="label-type"> </span> </div>
+          <div class="search-container">
+            <input currencyMask style="padding-right:.5em" formControlName="amount" (keypress)="numberOnly($event)" class="form-control amount-input search-box"
+              [(ngModel)]="asset.amount" [options]="{ prefix: '$',hundreds: ',' }" maxlength="10" />
+            <span class="search-button"> </span>
+          </div>
+
+
+        </div>
+
+
+        <div (click)="removed.emit()" class="trashtop col-sm-1">
+          <div>
+            <span class="delete-row">
+					<i class="fa fa-trash-o" aria-hidden="true"></i>
+				</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+  </div>
+
+</div>

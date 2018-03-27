@@ -1,0 +1,362 @@
+.five-padding-left {
+  padding-left: 3px;
+}
+
+.page {
+  padding-bottom: 90px;
+  display: flex;
+}
+
+.float-right {
+  float: right;
+}
+
+.padleft {
+  padding-left: 30px;
+}
+
+.addStatement {
+  float: right;
+  cursor: pointer;
+  font-size: 17px;
+}
+
+.txt-action-color {
+  color: #67babe;
+}
+
+.leftbutton {
+  float: right;
+  /* padding-top: 20px; */
+  margin-right: 122px;
+}
+
+.topMarginNames {
+  padding-top: 24px;
+}
+
+.form-group-real {
+  margin-bottom: 45px;
+}
+
+.form-control-v1 {
+  width: 94% !important;
+}
+
+.select-suffix {
+  width: 77px;
+}
+
+.paddingSSNText {
+  padding-left: 15px;
+}
+
+.trashtop {
+  padding-top: 1.7em;
+}
+
+.paddingAdditional {
+  padding-left: 7px;
+}
+
+.width-suffix {
+  width: 88%
+}
+
+.addAdditionalSSN {
+  cursor: pointer;
+}
+
+.addAdditionalName {
+  cursor: pointer;
+}
+
+.fa-130percx {
+  font-size: 1.3em;
+}
+
+.pullDown7 {
+  padding-top: 7px;
+}
+
+.rowPadding {
+  padding-top: 5px;
+  padding-bottom: 15px;
+}
+
+
+/*==================CSS V!============*/
+
+.box-wrpr {
+  text-align: center;
+  background-color: white;
+  width: 75%;
+  box-shadow: 1px 1px 14px -1px rgba(51, 51, 51, 0.5);
+  border-radius: 4px;
+  padding: 18px;
+  margin: 30px;
+}
+
+.field-container {
+  margin-bottom: 9px;
+}
+
+.field-container-header {
+  margin-top: -6px;
+  font-size: 12px;
+}
+
+.field-container-body {
+  margin-top: -8px;
+  font-weight: 600;
+  color: grey;
+}
+
+.field-container-box {
+  margin-top: 30px;
+}
+
+.mem-label {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.client-id {
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.client-id-new {
+  font-size: 14px;
+  font-weight: 700;
+  margin-top: -6px;
+}
+
+.edit-view-client {
+  margin-top: 7px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+sub-section-wrpr {
+  margin: 7px;
+}
+
+.uniqueRow {
+  padding-bottom: 10px;
+}
+
+.army-green {
+  color: rgb(84, 130, 53);
+}
+
+.sub-label-blue {
+  font-size: 22px;
+  margin-bottom: 15px;
+  margin-left: -10px;
+  color: rgb(47, 85, 151);
+  font-weight: 600;
+}
+
+.padding-right-zero {
+  padding-right: 0px!important;
+}
+
+.grey-sub-label {
+  font-size: 12px;
+}
+
+p:nth-child(2) {
+  background: red;
+}
+
+.sub-section-wrpr {
+  margin-left: 10px;
+}
+
+.data-row>* {
+  padding: 5px;
+}
+
+.edit-client-name {
+  font-size: 15px;
+  color: inherit;
+  cursor: pointer;
+}
+
+.blockSeperator {
+  border: 1px solid #eeeeee;
+}
+
+.sub-text {
+  margin-top: -8px;
+  color: gray;
+  font-weight: 600;
+}
+
+.disabledButton {
+  background-color: #a09a9a;
+  width: 100px;
+}
+
+.greyBackground {
+  background-color: #c1c1c1;
+}
+
+.frame {
+  color: #888;
+  padding: .2em;
+  font-size: 0.75em;
+}
+
+.two {
+  border-right: solid 1px #666;
+  border-left: solid 1px #666;
+  margin-left: -6px;
+}
+
+.three {
+  border-left: solid 1px #666;
+  margin-left: -6px;
+}
+
+.selectedFrame {
+  background-color: #c1c1c1;
+  color: #fff !important;
+}
+
+.align-Right {
+  margin-left: 12%;
+  font-size: 15px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 6px;
+  padding-right: 6px;
+  color: #d40606;
+  box-shadow: 0px 0px 1px #c72a2a;
+}
+
+.table-no-padding {
+  padding-bottom: 0;
+}
+
+.heading-info {
+  overflow: hidden;
+  text-align: center;
+}
+
+.padding-view-options {
+  padding-top: .25em;
+}
+
+.section-height {
+  height: 4em;
+}
+
+.but-right-margin {
+  margin-right: -16px;
+}
+
+.householdtrash {
+  margin-left: 10%;
+}
+
+.label-household {
+  padding-left: 0;
+}
+
+.paddingTop {
+  padding-top: 1em;
+}
+
+.ssnOrDobFileStatuses-tick {
+  font-size: 1.3em;
+  color: #548235;
+}
+
+.ssnOrDobFileStatuses-cross {
+  font-size: 1.3em;
+  color: #ca271b;
+}
+
+.ssnOrDobFileStatuses-file {
+  font-size: 1.1em;
+  color: #2f5597;
+}
+
+.vertical-alignment-helper {
+  display: table;
+  height: 100%;
+  width: 100%;
+  pointer-events: none;
+  /* This makes sure that we can still click outside of the modal to close it */
+}
+
+.vertical-align-center {
+  /* To center vertically */
+  display: table-cell;
+  vertical-align: middle;
+  pointer-events: none;
+}
+
+.modal-content {
+  /* Bootstrap sets the size of the modal in the modal-dialog class, we need to inherit it */
+  width: inherit;
+  height: inherit;
+  /* To center horizontally */
+  margin: 0 auto;
+  pointer-events: all;
+}
+
+.finished-upload {
+  color: #fff;
+  width: 50em;
+  height: 2.5em;
+  margin-left: 1em;
+  margin-bottom: 2em;
+  background-color: #e2ffc7;
+  border-radius: .25em;
+  border-style: solid;
+  border-color: lightgrey;
+  display: inline-block;
+  white-space: nowrap;
+}
+
+.upload-delete {
+  padding-left: 4em;
+}
+
+
+.final-upload-tick {
+  margin-top: .15em;
+  float: right;
+}
+
+.inputfile {
+  width: 0.1px;
+  height: 0.1px;
+  opacity: 0;
+  overflow: hidden;
+  position: absolute;
+  z-index: -1;
+}
+
+.inputfile+label {
+  cursor: pointer;
+}
+
+.final-upload-img{
+     margin-top: 0.35em;
+    margin-right: 0.5em;
+      float: left;
+}
+
+.final-upload-file-name{
+     margin-top: 0.2em;
+}
+
+.upload-tick {
+  float: right;
+  margin-right: 10px;
+  margin-top: 7px;
+}

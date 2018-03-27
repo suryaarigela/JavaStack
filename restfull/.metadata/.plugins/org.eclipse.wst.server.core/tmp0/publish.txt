@@ -1,0 +1,4 @@
+#Tomcat publish data
+#Thu Sep 29 23:45:13 CEST 2016
+org.eclipse.jst.jee.server\:Spring4MVCHelloWorldRestServiceDemo=C\:\\Softwares\\spring-tool-suite-3.8.1.RELEASE-e4.6-win32-x86_64\\sts-bundle\\pivotal-tc-server-developer-3.1.5.RELEASE\\base-instance\\wtpwebapps\\Spring4MVCHelloWorldRestServiceDemo
+org.eclipse.jst.jee.server\:/binary\:C\:\\Users\\suri2\\.m2\\repository\\org\\springframework\\spring-web\\4.3.0.RELEASE\\spring-web-4.3.0.RELEASE.jar=C\:\\Softwares\\spring-tool-suite-3.8.1.RELEASE-e4.6-win32-x86_64\\sts-bundle\\pivotal-tc-server-developer-3.1.5.RELEASE\\base-instance\\wtpwebapps\\Spring4MVCHelloWorldRestServiceDemo\\WEB-INF\\lib\\spring-web-4.3.0.RELEASE.jar

@@ -1,0 +1,10 @@
+package com.test.deadlock;
+
+public class PCCLass {
+
+	synchronized public void  put(int i) {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

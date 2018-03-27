@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<descriptor bundleId="str1234">
+  <family position="3.14159" classRefs="str1234">
+    <label key="str1234" inDefaultLocale="str1234" />
+  </family>
+  <tree position="3.14159" rootClassRefs="str1234">
+    <label key="str1234" inDefaultLocale="str1234" />
+  </tree>
+  <class localId="str1234" superClassRef="str1234" restCodeName="str1234" containerClassRefs="str1234" omdClassRef="str1234" canHaveImage="true" expandableInLineage="true" dataAccessRole="Active" reportingLevel="745">
+    <label key="str1234" inDefaultLocale="str1234" />
+    <pluralLabel key="str1234" inDefaultLocale="str1234" />
+    <storage mdsClass="str1234" typeAttribute="str1234" typeValue="str1234" />
+    <headerSection>
+      <attribute localId="str1234" type="String" multiValued="true" editable="true">
+        <label key="str1234" inDefaultLocale="str1234" />
+        <validValue localId="str1234">
+          <label key="str1234" inDefaultLocale="str1234" />
+        </validValue>
+      </attribute>
+    </headerSection>
+    <section>
+      <label key="str1234" inDefaultLocale="str1234" />
+      <attribute localId="str1234" type="String" multiValued="true" editable="true">
+        <label key="str1234" inDefaultLocale="str1234" />
+        <validValue localId="str1234">
+          <label key="str1234" inDefaultLocale="str1234" />
+        </validValue>
+      </attribute>
+    </section>
+  </class>
+</descriptor>

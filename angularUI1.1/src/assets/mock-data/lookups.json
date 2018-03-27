@@ -1,0 +1,3777 @@
+{
+    "navigationFlowRequested": false,
+    "localizedLookups": {
+        "Suffix": {
+            "beans": [
+                {
+                    "localeCode": "en_US",
+                    "lookupBean": {
+                        "shortLabel": "Jr",
+                        "longLabel": "Jr",
+                        "code": "Jr",
+                        "systemId": "EEAPI",
+                        "type": "Suffix"
+                    },
+                    "sortOrder": 1
+                },
+                {
+                    "localeCode": "en_US",
+                    "lookupBean": {
+                        "shortLabel": "Sr",
+                        "longLabel": "Sr",
+                        "code": "Sr",
+                        "systemId": "EEAPI",
+                        "type": "Suffix"
+                    },
+                    "sortOrder": 2
+                }
+            ]
+        },
+        "Sex": {
+            "beans": [
+                {
+                    "localeCode": "en_US",
+                    "lookupBean": {
+                        "shortLabel": "Male",
+                        "longLabel": "Male",
+                        "code": "1",
+                        "systemId": "EEAPI",
+                        "type": "Sex"
+                    },
+                    "sortOrder": 1
+                },
+                {
+                    "localeCode": "en_US",
+                    "lookupBean": {
+                        "shortLabel": "Female",
+                        "longLabel": "Female",
+                        "code": "2",
+                        "systemId": "EEAPI",
+                        "type": "Sex"
+                    },
+                    "sortOrder": 2
+                }
+            ]
+        },
+        "Race": {
+            "beans": [
+                {
+                    "localeCode": "en_US",
+                    "lookupBean": {
+                        "shortLabel": "Asian",
+                        "longLabel": "Asian",
+                        "code": "1",
+                        "systemId": "EEAPI",
+                        "type": "Race"
+                    },
+                    "sortOrder": 1
+                },
+                {
+                    "localeCode": "en_US",
+                    "lookupBean": {
+                        "shortLabel": "Black",
+                        "longLabel": "Black",
+                        "code": "2",
+                        "systemId": "EEAPI",
+                        "type": "Race"
+                    },
+                    "sortOrder": 2
+                }
+                ,
+                {
+                    "localeCode": "en_US",
+                    "lookupBean": {
+                        "shortLabel": "Caucasian",
+                        "longLabel": "Caucasian",
+                        "code": "3",
+                        "systemId": "EEAPI",
+                        "type": "Race"
+                    },
+                    "sortOrder": 2
+                }
+                ,
+                {
+                    "localeCode": "en_US",
+                    "lookupBean": {
+                        "shortLabel": "Hispanic",
+                        "longLabel": "Hispanic",
+                        "code": "4",
+                        "systemId": "EEAPI",
+                        "type": "Race"
+                    },
+                    "sortOrder": 2
+                }
+                ,
+                {
+                    "localeCode": "en_US",
+                    "lookupBean": {
+                        "shortLabel": "Native American",
+                        "longLabel": "Native American",
+                        "code": "5",
+                        "systemId": "EEAPI",
+                        "type": "Race"
+                    },
+                    "sortOrder": 2
+                },
+                {
+                    "localeCode": "en_US",
+                    "lookupBean": {
+                        "shortLabel": "Pacific/Alaskan Native",
+                        "longLabel": "Pacific/Alaskan Native",
+                        "code": "6",
+                        "systemId": "EEAPI",
+                        "type": "Race"
+                    },
+                    "sortOrder": 2
+                },
+                {
+                    "localeCode": "en_US",
+                    "lookupBean": {
+                        "shortLabel": "Unknown",
+                        "longLabel": "Unknown",
+                        "code": "7",
+                        "systemId": "EEAPI",
+                        "type": "Race"
+                    },
+                    "sortOrder": 2
+                }
+            ]
+        },
+        
+        "YesNo": {
+            "beans": [
+                {
+                    "localeCode": "en_US",
+                    "lookupBean": {
+                        "shortLabel": "Yes",
+                        "longLabel": "Yes",
+                        "code": "Y",
+                        "systemId": "EEAPI",
+                        "type": "YesNo"
+                    },
+                    "sortOrder": 1
+                },
+                {
+                    "localeCode": "en_US",
+                    "lookupBean": {
+                        "shortLabel": "No",
+                        "longLabel": "No",
+                        "code": "N",
+                        "systemId": "EEAPI",
+                        "type": "YesNo"
+                    },
+                    "sortOrder": 2
+                }
+            ]
+        },
+
+        "Type": {
+            "beans": [
+                {
+                    "localeCode": "en_US",
+                    "lookupBean": {
+                        "shortLabel": "Select",
+                        "longLabel": "Select",
+                        "code": "1",
+                        "systemId": "EEAPI",
+                        "type": "Type"
+                    },
+                    "sortOrder": 0
+                },
+                {
+                    "localeCode": "en_US",
+                    "lookupBean": {
+                        "shortLabel": "Medical Assistance",
+                        "longLabel": "Medical Assistance",
+                        "code": "2",
+                        "systemId": "EEAPI",
+                        "type": "Type"
+                    },
+                    "sortOrder": 2
+                },
+                {
+                    "localeCode": "en_US",
+                    "lookupBean": {
+                        "shortLabel": "Food Stamps",
+                        "longLabel": "Food Stamps",
+                        "code": "3",
+                        "systemId": "EEAPI",
+                        "type": "Type"
+                    },
+                    "sortOrder": 3
+                },
+                {
+                    "localeCode": "en_US",
+                    "lookupBean": {
+                        "shortLabel": "Emergency Assistance",
+                        "longLabel": "Emergency Assistance",
+                        "code": "4",
+                        "systemId": "EEAPI",
+                        "type": "Type"
+                    },
+                    "sortOrder": 4
+                }
+                
+            ]
+        },
+        "LivingArrangements": {
+            "beans": [
+                
+					{
+                    "localeCode": "en_US",
+                    "lookupBean": {
+                        "shortLabel": "Select",
+                        "longLabel": "Select",
+                        "code": "S",
+                        "systemId": "EEAPI",
+                        "type": "LivingArrangements"
+                    },
+                    "sortOrder": 0
+                },
+                {
+                    "localeCode": "en_US",
+                    "lookupBean": {
+                        "shortLabel": "At Home",
+                        "longLabel": "At Home",
+                        "code": "AH",
+                        "systemId": "EEAPI",
+                        "type": "LivingArrangements"
+                    },
+                    "sortOrder": 1
+                },
+                {
+                    "localeCode": "en_US",
+                    "lookupBean": {
+                        "shortLabel": "Homeless",
+                        "longLabel": "Homeless",
+                        "code": "HL",
+                        "systemId": "EEAPI",
+                        "type": "LivingArrangements"
+                    },
+                    "sortOrder": 2
+                },
+                {
+                    "localeCode": "en_US",
+                    "lookupBean": {
+                        "shortLabel": "Acute Care Facility",
+                        "longLabel": "Acute Care Facility",
+                        "code": "AC",
+                        "systemId": "EEAPI",
+                        "type": "LivingArrangements"
+                    },
+                    "sortOrder": 3
+                },
+                {
+                    "localeCode": "en_US",
+                    "lookupBean": {
+                        "shortLabel": "Intermediate Care Facility",
+                        "longLabel": "Intermediate Care Facility",
+                        "code": "IC",
+                        "systemId": "EEAPI",
+                        "type": "LivingArrangements"
+                    },
+                    "sortOrder": 4
+                },
+                {
+                    "localeCode": "en_US",
+                    "lookupBean": {
+                        "shortLabel": "Skilled Nursing Facility",
+                        "longLabel": "Skilled Nursing Facility",
+                        "code": "SN",
+                        "systemId": "EEAPI",
+                        "type": "LivingArrangements"
+                    },
+                    "sortOrder": 5
+                },
+                {
+                    "localeCode": "en_US",
+                    "lookupBean": {
+                        "shortLabel": "Chronic Care Facility",
+                        "longLabel": "Chronic Care Facility",
+                        "code": "CC",
+                        "systemId": "EEAPI",
+                        "type": "LivingArrangements"
+                    },
+                    "sortOrder": 6
+                },
+                {
+                    "localeCode": "en_US",
+                    "lookupBean": {
+                        "shortLabel": "Temporary LTC Admission",
+                        "longLabel": "Temporary LTC Admission",
+                        "code": "TL",
+                        "systemId": "EEAPI",
+                        "type": "LivingArrangements"
+                    },
+                    "sortOrder": 7
+                },
+                {
+                    "localeCode": "en_US",
+                    "lookupBean": {
+                        "shortLabel": "Rehabilitation Residence",
+                        "longLabel": "Rehabilitation Residence",
+                        "code": "RR",
+                        "systemId": "EEAPI",
+                        "type": "LivingArrangements"
+                    },
+                    "sortOrder": 8
+                },
+                {
+                    "localeCode": "en_US",
+                    "lookupBean": {
+                        "shortLabel": "Project Home",
+                        "longLabel": "Project Home",
+                        "code": "PH",
+                        "systemId": "EEAPI",
+                        "type": "LivingArrangements"
+                    },
+                    "sortOrder": 9
+                },
+                {
+                    "localeCode": "en_US",
+                    "lookupBean": {
+                        "shortLabel": "Licensed Domiciliary Care",
+                        "longLabel": "Licensed Domiciliary Care",
+                        "code": "LD",
+                        "systemId": "EEAPI",
+                        "type": "LivingArrangements"
+                    },
+                    "sortOrder": 10
+                },
+                {
+                    "localeCode": "en_US",
+                    "lookupBean": {
+                        "shortLabel": "Unlicensed Domiciliary Care",
+                        "longLabel": "Unlicensed Domiciliary Care",
+                        "code": "UD",
+                        "systemId": "EEAPI",
+                        "type": "LivingArrangements"
+                    },
+                    "sortOrder": 11
+                },
+                {
+                    "localeCode": "en_US",
+                    "lookupBean": {
+                        "shortLabel": "Vocational Rehabilitation",
+                        "longLabel": "Vocational Rehabilitation",
+                        "code": "VR",
+                        "systemId": "EEAPI",
+                        "type": "LivingArrangements"
+                    },
+                    "sortOrder": 12
+                },
+                {
+                    "localeCode": "en_US",
+                    "lookupBean": {
+                        "shortLabel": "Foster Care, Non IV-E",
+                        "longLabel": "Foster Care, Non IV-E",
+                        "code": "FC",
+                        "systemId": "EEAPI",
+                        "type": "LivingArrangements"
+                    },
+                    "sortOrder": 13
+                },
+                {
+                    "localeCode": "en_US",
+                    "lookupBean": {
+                        "shortLabel": "Foster Care, IV-E",
+                        "longLabel": "Foster Care, IV-E",
+                        "code": "FE",
+                        "systemId": "EEAPI",
+                        "type": "LivingArrangements"
+                    },
+                    "sortOrder": 14
+                },
+                {
+                    "localeCode": "en_US",
+                    "lookupBean": {
+                        "shortLabel": "Subsidized Adoption, Non IV-E",
+                        "longLabel": "Subsidized Adoption, Non IV-E",
+                        "code": "SA",
+                        "systemId": "EEAPI",
+                        "type": "LivingArrangements"
+                    },
+                    "sortOrder": 15
+                },
+                {
+                    "localeCode": "en_US",
+                    "lookupBean": {
+                        "shortLabel": "Subsidized Adoption, IV-E",
+                        "longLabel": "Subsidized Adoption, IV-E",
+                        "code": "SE",
+                        "systemId": "EEAPI",
+                        "type": "LivingArrangements"
+                    },
+                    "sortOrder": 16
+                },
+                {
+                    "localeCode": "en_US",
+                    "lookupBean": {
+                        "shortLabel": "Boarder",
+                        "longLabel": "Boarder",
+                        "code": "BO",
+                        "systemId": "EEAPI",
+                        "type": "LivingArrangements"
+                    },
+                    "sortOrder": 17
+                },
+                {
+                    "localeCode": "en_US",
+                    "lookupBean": {
+                        "shortLabel": "Roomer",
+                        "longLabel": "Roomer",
+                        "code": "RO",
+                        "systemId": "EEAPI",
+                        "type": "LivingArrangements"
+                    },
+                    "sortOrder": 18
+                },
+                {
+                    "localeCode": "en_US",
+                    "lookupBean": {
+                        "shortLabel": "Boarding School",
+                        "longLabel": "Boarding School",
+                        "code": "BS",
+                        "systemId": "EEAPI",
+                        "type": "LivingArrangements"
+                    },
+                    "sortOrder": 19
+                },
+                {
+                    "localeCode": "en_US",
+                    "lookupBean": {
+                        "shortLabel": "Alcohol & Drug Treatment Center",
+                        "longLabel": "Alcohol & Drug Treatment Center",
+                        "code": "AD",
+                        "systemId": "EEAPI",
+                        "type": "LivingArrangements"
+                    },
+                    "sortOrder": 20
+                },
+                {
+                    "localeCode": "en_US",
+                    "lookupBean": {
+                        "shortLabel": "Licensed Battered Spouse Shelter",
+                        "longLabel": "Licensed Battered Spouse Shelter",
+                        "code": "BT",
+                        "systemId": "EEAPI",
+                        "type": "LivingArrangements"
+                    },
+                    "sortOrder": 21
+                },
+                {
+                    "localeCode": "en_US",
+                    "lookupBean": {
+                        "shortLabel": "Emergency Housing",
+                        "longLabel": "Emergency Housing",
+                        "code": "EH",
+                        "systemId": "EEAPI",
+                        "type": "LivingArrangements"
+                    },
+                    "sortOrder": 22
+                },
+                {
+                    "localeCode": "en_US",
+                    "lookupBean": {
+                        "shortLabel": "Correction Facility",
+                        "longLabel": "Correction Facility",
+                        "code": "JL",
+                        "systemId": "EEAPI",
+                        "type": "LivingArrangements"
+                    },
+                    "sortOrder": 23
+                },
+                {
+                    "localeCode": "en_US",
+                    "lookupBean": {
+                        "shortLabel": "Large Group Home - 17 or more people",
+                        "longLabel": "Large Group Home - 17 or more people",
+                        "code": "LG",
+                        "systemId": "EEAPI",
+                        "type": "LivingArrangements"
+                    },
+                    "sortOrder": 24
+                },
+                {
+                    "localeCode": "en_US",
+                    "lookupBean": {
+                        "shortLabel": "Intermediate Care Facility",
+                        "longLabel": "Intermediate Care Facility",
+                        "code": "IC",
+                        "systemId": "EEAPI",
+                        "type": "LivingArrangements"
+                    },
+                    "sortOrder": 25
+                },
+                {
+                    "localeCode": "en_US",
+                    "lookupBean": {
+                        "shortLabel": "Small Group Home - 16 or less",
+                        "longLabel": "Small Group Home - 16 or less",
+                        "code": "SG",
+                        "systemId": "EEAPI",
+                        "type": "LivingArrangements"
+                    },
+                    "sortOrder": 26
+                },
+                {
+                    "localeCode": "en_US",
+                    "lookupBean": {
+                        "shortLabel": "Mental Disease Facility",
+                        "longLabel": "Mental Disease Facility",
+                        "code": "MD",
+                        "systemId": "EEAPI",
+                        "type": "LivingArrangements"
+                    },
+                    "sortOrder": 27
+                },
+                {
+                    "localeCode": "en_US",
+                    "lookupBean": {
+                        "shortLabel": "Tuberculosis Facility",
+                        "longLabel": "Tuberculosis Facility",
+                        "code": "TB",
+                        "systemId": "EEAPI",
+                        "type": "LivingArrangements"
+                    },
+                    "sortOrder": 28
+                },
+                {
+                    "localeCode": "en_US",
+                    "lookupBean": {
+                        "shortLabel": "Licensed Battered Spouse Shelter",
+                        "longLabel": "Licensed Battered Spouse Shelter",
+                        "code": "BT",
+                        "systemId": "EEAPI",
+                        "type": "LivingArrangements"
+                    },
+                    "sortOrder": 29
+                },
+                {
+                    "localeCode": "en_US",
+                    "lookupBean": {
+                        "shortLabel": "AIDS Residence ",
+                        "longLabel": "AIDS Residence",
+                        "code": "AR",
+                        "systemId": "EEAPI",
+                        "type": "LivingArrangements"
+                    },
+                    "sortOrder": 30
+                },
+                {
+                    "localeCode": "en_US",
+                    "lookupBean": {
+                        "shortLabel": "Alien Sponsor Living Alone",
+                        "longLabel": "Alien Sponsor Living Alone",
+                        "code": "AL",
+                        "systemId": "EEAPI",
+                        "type": "LivingArrangements"
+                    },
+                    "sortOrder": 31
+                },
+                {
+                    "localeCode": "en_US",
+                    "lookupBean": {
+                        "shortLabel": "Alien Sponsor at Home with Spouse",
+                        "longLabel": "Alien Sponsor at Home with Spouse",
+                        "code": "AS",
+                        "systemId": "EEAPI",
+                        "type": "LivingArrangements"
+                    },
+                    "sortOrder": 32
+                },
+                {
+                    "localeCode": "en_US",
+                    "lookupBean": {
+                        "shortLabel": "Migrant Camp",
+                        "longLabel": "Migrant Camp",
+                        "code": "MC",
+                        "systemId": "EEAPI",
+                        "type": "LivingArrangements"
+                    },
+                    "sortOrder": 33
+                },
+                {
+                    "localeCode": "en_US",
+                    "lookupBean": {
+                        "shortLabel": "Left for Foster Care",
+                        "longLabel": "Left for Foster Care",
+                        "code": "LF",
+                        "systemId": "EEAPI",
+                        "type": "LivingArrangements"
+                    },
+                    "sortOrder": 34
+                },
+                {
+                    "localeCode": "en_US",
+                    "lookupBean": {
+                        "shortLabel": "Left for Juvenile Services",
+                        "longLabel": "Left for Juvenile Services",
+                        "code": "LT",
+                        "systemId": "EEAPI",
+                        "type": "LivingArrangements"
+                    },
+                    "sortOrder": 35
+                },
+                {
+                    "localeCode": "en_US",
+                    "lookupBean": {
+                        "shortLabel": "Not in the Home",
+                        "longLabel": "Not in the Home",
+                        "code": "NO",
+                        "systemId": "EEAPI",
+                        "type": "LivingArrangements"
+                    },
+                    "sortOrder": 36
+                },
+                {
+                    "localeCode": "en_US",
+                    "lookupBean": {
+                        "shortLabel": "Individ Living Independently",
+                        "longLabel": "Individ Living Independently",
+                        "code": "LI",
+                        "systemId": "EEAPI",
+                        "type": "LivingArrangements"
+                    },
+                    "sortOrder": 37
+                },
+                {
+                    "localeCode": "en_US",
+                    "lookupBean": {
+                        "shortLabel": "Child Living with Parent",
+                        "longLabel": "Child Living with Parent",
+                        "code": "CP",
+                        "systemId": "EEAPI",
+                        "type": "LivingArrangements"
+                    },
+                    "sortOrder": 38
+                },
+                {
+                    "localeCode": "en_US",
+                    "lookupBean": {
+                        "shortLabel": "Individual Living in another Household",
+                        "longLabel": "Individual Living in another Household",
+                        "code": "IH",
+                        "systemId": "EEAPI",
+                        "type": "LivingArrangements"
+                    },
+                    "sortOrder": 39
+                },
+                {
+                    "localeCode": "en_US",
+                    "lookupBean": {
+                        "shortLabel": "Living in LTC",
+                        "longLabel": "Living in LTC",
+                        "code": "LL",
+                        "systemId": "EEAPI",
+                        "type": "LivingArrangements"
+                    },
+                    "sortOrder": 40
+                },
+                {
+                    "localeCode": "en_US",
+                    "lookupBean": {
+                        "shortLabel": "Couple in LTC",
+                        "longLabel": "Couple in LTC",
+                        "code": "SL",
+                        "systemId": "EEAPI",
+                        "type": "LivingArrangements"
+                    },
+                    "sortOrder": 41
+                },
+                {
+                    "localeCode": "en_US",
+                    "lookupBean": {
+                        "shortLabel": "Couple living Independently",
+                        "longLabel": "Couple living Independently",
+                        "code": "LS",
+                        "systemId": "EEAPI",
+                        "type": "LivingArrangements"
+                    },
+                    "sortOrder": 42
+                },
+                {
+                    "localeCode": "en_US",
+                    "lookupBean": {
+                        "shortLabel": "Couple living in HH of Another",
+                        "longLabel": "Couple living in HH of Another",
+                        "code": "LA",
+                        "systemId": "EEAPI",
+                        "type": "LivingArrangements"
+                    },
+                    "sortOrder": 43
+                }
+            ]
+        },
+        "EIexpenseType": {
+            "beans": [
+                {
+                    "localeCode": "en_US",
+                    "lookupBean": {
+                        "shortLabel": "Select",
+                        "longLabel": "Select",
+                        "code": "S",
+                        "systemId": "EEAPI",
+                        "type": "EIexpenseType"
+                    },
+                    "sortOrder": 0
+                },
+                {
+                    "localeCode": "en_US",
+                    "lookupBean": {
+                        "shortLabel": "Blind",
+                        "longLabel": "Blind",
+                        "code": "BL",
+                        "systemId": "EEAPI",
+                        "type": "EIexpenseType"
+                    },
+                    "sortOrder": 1
+                },
+                {
+                    "localeCode": "en_US",
+                    "lookupBean": {
+                        "shortLabel": "Sheltered Workshop Employment",
+                        "longLabel": "Sheltered Workshop Employment",
+                        "code": "SH",
+                        "systemId": "EEAPI",
+                        "type": "EIexpenseType"
+                    },
+                    "sortOrder": 2
+                },
+                {
+                    "localeCode": "en_US",
+                    "lookupBean": {
+                        "shortLabel": "Farm Loss",
+                        "longLabel": "Farm Loss",
+                        "code": "FL",
+                        "systemId": "EEAPI",
+                        "type": "EIexpenseType"
+                    },
+                    "sortOrder": 3
+                },
+                {
+                    "localeCode": "en_US",
+                    "lookupBean": {
+                        "shortLabel": "Personal Employment Expense",
+                        "longLabel": "Personal Employment Expense",
+                        "code": "PE",
+                        "systemId": "EEAPI",
+                        "type": "EIexpenseType"
+                    },
+                    "sortOrder": 4
+                },
+                {
+                    "localeCode": "en_US",
+                    "lookupBean": {
+                        "shortLabel": "Physical Impairment Expense",
+                        "longLabel": "Physical Impairment Expense",
+                        "code": "PI",
+                        "systemId": "EEAPI",
+                        "type": "EIexpenseType"
+                    },
+                    "sortOrder": 5
+                },
+                {
+                    "localeCode": "en_US",
+                    "lookupBean": {
+                        "shortLabel": "Self Employment/Business Expense",
+                        "longLabel": "Self Employment/Business Expense",
+                        "code": "SE",
+                        "systemId": "EEAPI",
+                        "type": "EIexpenseType"
+                    },
+                    "sortOrder": 6
+                },
+                {
+                    "localeCode": "en_US",
+                    "lookupBean": {
+                        "shortLabel": "Self Supported Work Plan Expense",
+                        "longLabel": "Self Supported Work Plan Expense",
+                        "code": "SW",
+                        "systemId": "EEAPI",
+                        "type": "EIexpenseType"
+                    },
+                    "sortOrder": 7
+                }
+
+            ]
+        },
+        "FoodStampsHHtype": {
+            "beans": [
+                {
+                    "localeCode": "en_US",
+                    "lookupBean": {
+                        "shortLabel": "Select",
+                        "longLabel": "Select",
+                        "code": "S",
+                        "systemId": "EEAPI",
+                        "type": "FoodStampsHHtype"
+                    },
+                    "sortOrder": 0
+                },
+                {
+                    "localeCode": "en_US",
+                    "lookupBean": {
+                        "shortLabel": "Disabled",
+                        "longLabel": "Disabled",
+                        "code": "D",
+                        "systemId": "EEAPI",
+                        "type": "FoodStampsHHtype"
+                    },
+                    "sortOrder": 1
+                },
+                {
+                    "localeCode": "en_US",
+                    "lookupBean": {
+                        "shortLabel": "Either Blind or Aged",
+                        "longLabel": "Either Blind or Aged",
+                        "code": "E",
+                        "systemId": "EEAPI",
+                        "type": "FoodStampsHHtype"
+                    },
+                    "sortOrder": 2
+                },
+                {
+                    "localeCode": "en_US",
+                    "lookupBean": {
+                        "shortLabel": "Regular",
+                        "longLabel": "Regular",
+                        "code": "R",
+                        "systemId": "EEAPI",
+                        "type": "FoodStampsHHtype"
+                    },
+                    "sortOrder": 3
+                }
+            ]   
+        },
+        "MedCoverageGroup": {
+            "beans": [
+                {
+                    "localeCode": "en_US",
+                    "lookupBean": {
+                        "shortLabel": "Select",
+                        "longLabel": "Select",
+                        "code": "S",
+                        "systemId": "EEAPI",
+                        "type": "MedCoverageGroup"
+                    },
+                    "sortOrder": 0
+                },
+                {
+                    "localeCode": "en_US",
+                    "lookupBean": {
+                        "shortLabel": "Family",
+                        "longLabel": "Family",
+                        "code": "F",
+                        "systemId": "EEAPI",
+                        "type": "MedCoverageGroup"
+                    },
+                    "sortOrder": 1
+                },
+                {
+                    "localeCode": "en_US",
+                    "lookupBean": {
+                        "shortLabel": "Pregnant",
+                        "longLabel": "Pregnant",
+                        "code": "P",
+                        "systemId": "EEAPI",
+                        "type": "MedCoverageGroup"
+                    },
+                    "sortOrder": 2
+                },
+                {
+                    "localeCode": "en_US",
+                    "lookupBean": {
+                        "shortLabel": "Refugees",
+                        "longLabel": "Refugees",
+                        "code": "R",
+                        "systemId": "EEAPI",
+                        "type": "MedCoverageGroup"
+                    },
+                    "sortOrder": 3
+                },
+                {
+                    "localeCode": "en_US",
+                    "lookupBean": {
+                        "shortLabel": "A, B or D",
+                        "longLabel": "A, B or D",
+                        "code": "ABD",
+                        "systemId": "EEAPI",
+                        "type": "MedCoverageGroup"
+                    },
+                    "sortOrder": 4
+                },
+                {
+                    "localeCode": "en_US",
+                    "lookupBean": {
+                        "shortLabel": "MASO",
+                        "longLabel": "MASO",
+                        "code": "M",
+                        "systemId": "EEAPI",
+                        "type": "MedCoverageGroup"
+                    },
+                    "sortOrder": 5
+                },
+                {
+                    "localeCode": "en_US",
+                    "lookupBean": {
+                        "shortLabel": "Family LTC",
+                        "longLabel": "Family LTC",
+                        "code": "T",
+                        "systemId": "EEAPI",
+                        "type": "MedCoverageGroup"
+                    },
+                    "sortOrder": 6
+                },
+                {
+                    "localeCode": "en_US",
+                    "lookupBean": {
+                        "shortLabel": "MASO LTC",
+                        "longLabel": "MASO LTC",
+                        "code": "Q",
+                        "systemId": "EEAPI",
+                        "type": "MedCoverageGroup"
+                    },
+                    "sortOrder": 7
+                },
+                {
+                    "localeCode": "en_US",
+                    "lookupBean": {
+                        "shortLabel": "HCB Waiver",
+                        "longLabel": "HCB Waiver",
+                        "code": "H",
+                        "systemId": "EEAPI",
+                        "type": "MedCoverageGroup"
+                    },
+                    "sortOrder": 8
+                },
+                {
+                    "localeCode": "en_US",
+                    "lookupBean": {
+                        "shortLabel": "FC and SA",
+                        "longLabel": "FC and SA",
+                        "code": "E",
+                        "systemId": "EEAPI",
+                        "type": "MedCoverageGroup"
+                    },
+                    "sortOrder": 9
+                },
+                {
+                    "localeCode": "en_US",
+                    "lookupBean": {
+                        "shortLabel": "Miscellaneous",
+                        "longLabel": "Miscellaneous",
+                        "code": "X",
+                        "systemId": "EEAPI",
+                        "type": "MedCoverageGroup"
+                    },
+                    "sortOrder": 10
+                }
+
+            ]
+        },
+        "EarningType": {
+            "beans": [
+                {
+                    "localeCode": "en_US",
+                    "lookupBean": {
+                        "shortLabel": "earning type",
+                        "longLabel": "earning type",
+                        "code": "CBB",
+                        "systemId": "EEAPI",
+                        "type": "EarningType"
+                    },
+                    "sortOrder": 1
+                },
+                {
+                    "localeCode": "en_US",
+                    "lookupBean": {
+                        "shortLabel": "Business",
+                        "longLabel": "Business",
+                        "code": "MCA",
+                        "systemId": "EEAPI",
+                        "type": "EarningType"
+                    },
+                    "sortOrder": 2
+                },
+                
+                {
+                    "localeCode": "en_US",
+                    "lookupBean": {
+                        "shortLabel": "Salary",
+                        "longLabel": "Salary",
+                        "code": "MIS",
+                        "systemId": "EEAPI",
+                        "type": "EarningType"
+                    },
+                    "sortOrder": 3
+                }  
+            ]
+        },         
+        "AssetType": {
+            "beans": [
+                {
+                    "localeCode": "en_US",
+                    "lookupBean": {
+                        "shortLabel": "Select",
+                        "longLabel": "Select",
+                        "code": "S",
+                        "systemId": "EEAPI",
+                        "type": "AssetType"
+                    },
+                    "sortOrder": 0
+                },
+                {
+                    "localeCode": "en_US",
+                    "lookupBean": {
+                        "shortLabel": "Cash/Bonds/Banks",
+                        "longLabel": "Cash/Bonds/Banks",
+                        "code": "CBB",
+                        "systemId": "EEAPI",
+                        "type": "AssetType"
+                    },
+                    "sortOrder": 1
+                },
+                {
+                    "localeCode": "en_US",
+                    "lookupBean": {
+                        "shortLabel": "Trusts",
+                        "longLabel": "Trusts",
+                        "code": "T",
+                        "systemId": "EEAPI",
+                        "type": "AssetType"
+                    },
+                    "sortOrder": 2
+                },
+                {
+                    "localeCode": "en_US",
+                    "lookupBean": {
+                        "shortLabel": "Mortgage/Contracts/Annuity",
+                        "longLabel": "Mortgage/Contracts/Annuity",
+                        "code": "MCA",
+                        "systemId": "EEAPI",
+                        "type": "AssetType"
+                    },
+                    "sortOrder": 3
+                },
+                {
+                    "localeCode": "en_US",
+                    "lookupBean": {
+                        "shortLabel": "Life Use",
+                        "longLabel": "Life Use",
+                        "code": "LIU",
+                        "systemId": "EEAPI",
+                        "type": "AssetType"
+                    },
+                    "sortOrder": 4
+                },
+                {
+                    "localeCode": "en_US",
+                    "lookupBean": {
+                        "shortLabel": "Retirement Funds",
+                        "longLabel": "Retirement Funds",
+                        "code": "RF",
+                        "systemId": "EEAPI",
+                        "type": "AssetType"
+                    },
+                    "sortOrder": 5
+                },
+                {
+                    "localeCode": "en_US",
+                    "lookupBean": {
+                        "shortLabel": "Miscellaneous",
+                        "longLabel": "Miscellaneous",
+                        "code": "MIS",
+                        "systemId": "EEAPI",
+                        "type": "AssetType"
+                    },
+                    "sortOrder": 5
+                },
+                {
+                    "localeCode": "en_US",
+                    "lookupBean": {
+                        "shortLabel": "Household Items & Equipment",
+                        "longLabel": "Household Items & Equipment",
+                        "code": "HIE",
+                        "systemId": "EEAPI",
+                        "type": "AssetType"
+                    },
+                    "sortOrder": 5
+                },
+                {
+                    "localeCode": "en_US",
+                    "lookupBean": {
+                        "shortLabel": "Other",
+                        "longLabel": "Other",
+                        "code": "OTH",
+                        "systemId": "EEAPI",
+                        "type": "AssetType"
+                    },
+                    "sortOrder": 5
+                }
+            ]
+        },
+        "Cash/Bonds/Banks": {
+            "beans": [
+                {
+                    "localeCode": "en_US",
+                    "lookupBean": {
+                        "shortLabel": "Cash",
+                        "longLabel": "Cash",
+                        "code": "CBB",
+                        "systemId": "EEAPI",
+                        "type": "Cash/Bonds/Banks"
+                    },
+                    "sortOrder": 1
+                },
+                {
+                    "localeCode": "en_US",
+                    "lookupBean": {
+                        "shortLabel": "Bonds",
+                        "longLabel": "Bonds",
+                        "code": "CBB",
+                        "systemId": "EEAPI",
+                        "type": "Cash/Bonds/Banks"
+                    },
+                    "sortOrder": 2
+                },
+                {
+                    "localeCode": "en_US",
+                    "lookupBean": {
+                        "shortLabel": "Checking Account",
+                        "longLabel": "Checking Account",
+                        "code": "CH",
+                        "systemId": "EEAPI",
+                        "type": "Cash/Bonds/Banks"
+                    },
+                    "sortOrder": 3
+                },
+                {
+                    "localeCode": "en_US",
+                    "lookupBean": {
+                        "shortLabel": "Draft Account",
+                        "longLabel": "Draft Account",
+                        "code": "DA",
+                        "systemId": "EEAPI",
+                        "type": "Cash/Bonds/Banks"
+                    },
+                    "sortOrder": 4
+                },
+                {
+                    "localeCode": "en_US",
+                    "lookupBean": {
+                        "shortLabel": "Stocks",
+                        "longLabel": "Stocks",
+                        "code": "ST",
+                        "systemId": "EEAPI",
+                        "type": "Cash/Bonds/Banks"
+                    },
+                    "sortOrder": 5
+                },
+                {
+                    "localeCode": "en_US",
+                    "lookupBean": {
+                        "shortLabel": "Savings",
+                        "longLabel": "Savings",
+                        "code": "SV",
+                        "systemId": "EEAPI",
+                        "type": "Cash/Bonds/Banks"
+                    },
+                    "sortOrder": 6
+                },
+                {
+                    "localeCode": "en_US",
+                    "lookupBean": {
+                        "shortLabel": "Certificate of Deposit",
+                        "longLabel": "Certificate of Deposit",
+                        "code": "CD",
+                        "systemId": "EEAPI",
+                        "type": "Cash/Bonds/Banks"
+                    },
+                    "sortOrder": 7
+                }
+            ]
+        },
+         "Trusts": {
+            "beans": [
+                {
+                    "localeCode": "en_US",
+                    "lookupBean": {
+                        "shortLabel": "Accessible Trust",
+                        "longLabel": "Accessible Trust",
+                        "code": "AT",
+                        "systemId": "EEAPI",
+                        "type": "Trusts"
+                    },
+                    "sortOrder": 1
+                },
+                {
+                    "localeCode": "en_US",
+                    "lookupBean": {
+                        "shortLabel": "Inaccessible Trust",
+                        "longLabel": "Inaccessible Trust",
+                        "code": "IU",
+                        "systemId": "EEAPI",
+                        "type": "Trusts"
+                    },
+                    "sortOrder": 2
+                },
+                {
+                    "localeCode": "en_US",
+                    "lookupBean": {
+                        "shortLabel": "Medicaid Qualifying Trust",
+                        "longLabel": "Medicaid Qualifying Trust",
+                        "code": "MQ",
+                        "systemId": "EEAPI",
+                        "type": "Trusts"
+                    },
+                    "sortOrder": 3
+                }
+            ]
+         },
+         "Mortgage/Contracts/Annuity": {
+            "beans": [
+                {
+                    "localeCode": "en_US",
+                    "lookupBean": {
+                        "shortLabel": "Income Producing mortgage",
+                        "longLabel": "Income Producing mortgage",
+                        "code": "IM",
+                        "systemId": "EEAPI",
+                        "type": "Mortgage/Contracts/Annuity"
+                    },
+                    "sortOrder": 1
+                },
+                {
+                    "localeCode": "en_US",
+                    "lookupBean": {
+                        "shortLabel": "Income Producing Annuity",
+                        "longLabel": "Income Producing Annuity",
+                        "code": "IO",
+                        "systemId": "EEAPI",
+                        "type": "Mortgage/Contracts/Annuity"
+                    },
+                    "sortOrder": 2
+                },
+                {
+                    "localeCode": "en_US",
+                    "lookupBean": {
+                        "shortLabel": "Non-Income Producing Mortg",
+                        "longLabel": "Non-Income Producing Mortg",
+                        "code": "NM",
+                        "systemId": "EEAPI",
+                        "type": "Mortgage/Contracts/Annuity"
+                    },
+                    "sortOrder": 3
+                },
+                {
+                    "localeCode": "en_US",
+                    "lookupBean": {
+                        "shortLabel": "Non-Income Producing Annuity",
+                        "longLabel": "Non-Income Producing Annuity",
+                        "code": "NA",
+                        "systemId": "EEAPI",
+                        "type": "Mortgage/Contracts/Annuity"
+                    },
+                    "sortOrder": 4
+                },
+                {
+                    "localeCode": "en_US",
+                    "lookupBean": {
+                        "shortLabel": "Income Producing Installment Contract",
+                        "longLabel": "Income Producing Installment Contract",
+                        "code": "IC",
+                        "systemId": "EEAPI",
+                        "type": "Mortgage/Contracts/Annuity"
+                    },
+                    "sortOrder": 5
+                },
+                {
+                    "localeCode": "en_US",
+                    "lookupBean": {
+                        "shortLabel": "Non-Income Producing Installment Contract",
+                        "longLabel": "Non-Income Producing Installment Contract",
+                        "code": "NC",
+                        "systemId": "EEAPI",
+                        "type": "Mortgage/Contracts/Annuity"
+                    },
+                    "sortOrder": 6
+                }                
+            ]
+         },
+         "LifeUse": {
+            "beans": [
+                {
+                    "localeCode": "en_US",
+                    "lookupBean": {
+                        "shortLabel": "Life Use Accessible",
+                        "longLabel": "Life Use Accessible",
+                        "code": "LE",
+                        "systemId": "EEAPI",
+                        "type": "LifeUse"
+                    },
+                    "sortOrder": 1
+                },
+                {
+                    "localeCode": "en_US",
+                    "lookupBean": {
+                        "shortLabel": "Life Use Inaccessible",
+                        "longLabel": "Life Use Inaccessible",
+                        "code": "LU",
+                        "systemId": "EEAPI",
+                        "type": "LifeUse"
+                    },
+                    "sortOrder": 2
+                }
+            ]
+         },
+          "RetirementFunds": {
+            "beans": [
+                {
+                    "localeCode": "en_US",
+                    "lookupBean": {
+                        "shortLabel": "I.R.A.",
+                        "longLabel": "I.R.A.",
+                        "code": "IR",
+                        "systemId": "EEAPI",
+                        "type": "RetirementFunds"
+                    },
+                    "sortOrder": 1
+                },
+                {
+                    "localeCode": "en_US",
+                    "lookupBean": {
+                        "shortLabel": "Keough Account",
+                        "longLabel": "Keough Account",
+                        "code": "KE",
+                        "systemId": "EEAPI",
+                        "type": "RetirementFunds"
+                    },
+                    "sortOrder": 2
+                }
+            ]
+         },
+         "Miscellaneous": {
+            "beans": [
+                {
+                    "localeCode": "en_US",
+                    "lookupBean": {
+                        "shortLabel": "Disaster Payment & Loans",
+                        "longLabel": "Disaster Payment & Loans",
+                        "code": "DP",
+                        "systemId": "EEAPI",
+                        "type": "Miscellaneous"
+                    },
+                    "sortOrder": 1
+                },
+                {
+                    "localeCode": "en_US",
+                    "lookupBean": {
+                        "shortLabel": "Income Tax Refund",
+                        "longLabel": "Income Tax Refund",
+                        "code": "IT",
+                        "systemId": "EEAPI",
+                        "type": "Miscellaneous"
+                    },
+                    "sortOrder": 2
+                },
+                {
+                    "localeCode": "en_US",
+                    "lookupBean": {
+                        "shortLabel": "Replacement funds",
+                        "longLabel": "Replacement funds",
+                        "code": "RF",
+                        "systemId": "EEAPI",
+                        "type": "Miscellaneous"
+                    },
+                    "sortOrder": 3
+                },
+                {
+                    "localeCode": "en_US",
+                    "lookupBean": {
+                        "shortLabel": "Lump Sum",
+                        "longLabel": "Lump Sum",
+                        "code": "LS",
+                        "systemId": "EEAPI",
+                        "type": "Miscellaneous"
+                    },
+                    "sortOrder": 4
+                }
+            ]
+         },
+          "HouseholdItems&Equipment": {
+            "beans": [
+                {
+                    "localeCode": "en_US",
+                    "lookupBean": {
+                        "shortLabel": "Basic Household Items",
+                        "longLabel": "Basic Household Items",
+                        "code": "BH",
+                        "systemId": "EEAPI",
+                        "type": "HouseholdItems&Equipment"
+                    },
+                    "sortOrder": 1
+                },
+                {
+                    "localeCode": "en_US",
+                    "lookupBean": {
+                        "shortLabel": "Non-Essential Household Items",
+                        "longLabel": "Non-Essential Household Items",
+                        "code": "NE",
+                        "systemId": "EEAPI",
+                        "type": "HouseholdItems&Equipment"
+                    },
+                    "sortOrder": 2
+                },
+                {
+                    "localeCode": "en_US",
+                    "lookupBean": {
+                        "shortLabel": "Income Producing Equipment & Tools",
+                        "longLabel": "Income Producing Equipment & Tools",
+                        "code": "ET",
+                        "systemId": "EEAPI",
+                        "type": "HouseholdItems&Equipment"
+                    },
+                    "sortOrder": 3
+                }
+            ]
+         },
+         "Other": {
+            "beans": [
+                {
+                    "localeCode": "en_US",
+                    "lookupBean": {
+                        "shortLabel": "Other Liquid Asset--Non-Countable (All Programs)",
+                        "longLabel": "Other Liquid Asset--Non-Countable (All Programs)",
+                        "code": "ON",
+                        "systemId": "EEAPI",
+                        "type": "Other"
+                    },
+                    "sortOrder": 1
+                },
+                {
+                    "localeCode": "en_US",
+                    "lookupBean": {
+                        "shortLabel": "Other Liquid Asset--Countable (All Programs)",
+                        "longLabel": "Other Liquid Asset--Countable (All Programs)",
+                        "code": "OT",
+                        "systemId": "EEAPI",
+                        "type": "Other"
+                    },
+                    "sortOrder": 2
+                },
+                {
+                    "localeCode": "en_US",
+                    "lookupBean": {
+                        "shortLabel": "Liquid Asset--Countable for Cash &/or M.A.",
+                        "longLabel": "Liquid Asset--Countable for Cash &/or M.A.",
+                        "code": "CO",
+                        "systemId": "EEAPI",
+                        "type": "Other"
+                    },
+                    "sortOrder": 3
+                },
+                {
+                    "localeCode": "en_US",
+                    "lookupBean": {
+                        "shortLabel": "Liquid Asset--Countable for Food Stamps",
+                        "longLabel": "Liquid Asset--Countable for Food Stamps",
+                        "code": "FS",
+                        "systemId": "EEAPI",
+                        "type": "Other"
+                    },
+                    "sortOrder": 4
+                }
+            ]
+         },
+                
+        "Family": {
+            "beans": [
+                {
+                    "localeCode": "en_US",
+                    "lookupBean": {
+                        "shortLabel": "Post AF Earnings/Disregard",
+                        "longLabel": "Post AF Earnings/Disregard",
+                        "code": "F02",
+                        "systemId": "EEAPI",
+                        "type": "Family"
+                    },
+                    "sortOrder": 1
+                },
+                {
+                    "localeCode": "en_US",
+                    "lookupBean": {
+                        "shortLabel": "Post AF Support",
+                        "longLabel": "Post AF Support",
+                        "code": "F03",
+                        "systemId": "EEAPI",
+                        "type": "Family"
+                    },
+                    "sortOrder": 2
+                },
+                {
+                    "localeCode": "en_US",
+                    "lookupBean": {
+                        "shortLabel": "Non-MA Requirements",
+                        "longLabel": "Non-MA Requirements",
+                        "code": "F04",
+                        "systemId": "EEAPI",
+                        "type": "Family"
+                    },
+                    "sortOrder": 3
+                },
+                {
+                    "localeCode": "en_US",
+                    "lookupBean": {
+                        "shortLabel": "FAC Categorically Needed",
+                        "longLabel": "FAC Categorically Needed",
+                        "code": "F05",
+                        "systemId": "EEAPI",
+                        "type": "Family"
+                    },
+                    "sortOrder": 4
+                },
+                {
+                    "localeCode": "en_US",
+                    "lookupBean": {
+                        "shortLabel": "FAC Med Needy Non-Spenddown",
+                        "longLabel": "FAC Med Needy Non-Spenddown",
+                        "code": "FAC",
+                        "systemId": "EEAPI",
+                        "type": "Family"
+                    },
+                    "sortOrder": 5
+                },
+                {
+                    "localeCode": "en_US",
+                    "lookupBean": {
+                        "shortLabel": "FAC Med Needy Spenddown",
+                        "longLabel": "FAC Med Needy Spenddown",
+                        "code": "FAC",
+                        "systemId": "EEAPI",
+                        "type": "Family"
+                    },
+                    "sortOrder": 6
+                }
+            ]
+        },
+        "Pregnant": {
+            "beans": [
+                {
+                    "localeCode": "en_US",
+                    "lookupBean": {
+                        "shortLabel": "Pregnant Women",
+                        "longLabel": "Pregnant Women",
+                        "code": "P02",
+                        "systemId": "EEAPI",
+                        "type": "Pregnant"
+                    },
+                    "sortOrder": 1
+                },
+                {
+                    "localeCode": "en_US",
+                    "lookupBean": {
+                        "shortLabel": "Cat Needy Newborns",
+                        "longLabel": "Cat Needy Newborns",
+                        "code": "P03",
+                        "systemId": "EEAPI",
+                        "type": "Pregnant"
+                    },
+                    "sortOrder": 2
+                },
+                {
+                    "localeCode": "en_US",
+                    "lookupBean": {
+                        "shortLabel": "Med Needy Newborns",
+                        "longLabel": "Med Needy Newborns",
+                        "code": "P04",
+                        "systemId": "EEAPI",
+                        "type": "Pregnant"
+                    },
+                    "sortOrder": 3
+                },
+                {
+                    "localeCode": "en_US",
+                    "lookupBean": {
+                        "shortLabel": "Would be eligible if Pregnant",
+                        "longLabel": "Would be eligible if Pregnant",
+                        "code": "P05",
+                        "systemId": "EEAPI",
+                        "type": "Pregnant"
+                    },
+                    "sortOrder": 4
+                },
+                {
+                    "localeCode": "en_US",
+                    "lookupBean": {
+                        "shortLabel": "Children 185% of Poverty",
+                        "longLabel": "Children 185% of Poverty",
+                        "code": "P06",
+                        "systemId": "EEAPI",
+                        "type": "Pregnant"
+                    },
+                    "sortOrder": 5
+                },
+                {
+                    "localeCode": "en_US",
+                    "lookupBean": {
+                        "shortLabel": "Children 133% of Poverty",
+                        "longLabel": "Children 133% of Poverty",
+                        "code": "P07",
+                        "systemId": "EEAPI",
+                        "type": "Pregnant"
+                    },
+                    "sortOrder": 6
+                },
+                {
+                    "localeCode": "en_US",
+                    "lookupBean": {
+                        "shortLabel": "Children 100% of Poverty",
+                        "longLabel": "Children 100% of Poverty",
+                        "code": "P08",
+                        "systemId": "EEAPI",
+                        "type": "Pregnant"
+                    },
+                    "sortOrder": 7
+                }
+                
+            ]
+        },
+        "Refugees": {
+            "beans": [
+                {
+                    "localeCode": "en_US",
+                    "lookupBean": {
+                        "shortLabel": "Post RCA Earnings",
+                        "longLabel": "Post RCA Earnings",
+                        "code": "G02",
+                        "systemId": "EEAPI",
+                        "type": "Refugees"
+                    },
+                    "sortOrder": 1
+                },
+                {
+                    "localeCode": "en_US",
+                    "lookupBean": {
+                        "shortLabel": "RMA Needys Non-Spenddown",
+                        "longLabel": "RMA Needys Non-Spenddown",
+                        "code": "G98",
+                        "systemId": "EEAPI",
+                        "type": "Refugees"
+                    },
+                    "sortOrder": 2
+                },
+                {
+                    "localeCode": "en_US",
+                    "lookupBean": {
+                        "shortLabel": "RMA Needys Spenddown",
+                        "longLabel": "RMA Needys Spenddown",
+                        "code": "G99",
+                        "systemId": "EEAPI",
+                        "type": "Refugees"
+                    },
+                    "sortOrder": 3
+                }
+            ]        
+        },
+        "ABorD": {
+            "beans": [
+                {
+                    "localeCode": "en_US",
+                    "lookupBean": {
+                        "shortLabel": "PAA recipient",
+                        "longLabel": "PAA recipient",
+                        "code": "S01",
+                        "systemId": "EEAPI",
+                        "type": "ABorD"
+                    },
+                    "sortOrder": 1
+                },
+                {
+                    "localeCode": "en_US",
+                    "lookupBean": {
+                        "shortLabel": "SSI Recipients",
+                        "longLabel": "SSI Recipients",
+                        "code": "S02",
+                        "systemId": "EEAPI",
+                        "type": "ABorD"
+                    },
+                    "sortOrder": 2
+                },
+                {
+                    "localeCode": "en_US",
+                    "lookupBean": {
+                        "shortLabel": "QMB",
+                        "longLabel": "QMB",
+                        "code": "S03",
+                        "systemId": "EEAPI",
+                        "type": "ABorD"
+                    },
+                    "sortOrder": 3
+                },
+                {
+                    "localeCode": "en_US",
+                    "lookupBean": {
+                        "shortLabel": "Pickle",
+                        "longLabel": "Pickle",
+                        "code": "S04",
+                        "systemId": "EEAPI",
+                        "type": "ABorD"
+                    },
+                    "sortOrder": 4
+                },
+                {
+                    "localeCode": "en_US",
+                    "lookupBean": {
+                        "shortLabel": "Section 5103s",
+                        "longLabel": "Section 5103s",
+                        "code": "S05",
+                        "systemId": "EEAPI",
+                        "type": "ABorD"
+                    },
+                    "sortOrder": 5
+                },
+                {
+                    "localeCode": "en_US",
+                    "lookupBean": {
+                        "shortLabel": "QWDIs",
+                        "longLabel": "QWDIs",
+                        "code": "S06",
+                        "systemId": "EEAPI",
+                        "type": "ABorD"
+                    },
+                    "sortOrder": 6
+                },
+                {
+                    "localeCode": "en_US",
+                    "lookupBean": {
+                        "shortLabel": "ABD Med Needy",
+                        "longLabel": "ABD Med Needy",
+                        "code": "S98",
+                        "systemId": "EEAPI",
+                        "type": "ABorD"
+                    },
+                    "sortOrder": 7
+                },
+                {
+                    "localeCode": "en_US",
+                    "lookupBean": {
+                        "shortLabel": "ABD Med Needy Spenddown",
+                        "longLabel": "ABD Med Needy Spenddown",
+                        "code": "S99",
+                        "systemId": "EEAPI",
+                        "type": "ABorD"
+                    },
+                    "sortOrder": 8
+                },
+                {
+                    "localeCode": "en_US",
+                    "lookupBean": {
+                        "shortLabel": "SSI Recipient LTC",
+                        "longLabel": "SSI Recipient LTC",
+                        "code": "L01",
+                        "systemId": "EEAPI",
+                        "type": "ABorD"
+                    },
+                    "sortOrder": 9
+                },
+                {
+                    "localeCode": "en_US",
+                    "lookupBean": {
+                        "shortLabel": "ABD LTC MN",
+                        "longLabel": "ABD LTC MN",
+                        "code": "L98",
+                        "systemId": "EEAPI",
+                        "type": "ABorD"
+                    },
+                    "sortOrder": 10
+                },
+                {
+                    "localeCode": "en_US",
+                    "lookupBean": {
+                        "shortLabel": "ABD LTC Med Needy Spenddown",
+                        "longLabel": "ABD LTC Med Needy Spenddown",
+                        "code": "L99",
+                        "systemId": "EEAPI",
+                        "type": "ABorD"
+                    },
+                    "sortOrder": 11
+                }
+                
+            ]
+        },
+        "MASO": {
+            "beans": [
+                {
+                    "localeCode": "en_US",
+                    "lookupBean": {
+                        "shortLabel": "MASO",
+                        "longLabel": "MASO",
+                        "code": "M01",
+                        "systemId": "EEAPI",
+                        "type": "MASO"
+                    },
+                    "sortOrder": 1
+                },
+                {
+                    "localeCode": "en_US",
+                    "lookupBean": {
+                        "shortLabel": "MASO Spenddown",
+                        "longLabel": "MASO Spenddown",
+                        "code": "M02",
+                        "systemId": "EEAPI",
+                        "type": "MASO"
+                    },
+                    "sortOrder": 2
+                }
+            ]
+        },
+        "FamilyLTC": {
+            "beans": [
+                {
+                    "localeCode": "en_US",
+                    "lookupBean": {
+                        "shortLabel": "Family LTC CN (AFDC)",
+                        "longLabel": "Family LTC CN (AFDC)",
+                        "code": "T01",
+                        "systemId": "EEAPI",
+                        "type": "FamilyLTC"
+                    },
+                    "sortOrder": 1
+                },
+                {
+                    "localeCode": "en_US",
+                    "lookupBean": {
+                        "shortLabel": "Family LTC MN Non-Spenddown",
+                        "longLabel": "Family LTC MN Non-Spenddown",
+                        "code": "T02",
+                        "systemId": "EEAPI",
+                        "type": "FamilyLTC"
+                    },
+                    "sortOrder": 2
+                },
+                {
+                    "localeCode": "en_US",
+                    "lookupBean": {
+                        "shortLabel": "PWC LTC Children under 185%",
+                        "longLabel": "PWC LTC Children under 185%",
+                        "code": "T03",
+                        "systemId": "EEAPI",
+                        "type": "FamilyLTC"
+                    },
+                    "sortOrder": 3
+                },
+                {
+                    "localeCode": "en_US",
+                    "lookupBean": {
+                        "shortLabel": "PWC LTC Children under 133%",
+                        "longLabel": "PWC LTC Children under 133%",
+                        "code": "T04",
+                        "systemId": "EEAPI",
+                        "type": "FamilyLTC"
+                    },
+                    "sortOrder": 4
+                },
+                {
+                    "localeCode": "en_US",
+                    "lookupBean": {
+                        "shortLabel": "PWC LTC Children under 100%",
+                        "longLabel": "PWC LTC Children under 100%",
+                        "code": "T05",
+                        "systemId": "EEAPI",
+                        "type": "FamilyLTC"
+                    },
+                    "sortOrder": 5
+                },
+                {
+                    "localeCode": "en_US",
+                    "lookupBean": {
+                        "shortLabel": "Familty LTC Med Needy Spenddown",
+                        "longLabel": "Familty LTC Med Needy Spenddown",
+                        "code": "T99",
+                        "systemId": "EEAPI",
+                        "type": "FamilyLTC"
+                    },
+                    "sortOrder": 6
+                }
+            ]
+        },
+        "MASOLTC": {
+            "beans": [
+                {
+                    "localeCode": "en_US",
+                    "lookupBean": {
+                        "shortLabel": "MASO LTC",
+                        "longLabel": "MASO LTC",
+                        "code": "Q01",
+                        "systemId": "EEAPI",
+                        "type": "MASOLTC"
+                    },
+                    "sortOrder": 1
+                },
+                {
+                    "localeCode": "en_US",
+                    "lookupBean": {
+                        "shortLabel": "MASO LTC Med Needy Spenddown",
+                        "longLabel": "MASO LTC Med Needy Spenddown",
+                        "code": "Q99",
+                        "systemId": "EEAPI",
+                        "type": "MASOLTC"
+                    },
+                    "sortOrder": 2
+                }
+            ]
+        },
+        "HCBWaiver": {
+            "beans": [
+                {
+                    "localeCode": "en_US",
+                    "lookupBean": {
+                        "shortLabel": "HCB Waiver",
+                        "longLabel": "HCB Waiver",
+                        "code": "H01",
+                        "systemId": "EEAPI",
+                        "type": "HCBWaiver"
+                    },
+                    "sortOrder": 1
+                },
+                {
+                    "localeCode": "en_US",
+                    "lookupBean": {
+                        "shortLabel": "HCB Waiver Non-Spenddown",
+                        "longLabel": "HCB Waiver Non-Spenddown",
+                        "code": "H98",
+                        "systemId": "EEAPI",
+                        "type": "HCBWaiver"
+                    },
+                    "sortOrder": 2
+                },
+                {
+                    "localeCode": "en_US",
+                    "lookupBean": {
+                        "shortLabel": "HCB Waiver Spenddown",
+                        "longLabel": "HCB Waiver Spenddown",
+                        "code": "H99",
+                        "systemId": "EEAPI",
+                        "type": "HCBWaiver"
+                    },
+                    "sortOrder": 3
+                }
+            ]
+        },
+        "FCandSA": {
+            "beans": [
+                {
+                    "localeCode": "en_US",
+                    "lookupBean": {
+                        "shortLabel": "Cat IV-E",
+                        "longLabel": "Cat IV-E",
+                        "code": "E01",
+                        "systemId": "EEAPI",
+                        "type": "FCandSA"
+                    },
+                    "sortOrder": 1
+                },
+                {
+                    "localeCode": "en_US",
+                    "lookupBean": {
+                        "shortLabel": "FAC Non-Spenddown Equivalent",
+                        "longLabel": "FAC Non-Spenddown Equivalent",
+                        "code": "E02",
+                        "systemId": "EEAPI",
+                        "type": "FCandSA"
+                    },
+                    "sortOrder": 2
+                },
+                {
+                    "localeCode": "en_US",
+                    "lookupBean": {
+                        "shortLabel": "State Funded FC",
+                        "longLabel": "State Funded FC",
+                        "code": "E03",
+                        "systemId": "EEAPI",
+                        "type": "FCandSA"
+                    },
+                    "sortOrder": 3
+                },
+                {
+                    "localeCode": "en_US",
+                    "lookupBean": {
+                        "shortLabel": "State Funded SA",
+                        "longLabel": "State Funded SA",
+                        "code": "E04",
+                        "systemId": "EEAPI",
+                        "type": "FCandSA"
+                    },
+                    "sortOrder": 4
+                }
+            ]
+        },
+        "MiscellaneousM": {
+            "beans": [
+                {
+                    "localeCode": "en_US",
+                    "lookupBean": {
+                        "shortLabel": "Repatriated Citizen Medical",
+                        "longLabel": "Repatriated Citizen Medical",
+                        "code": "X01",
+                        "systemId": "EEAPI",
+                        "type": "MiscellaneousM"
+                    },
+                    "sortOrder": 1
+                },
+                {
+                    "localeCode": "en_US",
+                    "lookupBean": {
+                        "shortLabel": "Aliens with Emergencies",
+                        "longLabel": "Aliens with Emergencies",
+                        "code": "X02",
+                        "systemId": "EEAPI",
+                        "type": "MiscellaneousM"
+                    },
+                    "sortOrder": 2
+                }
+            ]
+        },
+        "MotorVehUse": {
+            "beans": [
+                {
+                    "localeCode": "en_US",
+                    "lookupBean": {
+                        "shortLabel": "Select",
+                        "longLabel": "Select",
+                        "code": "S",
+                        "systemId": "EEAPI",
+                        "type": "MotorVehUse"
+                    },
+                    "sortOrder": 0
+                },
+                {
+                    "localeCode": "en_US",
+                    "lookupBean": {
+                        "shortLabel": "Daily Activity",
+                        "longLabel": "Daily Activity",
+                        "code": "DA",
+                        "systemId": "EEAPI",
+                        "type": "MotorVehUse"
+                    },
+                    "sortOrder": 1
+                },
+                {
+                    "localeCode": "en_US",
+                    "lookupBean": {
+                        "shortLabel": "Primary Family Vehicle",
+                        "longLabel": "Primary Family Vehicle",
+                        "code": "FV",
+                        "systemId": "EEAPI",
+                        "type": "MotorVehUse"
+                    },
+                    "sortOrder": 2
+                },
+                {
+                    "localeCode": "en_US",
+                    "lookupBean": {
+                        "shortLabel": "Travel to and from Employment",
+                        "longLabel": "Travel to and from Employment",
+                        "code": "EM",
+                        "systemId": "EEAPI",
+                        "type": "MotorVehUse"
+                    },
+                    "sortOrder": 3
+                },
+                {
+                    "localeCode": "en_US",
+                    "lookupBean": {
+                        "shortLabel": "Handicapped Vehicle",
+                        "longLabel": "Handicapped Vehicle",
+                        "code": "HA",
+                        "systemId": "EEAPI",
+                        "type": "MotorVehUse"
+                    },
+                    "sortOrder": 4
+                },
+                {
+                    "localeCode": "en_US",
+                    "lookupBean": {
+                        "shortLabel": "Income Producing",
+                        "longLabel": "Income Producing",
+                        "code": "IP",
+                        "systemId": "EEAPI",
+                        "type": "MotorVehUse"
+                    },
+                    "sortOrder": 5
+                },
+                {
+                    "localeCode": "en_US",
+                    "lookupBean": {
+                        "shortLabel": "Primary Residence",
+                        "longLabel": "Primary Residence",
+                        "code": "PR",
+                        "systemId": "EEAPI",
+                        "type": "MotorVehUse"
+                    },
+                    "sortOrder": 6
+                },
+                {
+                    "localeCode": "en_US",
+                    "lookupBean": {
+                        "shortLabel": "Long Distance Travel",
+                        "longLabel": "Long Distance Travel",
+                        "code": "LD",
+                        "systemId": "EEAPI",
+                        "type": "MotorVehUse"
+                    },
+                    "sortOrder": 7
+                },
+                {
+                    "localeCode": "en_US",
+                    "lookupBean": {
+                        "shortLabel": "Medical Transportation",
+                        "longLabel": "Medical Transportation",
+                        "code": "MA",
+                        "systemId": "EEAPI",
+                        "type": "MotorVehUse"
+                    },
+                    "sortOrder": 8
+                },
+                {
+                    "localeCode": "en_US",
+                    "lookupBean": {
+                        "shortLabel": "Subsistence Hunting and Fishing",
+                        "longLabel": "Subsistence Hunting and Fishing",
+                        "code": "HF",
+                        "systemId": "EEAPI",
+                        "type": "MotorVehUse"
+                    },
+                    "sortOrder": 9
+                },
+                {
+                    "localeCode": "en_US",
+                    "lookupBean": {
+                        "shortLabel": "Untagged",
+                        "longLabel": "Untagged",
+                        "code": "UN",
+                        "systemId": "EEAPI",
+                        "type": "MotorVehUse"
+                    },
+                    "sortOrder": 10
+                },
+                {
+                    "localeCode": "en_US",
+                    "lookupBean": {
+                        "shortLabel": "Other",
+                        "longLabel": "Other",
+                        "code": "OT",
+                        "systemId": "EEAPI",
+                        "type": "MotorVehUse"
+                    },
+                    "sortOrder": 11
+                }
+                
+            ]
+        },
+        "UtilityMethod": {
+            "beans": [
+                {
+                    "localeCode": "en_US",
+                    "lookupBean": {
+                        "shortLabel": "Select",
+                        "longLabel": "Select",
+                        "code": "S",
+                        "systemId": "EEAPI",
+                        "type": "UtilityMethod"
+                    },
+                    "sortOrder": 0
+                },
+                {
+                    "localeCode": "en_US",
+                    "lookupBean": {
+                        "shortLabel": "Actual",
+                        "longLabel": "Actual",
+                        "code": "A",
+                        "systemId": "EEAPI",
+                        "type": "UtilityMethod"
+                    },
+                    "sortOrder": 1
+                },
+                {
+                    "localeCode": "en_US",
+                    "lookupBean": {
+                        "shortLabel": "Phone",
+                        "longLabel": "Phone",
+                        "code": "P",
+                        "systemId": "EEAPI",
+                        "type": "UtilityMethod"
+                    },
+                    "sortOrder": 2
+                },
+                {
+                    "localeCode": "en_US",
+                    "lookupBean": {
+                        "shortLabel": "SUA",
+                        "longLabel": "SUA",
+                        "code": "S",
+                        "systemId": "EEAPI",
+                        "type": "UtilityMethod"
+                    },
+                    "sortOrder": 3
+                },
+                {
+                    "localeCode": "en_US",
+                    "lookupBean": {
+                        "shortLabel": "LUA",
+                        "longLabel": "LUA",
+                        "code": "L",
+                        "systemId": "EEAPI",
+                        "type": "UtilityMethod"
+                    },
+                    "sortOrder": 4
+                },
+                {
+                    "localeCode": "en_US",
+                    "lookupBean": {
+                        "shortLabel": "NONE",
+                        "longLabel": "NONE",
+                        "code": "N",
+                        "systemId": "EEAPI",
+                        "type": "UtilityMethod"
+                    },
+                    "sortOrder": 5
+                }
+            ]
+        },
+        "UnearnedIncomeType": {
+            "beans": [
+                {
+                    "localeCode": "en_US",
+                    "lookupBean": {
+                        "shortLabel": "Compensation Payments",
+                        "longLabel": "Compensation Payments",
+                        "code": "CP",
+                        "systemId": "EEAPI",
+                        "type": "UnearnedIncomeType"
+                    },
+                    "sortOrder": 1
+                },
+                {
+                    "localeCode": "en_US",
+                    "lookupBean": {
+                        "shortLabel": "Benefits/Pensions",
+                        "longLabel": "Benefits/Pensions",
+                        "code": "BP",
+                        "systemId": "EEAPI",
+                        "type": "UnearnedIncomeType"
+                    },
+                    "sortOrder": 2
+                },
+                {
+                    "localeCode": "en_US",
+                    "lookupBean": {
+                        "shortLabel": "Support/Alimony",
+                        "longLabel": "Support/Alimony",
+                        "code": "SA",
+                        "systemId": "EEAPI",
+                        "type": "UnearnedIncomeType"
+                    },
+                    "sortOrder": 3
+                },
+                {
+                    "localeCode": "en_US",
+                    "lookupBean": {
+                        "shortLabel": "Contributions/In-kind",
+                        "longLabel": "Contributions/In-kind",
+                        "code": "CI",
+                        "systemId": "EEAPI",
+                        "type": "UnearnedIncomeType"
+                    },
+                    "sortOrder": 4
+                },
+                {
+                    "localeCode": "en_US",
+                    "lookupBean": {
+                        "shortLabel": "Vendor Payments",
+                        "longLabel": "Vendor Payments",
+                        "code": "VP",
+                        "systemId": "EEAPI",
+                        "type": "UnearnedIncomeType"
+                    },
+                    "sortOrder": 5
+                },
+                {
+                    "localeCode": "en_US",
+                    "lookupBean": {
+                        "shortLabel": "Loans",
+                        "longLabel": "Loans",
+                        "code": "LO",
+                        "systemId": "EEAPI",
+                        "type": "UnearnedIncomeType"
+                    },
+                    "sortOrder": 6
+                },
+                {
+                    "localeCode": "en_US",
+                    "lookupBean": {
+                        "shortLabel": "Educational Assistance",
+                        "longLabel": "Educational Assistance",
+                        "code": "ED",
+                        "systemId": "EEAPI",
+                        "type": "UnearnedIncomeType"
+                    },
+                    "sortOrder": 7
+                },
+                {
+                    "localeCode": "en_US",
+                    "lookupBean": {
+                        "shortLabel": "Return on Investments",
+                        "longLabel": "Return on Investments",
+                        "code": "RI",
+                        "systemId": "EEAPI",
+                        "type": "UnearnedIncomeType"
+                    },
+                    "sortOrder": 8
+                },
+                {
+                    "localeCode": "en_US",
+                    "lookupBean": {
+                        "shortLabel": "Foster Care/Adoption",
+                        "longLabel": "Foster Care/Adoption",
+                        "code": "FO",
+                        "systemId": "EEAPI",
+                        "type": "UnearnedIncomeType"
+                    },
+                    "sortOrder": 9
+                },
+                {
+                    "localeCode": "en_US",
+                    "lookupBean": {
+                        "shortLabel": "Needs Based Assistance",
+                        "longLabel": "Needs Based Assistance",
+                        "code": "NE",
+                        "systemId": "EEAPI",
+                        "type": "UnearnedIncomeType"
+                    },
+                    "sortOrder": 10
+                },
+                {
+                    "localeCode": "en_US",
+                    "lookupBean": {
+                        "shortLabel": "Public Assistance",
+                        "longLabel": "Public Assistance",
+                        "code": "PU",
+                        "systemId": "EEAPI",
+                        "type": "UnearnedIncomeType"
+                    },
+                    "sortOrder": 11
+                },
+                {
+                    "localeCode": "en_US",
+                    "lookupBean": {
+                        "shortLabel": "Relocation",
+                        "longLabel": "Relocation",
+                        "code": "RE",
+                        "systemId": "EEAPI",
+                        "type": "UnearnedIncomeType"
+                    },
+                    "sortOrder": 12
+                },
+                {
+                    "localeCode": "en_US",
+                    "lookupBean": {
+                        "shortLabel": "Shelter Related",
+                        "longLabel": "Shelter Related",
+                        "code": "SH",
+                        "systemId": "EEAPI",
+                        "type": "UnearnedIncomeType"
+                    },
+                    "sortOrder": 13
+                },
+                {
+                    "localeCode": "en_US",
+                    "lookupBean": {
+                        "shortLabel": "Project Independence",
+                        "longLabel": "Project Independence",
+                        "code": "PI",
+                        "systemId": "EEAPI",
+                        "type": "UnearnedIncomeType"
+                    },
+                    "sortOrder": 14
+                },
+                {
+                    "localeCode": "en_US",
+                    "lookupBean": {
+                        "shortLabel": "Lump Sum",
+                        "longLabel": "Lump Sum",
+                        "code": "LS",
+                        "systemId": "EEAPI",
+                        "type": "UnearnedIncomeType"
+                    },
+                    "sortOrder": 15
+                },
+                {
+                    "localeCode": "en_US",
+                    "lookupBean": {
+                        "shortLabel": "Volunteer Related",
+                        "longLabel": "Volunteer Related",
+                        "code": "VR",
+                        "systemId": "EEAPI",
+                        "type": "UnearnedIncomeType"
+                    },
+                    "sortOrder": 16
+                },
+                {
+                    "localeCode": "en_US",
+                    "lookupBean": {
+                        "shortLabel": "Variable/Infrequent",
+                        "longLabel": "Variable/Infrequent",
+                        "code": "VB",
+                        "systemId": "EEAPI",
+                        "type": "UnearnedIncomeType"
+                    },
+                    "sortOrder": 17
+                },
+                {
+                    "localeCode": "en_US",
+                    "lookupBean": {
+                        "shortLabel": "Other",
+                        "longLabel": "Other",
+                        "code": "OR",
+                        "systemId": "EEAPI",
+                        "type": "UnearnedIncomeType"
+                    },
+                    "sortOrder": 18
+                }
+                
+            ]
+        },
+        "BenifitsPensions": {
+            "beans": [
+                {
+                    "localeCode": "en_US",
+                    "lookupBean": {
+                        "shortLabel": "Black Lung",
+                        "longLabel": "Black Lung",
+                        "code": "BL",
+                        "systemId": "EEAPI",
+                        "type": "BenifitsPensions"
+                    },
+                    "sortOrder": 1
+                },
+                {
+                    "localeCode": "en_US",
+                    "lookupBean": {
+                        "shortLabel": "Federal Pension",
+                        "longLabel": "Federal Pension",
+                        "code": "FP",
+                        "systemId": "EEAPI",
+                        "type": "BenifitsPensions"
+                    },
+                    "sortOrder": 2
+                },
+                {
+                    "localeCode": "en_US",
+                    "lookupBean": {
+                        "shortLabel": "Insurance Benefit",
+                        "longLabel": "Insurance Benefit",
+                        "code": "IB",
+                        "systemId": "EEAPI",
+                        "type": "BenifitsPensions"
+                    },
+                    "sortOrder": 3
+                },
+                {
+                    "localeCode": "en_US",
+                    "lookupBean": {
+                        "shortLabel": "Railroad Retirement Benefits",
+                        "longLabel": "Railroad Retirement Benefits",
+                        "code": "RR",
+                        "systemId": "EEAPI",
+                        "type": "BenifitsPensions"
+                    },
+                    "sortOrder": 4
+                },
+                {
+                    "localeCode": "en_US",
+                    "lookupBean": {
+                        "shortLabel": "Private Retirement Benefit",
+                        "longLabel": "Private Retirement Benefit",
+                        "code": "PR",
+                        "systemId": "EEAPI",
+                        "type": "BenifitsPensions"
+                    },
+                    "sortOrder": 5
+                },
+                {
+                    "localeCode": "en_US",
+                    "lookupBean": {
+                        "shortLabel": "Retro-Railroad Retirement",
+                        "longLabel": "Retro-Railroad Retirement",
+                        "code": "RF",
+                        "systemId": "EEAPI",
+                        "type": "BenifitsPensions"
+                    },
+                    "sortOrder": 6
+                },
+                {
+                    "localeCode": "en_US",
+                    "lookupBean": {
+                        "shortLabel": "Miners Benefits",
+                        "longLabel": "Miners Benefits",
+                        "code": "MB",
+                        "systemId": "EEAPI",
+                        "type": "BenifitsPensions"
+                    },
+                    "sortOrder": 7
+                },
+                {
+                    "localeCode": "en_US",
+                    "lookupBean": {
+                        "shortLabel": "Unemployment Insurance",
+                        "longLabel": "Unemployment Insurance",
+                        "code": "UC",
+                        "systemId": "EEAPI",
+                        "type": "BenifitsPensions"
+                    },
+                    "sortOrder": 8
+                },
+                {
+                    "localeCode": "en_US",
+                    "lookupBean": {
+                        "shortLabel": "State Pension",
+                        "longLabel": "State Pension",
+                        "code": "SP",
+                        "systemId": "EEAPI",
+                        "type": "BenifitsPensions"
+                    },
+                    "sortOrder": 9
+                },
+                {
+                    "localeCode": "en_US",
+                    "lookupBean": {
+                        "shortLabel": "Retro Unemployment Insurance",
+                        "longLabel": "Retro Unemployment Insurance",
+                        "code": "RD",
+                        "systemId": "EEAPI",
+                        "type": "BenifitsPensions"
+                    },
+                    "sortOrder": 10
+                },
+                {
+                    "localeCode": "en_US",
+                    "lookupBean": {
+                        "shortLabel": "Sup. Secur. Benefit (SSI)",
+                        "longLabel": "Sup. Secur. Benefit (SSI)",
+                        "code": "SI",
+                        "systemId": "EEAPI",
+                        "type": "BenifitsPensions"
+                    },
+                    "sortOrder": 11
+                },
+                {
+                    "localeCode": "en_US",
+                    "lookupBean": {
+                        "shortLabel": "Retro SSI Payment",
+                        "longLabel": "Retro SSI Payment",
+                        "code": "RB",
+                        "systemId": "EEAPI",
+                        "type": "BenifitsPensions"
+                    },
+                    "sortOrder": 12
+                },
+                {
+                    "localeCode": "en_US",
+                    "lookupBean": {
+                        "shortLabel": "Strike Benefits",
+                        "longLabel": "Strike Benefits",
+                        "code": "SB",
+                        "systemId": "EEAPI",
+                        "type": "BenifitsPensions"
+                    },
+                    "sortOrder": 13
+                },
+                {
+                    "localeCode": "en_US",
+                    "lookupBean": {
+                        "shortLabel": "Veterans Benefits",
+                        "longLabel": "Veterans Benefits",
+                        "code": "VA",
+                        "systemId": "EEAPI",
+                        "type": "BenifitsPensions"
+                    },
+                    "sortOrder": 14
+                },
+                {
+                    "localeCode": "en_US",
+                    "lookupBean": {
+                        "shortLabel": "Social Security Benefits",
+                        "longLabel": "Social Security Benefits",
+                        "code": "SA",
+                        "systemId": "EEAPI",
+                        "type": "BenifitsPensions"
+                    },
+                    "sortOrder": 15
+                },
+                {
+                    "localeCode": "en_US",
+                    "lookupBean": {
+                        "shortLabel": "Retro-Veterans Benefits",
+                        "longLabel": "Retro-Veterans Benefits",
+                        "code": "RC",
+                        "systemId": "EEAPI",
+                        "type": "BenifitsPensions"
+                    },
+                    "sortOrder": 16
+                },
+                {
+                    "localeCode": "en_US",
+                    "lookupBean": {
+                        "shortLabel": "Retro-Social Security",
+                        "longLabel": "Retro-Social Security",
+                        "code": "RA",
+                        "systemId": "EEAPI",
+                        "type": "BenifitsPensions"
+                    },
+                    "sortOrder": 17
+                },
+                {
+                    "localeCode": "en_US",
+                    "lookupBean": {
+                        "shortLabel": "V.A. Aid & Attendant",
+                        "longLabel": "V.A. Aid & Attendant",
+                        "code": "VT",
+                        "systemId": "EEAPI",
+                        "type": "BenifitsPensions"
+                    },
+                    "sortOrder": 17
+                }
+                
+            ]
+        },
+        "CompensationPayments": {
+            "beans": [
+                {
+                    "localeCode": "en_US",
+                    "lookupBean": {
+                        "shortLabel": "Workmans Compensation",
+                        "longLabel": "Workmans Compensation",
+                        "code": "WC",
+                        "systemId": "EEAPI",
+                        "type": "CompensationPayments"
+                    },
+                    "sortOrder": 1
+                },
+                {
+                    "localeCode": "en_US",
+                    "lookupBean": {
+                        "shortLabel": "All Indian Tribes",
+                        "longLabel": "All Indian Tribes",
+                        "code": "IT",
+                        "systemId": "EEAPI",
+                        "type": "CompensationPayments"
+                    },
+                    "sortOrder": 2
+                },
+                {
+                    "localeCode": "en_US",
+                    "lookupBean": {
+                        "shortLabel": "Retro-Workmans Compen",
+                        "longLabel": "Retro-Workmans Compen",
+                        "code": "RE",
+                        "systemId": "EEAPI",
+                        "type": "CompensationPayments"
+                    },
+                    "sortOrder": 3
+                },
+                {
+                    "localeCode": "en_US",
+                    "lookupBean": {
+                        "shortLabel": "Excluded Indian Tribes",
+                        "longLabel": "Excluded Indian Tribes",
+                        "code": "EI",
+                        "systemId": "EEAPI",
+                        "type": "CompensationPayments"
+                    },
+                    "sortOrder": 4
+                },
+                {
+                    "localeCode": "en_US",
+                    "lookupBean": {
+                        "shortLabel": "Agent Orange",
+                        "longLabel": "Agent Orange",
+                        "code": "AO",
+                        "systemId": "EEAPI",
+                        "type": "CompensationPayments"
+                    },
+                    "sortOrder": 5
+                },
+                {
+                    "localeCode": "en_US",
+                    "lookupBean": {
+                        "shortLabel": "Pribiloff Islands",
+                        "longLabel": "Pribiloff Islands",
+                        "code": "FF",
+                        "systemId": "EEAPI",
+                        "type": "CompensationPayments"
+                    },
+                    "sortOrder": 6
+                },
+                {
+                    "localeCode": "en_US",
+                    "lookupBean": {
+                        "shortLabel": "Japanese Compensation",
+                        "longLabel": "Japanese Compensation",
+                        "code": "JC",
+                        "systemId": "EEAPI",
+                        "type": "CompensationPayments"
+                    },
+                    "sortOrder": 7
+                }
+            ]
+        },
+         "SupportAlimony": {
+            "beans": [
+                {
+                    "localeCode": "en_US",
+                    "lookupBean": {
+                        "shortLabel": "Alimony",
+                        "longLabel": "Alimony",
+                        "code": "AL",
+                        "systemId": "EEAPI",
+                        "type": "SupportAlimony"
+                    },
+                    "sortOrder": 1
+                },
+                {
+                    "localeCode": "en_US",
+                    "lookupBean": {
+                        "shortLabel": "CS-Excess-suspend",
+                        "longLabel": "CS-Excess-suspend",
+                        "code": "EX",
+                        "systemId": "EEAPI",
+                        "type": "SupportAlimony"
+                    },
+                    "sortOrder": 2
+                },
+                {
+                    "localeCode": "en_US",
+                    "lookupBean": {
+                        "shortLabel": "Child Support (IV-D)",
+                        "longLabel": "Child Support (IV-D)",
+                        "code": "CS",
+                        "systemId": "EEAPI",
+                        "type": "SupportAlimony"
+                    },
+                    "sortOrder": 3
+                },
+                {
+                    "localeCode": "en_US",
+                    "lookupBean": {
+                        "shortLabel": "Support (Non-IV-D)",
+                        "longLabel": "Support (Non-IV-D)",
+                        "code": "SU",
+                        "systemId": "EEAPI",
+                        "type": "SupportAlimony"
+                    },
+                    "sortOrder": 4
+                }
+            ]
+         },
+          "ContributionsInKind": {
+            "beans": [
+                {
+                    "localeCode": "en_US",
+                    "lookupBean": {
+                        "shortLabel": "Contributions",
+                        "longLabel": "Contributions",
+                        "code": "CO",
+                        "systemId": "EEAPI",
+                        "type": "ContributionsInKind"
+                    },
+                    "sortOrder": 1
+                },
+                {
+                    "localeCode": "en_US",
+                    "lookupBean": {
+                        "shortLabel": "In Kind",
+                        "longLabel": "In Kind",
+                        "code": "IK",
+                        "systemId": "EEAPI",
+                        "type": "ContributionsInKind"
+                    },
+                    "sortOrder": 2
+                },
+                {
+                    "localeCode": "en_US",
+                    "lookupBean": {
+                        "shortLabel": "Charitable Cash Contri-$300 or less per qtr",
+                        "longLabel": "Charitable Cash Contri--$300 or less per qtr",
+                        "code": "CC",
+                        "systemId": "EEAPI",
+                        "type": "ContributionsInKind"
+                    },
+                    "sortOrder": 3
+                }
+            ]
+        },
+        "VendorPayments": {
+            "beans": [
+                {
+                    "localeCode": "en_US",
+                    "lookupBean": {
+                        "shortLabel": "Vendor Payment-Not for food or shelter",
+                        "longLabel": "Vendor Payment-Not for food or shelter",
+                        "code": "VP",
+                        "systemId": "EEAPI",
+                        "type": "VendorPayments"
+                    },
+                    "sortOrder": 1
+                },
+                {
+                    "localeCode": "en_US",
+                    "lookupBean": {
+                        "shortLabel": "Vendor Payment-For food or shelter",
+                        "longLabel": "Vendor Payment-For food or shelter",
+                        "code": "FS",
+                        "systemId": "EEAPI",
+                        "type": "VendorPayments"
+                    },
+                    "sortOrder": 2
+                },
+                {
+                    "localeCode": "en_US",
+                    "lookupBean": {
+                        "shortLabel": "Vendor Payment-Vendor payment by someone legally obligated to the household but diverted to pay a household expense",
+                        "longLabel": "Vendor Payment-Vendor payment by someone legally obligated to the household but diverted to pay a household expense",
+                        "code": "VC",
+                        "systemId": "EEAPI",
+                        "type": "VendorPayments"
+                    },
+                    "sortOrder": 3
+                }
+            ]
+        },
+        "Loans": {
+            "beans": [
+                {
+                    "localeCode": "en_US",
+                    "lookupBean": {
+                        "shortLabel": "Loan-No repayment plan (client is borrower)",
+                        "longLabel": "Loan-No repayment plan (client is borrower)",
+                        "code": "LA",
+                        "systemId": "EEAPI",
+                        "type": "Loans"
+                    },
+                    "sortOrder": 1
+                },
+                {
+                    "localeCode": "en_US",
+                    "lookupBean": {
+                        "shortLabel": "Loan-Repayment plan (client is borrower)",
+                        "longLabel": "Loan-Repayment plan (client is borrower)",
+                        "code": "LD",
+                        "systemId": "EEAPI",
+                        "type": "Loans"
+                    },
+                    "sortOrder": 2
+                },
+                {
+                    "localeCode": "en_US",
+                    "lookupBean": {
+                        "shortLabel": "Loan-repayment of interest (client is lender)",
+                        "longLabel": "Loan-repayment of interest (client is lender)",
+                        "code": "LR",
+                        "systemId": "EEAPI",
+                        "type": "Loans"
+                    },
+                    "sortOrder": 3
+                },
+                {
+                    "localeCode": "en_US",
+                    "lookupBean": {
+                        "shortLabel": "Loan-repayment of principle (client is lender)",
+                        "longLabel": "Loan-repayment of principle (client is lender)",
+                        "code": "LP",
+                        "systemId": "EEAPI",
+                        "type": "Loans"
+                    },
+                    "sortOrder": 4
+                },
+                {
+                    "localeCode": "en_US",
+                    "lookupBean": {
+                        "shortLabel": "Reverse Mortgage (client is borrower)",
+                        "longLabel": "Reverse Mortgage (client is borrower)",
+                        "code": "RM",
+                        "systemId": "EEAPI",
+                        "type": "Loans"
+                    },
+                    "sortOrder": 5
+                },
+                {
+                    "localeCode": "en_US",
+                    "lookupBean": {
+                        "shortLabel": "Equity Loan (client is borrower)",
+                        "longLabel": "Equity Loan (client is borrower)",
+                        "code": "EL",
+                        "systemId": "EEAPI",
+                        "type": "Loans"
+                    },
+                    "sortOrder": 6
+                }
+            ]
+        },
+        "EducationalAssistance": {
+            "beans": [
+                {
+                    "localeCode": "en_US",
+                    "lookupBean": {
+                        "shortLabel": "Educational Assistance-Undergrad./Not Commiss of Educ.",
+                        "longLabel": "Educational Assistance-Undergrad./Not Commiss of Educ.",
+                        "code": "EA",
+                        "systemId": "EEAPI",
+                        "type": "EducationalAssistance"
+                    },
+                    "sortOrder": 1
+                },
+                {
+                    "localeCode": "en_US",
+                    "lookupBean": {
+                        "shortLabel": "Educational Assistance-Undergrad./Commiss of Educ.",
+                        "longLabel": "Educational Assistance-Undergrad./Commiss of Educ.",
+                        "code": "UG",
+                        "systemId": "EEAPI",
+                        "type": "EducationalAssistance"
+                    },
+                    "sortOrder": 2
+                },
+                {
+                    "localeCode": "en_US",
+                    "lookupBean": {
+                        "shortLabel": "Educational Resource-For Food Stamps only--Use resource from F.S. calculations sheet",
+                        "longLabel": "Educational Resource-For Food Stamps only--Use resource from F.S. calculations sheet",
+                        "code": "LR",
+                        "systemId": "EEAPI",
+                        "type": "EducationalAssistance"
+                    },
+                    "sortOrder": 3
+                }
+            ]
+        },
+        "ReturnOnInvestments": {
+            "beans": [
+                {
+                    "localeCode": "en_US",
+                    "lookupBean": {
+                        "shortLabel": "Annuity",
+                        "longLabel": "Annuity",
+                        "code": "AN",
+                        "systemId": "EEAPI",
+                        "type": "ReturnOnInvestments"
+                    },
+                    "sortOrder": 1
+                },
+                {
+                    "localeCode": "en_US",
+                    "lookupBean": {
+                        "shortLabel": "Interest & Dividends",
+                        "longLabel": "Interest & Dividends",
+                        "code": "IN",
+                        "systemId": "EEAPI",
+                        "type": "ReturnOnInvestments"
+                    },
+                    "sortOrder": 2
+                },
+                {
+                    "localeCode": "en_US",
+                    "lookupBean": {
+                        "shortLabel": "Royalties",
+                        "longLabel": "Royalties",
+                        "code": "RO",
+                        "systemId": "EEAPI",
+                        "type": "ReturnOnInvestments"
+                    },
+                    "sortOrder": 3
+                },
+                {
+                    "localeCode": "en_US",
+                    "lookupBean": {
+                        "shortLabel": "Rental Property",
+                        "longLabel": "Rental Property",
+                        "code": "RP",
+                        "systemId": "EEAPI",
+                        "type": "ReturnOnInvestments"
+                    },
+                    "sortOrder": 4
+                },
+                {
+                    "localeCode": "en_US",
+                    "lookupBean": {
+                        "shortLabel": "Income producing installment contract",
+                        "longLabel": "Income producing installment contract",
+                        "code": "IC",
+                        "systemId": "EEAPI",
+                        "type": "ReturnOnInvestments"
+                    },
+                    "sortOrder": 5
+                }
+            ]
+        },
+        "FosterCareAdoption": {
+            "beans": [
+                {
+                    "localeCode": "en_US",
+                    "lookupBean": {
+                        "shortLabel": "State subsidized Foster Care",
+                        "longLabel": "State subsidized Foster Care",
+                        "code": "SF",
+                        "systemId": "EEAPI",
+                        "type": "FosterCareAdoption"
+                    },
+                    "sortOrder": 1
+                },
+                {
+                    "localeCode": "en_US",
+                    "lookupBean": {
+                        "shortLabel": "State Subsidized Adoption",
+                        "longLabel": "State Subsidized Adoption",
+                        "code": "SS",
+                        "systemId": "EEAPI",
+                        "type": "FosterCareAdoption"
+                    },
+                    "sortOrder": 2
+                },
+                {
+                    "localeCode": "en_US",
+                    "lookupBean": {
+                        "shortLabel": "IV-E Foster Care",
+                        "longLabel": "IV-E Foster Care",
+                        "code": "FC",
+                        "systemId": "EEAPI",
+                        "type": "FosterCareAdoption"
+                    },
+                    "sortOrder": 3
+                },
+                {
+                    "localeCode": "en_US",
+                    "lookupBean": {
+                        "shortLabel": "IV-E Adoption payment",
+                        "longLabel": "IV-E Adoption payment",
+                        "code": "DA",
+                        "systemId": "EEAPI",
+                        "type": "FosterCareAdoption"
+                    },
+                    "sortOrder": 4
+                },
+                {
+                    "localeCode": "en_US",
+                    "lookupBean": {
+                        "shortLabel": "IV-E F.C.--Not duplicate of AFDC",
+                        "longLabel": "IV-E F.C.--Not duplicate of AFDC",
+                        "code": "DD",
+                        "systemId": "EEAPI",
+                        "type": "FosterCareAdoption"
+                    },
+                    "sortOrder": 5
+                },
+                {
+                    "localeCode": "en_US",
+                    "lookupBean": {
+                        "shortLabel": "Adult Foster Care",
+                        "longLabel": "Adult Foster Care",
+                        "code": "AF",
+                        "systemId": "EEAPI",
+                        "type": "FosterCareAdoption"
+                    },
+                    "sortOrder": 6
+                }
+            ]
+        },
+        "NeedsBasedAssistance": {
+            "beans": [
+                {
+                    "localeCode": "en_US",
+                    "lookupBean": {
+                        "shortLabel": "Energy Assistance",
+                        "longLabel": "Energy Assistance",
+                        "code": "EN",
+                        "systemId": "EEAPI",
+                        "type": "NeedsBasedAssistance"
+                    },
+                    "sortOrder": 1
+                },
+                {
+                    "localeCode": "en_US",
+                    "lookupBean": {
+                        "shortLabel": "Emergency Assistance",
+                        "longLabel": "Emergency Assistance",
+                        "code": "EB",
+                        "systemId": "EEAPI",
+                        "type": "NeedsBasedAssistance"
+                    },
+                    "sortOrder": 2
+                },
+                {
+                    "localeCode": "en_US",
+                    "lookupBean": {
+                        "shortLabel": "Migrant Emergency Assist",
+                        "longLabel": "Migrant Emergency Assist",
+                        "code": "ME",
+                        "systemId": "EEAPI",
+                        "type": "NeedsBasedAssistance"
+                    },
+                    "sortOrder": 3
+                },
+                {
+                    "localeCode": "en_US",
+                    "lookupBean": {
+                        "shortLabel": "WIC",
+                        "longLabel": "WIC",
+                        "code": "WI",
+                        "systemId": "EEAPI",
+                        "type": "NeedsBasedAssistance"
+                    },
+                    "sortOrder": 4
+                },
+                {
+                    "localeCode": "en_US",
+                    "lookupBean": {
+                        "shortLabel": "Nutrition for the Elderly",
+                        "longLabel": "Nutrition for the Elderly",
+                        "code": "NE",
+                        "systemId": "EEAPI",
+                        "type": "NeedsBasedAssistance"
+                    },
+                    "sortOrder": 5
+                }
+            ]
+        },
+        "PublicAssistance": {
+            "beans": [
+                {
+                    "localeCode": "en_US",
+                    "lookupBean": {
+                        "shortLabel": "Cash Assistance-Maryland",
+                        "longLabel": "Cash Assistance-Maryland",
+                        "code": "PA",
+                        "systemId": "EEAPI",
+                        "type": "PublicAssistance"
+                    },
+                    "sortOrder": 1
+                },
+                {
+                    "localeCode": "en_US",
+                    "lookupBean": {
+                        "shortLabel": "GPA-Maryland",
+                        "longLabel": "GPA-Maryland",
+                        "code": "GA",
+                        "systemId": "EEAPI",
+                        "type": "PublicAssistance"
+                    },
+                    "sortOrder": 2
+                },
+                {
+                    "localeCode": "en_US",
+                    "lookupBean": {
+                        "shortLabel": "Cash Assist.-Out of state",
+                        "longLabel": "Cash Assist.-Out of state",
+                        "code": "OO",
+                        "systemId": "EEAPI",
+                        "type": "PublicAssistance"
+                    },
+                    "sortOrder": 3
+                },
+                {
+                    "localeCode": "en_US",
+                    "lookupBean": {
+                        "shortLabel": "GPA--Out of state",
+                        "longLabel": "GPA--Out of state",
+                        "code": "OS",
+                        "systemId": "EEAPI",
+                        "type": "PublicAssistance"
+                    },
+                    "sortOrder": 4
+                }
+            ]
+        },
+        "Relocation": {
+            "beans": [
+                {
+                    "localeCode": "en_US",
+                    "lookupBean": {
+                        "shortLabel": "Federal Relocation Assist",
+                        "longLabel": "Federal Relocation Assist",
+                        "code": "FR",
+                        "systemId": "EEAPI",
+                        "type": "Relocation"
+                    },
+                    "sortOrder": 1
+                },
+                {
+                    "localeCode": "en_US",
+                    "lookupBean": {
+                        "shortLabel": "State Relocation Assist",
+                        "longLabel": "State Relocation Assist",
+                        "code": "SR",
+                        "systemId": "EEAPI",
+                        "type": "Relocation"
+                    },
+                    "sortOrder": 2
+                }
+            ]
+        },
+        "ShelterRelated": {
+            "beans": [
+                {
+                    "localeCode": "en_US",
+                    "lookupBean": {
+                        "shortLabel": "Utility Supplement",
+                        "longLabel": "Utility Supplement",
+                        "code": "US",
+                        "systemId": "EEAPI",
+                        "type": "ShelterRelated"
+                    },
+                    "sortOrder": 1
+                },
+                {
+                    "localeCode": "en_US",
+                    "lookupBean": {
+                        "shortLabel": "HUD supplement to landlord",
+                        "longLabel": "HUD supplement to landlord",
+                        "code": "HS",
+                        "systemId": "EEAPI",
+                        "type": "ShelterRelated"
+                    },
+                    "sortOrder": 2
+                },
+                {
+                    "localeCode": "en_US",
+                    "lookupBean": {
+                        "shortLabel": "Experimental Housing Allow",
+                        "longLabel": "Experimental Housing Allow",
+                        "code": "EH",
+                        "systemId": "EEAPI",
+                        "type": "ShelterRelated"
+                    },
+                    "sortOrder": 3
+                }
+            ]
+        },
+        "ProjectIndependence": {
+            "beans": [
+                {
+                    "localeCode": "en_US",
+                    "lookupBean": {
+                        "shortLabel": "P.I. Needs Base Payment",
+                        "longLabel": "P.I. Needs Base Payment",
+                        "code": "JB",
+                        "systemId": "EEAPI",
+                        "type": "ProjectIndependence"
+                    },
+                    "sortOrder": 1
+                },
+                {
+                    "localeCode": "en_US",
+                    "lookupBean": {
+                        "shortLabel": "P.I. Support Services",
+                        "longLabel": "P.I. Support Services",
+                        "code": "PI",
+                        "systemId": "EEAPI",
+                        "type": "ProjectIndependence"
+                    },
+                    "sortOrder": 2
+                }
+            ]
+        },
+        "LumpSum": {
+            "beans": [
+                {
+                    "localeCode": "en_US",
+                    "lookupBean": {
+                        "shortLabel": "LumpSum",
+                        "longLabel": "LumpSum",
+                        "code": "LS",
+                        "systemId": "EEAPI",
+                        "type": "LumpSum"
+                    },
+                    "sortOrder": 1
+                }
+            ]
+        },
+        "VolunteerRelated": {
+            "beans": [
+                {
+                    "localeCode": "en_US",
+                    "lookupBean": {
+                        "shortLabel": "Reimbursement as a volunteer",
+                        "longLabel": "Reimbursement as a volunteer",
+                        "code": "RV",
+                        "systemId": "EEAPI",
+                        "type": "VolunteerRelated"
+                    },
+                    "sortOrder": 1
+                },
+                {
+                    "localeCode": "en_US",
+                    "lookupBean": {
+                        "shortLabel": "Domestic Volunteer Service Act",
+                        "longLabel": "Domestic Volunteer Service Act",
+                        "code": "DV",
+                        "systemId": "EEAPI",
+                        "type": "VolunteerRelated"
+                    },
+                    "sortOrder": 2
+                },
+                {
+                    "localeCode": "en_US",
+                    "lookupBean": {
+                        "shortLabel": "Vista",
+                        "longLabel": "Vista",
+                        "code": "VI",
+                        "systemId": "EEAPI",
+                        "type": "VolunteerRelated"
+                    },
+                    "sortOrder": 3
+                }
+            ]
+        },
+        "VariableInfrequent": {
+            "beans": [
+                {
+                    "localeCode": "en_US",
+                    "lookupBean": {
+                        "shortLabel": "Irregular income-Less than $30 per quarter",
+                        "longLabel": "Irregular income-Less than $30 per quarter",
+                        "code": "II",
+                        "systemId": "EEAPI",
+                        "type": "VariableInfrequent"
+                    },
+                    "sortOrder": 1
+                },
+                {
+                    "localeCode": "en_US",
+                    "lookupBean": {
+                        "shortLabel": "Irregular income-$30 to $60 per quarter",
+                        "longLabel": "Irregular income-$30 to $60 per quarter",
+                        "code": "IR",
+                        "systemId": "EEAPI",
+                        "type": "VariableInfrequent"
+                    },
+                    "sortOrder": 2
+                },
+                {
+                    "localeCode": "en_US",
+                    "lookupBean": {
+                        "shortLabel": "One time only Application month Income",
+                        "longLabel": "One time only Application month Income",
+                        "code": "OT",
+                        "systemId": "EEAPI",
+                        "type": "VariableInfrequent"
+                    },
+                    "sortOrder": 3
+                }
+            ]
+        },
+        "OtherUI": {
+            "beans": [
+                {
+                    "localeCode": "en_US",
+                    "lookupBean": {
+                        "shortLabel": "Other Countable-Cash & M.A. only",
+                        "longLabel": "Other Countable-Cash & M.A. only",
+                        "code": "OA",
+                        "systemId": "EEAPI",
+                        "type": "OtherUI"
+                    },
+                    "sortOrder": 1
+                },
+                {
+                    "localeCode": "en_US",
+                    "lookupBean": {
+                        "shortLabel": "Other Countable-Food Stamps only",
+                        "longLabel": "Other Countable-Food Stamps only",
+                        "code": "OF",
+                        "systemId": "EEAPI",
+                        "type": "OtherUI"
+                    },
+                    "sortOrder": 2
+                },
+                {
+                    "localeCode": "en_US",
+                    "lookupBean": {
+                        "shortLabel": "Other Countable-All Programs",
+                        "longLabel": "Other Countable-All Programs",
+                        "code": "OC",
+                        "systemId": "EEAPI",
+                        "type": "OtherUI"
+                    },
+                    "sortOrder": 3
+                },
+                {
+                    "localeCode": "en_US",
+                    "lookupBean": {
+                        "shortLabel": "Other Non-Countable-All Programs",
+                        "longLabel": "Other Non-Countable-All Programs",
+                        "code": "ON",
+                        "systemId": "EEAPI",
+                        "type": "OtherUI"
+                    },
+                    "sortOrder": 4
+                }
+            ]
+        },
+        "PrimaryLanguage": {
+            "beans": [
+                {
+                    "localeCode": "en_US",
+                    "lookupBean": {
+                        "shortLabel": "Arabic",
+                        "longLabel": "Arabic",
+                        "code": "A",
+                        "systemId": "EEAPI",
+                        "type": "PrimaryLanguage"
+                    },
+                    "sortOrder": 1
+                },
+				               {
+                    "localeCode": "en_US",
+                    "lookupBean": {
+                        "shortLabel": "English",
+                        "longLabel": "English",
+                        "code": "E",
+                        "systemId": "EEAPI",
+                        "type": "PrimaryLanguage"
+                    },
+                    "sortOrder": 1
+                },
+
+				               {
+                    "localeCode": "en_US",
+                    "lookupBean": {
+                        "shortLabel": "French",
+                        "longLabel": "French",
+                        "code": "F",
+                        "systemId": "EEAPI",
+                        "type": "PrimaryLanguage"
+                    },
+                    "sortOrder": 1
+                },
+
+				               {
+                    "localeCode": "en_US",
+                    "lookupBean": {
+                        "shortLabel": "German",
+                        "longLabel": "German",
+                        "code": "G",
+                        "systemId": "EEAPI",
+                        "type": "PrimaryLanguage"
+                    },
+                    "sortOrder": 1
+                },
+
+				               {
+                    "localeCode": "en_US",
+                    "lookupBean": {
+                        "shortLabel": "Hmung",
+                        "longLabel": "Hmung",
+                        "code": "H",
+                        "systemId": "EEAPI",
+                        "type": "PrimaryLanguage"
+                    },
+                    "sortOrder": 1
+                },
+
+				               {
+                    "localeCode": "en_US",
+                    "lookupBean": {
+                        "shortLabel": "Italian",
+                        "longLabel": "Italian",
+                        "code": "I",
+                        "systemId": "EEAPI",
+                        "type": "PrimaryLanguage"
+                    },
+                    "sortOrder": 1
+                },
+               {
+                    "localeCode": "en_US",
+                    "lookupBean": {
+                        "shortLabel": "Kymer",
+                        "longLabel": "Kymer",
+                        "code": "K",
+                        "systemId": "EEAPI",
+                        "type": "PrimaryLanguage"
+                    },
+                    "sortOrder": 1
+                },
+
+				               {
+                    "localeCode": "en_US",
+                    "lookupBean": {
+                        "shortLabel": "Laotian",
+                        "longLabel": "Laotian",
+                        "code": "L",
+                        "systemId": "EEAPI",
+                        "type": "PrimaryLanguage"
+                    },
+                    "sortOrder": 1
+                },
+				{
+                    "localeCode": "en_US",
+                    "lookupBean": {
+                        "shortLabel": "Polish",
+                        "longLabel": "Polish",
+                        "code": "P",
+                        "systemId": "EEAPI",
+                        "type": "PrimaryLanguage"
+                    },
+                    "sortOrder": 1
+                },
+				{
+                    "localeCode": "en_US",
+                    "lookupBean": {
+                        "shortLabel": "Portugese",
+                        "longLabel": "Portugese",
+                        "code": "O",
+                        "systemId": "EEAPI",
+                        "type": "PrimaryLanguage"
+                    },
+                    "sortOrder": 1
+                },
+				{
+                    "localeCode": "en_US",
+                    "lookupBean": {
+                        "shortLabel": "Russian",
+                        "longLabel": "Russian",
+                        "code": "R",
+                        "systemId": "EEAPI",
+                        "type": "PrimaryLanguage"
+                    },
+                    "sortOrder": 1
+                },
+				{
+                    "localeCode": "en_US",
+                    "lookupBean": {
+                        "shortLabel": "Spanish",
+                        "longLabel": "Spanish",
+                        "code": "S",
+                        "systemId": "EEAPI",
+                        "type": "PrimaryLanguage"
+                    },
+                    "sortOrder": 1
+                },
+				{
+                    "localeCode": "en_US",
+                    "lookupBean": {
+                        "shortLabel": "Vietnamese",
+                        "longLabel": "Vietnamese",
+                        "code": "V",
+                        "systemId": "EEAPI",
+                        "type": "PrimaryLanguage"
+                    },
+                    "sortOrder": 1
+                },
+				{
+                    "localeCode": "en_US",
+                    "lookupBean": {
+                        "shortLabel": "Other",
+                        "longLabel": "Other",
+                        "code": "X",
+                        "systemId": "EEAPI",
+                        "type": "PrimaryLanguage"
+                    },
+                    "sortOrder": 1
+                },
+				{
+                    "localeCode": "en_US",
+                    "lookupBean": {
+                        "shortLabel": "Farsi",
+                        "longLabel": "Farsi",
+                        "code": "Z",
+                        "systemId": "EEAPI",
+                        "type": "PrimaryLanguage"
+                    },
+                    "sortOrder": 1
+                }
+
+				
+				]
+		},
+        "HearingImpaired": {
+            "beans": [
+                {
+                    "localeCode": "en_US",
+                    "lookupBean": {
+                        "shortLabel": "American Sign Lanuage",
+                        "longLabel": "American Sign Lanuage",
+                        "code": "A",
+                        "systemId": "EEAPI",
+                        "type": "HearingImpaired"
+                    },
+                    "sortOrder": 1
+                },
+                {
+                    "localeCode": "en_US",
+                    "lookupBean": {
+                        "shortLabel": "Don",
+                        "longLabel": "Don",
+                        "code": "D",
+                        "systemId": "EEAPI",
+                        "type": "HearingImpaired"
+                    },
+                    "sortOrder": 2
+                }
+				,
+                {
+                    "localeCode": "en_US",
+                    "lookupBean": {
+                        "shortLabel": "Minimum Lanuage Skills",
+                        "longLabel": "Minimum Lanuage Skills",
+                        "code": "M",
+                        "systemId": "EEAPI",
+                        "type": "HearingImpaired"
+                    },
+                    "sortOrder": 2
+                }
+				,
+                {
+                    "localeCode": "en_US",
+                    "lookupBean": {
+                        "shortLabel": "No Hearing Impairment",
+                        "longLabel": "No Hearing Impairment",
+                        "code": "N",
+                        "systemId": "EEAPI",
+                        "type": "HearingImpaired"
+                    },
+                    "sortOrder": 2
+                }
+				,
+                {
+                    "localeCode": "en_US",
+                    "lookupBean": {
+                        "shortLabel": "Oral Interpreter",
+                        "longLabel": "Oral Interpreter",
+                        "code": "O",
+                        "systemId": "EEAPI",
+                        "type": "HearingImpaired"
+                    },
+                    "sortOrder": 2
+                },
+                {
+                    "localeCode": "en_US",
+                    "lookupBean": {
+                        "shortLabel": "Pidgin Sign Lanuage",
+                        "longLabel": "Pidgin Sign Lanuage",
+                        "code": "P",
+                        "systemId": "EEAPI",
+                        "type": "HearingImpaired"
+                    },
+                    "sortOrder": 2
+                }
+				,
+                {
+                    "localeCode": "en_US",
+                    "lookupBean": {
+                        "shortLabel": "Signed English",
+                        "longLabel": "Signed English",
+                        "code": "S",
+                        "systemId": "EEAPI",
+                        "type": "HearingImpaired"
+                    },
+                    "sortOrder": 2
+                }
+            ]
+        },
+        "States": {
+            "beans": [
+                {
+                    "localeCode": "en_US",
+                    "lookupBean": {
+                        "shortLabel": "Maryland",
+                        "longLabel": "Maryland",
+                        "code": "MD",
+                        "systemId": "EEAPI",
+                        "type": "States"
+                    },
+                    "sortOrder": 1
+                }
+            ]
+        },
+         "County": {
+            "beans": [
+                {
+                    "localeCode": "en_US",
+                    "lookupBean": {
+                        "shortLabel": "Baltimore City",
+                        "longLabel": "Baltimore City",
+                        "code": "BC",
+                        "systemId": "EEAPI",
+                        "type": "County"
+                    },
+                    "sortOrder": 1
+                }
+            ]
+        },
+        "District": {
+            "beans": [
+                {
+                    "localeCode": "en_US",
+                    "lookupBean": {
+                        "shortLabel": "Baltimore City",
+                        "longLabel": "Baltimore City",
+                        "code": "BC",
+                        "systemId": "EEAPI",
+                        "type": "District"
+                    },
+                    "sortOrder": 1
+                },
+                {
+                    "localeCode": "en_US",
+                    "lookupBean": {
+                        "shortLabel": "Baltimore Region",
+                        "longLabel": "Baltimore Region",
+                        "code": "BR",
+                        "systemId": "EEAPI",
+                        "type": "District"
+                    },
+                    "sortOrder": 1
+                },
+                {
+                    "localeCode": "en_US",
+                    "lookupBean": {
+                        "shortLabel": "Eastern Shore",
+                        "longLabel": "Eastern Shore",
+                        "code": "ES",
+                        "systemId": "EEAPI",
+                        "type": "District"
+                    },
+                    "sortOrder": 1
+                }
+            ]
+        }
+        ,
+        "PhoneType": {
+            "beans": [
+                {
+                    "localeCode": "en_US",
+                    "lookupBean": {
+                        "shortLabel": "Home",
+                        "longLabel": "Home",
+                        "code": "H",
+                        "systemId": "EEAPI",
+                        "type": "PhoneType"
+                    },
+                    "sortOrder": 1
+                },
+                {
+                    "localeCode": "en_US",
+                    "lookupBean": {
+                        "shortLabel": "Work",
+                        "longLabel": "Work",
+                        "code": "W",
+                        "systemId": "EEAPI",
+                        "type": "PhoneType"
+                    },
+                    "sortOrder": 1
+                }
+            ]
+        }
+    }
+}

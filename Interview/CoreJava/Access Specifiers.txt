@@ -1,0 +1,53 @@
+Section ---Access Specifiers (Non Access modifiers)
+
+Static Variables:
+=================
+The static keyword is used to create variables that will exist independently of any instances created for the class. Only one copy of the static variable exists regardless of the number of instances of the class.
+Static variables are also known as class variables. Local variables cannot be declared static.
+
+Static Methods:
+===============
+The static keyword is used to create methods that will exist independently of any instances created for the class.
+Static methods do not use any instance variables of any object of the class they are defined in. Static methods take all the data from parameters and compute something from those parameters, with no reference to variables.
+Class variables and methods can be accessed using the class name followed by a dot and the name of the variable or method.
+
+Final Variables:
+=================
+A final variable can be explicitly initialized only once. A reference variable declared final can never be reassigned to refer to an different object.
+However, the data within the object can be changed. So, the state of the object can be changed but not the reference.
+With variables, the final modifier often is used with static to make the constant a class variable.
+
+Final Methods:
+=============
+A final method cannot be overridden by any subclasses. As mentioned previously, the final modifier prevents a method from being modified in a subclass.
+The main intention of making a method final would be that the content of the method should not be changed by any outsider.
+
+Final Classes:
+==============
+The main purpose of using a class being declared as final is to prevent the class from being subclassed. If a class is marked as final then no class can inherit any feature from the final class.
+
+Abstract Class:
+==============
+An abstract class can never be instantiated. If a class is declared as abstract then the sole purpose is for the class to be extended.
+A class cannot be both abstract and final (since a final class cannot be extended). If a class contains abstract methods then the class should be declared abstract. Otherwise, a compile error will be thrown.
+An abstract class may contain both abstract methods as well normal methods.
+
+Abstract Methods:
+=================
+An abstract method is a method declared without any implementation. The methods body (implementation) is provided by the subclass. Abstract methods can never be final or strict.
+Any class that extends an abstract class must implement all the abstract methods of the super class, unless the subclass is also an abstract class.
+If a class contains one or more abstract methods, then the class must be declared abstract. An abstract class does not need to contain abstract methods.
+The abstract method ends with a semicolon. Example: public abstract sample();
+
+The Synchronized Modifier:
+==========================
+The synchronized keyword used to indicate that a method can be accessed by only one thread at a time. The synchronized modifier can be applied with any of the four access level modifiers.
+
+The Transient Modifier:
+======================
+An instance variable is marked transient to indicate the JVM to skip the particular variable when serializing the object containing it.
+This modifier is included in the statement that creates the variable, preceding the class or data type of the variable.
+
+Voltaile:
+========
+Instead of synchronized variable in Java, you can have java volatile variable, which will instruct JVM threads to read value of volatile variable from main memory and don't cache it locally. If a variable is not shared between multiple threads no need to use volatile keyword with that variable.

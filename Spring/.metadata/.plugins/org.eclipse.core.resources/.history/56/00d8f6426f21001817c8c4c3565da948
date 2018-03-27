@@ -1,0 +1,31 @@
+package com.sample.test.web.WebApplicationDemo;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+@Configuration
+@EnableAutoConfiguration
+@Controller
+@ComponentScan
+public class WebApplicationDemoApplication {
+
+	public static void main(String[] args) {
+		SpringApplication.run(WebApplicationDemoApplication.class, args);
+	}
+	@RequestMapping("/ExceptionNotFound")
+	String getFirstString(){
+		try {
+			throw new ExceptionNotFound(1);
+		} catch (ExceptionNotFound e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return "Hey THis is my First Programme";
+	}
+	
+	 
+}

@@ -1,0 +1,864 @@
+{
+    "screening": {
+        "benefitsCase": {
+            "caseId": null,
+            "applicationDate": null,
+            "householdMembers": [
+                {
+                    "householdMemberId": null,
+                    "headOfHouseholdYN": null,
+                    "relationshipCd": null,
+                    "altNames": [
+                        {
+                            "firstName": "Jake",
+                            "middleName": "Smith",
+                            "lastName": "Rodrigus",
+                            "suffix": null
+                        }
+                    ],
+                    "additionalSsns": [
+                        {
+                            "ssnPart1": "123",
+                            "ssnPart2": "456",
+                            "ssnPart3": "7890"
+                        },
+                        {
+                            "ssnPart1": "123",
+                            "ssnPart2": "456",
+                            "ssnPart3": "7891"
+                        }
+                    ],
+                    "pregnantYN": null,
+                    "pregnancyDueDate": null,
+                    "aliasClientIds": [
+                        456,
+                        789
+                    ],
+                    "memberClearanceId": null,
+                    "memberClearedYN": null,
+                    "memberEditableYN": null,
+                    "cases": [
+                        345678,
+                        789574
+                    ],
+                    "verification": {
+                        "ssnVerificationModel": {
+                            "verificationDocumentCd": null,
+                            "verificationRequestedYN": null,
+                            "verificationType": null,
+                            "verifiedYN": null,
+                            "retryCount": 0,
+                            "messages": null
+                        },
+                        "dobVerificationModel": {
+                            "verificationDocumentCd": null,
+                            "verificationRequestedYN": null,
+                            "verificationType": null,
+                            "verifiedYN": null,
+                            "retryCount": 0,
+                            "messages": null
+                        }
+                    },
+                    "hasSsnYN": "Y",
+                    "ssnReferral": null,
+                    "personName": {
+                        "firstName": "Jake",
+                        "middleName": null,
+                        "lastName": "Smith",
+                        "suffix": null
+                    },
+                    "dob": "05/19/1992",
+                    "ssn": {
+                        "ssnPart1": "123",
+                        "ssnPart2": "456",
+                        "ssnPart3": "7892"
+                    },
+                    "gender": "M",
+                    "raceCds": [
+                        "Caucasian",
+                        "Hispanic"
+                    ],
+                    "deletedYN": null
+                },
+                {
+                    "householdMemberId": null,
+                    "headOfHouseholdYN": null,
+                    "relationshipCd": null,
+                    "altNames": [
+                        {
+                            "firstName": "Jake",
+                            "middleName": "Smith",
+                            "lastName": "Rodrigus",
+                            "suffix": null
+                        }
+                    ],
+                    "additionalSsns": [
+                        {
+                            "ssnPart1": "123",
+                            "ssnPart2": "456",
+                            "ssnPart3": "7890"
+                        },
+                        {
+                            "ssnPart1": "123",
+                            "ssnPart2": "456",
+                            "ssnPart3": "7891"
+                        }
+                    ],
+                    "pregnantYN": null,
+                    "pregnancyDueDate": null,
+                    "aliasClientIds": [
+                        456,
+                        789
+                    ],
+                    "memberClearanceId": null,
+                    "memberClearedYN": null,
+                    "memberEditableYN": null,
+                    "cases": [
+                        345678,
+                        789574
+                    ],
+                    "verification": {
+                        "ssnVerificationModel": {
+                            "verificationDocumentCd": null,
+                            "verificationRequestedYN": null,
+                            "verificationType": null,
+                            "verifiedYN": null,
+                            "retryCount": 0,
+                            "messages": null
+                        },
+                        "dobVerificationModel": {
+                            "verificationDocumentCd": null,
+                            "verificationRequestedYN": null,
+                            "verificationType": null,
+                            "verifiedYN": null,
+                            "retryCount": 0,
+                            "messages": null
+                        }
+                    },
+                    "hasSsnYN": "Y",
+                    "ssnReferral": null,
+                    "personName": {
+                        "firstName": "Jake",
+                        "middleName": null,
+                        "lastName": "Smith",
+                        "suffix": null
+                    },
+                    "dob": "05/19/1992",
+                    "ssn": {
+                        "ssnPart1": "123",
+                        "ssnPart2": "456",
+                        "ssnPart3": "7892"
+                    },
+                    "gender": "M",
+                    "raceCds": [
+                        "Caucasian",
+                        "Hispanic"
+                    ],
+                    "deletedYN": null
+                }
+            ],
+            "contactInformation": {
+                "homeAddress": {
+                    "addressLine1": null,
+                    "addressLine2": null,
+                    "city": null,
+                    "state": null,
+                    "county": null,
+                    "district": null,
+                    "zipcode": null
+                },
+                "mailingAddress": {
+                    "addressLine1": null,
+                    "addressLine2": null,
+                    "city": null,
+                    "state": null,
+                    "county": null,
+                    "district": null,
+                    "zipcode": null
+                },
+                "sameMailingAddressYN": null,
+                "phoneNumber": {
+                    "phoneNumber": null,
+                    "phoneNumberType": null,
+                    "phoneNumberExt": null
+                },
+                "altPhoneNumber": {
+                    "phoneNumber": null,
+                    "phoneNumberType": null,
+                    "phoneNumberExt": null
+                },
+                "email": null
+            },
+            "additionalInformation": {
+                "preferredLanguage": null,
+                "interpreterNeededYN": null,
+                "visuallyImparedYN": null,
+                "hearingImparedYN": null,
+                "hearingImparedType": null
+            },
+            "requestedPrograms": [
+                {
+                    "programName": null,
+                    "programType": null,
+                    "medCoverageGroup": null,
+                    "availableAuId": null,
+                    "ppiGroup": null,
+                    "selectedYN": null,
+                    "eligibleYN": null,
+                    "requestedYN": null
+                },
+                {
+                    "programName": null,
+                    "programType": null,
+                    "medCoverageGroup": null,
+                    "availableAuId": null,
+                    "ppiGroup": null,
+                    "selectedYN": null,
+                    "eligibleYN": null,
+                    "requestedYN": null
+                },
+                {
+                    "programName": null,
+                    "programType": null,
+                    "medCoverageGroup": null,
+                    "availableAuId": null,
+                    "ppiGroup": null,
+                    "selectedYN": null,
+                    "eligibleYN": null,
+                    "requestedYN": null
+                },
+                {
+                    "programName": null,
+                    "programType": null,
+                    "medCoverageGroup": null,
+                    "availableAuId": null,
+                    "ppiGroup": null,
+                    "selectedYN": null,
+                    "eligibleYN": null,
+                    "requestedYN": null
+                }
+            ],
+            "householdCircumstance": {
+                "earningsAmount": null,
+                "unearnedAmount": null,
+                "assetAmount": null,
+                "shelterAmount": null,
+                "homelessYN": null,
+                "disabledYN": null,
+                "refugeeYN": null,
+                "blindYN": null,
+                "destituteMigrantYN": null,
+                "shelterIncludesMealsYN": null,
+                "protectiveLivingArrangementYN": null,
+                "communityBasedWaiverYN": null,
+                "medicarePartAEntitlementYN": null,
+                "absentParent": {
+                    "personName": {
+                        "firstName": null,
+                        "middleName": null,
+                        "lastName": null,
+                        "suffix": null
+                    },
+                    "dob": null,
+                    "ssn": {
+                        "ssnPart1": null,
+                        "ssnPart2": null,
+                        "ssnPart3": null
+                    },
+                    "gender": null,
+                    "raceCds": null,
+                    "deletedYN": null
+                }
+            },
+            "authorizedRepresentatives": [
+                {
+                    "authRepType": null,
+                    "relationshipCd": null,
+                    "personName": null,
+                    "dob": null,
+                    "ssn": null,
+                    "gender": null,
+                    "raceCds": null,
+                    "deletedYN": null
+                }
+            ],
+            "eligibility": {
+                "programs": [
+                    {
+                        "programName": null,
+                        "programType": null,
+                        "medCoverageGroup": null,
+                        "availableAuId": null,
+                        "ppiGroup": null,
+                        "selectedYN": null,
+                        "eligibleYN": null,
+                        "requestedYN": null
+                    },
+                    {
+                        "programName": null,
+                        "programType": null,
+                        "medCoverageGroup": null,
+                        "availableAuId": null,
+                        "ppiGroup": null,
+                        "selectedYN": null,
+                        "eligibleYN": null,
+                        "requestedYN": null
+                    },
+                    {
+                        "programName": null,
+                        "programType": null,
+                        "medCoverageGroup": null,
+                        "availableAuId": null,
+                        "ppiGroup": null,
+                        "selectedYN": null,
+                        "eligibleYN": null,
+                        "requestedYN": null
+                    }
+                ],
+                "expeditedFoodStampsYN": null
+            },
+            "signature": {
+                "withdrawAppBeforeSigningYN": null,
+                "withdrawAppAfterSigningYN": null,
+                "lastNameAndRemarks": null
+            },
+            "scheduleInterview": {
+                "worker": {
+                    "unitType": null,
+                    "unitNumber": null,
+                    "workerId": null,
+                    "timeSlots": null,
+                    "personName": null,
+                    "dob": null,
+                    "ssn": null,
+                    "gender": null,
+                    "raceCds": null,
+                    "deletedYN": null
+                },
+                "inquiryDate": null,
+                "appointmentStartTime": null,
+                "appointmentEndTime": null,
+                "appointmentType": null
+            },
+            "reviewUpdateNarrativeYN": null,
+            "requestBackgroundVerificationYN": null,
+            "caseStatusCode": null
+        },
+        "verification": {
+            "retryCount": 0,
+            "messages": [
+                {
+                    "code": null,
+                    "message": null,
+                    "severity": 0
+                },
+                {
+                    "code": null,
+                    "message": null,
+                    "severity": 0
+                }
+            ]
+        },
+        "screeningSteps": {
+            "initiateScreeningComplete": false,
+            "registrationRequired": false,
+            "registrationComplete": false,
+            "verificationComplete": false,
+            "householdInformationRequired": false,
+            "householdInformationComplete": false,
+            "contactInformationRequired": false,
+            "contactInformationComplete": false,
+            "requestedProgramSelectionRequired": false,
+            "requestedProgramSelectionComplete": false,
+            "householdCircumstancesRequired": false,
+            "householdCircumstancesComplete": false,
+            "informedChoiceRequired": false,
+            "informedChoiceComplete": false,
+            "assitanceRequiredFormPrinted": false,
+            "screeningDispositionRequired": false,
+            "screeningDispositionComplete": false,
+            "trialBudgetComplete": false,
+            "screeningComplete": false
+        },
+        "caseNarrative": null
+    },
+    "workerManagement": {
+        "search": {
+            "unitType": null,
+            "unitNumber": null,
+            "workerId": null,
+            "timeSlots": {
+                "10:00": "A",
+                "10:30": "A",
+                "11:00": "NA",
+                "11:30": "A",
+                "12:00": "NA",
+                "12:30": "A",
+                "13:00": "A",
+                "9:30": "A"
+            },
+            "personName": {
+                "firstName": "Worker",
+                "middleName": null,
+                "lastName": "Name",
+                "suffix": null
+            },
+            "dob": null,
+            "ssn": null,
+            "gender": null,
+            "raceCds": null,
+            "deletedYN": null
+        },
+        "results": [
+            {
+                "unitType": null,
+                "unitNumber": null,
+                "workerId": null,
+                "timeSlots": {
+                    "10:00": "A",
+                    "10:30": "A",
+                    "11:00": "NA",
+                    "11:30": "A",
+                    "12:00": "NA",
+                    "12:30": "A",
+                    "13:00": "A",
+                    "9:30": "A"
+                },
+                "personName": {
+                    "firstName": "Worker",
+                    "middleName": null,
+                    "lastName": "Name",
+                    "suffix": null
+                },
+                "dob": null,
+                "ssn": null,
+                "gender": null,
+                "raceCds": null,
+                "deletedYN": null
+            },
+            {
+                "unitType": null,
+                "unitNumber": null,
+                "workerId": null,
+                "timeSlots": {
+                    "10:00": "A",
+                    "10:30": "A",
+                    "11:00": "NA",
+                    "11:30": "A",
+                    "12:00": "NA",
+                    "12:30": "A",
+                    "13:00": "A",
+                    "9:30": "A"
+                },
+                "personName": {
+                    "firstName": "Worker",
+                    "middleName": null,
+                    "lastName": "Name",
+                    "suffix": null
+                },
+                "dob": null,
+                "ssn": null,
+                "gender": null,
+                "raceCds": null,
+                "deletedYN": null
+            }
+        ]
+    },
+    "clientManagement": {
+        "client": {
+            "householdMemberId": null,
+            "headOfHouseholdYN": null,
+            "relationshipCd": null,
+            "altNames": null,
+            "additionalSsns": null,
+            "pregnantYN": null,
+            "pregnancyDueDate": null,
+            "aliasClientIds": null,
+            "memberClearanceId": null,
+            "memberClearedYN": null,
+            "memberEditableYN": null,
+            "cases": null,
+            "verification": {
+                "ssnVerificationModel": {
+                    "verificationDocumentCd": null,
+                    "verificationRequestedYN": null,
+                    "verificationType": null,
+                    "verifiedYN": null,
+                    "retryCount": 0,
+                    "messages": null
+                },
+                "dobVerificationModel": {
+                    "verificationDocumentCd": null,
+                    "verificationRequestedYN": null,
+                    "verificationType": null,
+                    "verifiedYN": null,
+                    "retryCount": 0,
+                    "messages": null
+                }
+            },
+            "hasSsnYN": null,
+            "ssnReferral": null,
+            "personName": null,
+            "dob": null,
+            "ssn": null,
+            "gender": null,
+            "raceCds": null,
+            "deletedYN": null
+        },
+        "search": {
+            "householdMemberId": null,
+            "headOfHouseholdYN": null,
+            "relationshipCd": null,
+            "altNames": [
+                {
+                    "firstName": "Jake",
+                    "middleName": "Smith",
+                    "lastName": "Rodrigus",
+                    "suffix": null
+                }
+            ],
+            "additionalSsns": [
+                {
+                    "ssnPart1": "123",
+                    "ssnPart2": "456",
+                    "ssnPart3": "7890"
+                },
+                {
+                    "ssnPart1": "123",
+                    "ssnPart2": "456",
+                    "ssnPart3": "7891"
+                }
+            ],
+            "pregnantYN": null,
+            "pregnancyDueDate": null,
+            "aliasClientIds": [
+                456,
+                789
+            ],
+            "memberClearanceId": null,
+            "memberClearedYN": null,
+            "memberEditableYN": null,
+            "cases": [
+                345678,
+                789574
+            ],
+            "verification": {
+                "ssnVerificationModel": {
+                    "verificationDocumentCd": null,
+                    "verificationRequestedYN": null,
+                    "verificationType": null,
+                    "verifiedYN": null,
+                    "retryCount": 0,
+                    "messages": null
+                },
+                "dobVerificationModel": {
+                    "verificationDocumentCd": null,
+                    "verificationRequestedYN": null,
+                    "verificationType": null,
+                    "verifiedYN": null,
+                    "retryCount": 0,
+                    "messages": null
+                }
+            },
+            "hasSsnYN": "Y",
+            "ssnReferral": null,
+            "personName": {
+                "firstName": "Jake",
+                "middleName": null,
+                "lastName": "Smith",
+                "suffix": null
+            },
+            "dob": "05/19/1992",
+            "ssn": {
+                "ssnPart1": "123",
+                "ssnPart2": "456",
+                "ssnPart3": "7892"
+            },
+            "gender": "M",
+            "raceCds": [
+                "Caucasian",
+                "Hispanic"
+            ],
+            "deletedYN": null
+        },
+        "results": [
+            {
+                "householdMemberId": null,
+                "headOfHouseholdYN": null,
+                "relationshipCd": null,
+                "altNames": [
+                    {
+                        "firstName": "Jake",
+                        "middleName": "Smith",
+                        "lastName": "Rodrigus",
+                        "suffix": null
+                    }
+                ],
+                "additionalSsns": [
+                    {
+                        "ssnPart1": "123",
+                        "ssnPart2": "456",
+                        "ssnPart3": "7890"
+                    },
+                    {
+                        "ssnPart1": "123",
+                        "ssnPart2": "456",
+                        "ssnPart3": "7891"
+                    }
+                ],
+                "pregnantYN": null,
+                "pregnancyDueDate": null,
+                "aliasClientIds": [
+                    456,
+                    789
+                ],
+                "memberClearanceId": null,
+                "memberClearedYN": null,
+                "memberEditableYN": null,
+                "cases": [
+                    345678,
+                    789574
+                ],
+                "verification": {
+                    "ssnVerificationModel": {
+                        "verificationDocumentCd": null,
+                        "verificationRequestedYN": null,
+                        "verificationType": null,
+                        "verifiedYN": null,
+                        "retryCount": 0,
+                        "messages": null
+                    },
+                    "dobVerificationModel": {
+                        "verificationDocumentCd": null,
+                        "verificationRequestedYN": null,
+                        "verificationType": null,
+                        "verifiedYN": null,
+                        "retryCount": 0,
+                        "messages": null
+                    }
+                },
+                "hasSsnYN": "Y",
+                "ssnReferral": null,
+                "personName": {
+                    "firstName": "Jake",
+                    "middleName": null,
+                    "lastName": "Smith",
+                    "suffix": null
+                },
+                "dob": "05/19/1992",
+                "ssn": {
+                    "ssnPart1": "123",
+                    "ssnPart2": "456",
+                    "ssnPart3": "7892"
+                },
+                "gender": "M",
+                "raceCds": [
+                    "Caucasian",
+                    "Hispanic"
+                ],
+                "deletedYN": null
+            },
+            {
+                "householdMemberId": null,
+                "headOfHouseholdYN": null,
+                "relationshipCd": null,
+                "altNames": [
+                    {
+                        "firstName": "Jake",
+                        "middleName": "Smith",
+                        "lastName": "Rodrigus",
+                        "suffix": null
+                    }
+                ],
+                "additionalSsns": [
+                    {
+                        "ssnPart1": "123",
+                        "ssnPart2": "456",
+                        "ssnPart3": "7890"
+                    },
+                    {
+                        "ssnPart1": "123",
+                        "ssnPart2": "456",
+                        "ssnPart3": "7891"
+                    }
+                ],
+                "pregnantYN": null,
+                "pregnancyDueDate": null,
+                "aliasClientIds": [
+                    456,
+                    789
+                ],
+                "memberClearanceId": null,
+                "memberClearedYN": null,
+                "memberEditableYN": null,
+                "cases": [
+                    345678,
+                    789574
+                ],
+                "verification": {
+                    "ssnVerificationModel": {
+                        "verificationDocumentCd": null,
+                        "verificationRequestedYN": null,
+                        "verificationType": null,
+                        "verifiedYN": null,
+                        "retryCount": 0,
+                        "messages": null
+                    },
+                    "dobVerificationModel": {
+                        "verificationDocumentCd": null,
+                        "verificationRequestedYN": null,
+                        "verificationType": null,
+                        "verifiedYN": null,
+                        "retryCount": 0,
+                        "messages": null
+                    }
+                },
+                "hasSsnYN": "Y",
+                "ssnReferral": null,
+                "personName": {
+                    "firstName": "Jake",
+                    "middleName": null,
+                    "lastName": "Smith",
+                    "suffix": null
+                },
+                "dob": "05/19/1992",
+                "ssn": {
+                    "ssnPart1": "123",
+                    "ssnPart2": "456",
+                    "ssnPart3": "7892"
+                },
+                "gender": "M",
+                "raceCds": [
+                    "Caucasian",
+                    "Hispanic"
+                ],
+                "deletedYN": null
+            }
+        ]
+    },
+    "helpTexts": {
+        "moduleName": null,
+        "helpTexts": {
+            "Clearance": [
+                {
+                    "id": null,
+                    "htmlHelpText": "\u003chtml\u003e\u003chead\u003e\u003c/head\u003e\u003cbody\u003e\u003cp\u003eDummy Help Text. \u003ca href\u003d\"https://google.com\"\u003eClick Here\u003c/p\u003e\u003c/body\u003e\u003c/html\u003e",
+                    "associatedFieldYN": null,
+                    "associatedFieldId": null
+                }
+            ],
+            "ContactInformation": [
+                {
+                    "id": null,
+                    "htmlHelpText": "\u003chtml\u003e\u003chead\u003e\u003c/head\u003e\u003cbody\u003e\u003cp\u003eDummy Help Text. \u003ca href\u003d\"https://google.com\"\u003eClick Here\u003c/p\u003e\u003c/body\u003e\u003c/html\u003e",
+                    "associatedFieldYN": null,
+                    "associatedFieldId": null
+                }
+            ]
+        },
+        "sectionKeys": [
+            "Clearance",
+            "ContactInformation"
+        ]
+    },
+    "addressSearch": {
+        "search": {
+            "addressLine1": "6800 Dearpath Rd",
+            "addressLine2": null,
+            "city": "Baltimore",
+            "state": "MD",
+            "county": "Howard",
+            "district": null,
+            "zipcode": "21210"
+        },
+        "results": [
+            {
+                "addressLine1": "6800 Dearpath Rd",
+                "addressLine2": null,
+                "city": "Baltimore",
+                "state": "MD",
+                "county": "Howard",
+                "district": null,
+                "zipcode": "21210"
+            },
+            {
+                "addressLine1": "6800 Dearpath Rd",
+                "addressLine2": null,
+                "city": "Baltimore",
+                "state": "MD",
+                "county": "Howard",
+                "district": null,
+                "zipcode": "21210"
+            }
+        ]
+    },
+    "trialBudget": {
+        "request": {
+            "livingArrangement": null,
+            "householdMemberSize": null,
+            "program": {
+                "programName": null,
+                "programType": null,
+                "medCoverageGroup": null,
+                "availableAuId": null,
+                "ppiGroup": null,
+                "selectedYN": null,
+                "eligibleYN": null,
+                "requestedYN": null
+            },
+            "irsDependents": null,
+            "clients": [
+                {
+                    "thirtyAndOneThirdYN": null,
+                    "thirtyYN": null,
+                    "dependentCareExpense": null,
+                    "earnedIncome": {
+                        "DummyType1": 2000.0,
+                        "DummyType2": 100.0
+                    },
+                    "earnedIncomeExpenseType": null,
+                    "earnedIncomeExpense": null
+                }
+            ],
+            "deemarEarnedIncome": null,
+            "deemarEarnedIncomeExpense": null,
+            "unearnedIncome": null,
+            "spouseUnearnedIncome": null,
+            "deemarUnearnedIncome": null,
+            "rentMortgageExpense": null,
+            "utilityExpense": null,
+            "medicalExpense": null,
+            "ltcDeductionExpense": null,
+            "utilityMethodType": null,
+            "assets": {
+                "DummyType1": 2000.0,
+                "DummyType2": 100.0
+            },
+            "vehicularAssets": [
+                {
+                    "useType": null,
+                    "fmw": null,
+                    "encumb": null
+                }
+            ]
+        },
+        "eligibleBudget": {
+            "Assets": {
+                "DummyType1": 2000.0,
+                "DummyType2": 100.0
+            },
+            "Net Income Test": {
+                "DummyType1": 2000.0,
+                "DummyType2": 100.0
+            }
+        },
+        "budgetType": null,
+        "reason": null
+    },
+    "requestActor": null,
+    "requestOwner": null,
+    "userMessages": null,
+    "requestDateTime": null,
+    "requestId": null,
+    "navigationFlowRequested": true
+}

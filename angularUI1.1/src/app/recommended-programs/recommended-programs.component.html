@@ -1,0 +1,149 @@
+<div class="col-md-7 content-box">
+  <tooltip-content #screeningOptions>
+    <div><span><p class="fa fa-info-circle fa-tooltip" ></p></span>
+      <div class="tooltip-text-regisnation">Enter the monthly Income Types and Amounts, both earned and unearned</div>
+    </div>
+  </tooltip-content>
+
+  <form [formGroup]="recommendedProgramForm" novalidate>
+    <div class="settingsPage-box">
+      <div class="header-change 
+                  section-label 
+                  section-wrpr 
+                  box-border-bottom 
+                  headerPadding">
+        <h4>SUGGESTED PROGRAMS</h4>
+      </div>
+      <div class="row-view box-border-bottom" tooltipPlacement="right" [tooltip]="screeningOptions">
+        <div class="row">
+          <div class="col-sm-12 subHeader ">
+            Based on information entered throughout screening, the following are suggested programs for which the applicant can apply
+            <!--<div *ngIf="!recommendedProgramForm.controls['apply_program' ||'program_selected'].valid 
+              && recommendedProgramForm.controls['apply_program'|| 'program_selected'].untouched" class="alert alert-danger">
+              <small>At least one Program should be selected</small>
+            </div>-->
+          </div>
+        </div>
+        <div class="row paddingTop paddingBottom">
+          <div class="col-sm-3 textPaddingTop">
+            Application Date
+          </div>
+          <div class="col-sm-4">
+            <input type="date" class="form-control" formControlName="applicationDate" />
+          </div>
+        </div>
+        <table class="col-md-12 set-height table" formArrayName="suggestProgram">
+          <thead class="row box-border-bottom tableHeaderColor table1HeaderPadding">
+            <tr>
+              <th>Apply</th>
+              <th>Name</th>
+              <th>Type</th>
+              <th>Med Cvg Group</th>
+              <th>Available AuId</th>
+              <th>ppiGroup</th>
+              <th>eligible YN</th> 
+            </tr>
+          </thead>
+          <tbody>
+            <tr 
+              *ngFor="let program of SuggestProgram.controls; let i=index"
+              [formGroupName]="i" >
+              <td>
+                <input type="checkbox" formControlName="selectedYN">
+              </td>
+              <td>{{program.value.programName}}</td>
+              <td>{{program.value.programType}}</td>
+              <td>{{program.value.medCoverageGroup}}</td>
+              <td>{{program.value.availableAuId}}</td>
+              <td>{{program.value.ppiGroup}}</td>
+              <td>{{program.value.selectedYN}}</td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="form-check">
+            <label class="form-check-label">
+              <input class="form-check-input" type="checkbox" formControlName="fs"> Expedited Food stamps
+            </label>
+        </div>
+      </div>
+      <div class="clearfix"></div>
+    </div>
+
+    <div class="section-label header-change section-wrpr box-border-bottom headerPadding settingsPage-box">
+      <h4>Additional Programs
+        <div class="addStatement" (click)='addProgram()'><i class="fa fa-plus-circle fa-lg plusIconColor" aria-hidden="true"></i>&nbsp;Add Additional Program</div>
+      </h4>
+    </div>
+    <div class="settingsPage-box row-view box-border-bottom">
+      <div class="row">
+        <div class="col-sm-12 subHeader paddingBottom">
+          Additional programs requested by the applicant
+        </div>
+      </div>
+      <!-- beg additional programs -->
+      <div formArrayName="additionalProgram" #addPro
+        class="row tableHeaderColor tableHeaderPadding padding-bottom" 
+        *ngIf="recommendedProgramForm.value.additionalProgram.length > 0">
+        <div 
+          *ngFor="let program of AdditionalProgram.controls; let i=index" 
+          [formGroupName]="i">
+          <!-- The repeated additional program template -->
+          <div class="col-sm-4 padding-bottom">
+            <label class="label-type" *ngIf="i==0">Program</label>
+            <select class="form-control" formControlName="programName">
+                <option 
+                  *ngFor="let optionEntity of this.constantsService.getConstant('selections')"  
+                  [value]="optionEntity.key">
+                  {{optionEntity.value}}
+                </option>
+              </select>
+          </div>
+          <div class="col-sm-2 padding-bottom">
+            <label class="label-type" *ngIf="i==0">Type</label>
+            <select class="form-control" formControlName="programType">
+                <option 
+                  *ngFor="let optionEntity of num"  
+                  [value]="optionEntity">
+                  {{optionEntity}}
+                </option>
+              </select>
+          </div>
+          <div class="col-sm-2 padding-bottom">
+            <label class="label-type" *ngIf="i==0">Group</label>
+            <select class="form-control" formControlName="medCoverageGroup">
+                <option 
+                  *ngFor="let optionEntity of num"  
+                  [value]="optionEntity">
+                  {{optionEntity}}
+                </option>
+              </select>
+          </div>
+          <div class="col-sm-2 padding-bottom">
+            <label class="label-type" *ngIf="i==0">PPI Group </label>
+            <select class="form-control" formControlName="ppiGroup">
+                <option 
+                  *ngFor="let optionEntity of num"  
+                  [value]="optionEntity">
+                  {{optionEntity}}
+                </option>
+              </select>
+          </div>
+          <div class="col-sm-1 pd-left">
+            <span class="label-type" *ngIf="i==0">&nbsp;</span>
+            <span class="delete-row hand" (click)="removeProgram(i)">
+                <i class="fa fa-trash-o"></i>
+            </span>
+          </div>
+          <br>
+        </div>
+      </div>
+      <!--{{recommendedProgramForm.value.additionalProgram | json}}
+      {{recommendedProgramForm.status | json }}-->
+      <!-- beg additional programs -->
+    </div>
+    <div class="buttonALign btn Wrapper"><br>
+      <button class="btn cancel-btn btnMargingRt btnCancel" (click)="back()">Back</button>
+      <button type="button" class="btn btn-primary btnSave" [disabled]=!recommendedProgramForm.valid (click)="next()">Next</button>
+    </div>
+  </form>
+</div>

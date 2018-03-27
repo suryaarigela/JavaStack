@@ -1,0 +1,8 @@
+.alertMessageModal {
+	display: block;
+}
+
+#alertModal{
+    top: 30vh;
+    z-index: 10001;
+}

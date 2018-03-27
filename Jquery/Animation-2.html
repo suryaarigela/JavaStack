@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>animate demo</title>
+  <style>
+  div {
+    position: absolute;
+    background-color: #ffff00;
+    left: 10px;
+    bottom:495px;
+    padding-bottom:10px;
+    down:100px;
+    width: 90px;
+    height: 90px;
+    margin: 5px;
+    opacity:0.5;
+  }
+  </style>
+  <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+</head>
+<body>
+ 
+<button id="left">&laquo;</button>
+<button id="right">&raquo;</button>
+<button id="up">&uArr;</button>
+<button id="down">&dArr;</button>
+
+<div class="block"></div>
+ 
+<script>
+$( "#right" ).click(function() {
+         console.log("right")
+  $( ".block" ).animate({ "left": "+=90px" }, "fast" );
+});
+ 
+$( "#left" ).click(function(){
+     console.log("left")
+  $( ".block" ).animate({ "left": "-=90px" }, "fast" );
+});
+$( "#up" ).click(function() {
+    console.log("up")
+  $( ".block" ).animate({ "bottom": "+=90px" }, "fast" );
+});
+ 
+$( "#down" ).click(function(){
+    console.log("down")
+  $( ".block" ).animate({ "bottom": "-=90px" }, "fast" );
+});
+</script>
+ 
+ <table aria-colspan="290px" border="0px">
+     <tr><th colspan="90px" width="90px" height="100px">Surya</th>
+     <th colspan="90px" width="90px" height="100px">Surya</th>
+     <th colspan="90px" width="90px" height="100px">Surya</th>
+     <th colspan="90px" width="90px" height="100px">Surya</th>
+     <th colspan="90px" width="90px" height="100px">Surya</th>
+     <th colspan="90px" width="90px" height="100px">Surya</th>
+     </tr>
+     <tr><td colspan="90px" width="90px" height="100px">Surya</td>
+     <td colspan="90px" width="90px" height="100px">Surya</td>
+      <td colspan="90px" width="90px" height="100px">Surya</td>
+       <td colspan="90px" width="90px" height="100px">Surya</td>
+        <td colspan="90px" width="90px" height="100px">Surya</td>
+         <td colspan="90px" width="90px" height="100px">Surya</td>
+          <td colspan="90px" width="90px" height="100px">Surya</td>
+     </tr>
+     <tr><td colspan="90px" width="90px" height="100px">Surya</td>
+      <td colspan="90px" width="90px" height="100px">Surya</td>
+      <td colspan="90px" width="90px" height="100px">Surya</td>
+       <td colspan="90px" width="90px" height="100px">Surya</td>
+        <td colspan="90px" width="90px" height="100px">Surya</td>
+         <td colspan="90px" width="90px" height="100px">Surya</td>
+          <td colspan="90px" width="90px" height="100px">Surya</td>
+     </tr>
+     <tr><td colspan="90px" width="90px" height="100px">Surya</td>
+     <td colspan="90px" width="90px" height="100px">Surya</td>
+      <td colspan="90px" width="90px" height="100px">Surya</td>
+       <td colspan="90px" width="90px" height="100px">Surya</td>
+        <td colspan="90px" width="90px" height="100px">Surya</td>
+         <td colspan="90px" width="90px" height="100px">Surya</td>
+          <td colspan="90px" width="90px" height="100px">Surya</td>
+     </tr>
+     <tr><td colspan="90px" width="90px" height="100px">Surya</td>
+     <td colspan="90px" width="90px" height="100px">Surya</td>
+      <td colspan="90px" width="90px" height="100px">Surya</td>
+       <td colspan="90px" width="90px" height="100px">Surya</td>
+        <td colspan="90px" width="90px" height="100px">Surya</td>
+         <td colspan="90px" width="90px" height="100px">Surya</td>
+          <td colspan="90px" width="90px" height="100px">Surya</td>
+     </tr>
+     <tr><td colspan="90px" width="90px" height="100px">Surya</td>
+     <td colspan="90px" width="90px" height="100px">Surya</td>
+      <td colspan="90px" width="90px" height="100px">Surya</td>
+       <td colspan="90px" width="90px" height="100px">Surya</td>
+        <td colspan="90px" width="90px" height="100px">Surya</td>
+         <td colspan="90px" width="90px" height="100px">Surya</td>
+          <td colspan="90px" width="90px" height="100px">Surya</td>
+     </tr>
+     
+</body>
+</html>

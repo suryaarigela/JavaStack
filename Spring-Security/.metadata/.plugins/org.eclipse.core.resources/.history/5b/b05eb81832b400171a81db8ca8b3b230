@@ -1,0 +1,16 @@
+package com.exception;
+
+public class Employee {
+	
+	@Override
+	public boolean @Override
+	public boolean equals(Object obj) {
+		// TODO Auto-generated method stub
+		return true;
+	}
+	@Override
+	public int hashCode(){
+		return 1;
+	}
+
+}

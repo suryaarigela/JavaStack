@@ -1,0 +1,104 @@
+{"livingArrangement": "",
+"householdMemberSize": "2",
+"program": {
+		 "programName":  "",
+         "programType":  "",
+         "medCoverageGroup":  "",
+         "availableAuId":  "",
+         "ppiGroup":  "",
+         "selectedYN":  "", 
+         "eligibleYN":  "",
+         "requestedYN":  "", 
+         "CAP_indicator":  ""
+},
+"irsDependents":  "1234",
+"clients": 
+  [
+    {
+         "thirtyAndOneThirdYN":  "",
+         "thirtYN":  "",
+         "dependentCareExpense":  1234,
+         "earnedIncomes": [
+						  {
+		                  "incomeType":"",
+						  "amount":1234
+						  },
+						  {
+		                    "incomeType":"",
+						  "amount":1234
+						  }
+						],
+         "earnedIncomeExpenseType":  "",
+         "earnedIncomeExpense": 1234 
+    },
+	{
+        "thirtyAndOneThirdYN":  "",
+         "thirtYN":  "",
+         "dependentCareExpense":  4567, 
+         "earnedIncomes": [
+						  {
+		                  "incomeType":"",
+						  "amount":4567
+						  },
+						  {
+		                    "incomeType":"",
+						  "amount":4567
+						  }
+						],
+         "earnedIncomeExpenseType":  "",
+         "earnedIncomeExpense": 4567 
+    }
+  ]
+,
+"deemarEarnedIncome": 12234, 
+"deemarEarnedIncomeExpense": 1234, 
+"unearnedIncomes": 
+       {
+	    "houseHoldUnearnedIncomes": [
+						  {
+		                  "incomeType":"BP",
+						  "amount":4567
+						  },
+						  {
+		                  "incomeType":"SA",
+						  "amount":4567
+						  }
+						],
+		 "spouseUnearnedIncome": 333 ,
+		 "deemerUnearnedIncome": 333
+		 }
+		
+
+,
+"spouseUnearnedIncome": 111, 
+"deemarUnearnedIncome":1111, 
+"rentMortgageExpense": 111, 
+"utilities":  111, 
+"medicalExpense":  111, 
+"ltc": 111, 
+"mortage":  111, 
+"houseHoldUtility":  "",      
+"utilityMethodType":  "P",
+"assets": [
+		{
+		"assetType":"MCA",
+		"amount":4567
+		},
+		{
+		"assetType":"RF",
+		"amount":333
+		}
+]
+  ,
+"vehicularAssets": [
+      { "useType":  "EM",
+         "fmw":  "222",
+         "encumb":  "666"
+		},
+		{ "useType":  "HA",
+         "fmw":  "888",
+         "encumb":  "555"
+		}
+]
+
+}

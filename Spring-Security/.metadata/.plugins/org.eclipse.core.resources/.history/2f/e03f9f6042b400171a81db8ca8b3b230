@@ -1,0 +1,14 @@
+package com.test.deadlock;
+
+public class PCCLass {
+
+	synchronized  void  put(int i) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	synchronized  int  get() {
+		// TODO Auto-generated method stub
+		
+	}
+}

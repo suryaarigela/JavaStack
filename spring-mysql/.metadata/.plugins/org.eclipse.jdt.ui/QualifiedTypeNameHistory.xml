@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="org.springframework.batch.core.configuration.annotation.JobBuilderFactory"/>
+<fullyQualifiedTypeName name="javax.sql.DataSource"/>
+<fullyQualifiedTypeName name="org.springframework.batch.item.ItemProcessor"/>
+<fullyQualifiedTypeName name="org.hamcrest.Condition.Step"/>
+<fullyQualifiedTypeName name="org.springframework.batch.core.Step"/>
+<fullyQualifiedTypeName name="org.springframework.batch.core.Job"/>
+</qualifiedTypeNameHistroy>

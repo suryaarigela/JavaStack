@@ -1,0 +1,153 @@
+.five-padding-left {
+  padding-left: 3px;
+}
+
+.page {
+  padding-bottom: 90px;
+  display: flex;
+}
+
+.float-right {
+  float: right;
+}
+
+.padleft {
+  padding-left: 30px;
+}
+
+.pushDown {
+  padding-top: 5px;
+}
+
+.pushDown8 {
+  padding-top: 8px;
+}
+
+.addStatement {
+  float: right;
+  cursor: pointer;
+  font-size: 17px;
+}
+
+.pushDown25 {
+  padding-bottom: 25px;
+}
+
+.txt-action-color {
+  color: #67babe;
+}
+
+.leftbutton {
+  float: right;
+  /* padding-top: 20px; */
+  margin-right: 122px;
+}
+
+.topMarginNames {
+  padding-top: 24px;
+}
+
+.form-group-real {
+  margin-bottom: 45px;
+}
+
+.form-control-v1 {
+  width: 94% !important;
+  }
+
+.select-suffix {
+  width: 77px;
+}
+
+.paddingSSNText {
+  padding-left: 15px;
+}
+
+.trashtop {
+  padding-top: 1.7em;
+}
+
+.paddingAdditional {
+  padding-left: 7px;
+}
+
+.width-suffix {
+  width: 88% !important;
+}
+
+.addAdditionalSSN {
+  cursor: pointer;
+}
+
+.addAdditionalName {
+  cursor: pointer;
+}
+
+.fa-130percx {
+  font-size: 1.3em;
+}
+
+.pullDown7 {
+  padding-top: 7px;
+}
+
+.rowPadding{
+    padding-top: 5px;
+    padding-bottom: 15px;
+}
+.addbutton-margin{
+    margin-top: 7px;
+}
+.add-client-height{
+  height: 15px;
+}
+.indexvalue{
+  z-index: 2px;
+}
+.hrefcolor{
+  color: #337ab7;
+}
+.topalign{
+  margin-top: -24px;
+}
+/*.bottom-space{
+  padding-bottom : 0px !important;
+}*/
+.alignssnReferral{
+  margin-bottom : -0.1em;
+}
+.alignRadio{
+  margin-top : 13px;
+}
+
+.selectProgramText1 {
+    margin-bottom: 10px;
+}
+
+.checkbox {
+    padding-left: 20px;
+    position: relative;
+    display: block;
+    min-height: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.checkbox input[type="checkbox"] {
+    padding: .3em;
+}
+
+.checkbox label {
+    display: inline-block;
+    position: relative;
+    padding-left: 5px;
+    margin-bottom: 0;
+    font-weight: 400;
+    cursor: pointer;
+}
+.padding-bottom{
+  padding-bottom: 20px;
+}
+.padding-bottom-50{
+  padding-bottom: 30%;
+}

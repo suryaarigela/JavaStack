@@ -1,0 +1,97 @@
+#header-wrap {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  z-index: 2;
+}
+
+.headerbg {
+  background: #efefef;
+  border-bottom: 1px solid #999999;
+  min-height: 64px;
+  z-index: 10000000 !important;
+}
+
+.header-left {
+  margin-top: 10px;
+}
+
+.sidebar-toggle {
+  display: inline-block;
+  position: relative;
+  vertical-align: middle;
+}
+
+.sidebar-toggle span {
+  width: 15px;
+  height: 2px;
+  background-color: #888;
+  display: block;
+  margin-bottom: 2px;
+  border-radius: 2px;
+}
+
+.top-right {
+  margin-top: 25px;
+}
+
+.top-right ul {
+  float: right;
+}
+
+.top-right ul li {
+  float: left;
+  margin-right: 22px;
+}
+
+.top-right ul li:last-child {
+  margin-right: 0;
+}
+
+.top-right ul li a {
+  font-size: 16px;
+  color: #0e0e0e;
+  vertical-align: bottom;
+}
+
+.top-right ul li a i {
+  font-size: 24px;
+  color: #0e0e0e;
+}
+
+.user-profile-name {
+  position: relative;
+  top: 3px;
+}
+
+.user-profile {
+  margin-left: -77px;
+  margin-top: 15px;
+}
+
+.help-top-margin {
+  margin-top: 3px;
+}
+
+.label-top-margin {
+  margin-right: 73px !important;
+  pointer-events: none;
+}
+
+
+.data-count[data-count]:after {
+  position: absolute;
+  right: -1em;
+  top: -1.4em;
+  content: attr(data-count);
+  font-size: .5em;
+  padding: .6em;
+  border-radius: 100%;
+  line-height: .75em;
+  color: white;
+  background: rgb(202, 39, 27);
+  text-align: center;
+  min-width: 2em;
+  font-weight: bold;
+}

@@ -1,0 +1,14 @@
+package com.example.demo;
+
+import javax.servlet.http.HttpServletRequest;
+
+import org.springframework.web.bind.annotation.ControllerAdvice;
+
+@ControllerAdvice
+public class ExceptionConfig {
+
+	public String handleException(HttpServletRequest req,Exception e){
+		System.out.println("Request "+req.getRequestURL());
+		return "";
+	}
+}

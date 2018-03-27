@@ -1,0 +1,23 @@
+
+    
+	
+	<div [formGroup]="parentForm">
+        <motor-vehicle *ngFor="let motorVehicle of motorVehicles; let i = index" 
+          [formArray]="parentForm.controls.motorVehicles" 
+          [motorVehicle]="motorVehicle"
+          (removed)="removemotorVehicle(i)">
+        </motor-vehicle>
+    </div>
+ 
+     <div class="row">
+    <div class="col-xs-6 col-md-6" style="background-color:white;"></div>
+    <div class="col-xs-6 col-md-1 total-info text-right" style="background-color:white;">Total FMW</div> 
+    <div class="col-xs-6 col-md-2" style="background-color:white;"> ${{countFMW(motorVehicles) | number : '1.2-2'}}</div> 
+   
+    <div class="col-xs-6 col-md-1  total-info text-right"  style="background-color:white;">Total Encumb</div>
+     <div class="col-xs-6 col-md-1" style="background-color:white;">${{countEncumb(motorVehicles) | number : '1.2-2'}}</div> 
+   
+  </div>
+ <div (click)="addMotorVehicle()" id="addMotorVehicle" class="addAdditionalSSN no-padding addbutton-margin col-sm-11"><span class="float-right"><i class="fa fa-plus-circle fa-lg plusIconColor " aria-hidden="true"></i><span class=" txt-action-color">&nbsp;Add Motor Vehicle</span></span>
+	             </div>
+	   <div class="clearfix"></div>

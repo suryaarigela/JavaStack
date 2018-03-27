@@ -1,0 +1,26 @@
+<div class="section-label">
+      <div class="income-header">EARNED INCOME</div>
+       <div (click)="addClient()" id="addEiClient" class="addAdditionalSSN addbutton-margin float-right"><span><i class="fa fa-plus-circle fa-lg plusIconColor" aria-hidden="true"></i><span class=" txt-action-color">&nbsp;Add Earned Income Client
+</span></span></div>
+
+
+    </div>
+<div [formGroup]="parentForm">
+    <div formArrayName="clients">
+        <client *ngFor="let client of clients; let i = index" 
+          [formArray]="parentForm.controls.clients" 
+          [client]="client"
+          [clientNr]="i"
+          (removed)="removeClient(i)"> 
+        </client>
+		
+		
+    </div>
+    <!--<div class="margin-20">
+        <button class="btn btn-primary" (click)="addContract()">
+            Add another contract +
+        </button>
+    </div>
+	-->
+	
+</div>

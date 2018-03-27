@@ -1,0 +1,5 @@
+package com.test.deadlock;
+
+public class Consumer extends Thread {
+
+}

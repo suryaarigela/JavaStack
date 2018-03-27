@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aop-reference-model>
+<aop-project name="kafka_filter"/>
+<aop-project name="kafka_producer"/>
+<aop-project name="boot-kafka"/>
+<aop-project name="gs-accessing-facebook"/>
+<aop-project name="ldap-security"/>
+<aop-project name="SpringException"/>
+<aop-project name="kafka_consumer"/>
+</aop-reference-model>

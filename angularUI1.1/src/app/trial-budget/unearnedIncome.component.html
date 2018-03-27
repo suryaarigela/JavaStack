@@ -1,0 +1,47 @@
+<!--form-group -->
+<div [formGroup]="unearnedIncomeGroup">
+
+      <tooltip-content #tbunearnedIncome>
+        <div><span ><p class="fa fa-info-circle fa-tooltip" ></p></span><div class="tooltip-text-regisnation">
+         Select the type of Household Unearned Income and enter the amount in whole Dollars</div></div>
+        </tooltip-content>
+  <div tooltipPlacement="right" [tooltip]="tbunearnedIncome"> 
+  <div class="col-sm-12">
+    <div class="col-sm-3">
+      <label for="Demographic" class=" label-field" *ngIf="index==0">Household Unearned Income</label>
+    </div>
+    <div class="col-sm-9 zero-padding-bottom">
+      <div>
+        <div class="col-sm-5 form-group zero-padding-left">
+          <div *ngIf="index==0" class="pushDown" for="dob">Type</div> 
+          <div *ngIf="index!=0" class="pushDown" for="dob"></div>
+
+          <select class="form-control " [(ngModel)]="unEarnedIncome.incomeType" formControlName="incomeType">
+											<option  *ngFor="let optionEntity of this.unearnedIncometypeDropdown" value="{{optionEntity.key}}">{{optionEntity.value}}</option>
+                    </select>
+        </div>
+
+        <div class="col-sm-5 pd-left padding5 amount-bg pushDown">
+          <div *ngIf="index==0">
+            <span class="label-type">Amount</span>
+          </div>
+          <div *ngIf="index!=0"><span class="label-type"> </span> </div>
+          <div class="search-container">
+            <input currencyMask style="padding-right:.5em" formControlName="amount" (keypress)="numberOnly($event)" class="form-control"
+              [(ngModel)]="unEarnedIncome.amount" [options]="{ prefix: '$',hundreds: ',' }" maxlength="10" />
+          </div>
+          <div class="clearfix"></div>
+        </div>
+
+        <div (click)="removed.emit()" class="trashtop col-sm-1 zero-padding-left">
+          <div>
+            <span class="delete-row">
+					<i class="fa fa-trash-o" aria-hidden="true"></i>
+				</span>
+          </div>
+        </div>
+      </div>
+</div>
+    </div>
+  </div>
+  </div>

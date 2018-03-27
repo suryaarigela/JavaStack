@@ -1,0 +1,60 @@
+ <div id="result">
+ <section *ngIf="root">
+ 	<h3>Search results</h3>
+<!--
+<ul class="heroes">
+		<span>Origin</span>
+ 				<span>Destination</span>
+ 				<span>Seat</span>
+ 				<span>Fare</span>
+ 				<span>Duration</span>
+  <li *ngFor="let item of root.onwardflights" >
+    	<span>{{item.origin}}</span>
+ 				<span>{{item.destination}}</span>
+ 				<span>{{item.seat}}</span>
+ 				<span>{{item.fare.totalfare}}</span>
+ 				<span>{{item.duration}}</span>
+  </li>
+</ul>
+-->
+ 	<table >
+ 	<body>
+ 			<tr>
+ 				<th>Origin</th>
+ 				<th>Destination</th>
+ 				<th>Seat</th>
+ 				<th>Total Fare</th>
+ 				<th>Duration</th>
+ 			</tr>
+ 			<tr on-mouseover='changeMe(item)'  *ngFor="let item of root.data.onwardflights | paginate:{itemsPerPage:4, currentPage:p} ">
+ 				<td>{{item.origin}}</td>
+ 				<td>{{item.destination}}</td>
+ 				<td>{{item.seat}}</td>
+ 				<td>{{item.fare.totalfare}}</td>
+ 				<td>{{item.duration}}</td>
+			
+ 			</tr>
+ 		</body>
+ 	</table>
+	 <pagination-controls (pageChange)="p =$event"></pagination-controls>
+ </section>
+  <button [routerLink]=" ['/'] ">Plan your trip</button>
+ </div>
+ <div id="details" *ngIf="showDetail">
+	 <table >
+ 	<body>
+		 <p>Pickup Points</p>
+ 			<tr>
+ 				<th>Time</th><th>Land Mark</th><th>Location</th>
+ 			
+ 			</tr>
+ 			<tr  *ngFor="let lis of list ">
+ 				<td>{{lis.BPTime}}</td>	
+				 <td>{{lis.BPLandmark}}</td>	
+				 <td>{{lis.BPLocation}}</td>	
+ 			</tr>
+ 		</body>
+ 	</table>
+	
+	
+ </div>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aop-reference-model>
+<aop-project name="employee-producer"/>
+<aop-project name="SpringBootHelloWorld"/>
+<aop-project name="com.javainuse"/>
+<aop-project name="spring-boot-web-spring-security"/>
+<aop-project name="employee-management-system"/>
+<aop-project name="boot-form-handling"/>
+<aop-project name="employee-consumer"/>
+</aop-reference-model>

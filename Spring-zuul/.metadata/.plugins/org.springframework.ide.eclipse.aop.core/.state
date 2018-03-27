@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aop-reference-model>
+<aop-project name="Student"/>
+<aop-project name="ZuulServer"/>
+<aop-project name="Lecturer"/>
+<aop-project name="jersydemo"/>
+<aop-project name="navigator-sdk-client"/>
+<aop-project name="navigator-sdk-examples"/>
+</aop-reference-model>

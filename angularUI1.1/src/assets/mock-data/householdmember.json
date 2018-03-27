@@ -1,0 +1,51 @@
+{
+        "householdMemberId": null,
+        "headOfHouseholdYN": "",
+        "relationshipCd": "-1",
+        "altNames": [],
+        "additionalSsns": [],
+        "pregnantYN": "",
+        "pregnancyDueDate": null,
+        "aliasClientIds": [],
+        "memberClearanceId": "",
+        "memberClearedYN": "",
+        "memberEditableYN": "",
+        "cases": [],
+        "verification": {
+          "ssnVerificationModel": {
+            "verificationDocumentCd": "",
+            "verificationRequestedYN": "",
+            "verificationType": "",
+            "verifiedYN": "",
+            "verificationAutoVerified": false,
+            "verificationFileList": [],
+            "retryCount": null,
+            "messages": []
+          }, "dobVerificationModel": {
+            "verificationDocumentCd": "",
+            "verificationAutoVerified": false,
+            "verificationFileList": [],
+            "verificationRequestedYN": "",
+            "verificationType": "",
+            "verifiedYN": "",
+            "retryCount": null,
+            "messages": []
+          }
+        }, "hasSsnYN": "",
+        "ssnReferral": "-1",
+        "personName": {
+          "firstName": "",
+          "lastName": "",
+          "middleName": "",
+          "suffix": "-1"
+        },
+        "dob": null,
+        "ssn":
+        {
+          "ssnPart1": null,
+          "ssnPart2": null,
+          "ssnPart3": null
+        }, "gender": "-1",
+        "raceCds": ["-1"],
+        "deletedYN": ""
+      }

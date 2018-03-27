@@ -1,0 +1,17 @@
+{
+  "lookupKeys": [
+    "YesNo",
+    "Suffix"
+  ],
+  "lookups": {
+    "Suffix": {
+      "Sr": "Sr.",
+      "XI": "XI",
+      "Jr": "Jr."
+    },
+    "YesNo": {
+      "Y": "Yes",
+      "N": "No"
+    }
+  }
+}

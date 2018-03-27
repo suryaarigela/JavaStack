@@ -1,0 +1,5 @@
+package com.example.security.ldapsecurity.config;
+
+public class SecurityConfiguration {
+
+}

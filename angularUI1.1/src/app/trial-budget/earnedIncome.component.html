@@ -1,0 +1,68 @@
+<!--
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <span>Earn Income {{index + 1}}</span>
+        <span class="glyphicon glyphicon-remove pull-right" (click)="removed.emit()"></span>
+    </div>
+    <div class="panel-body">
+        <div [formGroup]="earnIncomeGroup">
+            <div class="form-group">
+                <label>Type</label>
+                <select formControlName="type">
+                    <option *ngFor="let type of emailTypes" [value]="type.id">{{type.name}}</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>Text</label>
+                <input type="text" class="form-control" formControlName="text">
+            </div>
+
+        </div>
+    </div>
+</div>
+-->
+
+<div class="col-sm-12 no-padding" [formGroup]="earnedIncomeGroup">
+			<!--<div *ngFor="let earnedIncome of tbForm.controls.earnIncome.controls; let i=index">  -->
+			<div>
+	          <div class="col-sm-3">
+	             <label for="Demographic" class=" label-field" *ngIf = "index ==0 ">Earned Income</label>
+	          </div>
+	          <div class="col-sm-9 zero-padding-bottom">
+	          <!--  <div *ngFor="let earnedIncome of eiClient.controls.earnedIncomes.controls; let j=index">-->
+				 <tooltip-content #earnedIncomeTooltip>
+          <div style="margin-top: 3em"><span><i class="fa fa-info-circle fa-tooltip" ></i></span>
+            <div class="tooltip-text-regisnation">
+              Enter the monthly Earned Income Types and Amounts
+            </div>
+          </div>
+        </tooltip-content>
+				
+	              <div class="col-sm-5 form-group zero-padding-left">
+	                <div for="dob" *ngIf = "index ==0 " >Type</div>
+	                <select class="form-control">
+												<!--<option  *ngFor="let optionEntity of this.constantsService.getDropDown('typeDropDown')" value="{{optionEntity.key}}">{{optionEntity.value}}</option>-->
+	                       <option>Select</option>
+	                    </select>
+	              </div>
+				<div class="col-sm-5 pd-left padding5 amount-bg input-mask"> 
+                    <span class="label-type" *ngIf = "index ==0 ">Amount</span>
+                    <div class="search-container">
+                      <input currencyMask style="padding-right:.5em" formControlName="amount" (keypress)="numberOnly($event)" class="form-control"
+                      [(ngModel)]="earnedIncome.amount" [options]="{ prefix: '$',hundreds: ',' }" maxlength="10" />
+                    </div>
+                    <div class="clearfix"></div>
+				</div>
+	            <div (click)="removed.emit()" class="trashtop col-sm-1 zero-padding-left">
+	              <div>
+	                <span class="delete-row">
+						<i class="fa fa-trash-o" aria-hidden="true"></i>
+					</span>
+	              </div>
+	            </div>
+				</div>
+	          </div>
+	        </div>
+	        
+

@@ -1,0 +1,732 @@
+[{
+    "navigationFlowRequested": false,
+    "localizedLookups": {
+      "yesNo": {
+        "beans": [
+          {
+            "localeCode": "en_US",
+            "lookupBean": {
+              "shortLabel": "Yes",
+              "longLabel": "Yes",
+              "code": "Y",
+              "systemId": "EEAPI",
+              "type": "YesNo"
+            },
+            "sortOrder": 1
+          },
+          {
+            "localeCode": "en_US",
+            "lookupBean": {
+              "shortLabel": "No",
+              "longLabel": "No",
+              "code": "N",
+              "systemId": "EEAPI",
+              "type": "YesNo"
+            },
+            "sortOrder": 2
+          }
+        ]
+      },
+      "sex": {
+        "beans": [
+          {
+            "localeCode": "en_US",
+            "lookupBean": {
+              "shortLabel": "Male",
+              "longLabel": "Male",
+              "code": "1",
+              "systemId": "EEAPI",
+              "type": "Sex"
+            },
+            "sortOrder": 1
+          },
+          {
+            "localeCode": "en_US",
+            "lookupBean": {
+              "shortLabel": "Female",
+              "longLabel": "Female",
+              "code": "2",
+              "systemId": "EEAPI",
+              "type": "Sex"
+            },
+            "sortOrder": 2
+          },
+          {
+            "localeCode": "en_US",
+            "lookupBean": {
+              "shortLabel": "Others",
+              "longLabel": "Others",
+              "code": "3",
+              "systemId": "EEAPI",
+              "type": "Sex"
+            },
+            "sortOrder": 3
+          }
+        ]
+      },
+      "suffix": {
+        "beans": [
+          {
+            "localeCode": "en_US",
+            "lookupBean": {
+              "shortLabel": "III",
+              "longLabel": "III",
+              "code": "1",
+              "systemId": "EEAPI",
+              "type": "suffix"
+            },
+            "sortOrder": 1
+          },
+          {
+            "localeCode": "en_US",
+            "lookupBean": {
+              "shortLabel": "IV",
+              "longLabel": "IV",
+              "code": "2",
+              "systemId": "EEAPI",
+              "type": "suffix"
+            },
+            "sortOrder": 2
+          },
+          {
+            "localeCode": "en_US",
+            "lookupBean": {
+              "shortLabel": "Jr",
+              "longLabel": "Jr",
+              "code": "3",
+              "systemId": "EEAPI",
+              "type": "suffix"
+            },
+            "sortOrder": 3
+          },
+          {
+            "localeCode": "en_US",
+            "lookupBean": {
+              "shortLabel": "Sr",
+              "longLabel": "Sr",
+              "code": "4",
+              "systemId": "EEAPI",
+              "type": "suffix"
+            },
+            "sortOrder": 4
+          }
+        ]
+      },
+      "race": {
+        "beans": [
+          {
+            "localeCode": "en_US",
+            "lookupBean": {
+              "shortLabel": "Asian",
+              "longLabel": "Asian",
+              "code": "1",
+              "systemId": "EEAPI",
+              "type": "race"
+            },
+            "sortOrder": 1
+          },
+          {
+            "localeCode": "en_US",
+            "lookupBean": {
+              "shortLabel": "Black",
+              "longLabel": "Black",
+              "code": "2",
+              "systemId": "EEAPI",
+              "type": "race"
+            },
+            "sortOrder": 2
+          },
+          {
+            "localeCode": "en_US",
+            "lookupBean": {
+              "shortLabel": "Caucasian",
+              "longLabel": "Caucasian",
+              "code": "3",
+              "systemId": "EEAPI",
+              "type": "race"
+            },
+            "sortOrder": 3
+          },
+          {
+            "localeCode": "en_US",
+            "lookupBean": {
+              "shortLabel": "Hispanic",
+              "longLabel": "Hispanic",
+              "code": "4",
+              "systemId": "EEAPI",
+              "type": "race"
+            },
+            "sortOrder": 4
+          },
+          {
+            "localeCode": "en_US",
+            "lookupBean": {
+              "shortLabel": "Native American",
+              "longLabel": "Native American",
+              "code": "5",
+              "systemId": "EEAPI",
+              "type": "race"
+            },
+            "sortOrder": 5
+          },
+          {
+            "localeCode": "en_US",
+            "lookupBean": {
+              "shortLabel": "Pacific/Alaskan Native",
+              "longLabel": "Pacific/Alaskan Native",
+              "code": "6",
+              "systemId": "EEAPI",
+              "type": "race"
+            },
+            "sortOrder": 6
+          },
+          {
+            "localeCode": "en_US",
+            "lookupBean": {
+              "shortLabel": "Unknwon",
+              "longLabel": "Unknwon",
+              "code": "7",
+              "systemId": "EEAPI",
+              "type": "race"
+            },
+            "sortOrder": 7
+          }
+        ]
+      },
+
+      "relationship": {
+        "beans": [
+          {
+            "localeCode": "en_US",
+            "lookupBean": {
+              "shortLabel": "HOH/Self",
+              "longLabel": "HOH/Self",
+              "code": "SE",
+              "systemId": "EEAPI",
+              "type": "relationship"
+            },
+            "sortOrder": 1
+          },
+          {
+            "localeCode": "en_US",
+            "lookupBean": {
+              "shortLabel": "Natural or Adopted Child",
+              "longLabel": "Natural or Adopted Child",
+              "code": "CH",
+              "systemId": "EEAPI",
+              "type": "relationship"
+            },
+            "sortOrder": 2
+          },
+          {
+            "localeCode": "en_US",
+            "lookupBean": {
+              "shortLabel": "Stepchild",
+              "longLabel": "Stepchild",
+              "code": "SC",
+              "systemId": "EEAPI",
+              "type": "relationship"
+            },
+            "sortOrder": 3
+          },
+          {
+            "localeCode": "en_US",
+            "lookupBean": {
+              "shortLabel": "Spousal Parent",
+              "longLabel": "Spousal Parent",
+              "code": "SP",
+              "systemId": "EEAPI",
+              "type": "relationship"
+            },
+            "sortOrder": 4
+          },
+          {
+            "localeCode": "en_US",
+            "lookupBean": {
+              "shortLabel": "Non-Parent Spouse",
+              "longLabel": "Non-Parent Spouse",
+              "code": "NS",
+              "systemId": "EEAPI",
+              "type": "relationship"
+            },
+            "sortOrder": 5
+          },
+          {
+            "localeCode": "en_US",
+            "lookupBean": {
+              "shortLabel": "Other Parent",
+              "longLabel": "Other Parent",
+              "code": "OP",
+              "systemId": "EEAPI",
+              "type": "relationship"
+            },
+            "sortOrder": 6
+          },
+          {
+            "localeCode": "en_US",
+            "lookupBean": {
+              "shortLabel": "Grand/Great Grandchild",
+              "longLabel": "Grand/Great Grandchild",
+              "code": "GC",
+              "systemId": "EEAPI",
+              "type": "relationship"
+            },
+            "sortOrder": 7
+          },
+          {
+            "localeCode": "en_US",
+            "lookupBean": {
+              "shortLabel": "Sibling",
+              "longLabel": "Sibling",
+              "code": "SI",
+              "systemId": "EEAPI",
+              "type": "relationship"
+            },
+            "sortOrder": 8
+          },
+          {
+            "localeCode": "en_US",
+            "lookupBean": {
+              "shortLabel": "Step Sibling",
+              "longLabel": "Step Sibling",
+              "code": "SS",
+              "systemId": "EEAPI",
+              "type": "relationship"
+            },
+            "sortOrder": 9
+          },
+          {
+            "localeCode": "en_US",
+            "lookupBean": {
+              "shortLabel": "Child Who Is Parent",
+              "longLabel": "Child Who Is Parent",
+              "code": "CP",
+              "systemId": "EEAPI",
+              "type": "relationship"
+            },
+            "sortOrder": 10
+          },
+          {
+            "localeCode": "en_US",
+            "lookupBean": {
+              "shortLabel": "Other Related Adult",
+              "longLabel": "Other Related Adult",
+              "code": "OR",
+              "systemId": "EEAPI",
+              "type": "relationship"
+            },
+            "sortOrder": 11
+          },
+          {
+            "localeCode": "en_US",
+            "lookupBean": {
+              "shortLabel": "Other Unrelated Adult",
+              "longLabel": "Other Unrelated Adult",
+              "code": "OU",
+              "systemId": "EEAPI",
+              "type": "relationship"
+            },
+            "sortOrder": 12
+          },
+          {
+            "localeCode": "en_US",
+            "lookupBean": {
+              "shortLabel": "Other Unrelated Child",
+              "longLabel": "Other Unrelated Child",
+              "code": "OC",
+              "systemId": "EEAPI",
+              "type": "relationship"
+            },
+            "sortOrder": 13
+          },
+          {
+            "localeCode": "en_US",
+            "lookupBean": {
+              "shortLabel": "First Cousin",
+              "longLabel": "First Cousin",
+              "code": "FC",
+              "systemId": "EEAPI",
+              "type": "relationship"
+            },
+            "sortOrder": 14
+          },
+          {
+            "localeCode": "en_US",
+            "lookupBean": {
+              "shortLabel": "Niece/Nephew",
+              "longLabel": "Niece/Nephew",
+              "code": "NN",
+              "systemId": "EEAPI",
+              "type": "relationship"
+            },
+            "sortOrder": 15
+          },
+          {
+            "localeCode": "en_US",
+            "lookupBean": {
+              "shortLabel": "Aunt/Uncle",
+              "longLabel": "Aunt/Uncle",
+              "code": "AU",
+              "systemId": "EEAPI",
+              "type": "relationship"
+            },
+            "sortOrder": 16
+          },
+          {
+            "localeCode": "en_US",
+            "lookupBean": {
+              "shortLabel": "Half Sibling",
+              "longLabel": "Half Sibling",
+              "code": "HS",
+              "systemId": "EEAPI",
+              "type": "relationship"
+            },
+            "sortOrder": 17
+          },
+          {
+            "localeCode": "en_US",
+            "lookupBean": {
+              "shortLabel": "Child/Parent treat as Child",
+              "longLabel": "Child/Parent treat as Child",
+              "code": "CC",
+              "systemId": "EEAPI",
+              "type": "relationship"
+            },
+            "sortOrder": 18
+          }
+        ]
+      },
+      "ssnVerificationOption": {
+        "beans": [
+          {
+            "localeCode": "en_US",
+            "lookupBean": {
+              "shortLabel": "Alias ssn",
+              "longLabel": "Alias ssn",
+              "code": "AL",
+              "systemId": "EEAPI",
+              "type": "ssnVerificationOption"
+            },
+            "sortOrder": 1
+          },
+          {
+            "localeCode": "en_US",
+            "lookupBean": {
+              "shortLabel": "SSN Card (Issued by SSA)",
+              "longLabel": "SSN Card (Issued by SSA)",
+              "code": "CA",
+              "systemId": "EEAPI",
+              "type": "ssnVerificationOption"
+            },
+            "sortOrder": 2
+          },
+          {
+            "localeCode": "en_US",
+            "lookupBean": {
+              "shortLabel": "SSN Error",
+              "longLabel": "SSN Error",
+              "code": "ER",
+              "systemId": "EEAPI",
+              "type": "ssnVerificationOption"
+            },
+            "sortOrder": 3
+          },
+          {
+            "localeCode": "en_US",
+            "lookupBean": {
+              "shortLabel": "Verified by SSN Interface",
+              "longLabel": "Verified by SSN Interface",
+              "code": "FV",
+              "systemId": "EEAPI",
+              "type": "ssnVerificationOption"
+            },
+            "sortOrder": 4
+          },
+          {
+            "localeCode": "en_US",
+            "lookupBean": {
+              "shortLabel": "Letter from SSA",
+              "longLabel": "Letter from SSA",
+              "code": "LE",
+              "systemId": "EEAPI",
+              "type": "ssnVerificationOption"
+            },
+            "sortOrder": 5
+          },
+          {
+            "localeCode": "en_US",
+            "lookupBean": {
+              "shortLabel": "Not Verified",
+              "longLabel": "Not Verified",
+              "code": "NO",
+              "systemId": "EEAPI",
+              "type": "ssnVerificationOption"
+            },
+            "sortOrder": 6
+          },
+          {
+            "localeCode": "en_US",
+            "lookupBean": {
+              "shortLabel": "state Verified (All case documents agree-SSA discrepancy)",
+              "longLabel": "state Verified (All case documents agree-SSA discrepancy)",
+              "code": "SV",
+              "systemId": "EEAPI",
+              "type": "ssnVerificationOption"
+            },
+            "sortOrder": 7
+          }
+        ]
+      },
+      "dobVerificationOption": {
+        "beans": [
+          {
+            "localeCode": "en_US",
+            "lookupBean": {
+              "shortLabel": "Alien Card",
+              "longLabel": "Alien Card",
+              "code": "AC",
+              "systemId": "EEAPI",
+              "type": "dobVerificationOption"
+            },
+            "sortOrder": 1
+          },
+          {
+            "localeCode": "en_US",
+            "lookupBean": {
+              "shortLabel": "Birth Certificate",
+              "longLabel": "Birth Certificate",
+              "code": "BC",
+              "systemId": "EEAPI",
+              "type": "dobVerificationOption"
+            },
+            "sortOrder": 2
+          },
+          {
+            "localeCode": "en_US",
+            "lookupBean": {
+              "shortLabel": "Baptismal Record",
+              "longLabel": "Baptismal Record",
+              "code": "BR",
+              "systemId": "EEAPI",
+              "type": "dobVerificationOption"
+            },
+            "sortOrder": 3
+          },
+          {
+            "localeCode": "en_US",
+            "lookupBean": {
+              "shortLabel": "Family Bible",
+              "longLabel": "Family Bible",
+              "code": "FB",
+              "systemId": "EEAPI",
+              "type": "dobVerificationOption"
+            },
+            "sortOrder": 4
+          },
+          {
+            "localeCode": "en_US",
+            "lookupBean": {
+              "shortLabel": "Hospital Certificate/Physician Certificate",
+              "longLabel": "Hospital Certificate/Physician Certificate",
+              "code": "HC",
+              "systemId": "EEAPI",
+              "type": "dobVerificationOption"
+            },
+            "sortOrder": 5
+          },
+          {
+            "localeCode": "en_US",
+            "lookupBean": {
+              "shortLabel": "Not Verified",
+              "longLabel": "Not Verified",
+              "code": "NO",
+              "systemId": "EEAPI",
+              "type": "dobVerificationOption"
+            },
+            "sortOrder": 6
+          },
+          {
+            "localeCode": "en_US",
+            "lookupBean": {
+              "shortLabel": "Others",
+              "longLabel": "Others",
+              "code": "OT",
+              "systemId": "EEAPI",
+              "type": "dobVerificationOption"
+            },
+            "sortOrder": 7
+          }
+        ]
+      },
+      "typeDropDown": {
+        "beans": [
+          {
+            "localeCode": "en_US",
+            "lookupBean": {
+              "shortLabel": "Type 1",
+              "longLabel": "Type 1",
+              "code": "1",
+              "systemId": "EEAPI",
+              "type": "typeDropDown"
+            },
+            "sortOrder": 1
+          },
+          {
+            "localeCode": "en_US",
+            "lookupBean": {
+              "shortLabel": "Type 2",
+              "longLabel": "Type 2",
+              "code": "2",
+              "systemId": "EEAPI",
+              "type": "typeDropDown"
+            },
+            "sortOrder": 2
+          },
+          {
+            "localeCode": "en_US",
+            "lookupBean": {
+              "shortLabel": "Type 3",
+              "longLabel": "Type 3",
+              "code": "3",
+              "systemId": "EEAPI",
+              "type": "typeDropDown"
+            },
+            "sortOrder": 3
+          }
+        ]
+      },
+      "monthlyIncomeType": {
+        "beans": [
+          {
+            "localeCode": "en_US",
+            "lookupBean": {
+              "shortLabel": "Employment Income",
+              "longLabel": "Employment Income",
+              "code": "1",
+              "systemId": "EEAPI",
+              "type": "monthlyIncomeType"
+            },
+            "sortOrder": 1
+          },
+          {
+            "localeCode": "en_US",
+            "lookupBean": {
+              "shortLabel": "Investment Income",
+              "longLabel": "Investment Income",
+              "code": "2",
+              "systemId": "EEAPI",
+              "type": "monthlyIncomeType"
+            },
+            "sortOrder": 2
+          },
+          {
+            "localeCode": "en_US",
+            "lookupBean": {
+              "shortLabel": "Tips",
+              "longLabel": "Tips",
+              "code": "3",
+              "systemId": "EEAPI",
+              "type": "monthlyIncomeType"
+            },
+            "sortOrder": 3
+          }
+        ]
+      },
+      "liquidAssetsType": {
+        "beans": [
+          {
+            "localeCode": "en_US",
+            "lookupBean": {
+              "shortLabel": "Bank Accounts",
+              "longLabel": "Bank Accounts",
+              "code": "1",
+              "systemId": "EEAPI",
+              "type": "liquidAssetsType"
+            },
+            "sortOrder": 1
+          },
+          {
+            "localeCode": "en_US",
+            "lookupBean": {
+              "shortLabel": "Investments",
+              "longLabel": "Investments",
+              "code": "2",
+              "systemId": "EEAPI",
+              "type": "liquidAssetsType"
+            },
+            "sortOrder": 2
+          }
+        ]
+      },
+      "ssnReferral": {
+        "beans": [
+          {
+            "localeCode": "en_US",
+            "lookupBean": {
+              "shortLabel": "SSA Referral",
+              "longLabel": "SSA Referral",
+              "code": "A",
+              "systemId": "EEAPI",
+              "type": "ssnReferral"
+            },
+            "sortOrder": 1
+          },
+          {
+            "localeCode": "en_US",
+            "lookupBean": {
+              "shortLabel": "Discrepancy (Duplicate number or other problem)",
+              "longLabel": "Discrepancy (Duplicate number or other problem)",
+              "code": "D",
+              "systemId": "EEAPI",
+              "type": "ssnReferral"
+            },
+            "sortOrder": 2
+          },
+          {
+            "localeCode": "en_US",
+            "lookupBean": {
+              "shortLabel": "Hospital Referral (Newborn)",
+              "longLabel": "Hospital Referral (Newborn)",
+              "code": "H",
+              "systemId": "EEAPI",
+              "type": "ssnReferral"
+            },
+            "sortOrder": 3
+          },
+          {
+            "localeCode": "en_US",
+            "lookupBean": {
+              "shortLabel": "Print Referral Form",
+              "longLabel": "Print Referral Form",
+              "code": "P",
+              "systemId": "EEAPI",
+              "type": "ssnReferral"
+            },
+            "sortOrder": 4
+          },
+          {
+            "localeCode": "en_US",
+            "lookupBean": {
+              "shortLabel": "Refused to supply SSN or apply for SSN",
+              "longLabel": "Refused to supply SSN or apply for SSN",
+              "code": "R",
+              "systemId": "EEAPI",
+              "type": "ssnReferral"
+            },
+            "sortOrder": 5
+          },
+          {
+            "localeCode": "en_US",
+            "lookupBean": {
+              "shortLabel": "Sent Referral Form to Client",
+              "longLabel": "Sent Referral Form to Client",
+              "code": "S",
+              "systemId": "EEAPI",
+              "type": "ssnReferral"
+            },
+            "sortOrder": 6
+          }
+        ]
+      }
+    }
+  }]

@@ -1,0 +1,21 @@
+#footer{
+	text-align: center;
+	position: absolute;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	padding:1em 0;
+	z-index: 10000;
+}
+#footer ul li{
+	display:inline-block;
+}
+#footer ul li a{
+	font-size: 15px;
+	color: rgba(255,255,255,.85);
+	padding: .5em 1.5em .7em;
+	display: block;
+}
+#footer ul li a:hover{
+	color:rgba(255,255,255,1);
+}

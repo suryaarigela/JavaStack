@@ -1,0 +1,11 @@
+https://www.journaldev.com/1321/java-string-interview-questions-and-answers
+###########
+String s1 = "test";
+String s2 = new String("test");  // "new String" guarantees a different object
+System.out.println(s1 == s2);  // should print "false"
+s2 = s2.intern();
+System.out.println(s1 == s2);  // should print "true"
+###########
+
+
+ 

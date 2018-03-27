@@ -1,0 +1,45 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:aop="http://www.springframework.org/schema/aop" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:jee="http://www.springframework.org/schema/jee" xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:task="http://www.springframework.org/schema/task"
+	xsi:schemaLocation="http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.2.xsd http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.2.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.2.xsd http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee-3.2.xsd http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.2.xsd http://www.springframework.org/schema/task http://www.springframework.org/schema/task/spring-task-3.2.xsd">
+
+	<context:annotation-config />  
+	<!-- <bean class="org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor" /> -->
+
+	<bean id="color" class="com.javacodegeeks.snippets.enterprise.Color">
+		<property name="baseColor" value="white" />
+		<property name="textureColor" value="grey" />
+	</bean>
+	
+	<bean id="color1" class="com.javacodegeeks.snippets.enterprise.Color1">
+		<property name="baseColor" value="white" />
+		<property name="textureColor" value="grey" />
+	</bean>
+
+	<bean id="cat" class="com.javacodegeeks.snippets.enterprise.Cat">
+		<property name="name" value="cat" />
+		<property name="color" ref="color" />
+	</bean>
+
+	<bean id="dog" class="com.javacodegeeks.snippets.enterprise.Dog" autowire="byName">
+		<property name="name" value="dog" />
+	</bean>
+
+	<!-- <bean id="elephant" class="com.javacodegeeks.snippets.enterprise.Elephant" autowire="byType">
+		<property name="name" value="elephant" />
+	</bean> -->
+
+	<bean id="frog" class="com.javacodegeeks.snippets.enterprise.Frog"	autowire="constructor">
+		<property name="name" value="frog" />
+	</bean>
+
+	<bean id="tiger" class="com.javacodegeeks.snippets.enterprise.Tiger">
+		<property name="name" value="tiger" />
+	 </bean>
+ <bean id="anotherColor" class="com.javacodegeeks.snippets.enterprise.Color">
+		<property name="baseColor" value="yellow" />
+		<property name="textureColor" value="black" />
+	</bean>
+</beans> 

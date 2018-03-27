@@ -1,0 +1,27 @@
+package com.exception;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class ConcurrentModificationExceptionTest {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+ 
+	}
+	private String toString(List aDrugStrengthList) {
+        StringBuilder str = new StringBuilder();
+    List removalList = new ArrayList();
+    for (DrugStrength aDrugStrength : aDrugStrengthList) {
+        if (!aDrugStrength.isValidDrugDescription()) {
+            removalList.add(aDrugStrength);
+        }
+    }
+    aDrugStrengthList.removeAll(removalList);
+    str.append(aDrugStrengthList);
+    if (str.indexOf("]") != -1) {
+        str.insert(str.lastIndexOf("]"), "\n          " );
+    }
+    return str.toString();
+}
+}

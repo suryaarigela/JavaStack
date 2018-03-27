@@ -1,0 +1,54 @@
+<div class="login-body">
+	<div class="wrapper">
+		<div id="login-container">
+			<div class="login-box">
+				<div class="loginbg">
+					<div class="logo-wrapper">
+						<img src="./assets/images/loginLogo.png" alt="Maryland" />
+					</div>
+					<div class="login-account">
+						<h2>Login To Your Account</h2>
+						<div *ngIf="loginPagemessage" class="alert alert-info">
+							<a class="close" data-dismiss="alert">&times;</a>
+							<span>{{loginPagemessage}}</span>
+						</div>
+						<form [formGroup]="loginForm" novalidate (ngSubmit)="save(loginForm.value, loginForm.valid)">
+							<div class="form-group">
+								<md-input-container class="example-full-width">
+									<input type="email" mdInput placeholder="Email Address" formControlName="email" required>
+									<md-error *ngIf="loginForm.controls.email.hasError('required')">This field is required</md-error>
+									<md-error *ngIf="(loginForm.controls.email.value != '')  && (loginForm.controls.email.hasError('email'))"> Please enter a valid email address</md-error>
+								</md-input-container>
+							</div>
+							<div class="form-group">
+								<md-input-container class="example-full-width">
+									<input type="password" mdInput placeholder="Password" formControlName="password" required>
+									<md-error *ngIf="loginForm.controls.password.hasError('required')">This field is required</md-error>
+									<md-error *ngIf="loginForm.controls.password.hasError('minlength')"> Password should be atleast 6 characters long.</md-error>
+								</md-input-container>
+							</div>
+							<div class="login-check">
+								<div class="login-remember">
+									<md-checkbox class="example-margin">Remember me</md-checkbox>
+								</div>
+								<div class="forgot-password">
+									<a [routerLink]="['/ForgotPassword']" [routerLinkActive]="['active']">Forgot your password?</a>
+								</div>
+								<div class="clearfix"></div>
+							</div>
+							<div class="login-bottom-line">
+								<button disableOnClick type="submit" class="btn btn-primary login-btn" (click)="get()">Login</button>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+			<div class="login-bottom-text">
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus mattis volutpat est eu feugiat. Etiam arcu neque,
+					vestibulum quis lectus a, congue dapibus lectus. Pellentesque commodo, nunc ut ullamcorper lacinia, nunc dui vehicula
+					ante, id tincidunt mauris tortor sed augue. Curabitur nec lectus lacus. </p>					
+			</div>						
+		</div>		
+	</div>	
+</div>
+<app-footer class="footer"></app-footer>

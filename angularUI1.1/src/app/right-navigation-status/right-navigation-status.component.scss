@@ -1,0 +1,68 @@
+/*Variables*/
+$no-border-top: transparent;
+$color-success: #2889c9;
+$color-active: #000;
+
+.no-border-top {
+    border-top: $no-border-top !important;
+}
+
+.active-flow-menu {
+    a {
+        color: $color-active !important;
+        cursor: pointer !important;
+    }
+}
+
+.completed-flow-menu {
+    a {
+        color: $color-success !important;
+        cursor: pointer !important;
+    }
+}
+
+.sub-list-icons {
+    position: relative;
+    padding-left: 10px;
+    top: 0px !important;
+}
+
+.menu-right{
+	float:right;
+	width:200px;
+	border:1px solid #ccc;
+	border-radius:2px;
+	margin-left:15px;
+}
+.menu-right h3{
+	text-align:center;
+	font-size:1.5rem;
+	font-weight:600;
+	line-height:1.2;
+	color:#2889c9;
+	margin:5px 0;
+}
+.menu-right ul li{
+	border-top:1px solid #ccc;
+}
+.menu-right ul li a{
+	padding:8px 5px;
+	font-size:1.3rem;
+	font-weight:600;
+	line-height:1.2;
+	color:#ccc;
+	display:block;
+	position:relative;
+    cursor: default;
+}
+.menu-right ul li a i{
+	position:absolute;
+	right:5px;
+	top:8px;
+}
+.fa-round{
+	width:15px;
+	height:15px;
+	border:1px solid #ccc;
+	border-radius:50%;
+}

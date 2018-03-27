@@ -1,0 +1,236 @@
+<div class="col-md-7 content-box">
+  <div class="settingsPage-box">
+    <form [formGroup]="authRepForm" (ngSubmit)="onSubmit(authRepForm.value)">
+      <h3 class="box-border-bottom">Authorized Representative</h3>
+      <div class="box-border-bottom row-view">
+        <div class="col-sm-3">
+          <label class="pushDown">Relationship & Type</label>
+        </div>
+        <div class="col-sm-5">
+          <div class="pushDown">Relation</div>
+          <select class="form-control" [(ngModel)]="relation" formControlName="relation"> 
+            <option></option>
+            <option>Self</option>
+            <option>Spouse</option>
+            <option>Child</option>
+            <option>Dependent</option>
+					</select>
+        </div>
+        <div class="col-sm-4">
+          <div class="pushDown" for="firstName">Type</div>
+          <select class="form-control" [(ngModel)]="p_type" formControlName='type'> 
+            <option>HOH/Self</option>
+            <option>Child Who Is Parent</option>
+            <option>Natural or Adopted Child</option>
+            <option>Other Related Adult</option>
+            <option>Stepchild</option>
+            <option>Other Unrelated Adult</option>
+            <option>Spousal Parent</option>
+            <option>Other Unrelated Child</option>
+            <option>Non-Parent Spouse</option>
+            <option>First Cousin</option>
+            <option>Other Parent</option>
+            <option>Niece/Nephew</option>
+            <option>Grand Great Grandchild</option>
+            <option>Aunt/Uncle</option>
+            <option>Sibling</option>
+            <option>Half Sibling</option>
+            <option>Step Sibling</option>
+            <option>Child/Parent treat as Child</option>
+          </select>
+        </div>
+        <div class="clearfix"></div>
+      </div>
+      <div class="box-border-bottom row-view">
+        <div class="col-sm-3">
+          <label for="name" class="pushDown">Name</label>
+        </div>
+        <div class="col-sm-9 zero-padding-bottom">
+          <div>
+            <div class="col-sm-3 form-group zero-padding-left form-group required zero-padding-right">
+              <div class="pushDown control-label" for="firstName">First</div>
+              <input class="form-control" type="text" formControlName="firstName" (keypress)="textOnly($event)" />
+              <div *ngIf="authRepForm.controls['firstName'].hasError('required') && authRepForm.controls['firstName'].touched" class="alert alert-danger">
+                <small> {{titleAlert}}</small>
+              </div>
+              <div *ngIf="authRepForm.controls['firstName'].hasError('minlength') && authRepForm.controls['firstName'].touched" class="alert alert-danger">
+                <small>Your first name cannot be less than 3 characters.</small>
+              </div>
+              <div *ngIf="authRepForm.controls['firstName'].hasError('maxlength') && authRepForm.controls['firstName'].touched" class="alert alert-danger">
+                <small>Your first name cannot exceed 20 characters.</small>
+              </div>
+            </div>
+
+            <div class="col-sm-3 form-group five-padding-left zero-padding-right">
+              <div class="pushDown" for="middleName">Middle</div>
+              <input class="form-control" type="text" formControlName="middleName" (keypress)="textOnly($event)" />
+              <div *ngIf="authRepForm.controls['middleName'].hasError('maxlength') && authRepForm.controls['middleName'].touched" class="alert alert-danger">
+                <small>Your first name cannot exceed 20 characters.</small>
+              </div>
+            </div>
+
+            <div class="col-sm-3 five-padding-left zero-padding-right form-group required">
+              <!--form-group-->
+              <div class="pushDown control-label" for="lastName">Last</div>
+              <input class="form-control-v1 form-control" type="text" formControlName="lastName" (keypress)="textOnly($event)" />
+              <div *ngIf="authRepForm.controls['lastName'].hasError('required') && authRepForm.controls['lastName'].touched" class="alert alert-danger">
+                <small>{{titleAlert}}</small>
+              </div>
+              <div *ngIf="authRepForm.controls['lastName'].hasError('maxlength') && authRepForm.controls['lastName'].touched" class="alert alert-danger">
+                <small>Your last name cannot exceed 18 characters.</small>
+              </div>
+            </div>
+            <div class="col-sm-3 form-group five-padding-left zero-padding-right ">
+              <div class="pushDown" for="suffix">Suffix</div>
+              <select class="form-control-v1 form-control width-suffix" formControlName="suffix">
+								<option 
+                  *ngFor="let optionEntity of suffixDD"
+                  [value]="optionEntity.key">
+                  {{optionEntity.value}}
+								</option>
+				      </select>
+            </div>
+          </div>
+        </div>
+        <div class="clearfix"></div>
+      </div>
+      <div class="row-view box-border-bottom" data-toggle="tooltip" data-original-title='<div><span ><p class="fa fa-info-circle fa-tooltip" ></p></span><span  class ="tooltip-text"> Address Info</span></div>'>
+        <div class="col-sm-3 grid-block">
+          <div class="label-field">Address</div>
+        </div>
+        <div class="col-sm-9 grid-block">
+          <div class="row">
+            <div class="col-sm-12">
+              <div class="grid-textField form-group required">
+                <div class="sub-label control-label" for="line1_RA">Line 1</div>
+                <input type="text" class="form-control" formControlName="line1_RA">
+                <div *ngIf="authRepForm.controls['line1_RA'].hasError('required') && authRepForm.controls['line1_RA'].touched" class="alert alert-danger">
+                  {{titleAlert}}
+                </div>
+                <div *ngIf="authRepForm.controls['line1_RA'].hasError('maxlength') && authRepForm.controls['line1_RA'].touched" class="alert alert-danger">
+                  <small>your input cannot exceed 52 characters.</small>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-12">
+              <div class="grid-textField form-group">
+                <div class="sub-label control-label" for="line2_RA">Line 2</div>
+                <input type="text" class="form-control" formControlName="line2_RA">
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-4 form-group required">
+              <div class="sub-label control-label" for="city_RA">City</div>
+              <div class="grid-textField">
+                <input type="text" class="form-control" formControlName="city_RA" (keypress)="textOnly($event)">
+                <!--City-->
+                <div *ngIf="authRepForm.controls['city_RA'].hasError('required') && authRepForm.controls['city_RA'].touched" class="alert alert-danger">
+                  {{titleAlert}}
+                </div>
+                <div *ngIf="authRepForm.controls['city_RA'].hasError('maxlength') && authRepForm.controls['city_RA'].touched" class="alert alert-danger">
+                  <small>your input cannot exceed 22 characters.</small>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-sm-4 field-pd-left form-group required">
+              <div class="sub-label control-label" for="zip_RA">Zipcode</div>
+              <div class="grid-textField">
+                <input type="text" class="form-control" (keypress)="numberOnly($event)" formControlName="zip_RA">
+                <!--Zipcode-->
+                <div *ngIf="authRepForm.controls['zip_RA'].hasError('required') && authRepForm.controls['zip_RA'].touched" class="alert alert-danger">
+                  {{titleAlert}}
+                </div>
+                <div *ngIf="authRepForm.controls['zip_RA'].hasError('maxlength') && authRepForm.controls['zip_RA'].touched" class="alert alert-danger">
+                  <small>your input cannot exceed 5 characters.</small>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-4 field-pd-left form-group required">
+              <div class="grid-textField">
+                <div class="sub-label control-label" for="state_RA">State</div>
+                <select class="form-control" formControlName="state_RA" [(ngModel)]="state_RA">
+                  <option 
+                    *ngFor="let optionEntity of stateDD"  
+                    [value]="optionEntity.key">
+                    {{optionEntity.value}}
+                  </option>
+							  </select>
+                <div *ngIf="authRepForm.controls['state_RA'].hasError('required') && authRepForm.controls['state_RA'].touched" class="alert alert-danger">
+                  {{titleAlert}}
+                </div>
+              </div>
+            </div>
+            <div class="row col-sm-12 padding-none" *ngIf="state_RA=='MD'">
+              <div class="col-sm-6 grid-textField form-group required padding-top-0">
+                <div class="sub-label control-label" for="county_RA">County</div>
+                <select class="form-control" formControlName="county_RA">
+                  <option 
+                    *ngFor="let optionEntity of countyDD"  
+                    [value]="optionEntity.key">
+                    {{optionEntity.value}}
+                  </option>
+                </select>
+                <div *ngIf="authRepForm.controls['county_RA'].hasError('required') && authRepForm.controls['county_RA'].touched" class="alert alert-danger">
+                  {{titleAlert}}
+                </div>
+              </div>
+              <div class="col-sm-6 field-pd-left grid-textField form-group required padding-top-0 pull-right padding-none">
+                <div class="sub-label control-label" for="district_RA">District</div>
+                <select class="form-control" formControlName="district_RA">
+                    <option 
+                      *ngFor="let optionEntity of districtDD"  
+                      [value]="optionEntity.key">
+                      {{optionEntity.value}}
+                    </option>
+                </select>
+                <div *ngIf="authRepForm.controls['district_RA'].hasError('required') && authRepForm.controls['district_RA'].touched" class="alert alert-danger">
+                  {{titleAlert}}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="clearfix"></div>
+      </div>
+      <div class="row-view box-border-bottom" data-toggle="tooltip" data-original-title='<div><span ><p class="fa fa-info-circle fa-tooltip" ></p></span><span  class ="tooltip-text"> Contact Info</span></div>'>
+
+        <div class="col-sm-3 grid-block">
+          <div class="label-field pushDown">Phone Number</div>
+        </div>
+        <div class="col-sm-5 grid-block">
+          <div class="sub-label control-label" for="p_number">Number</div>
+          <div class="grid-textField">
+            <input type="text" class="form-control" (keypress)="numberOnly($event)" formControlName="p_number">
+          </div>
+        </div>
+        <div class="col-sm-2 grid-block">
+          <div class="sub-label control-label" for="p_ext">Ext.</div>
+          <div class="grid-textField">
+            <input type="text" class="form-control" formControlName="p_ext" (keypress)="numberOnly($event)">
+          </div>
+        </div>
+        <div class="col-sm-2 grid-block">
+          <label class="sub-label control-label" for="p_type" style="margin-bottom: 0;">Type</label>
+          <div class="grid-textField">
+            <select class="form-control" formControlName="p_type">
+							<option 
+                *ngFor="let optionEntity of phoneTypeDD"  
+                [value]="optionEntity.key">
+                {{optionEntity.value}}
+              </option>											
+					  </select> 
+          </div>
+        </div>
+        <div class="clearfix"></div>
+      </div>
+      <div style="margin-top: 25px;" class="buttonALign btnWrapper">
+        <button class="btn cancel-btn btnMargingRt btnCancel" (click)="back()">Cancel</button>
+        <button style="margin-right: 0px;" type="submit" class="btn btn-primary buttonPadding">Save</button>
+      </div>
+    </form>
+  </div>
+</div>

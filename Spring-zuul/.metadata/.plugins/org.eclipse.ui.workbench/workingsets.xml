@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workingSetManager>
+<workingSet editPageId="org.eclipse.ui.resourceWorkingSetPage" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1510934801288_1" label="navigator-sdk" name="navigator-sdk">
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/navigator-sdk" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/navigator-sdk-model" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/navigator-sdk-client" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/navigator-sdk-examples" type="4"/>
+</workingSet>
+<workingSet aggregate="true" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1507426143269_0" label="Window Working Set" name="Aggregate for window 1507426143269"/>
+</workingSetManager>
